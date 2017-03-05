@@ -1,0 +1,58 @@
+{
+  "name": "eslint-plugin-crc",
+  "version": "0.1.0",
+  "description": "Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaboration models.",
+  "keywords": [
+    "refactoring",
+    "refactor",
+    "refactoring-tools",
+    "javascript",
+    "javascript-tools",
+    "code-analysis",
+    "cli",
+    "ast",
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": {
+    "name": "Greg Swindle",
+    "email": "greg@swindle.net",
+    "url": "http://swindle.net"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "nyc mocha tests --recursive",
+    "coverage": "nyc report",
+    "coverage:readme": "nyc report >> README0.md"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js",
+      "**/fixtures/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "check-coverage": true,
+    "lines": 100
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.17.0",
+    "esrefactor": "^0.1.0",
+    "lodash": "^4.17.4",
+    "nyc": "^10.1.2",
+    "relative-path": "^1.1.0",
+    "require-dir": "^0.3.1",
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT"
+}

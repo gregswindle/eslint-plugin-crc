@@ -1,0 +1,923 @@
+{
+  "type": "Program",
+  "start": 0,
+  "end": 450,
+  "range": [
+    0,
+    449
+  ],
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "start": 0,
+      "end": 13,
+      "range": [
+        0,
+        13
+      ],
+      "expression": {
+        "type": "Literal",
+        "start": 0,
+        "end": 12,
+        "range": [
+          0,
+          12
+        ],
+        "value": "use strict",
+        "raw": "'use strict'"
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "start": 15,
+      "end": 95,
+      "range": [
+        15,
+        95
+      ],
+      "id": {
+        "type": "Identifier",
+        "start": 24,
+        "end": 29,
+        "range": [
+          24,
+          29
+        ],
+        "name": "Alpha"
+      },
+      "generator": false,
+      "expression": false,
+      "params": [],
+      "body": {
+        "type": "BlockStatement",
+        "start": 32,
+        "end": 95,
+        "range": [
+          32,
+          95
+        ],
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "start": 36,
+            "end": 56,
+            "range": [
+              36,
+              56
+            ],
+            "expression": {
+              "type": "AssignmentExpression",
+              "start": 36,
+              "end": 55,
+              "range": [
+                36,
+                55
+              ],
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "start": 36,
+                "end": 45,
+                "range": [
+                  36,
+                  45
+                ],
+                "object": {
+                  "type": "ThisExpression",
+                  "start": 36,
+                  "end": 40,
+                  "range": [
+                    36,
+                    40
+                  ]
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 41,
+                  "end": 45,
+                  "range": [
+                    41,
+                    45
+                  ],
+                  "name": "name"
+                },
+                "computed": false
+              },
+              "right": {
+                "type": "Literal",
+                "start": 48,
+                "end": 55,
+                "range": [
+                  48,
+                  55
+                ],
+                "value": "alpha",
+                "raw": "'alpha'"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "start": 59,
+            "end": 93,
+            "range": [
+              59,
+              93
+            ],
+            "expression": {
+              "type": "AssignmentExpression",
+              "start": 59,
+              "end": 92,
+              "range": [
+                59,
+                92
+              ],
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "start": 59,
+                "end": 68,
+                "range": [
+                  59,
+                  68
+                ],
+                "object": {
+                  "type": "ThisExpression",
+                  "start": 59,
+                  "end": 63,
+                  "range": [
+                    59,
+                    63
+                  ]
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 64,
+                  "end": 68,
+                  "range": [
+                    64,
+                    68
+                  ],
+                  "name": "type"
+                },
+                "computed": false
+              },
+              "right": {
+                "type": "Literal",
+                "start": 71,
+                "end": 92,
+                "range": [
+                  71,
+                  92
+                ],
+                "value": "function contructor",
+                "raw": "'function contructor'"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "start": 97,
+      "end": 155,
+      "range": [
+        97,
+        155
+      ],
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "start": 101,
+          "end": 154,
+          "range": [
+            101,
+            154
+          ],
+          "id": {
+            "type": "Identifier",
+            "start": 101,
+            "end": 106,
+            "range": [
+              101,
+              106
+            ],
+            "name": "Bravo"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "start": 109,
+            "end": 154,
+            "range": [
+              109,
+              154
+            ],
+            "properties": [
+              {
+                "type": "Property",
+                "start": 113,
+                "end": 126,
+                "range": [
+                  113,
+                  126
+                ],
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 113,
+                  "end": 117,
+                  "range": [
+                    113,
+                    117
+                  ],
+                  "name": "name"
+                },
+                "value": {
+                  "type": "Literal",
+                  "start": 119,
+                  "end": 126,
+                  "range": [
+                    119,
+                    126
+                  ],
+                  "value": "Bravo",
+                  "raw": "'Bravo'"
+                },
+                "kind": "init"
+              },
+              {
+                "type": "Property",
+                "start": 130,
+                "end": 152,
+                "range": [
+                  130,
+                  152
+                ],
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 130,
+                  "end": 134,
+                  "range": [
+                    130,
+                    134
+                  ],
+                  "name": "type"
+                },
+                "value": {
+                  "type": "Literal",
+                  "start": 136,
+                  "end": 152,
+                  "range": [
+                    136,
+                    152
+                  ],
+                  "value": "object literal",
+                  "raw": "'object literal'"
+                },
+                "kind": "init"
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "start": 157,
+      "end": 242,
+      "range": [
+        157,
+        242
+      ],
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "start": 161,
+          "end": 241,
+          "range": [
+            161,
+            241
+          ],
+          "id": {
+            "type": "Identifier",
+            "start": 161,
+            "end": 168,
+            "range": [
+              161,
+              168
+            ],
+            "name": "Charlie"
+          },
+          "init": {
+            "type": "CallExpression",
+            "start": 171,
+            "end": 241,
+            "range": [
+              171,
+              241
+            ],
+            "callee": {
+              "type": "MemberExpression",
+              "start": 171,
+              "end": 184,
+              "range": [
+                171,
+                184
+              ],
+              "object": {
+                "type": "Identifier",
+                "start": 171,
+                "end": 177,
+                "range": [
+                  171,
+                  177
+                ],
+                "name": "Object"
+              },
+              "property": {
+                "type": "Identifier",
+                "start": 178,
+                "end": 184,
+                "range": [
+                  178,
+                  184
+                ],
+                "name": "create"
+              },
+              "computed": false
+            },
+            "arguments": [
+              {
+                "type": "ObjectExpression",
+                "start": 185,
+                "end": 240,
+                "range": [
+                  185,
+                  240
+                ],
+                "properties": [
+                  {
+                    "type": "Property",
+                    "start": 189,
+                    "end": 204,
+                    "range": [
+                      189,
+                      204
+                    ],
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 189,
+                      "end": 193,
+                      "range": [
+                        189,
+                        193
+                      ],
+                      "name": "name"
+                    },
+                    "value": {
+                      "type": "Literal",
+                      "start": 195,
+                      "end": 204,
+                      "range": [
+                        195,
+                        204
+                      ],
+                      "value": "Charlie",
+                      "raw": "'Charlie'"
+                    },
+                    "kind": "init"
+                  },
+                  {
+                    "type": "Property",
+                    "start": 208,
+                    "end": 238,
+                    "range": [
+                      208,
+                      238
+                    ],
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 208,
+                      "end": 212,
+                      "range": [
+                        208,
+                        212
+                      ],
+                      "name": "type"
+                    },
+                    "value": {
+                      "type": "Literal",
+                      "start": 214,
+                      "end": 238,
+                      "range": [
+                        214,
+                        238
+                      ],
+                      "value": "Object.create: literal",
+                      "raw": "'Object.create: literal'"
+                    },
+                    "kind": "init"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "start": 244,
+      "end": 279,
+      "range": [
+        244,
+        279
+      ],
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "start": 248,
+          "end": 278,
+          "range": [
+            248,
+            278
+          ],
+          "id": {
+            "type": "Identifier",
+            "start": 248,
+            "end": 253,
+            "range": [
+              248,
+              253
+            ],
+            "name": "Delta"
+          },
+          "init": {
+            "type": "CallExpression",
+            "start": 256,
+            "end": 278,
+            "range": [
+              256,
+              278
+            ],
+            "callee": {
+              "type": "MemberExpression",
+              "start": 256,
+              "end": 269,
+              "range": [
+                256,
+                269
+              ],
+              "object": {
+                "type": "Identifier",
+                "start": 256,
+                "end": 262,
+                "range": [
+                  256,
+                  262
+                ],
+                "name": "Object"
+              },
+              "property": {
+                "type": "Identifier",
+                "start": 263,
+                "end": 269,
+                "range": [
+                  263,
+                  269
+                ],
+                "name": "create"
+              },
+              "computed": false
+            },
+            "arguments": [
+              {
+                "type": "Identifier",
+                "start": 270,
+                "end": 277,
+                "range": [
+                  270,
+                  277
+                ],
+                "name": "Charlie"
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "start": 281,
+      "end": 323,
+      "range": [
+        281,
+        323
+      ],
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "start": 285,
+          "end": 322,
+          "range": [
+            285,
+            322
+          ],
+          "id": {
+            "type": "Identifier",
+            "start": 285,
+            "end": 289,
+            "range": [
+              285,
+              289
+            ],
+            "name": "Echo"
+          },
+          "init": {
+            "type": "CallExpression",
+            "start": 292,
+            "end": 322,
+            "range": [
+              292,
+              322
+            ],
+            "callee": {
+              "type": "MemberExpression",
+              "start": 292,
+              "end": 305,
+              "range": [
+                292,
+                305
+              ],
+              "object": {
+                "type": "Identifier",
+                "start": 292,
+                "end": 298,
+                "range": [
+                  292,
+                  298
+                ],
+                "name": "Object"
+              },
+              "property": {
+                "type": "Identifier",
+                "start": 299,
+                "end": 305,
+                "range": [
+                  299,
+                  305
+                ],
+                "name": "create"
+              },
+              "computed": false
+            },
+            "arguments": [
+              {
+                "type": "MemberExpression",
+                "start": 306,
+                "end": 321,
+                "range": [
+                  306,
+                  321
+                ],
+                "object": {
+                  "type": "Identifier",
+                  "start": 306,
+                  "end": 311,
+                  "range": [
+                    306,
+                    311
+                  ],
+                  "name": "Alpha"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 312,
+                  "end": 321,
+                  "range": [
+                    312,
+                    321
+                  ],
+                  "name": "prototype"
+                },
+                "computed": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "ExpressionStatement",
+      "start": 325,
+      "end": 348,
+      "range": [
+        325,
+        348
+      ],
+      "expression": {
+        "type": "AssignmentExpression",
+        "start": 325,
+        "end": 347,
+        "range": [
+          325,
+          347
+        ],
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "start": 325,
+          "end": 339,
+          "range": [
+            325,
+            339
+          ],
+          "object": {
+            "type": "Identifier",
+            "start": 325,
+            "end": 331,
+            "range": [
+              325,
+              331
+            ],
+            "name": "module"
+          },
+          "property": {
+            "type": "Identifier",
+            "start": 332,
+            "end": 339,
+            "range": [
+              332,
+              339
+            ],
+            "name": "exports"
+          },
+          "computed": false
+        },
+        "right": {
+          "type": "Identifier",
+          "start": 342,
+          "end": 347,
+          "range": [
+            342,
+            347
+          ],
+          "name": "Alpha"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "start": 350,
+      "end": 373,
+      "range": [
+        350,
+        373
+      ],
+      "expression": {
+        "type": "AssignmentExpression",
+        "start": 350,
+        "end": 372,
+        "range": [
+          350,
+          372
+        ],
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "start": 350,
+          "end": 364,
+          "range": [
+            350,
+            364
+          ],
+          "object": {
+            "type": "Identifier",
+            "start": 350,
+            "end": 356,
+            "range": [
+              350,
+              356
+            ],
+            "name": "module"
+          },
+          "property": {
+            "type": "Identifier",
+            "start": 357,
+            "end": 364,
+            "range": [
+              357,
+              364
+            ],
+            "name": "exports"
+          },
+          "computed": false
+        },
+        "right": {
+          "type": "Identifier",
+          "start": 367,
+          "end": 372,
+          "range": [
+            367,
+            372
+          ],
+          "name": "Bravo"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "start": 375,
+      "end": 400,
+      "range": [
+        375,
+        400
+      ],
+      "expression": {
+        "type": "AssignmentExpression",
+        "start": 375,
+        "end": 399,
+        "range": [
+          375,
+          399
+        ],
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "start": 375,
+          "end": 389,
+          "range": [
+            375,
+            389
+          ],
+          "object": {
+            "type": "Identifier",
+            "start": 375,
+            "end": 381,
+            "range": [
+              375,
+              381
+            ],
+            "name": "module"
+          },
+          "property": {
+            "type": "Identifier",
+            "start": 382,
+            "end": 389,
+            "range": [
+              382,
+              389
+            ],
+            "name": "exports"
+          },
+          "computed": false
+        },
+        "right": {
+          "type": "Identifier",
+          "start": 392,
+          "end": 399,
+          "range": [
+            392,
+            399
+          ],
+          "name": "Charlie"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "start": 402,
+      "end": 425,
+      "range": [
+        402,
+        425
+      ],
+      "expression": {
+        "type": "AssignmentExpression",
+        "start": 402,
+        "end": 424,
+        "range": [
+          402,
+          424
+        ],
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "start": 402,
+          "end": 416,
+          "range": [
+            402,
+            416
+          ],
+          "object": {
+            "type": "Identifier",
+            "start": 402,
+            "end": 408,
+            "range": [
+              402,
+              408
+            ],
+            "name": "module"
+          },
+          "property": {
+            "type": "Identifier",
+            "start": 409,
+            "end": 416,
+            "range": [
+              409,
+              416
+            ],
+            "name": "exports"
+          },
+          "computed": false
+        },
+        "right": {
+          "type": "Identifier",
+          "start": 419,
+          "end": 424,
+          "range": [
+            419,
+            424
+          ],
+          "name": "Delta"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "start": 427,
+      "end": 449,
+      "range": [
+        427,
+        449
+      ],
+      "expression": {
+        "type": "AssignmentExpression",
+        "start": 427,
+        "end": 448,
+        "range": [
+          427,
+          448
+        ],
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "start": 427,
+          "end": 441,
+          "range": [
+            427,
+            441
+          ],
+          "object": {
+            "type": "Identifier",
+            "start": 427,
+            "end": 433,
+            "range": [
+              427,
+              433
+            ],
+            "name": "module"
+          },
+          "property": {
+            "type": "Identifier",
+            "start": 434,
+            "end": 441,
+            "range": [
+              434,
+              441
+            ],
+            "name": "exports"
+          },
+          "computed": false
+        },
+        "right": {
+          "type": "Identifier",
+          "start": 444,
+          "end": 448,
+          "range": [
+            444,
+            448
+          ],
+          "name": "Echo"
+        }
+      }
+    }
+  ],
+  "sourceType": "module"
+}

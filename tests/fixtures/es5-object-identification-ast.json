@@ -1,10 +1,10 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 450,
+  "end": 571,
   "range": [
     0,
-    449
+    570
   ],
   "body": [
     {
@@ -624,47 +624,299 @@
       "kind": "var"
     },
     {
-      "type": "ExpressionStatement",
+      "type": "FunctionDeclaration",
       "start": 325,
-      "end": 348,
+      "end": 375,
       "range": [
         325,
-        348
+        375
+      ],
+      "id": {
+        "type": "Identifier",
+        "start": 334,
+        "end": 341,
+        "range": [
+          334,
+          341
+        ],
+        "name": "Foxtrot"
+      },
+      "generator": false,
+      "expression": false,
+      "params": [],
+      "body": {
+        "type": "BlockStatement",
+        "start": 344,
+        "end": 375,
+        "range": [
+          344,
+          375
+        ],
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "start": 348,
+            "end": 373,
+            "range": [
+              348,
+              373
+            ],
+            "expression": {
+              "type": "AssignmentExpression",
+              "start": 348,
+              "end": 372,
+              "range": [
+                348,
+                372
+              ],
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "start": 348,
+                "end": 358,
+                "range": [
+                  348,
+                  358
+                ],
+                "object": {
+                  "type": "ThisExpression",
+                  "start": 348,
+                  "end": 352,
+                  "range": [
+                    348,
+                    352
+                  ]
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 353,
+                  "end": 358,
+                  "range": [
+                    353,
+                    358
+                  ],
+                  "name": "alpha"
+                },
+                "computed": false
+              },
+              "right": {
+                "type": "NewExpression",
+                "start": 361,
+                "end": 372,
+                "range": [
+                  361,
+                  372
+                ],
+                "callee": {
+                  "type": "Identifier",
+                  "start": 365,
+                  "end": 370,
+                  "range": [
+                    365,
+                    370
+                  ],
+                  "name": "Alpha"
+                },
+                "arguments": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "start": 377,
+      "end": 444,
+      "range": [
+        377,
+        444
       ],
       "expression": {
         "type": "AssignmentExpression",
-        "start": 325,
-        "end": 347,
+        "start": 377,
+        "end": 443,
         "range": [
-          325,
-          347
+          377,
+          443
         ],
         "operator": "=",
         "left": {
           "type": "MemberExpression",
-          "start": 325,
-          "end": 339,
+          "start": 377,
+          "end": 400,
           "range": [
-            325,
-            339
+            377,
+            400
+          ],
+          "object": {
+            "type": "MemberExpression",
+            "start": 377,
+            "end": 394,
+            "range": [
+              377,
+              394
+            ],
+            "object": {
+              "type": "Identifier",
+              "start": 377,
+              "end": 384,
+              "range": [
+                377,
+                384
+              ],
+              "name": "Foxtrot"
+            },
+            "property": {
+              "type": "Identifier",
+              "start": 385,
+              "end": 394,
+              "range": [
+                385,
+                394
+              ],
+              "name": "prototype"
+            },
+            "computed": false
+          },
+          "property": {
+            "type": "Identifier",
+            "start": 395,
+            "end": 400,
+            "range": [
+              395,
+              400
+            ],
+            "name": "radio"
+          },
+          "computed": false
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "start": 403,
+          "end": 443,
+          "range": [
+            403,
+            443
+          ],
+          "id": null,
+          "generator": false,
+          "expression": false,
+          "params": [],
+          "body": {
+            "type": "BlockStatement",
+            "start": 414,
+            "end": 443,
+            "range": [
+              414,
+              443
+            ],
+            "body": [
+              {
+                "type": "ReturnStatement",
+                "start": 418,
+                "end": 441,
+                "range": [
+                  418,
+                  441
+                ],
+                "argument": {
+                  "type": "MemberExpression",
+                  "start": 425,
+                  "end": 440,
+                  "range": [
+                    425,
+                    440
+                  ],
+                  "object": {
+                    "type": "MemberExpression",
+                    "start": 425,
+                    "end": 435,
+                    "range": [
+                      425,
+                      435
+                    ],
+                    "object": {
+                      "type": "ThisExpression",
+                      "start": 425,
+                      "end": 429,
+                      "range": [
+                        425,
+                        429
+                      ]
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 430,
+                      "end": 435,
+                      "range": [
+                        430,
+                        435
+                      ],
+                      "name": "alpha"
+                    },
+                    "computed": false
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "start": 436,
+                    "end": 440,
+                    "range": [
+                      436,
+                      440
+                    ],
+                    "name": "name"
+                  },
+                  "computed": false
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "start": 446,
+      "end": 469,
+      "range": [
+        446,
+        469
+      ],
+      "expression": {
+        "type": "AssignmentExpression",
+        "start": 446,
+        "end": 468,
+        "range": [
+          446,
+          468
+        ],
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "start": 446,
+          "end": 460,
+          "range": [
+            446,
+            460
           ],
           "object": {
             "type": "Identifier",
-            "start": 325,
-            "end": 331,
+            "start": 446,
+            "end": 452,
             "range": [
-              325,
-              331
+              446,
+              452
             ],
             "name": "module"
           },
           "property": {
             "type": "Identifier",
-            "start": 332,
-            "end": 339,
+            "start": 453,
+            "end": 460,
             "range": [
-              332,
-              339
+              453,
+              460
             ],
             "name": "exports"
           },
@@ -672,11 +924,11 @@
         },
         "right": {
           "type": "Identifier",
-          "start": 342,
-          "end": 347,
+          "start": 463,
+          "end": 468,
           "range": [
-            342,
-            347
+            463,
+            468
           ],
           "name": "Alpha"
         }
@@ -684,46 +936,46 @@
     },
     {
       "type": "ExpressionStatement",
-      "start": 350,
-      "end": 373,
+      "start": 471,
+      "end": 494,
       "range": [
-        350,
-        373
+        471,
+        494
       ],
       "expression": {
         "type": "AssignmentExpression",
-        "start": 350,
-        "end": 372,
+        "start": 471,
+        "end": 493,
         "range": [
-          350,
-          372
+          471,
+          493
         ],
         "operator": "=",
         "left": {
           "type": "MemberExpression",
-          "start": 350,
-          "end": 364,
+          "start": 471,
+          "end": 485,
           "range": [
-            350,
-            364
+            471,
+            485
           ],
           "object": {
             "type": "Identifier",
-            "start": 350,
-            "end": 356,
+            "start": 471,
+            "end": 477,
             "range": [
-              350,
-              356
+              471,
+              477
             ],
             "name": "module"
           },
           "property": {
             "type": "Identifier",
-            "start": 357,
-            "end": 364,
+            "start": 478,
+            "end": 485,
             "range": [
-              357,
-              364
+              478,
+              485
             ],
             "name": "exports"
           },
@@ -731,11 +983,11 @@
         },
         "right": {
           "type": "Identifier",
-          "start": 367,
-          "end": 372,
+          "start": 488,
+          "end": 493,
           "range": [
-            367,
-            372
+            488,
+            493
           ],
           "name": "Bravo"
         }
@@ -743,46 +995,46 @@
     },
     {
       "type": "ExpressionStatement",
-      "start": 375,
-      "end": 400,
+      "start": 496,
+      "end": 521,
       "range": [
-        375,
-        400
+        496,
+        521
       ],
       "expression": {
         "type": "AssignmentExpression",
-        "start": 375,
-        "end": 399,
+        "start": 496,
+        "end": 520,
         "range": [
-          375,
-          399
+          496,
+          520
         ],
         "operator": "=",
         "left": {
           "type": "MemberExpression",
-          "start": 375,
-          "end": 389,
+          "start": 496,
+          "end": 510,
           "range": [
-            375,
-            389
+            496,
+            510
           ],
           "object": {
             "type": "Identifier",
-            "start": 375,
-            "end": 381,
+            "start": 496,
+            "end": 502,
             "range": [
-              375,
-              381
+              496,
+              502
             ],
             "name": "module"
           },
           "property": {
             "type": "Identifier",
-            "start": 382,
-            "end": 389,
+            "start": 503,
+            "end": 510,
             "range": [
-              382,
-              389
+              503,
+              510
             ],
             "name": "exports"
           },
@@ -790,11 +1042,11 @@
         },
         "right": {
           "type": "Identifier",
-          "start": 392,
-          "end": 399,
+          "start": 513,
+          "end": 520,
           "range": [
-            392,
-            399
+            513,
+            520
           ],
           "name": "Charlie"
         }
@@ -802,46 +1054,46 @@
     },
     {
       "type": "ExpressionStatement",
-      "start": 402,
-      "end": 425,
+      "start": 523,
+      "end": 546,
       "range": [
-        402,
-        425
+        523,
+        546
       ],
       "expression": {
         "type": "AssignmentExpression",
-        "start": 402,
-        "end": 424,
+        "start": 523,
+        "end": 545,
         "range": [
-          402,
-          424
+          523,
+          545
         ],
         "operator": "=",
         "left": {
           "type": "MemberExpression",
-          "start": 402,
-          "end": 416,
+          "start": 523,
+          "end": 537,
           "range": [
-            402,
-            416
+            523,
+            537
           ],
           "object": {
             "type": "Identifier",
-            "start": 402,
-            "end": 408,
+            "start": 523,
+            "end": 529,
             "range": [
-              402,
-              408
+              523,
+              529
             ],
             "name": "module"
           },
           "property": {
             "type": "Identifier",
-            "start": 409,
-            "end": 416,
+            "start": 530,
+            "end": 537,
             "range": [
-              409,
-              416
+              530,
+              537
             ],
             "name": "exports"
           },
@@ -849,11 +1101,11 @@
         },
         "right": {
           "type": "Identifier",
-          "start": 419,
-          "end": 424,
+          "start": 540,
+          "end": 545,
           "range": [
-            419,
-            424
+            540,
+            545
           ],
           "name": "Delta"
         }
@@ -861,46 +1113,46 @@
     },
     {
       "type": "ExpressionStatement",
-      "start": 427,
-      "end": 449,
+      "start": 548,
+      "end": 570,
       "range": [
-        427,
-        449
+        548,
+        570
       ],
       "expression": {
         "type": "AssignmentExpression",
-        "start": 427,
-        "end": 448,
+        "start": 548,
+        "end": 569,
         "range": [
-          427,
-          448
+          548,
+          569
         ],
         "operator": "=",
         "left": {
           "type": "MemberExpression",
-          "start": 427,
-          "end": 441,
+          "start": 548,
+          "end": 562,
           "range": [
-            427,
-            441
+            548,
+            562
           ],
           "object": {
             "type": "Identifier",
-            "start": 427,
-            "end": 433,
+            "start": 548,
+            "end": 554,
             "range": [
-              427,
-              433
+              548,
+              554
             ],
             "name": "module"
           },
           "property": {
             "type": "Identifier",
-            "start": 434,
-            "end": 441,
+            "start": 555,
+            "end": 562,
             "range": [
-              434,
-              441
+              555,
+              562
             ],
             "name": "exports"
           },
@@ -908,11 +1160,11 @@
         },
         "right": {
           "type": "Identifier",
-          "start": 444,
-          "end": 448,
+          "start": 565,
+          "end": 569,
           "range": [
-            444,
-            448
+            565,
+            569
           ],
           "name": "Echo"
         }

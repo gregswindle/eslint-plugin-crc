@@ -4,38 +4,43 @@
 
 ## What is a Class-Responsibility-Collaborator (CRC) Model?
 
-A CRC Model expresses how classes (or objects) behave and interact using a simple and scannable template:
+A CRC Model expresses how classes behave and interact using a simple and scannable template.
 
+<!-- crc-model-template:html,markdown -->
 <table width="100%">
   <thead>
-    <tr>
-      <th colspan="2">`Class name`</th>
+    <tr valign="top" align="left">
+      <th colspan="2"><code>Class name</code></th>
     </tr>
-    <tr>
-      <th>`Responsibilities`</th>
-      <th>`Collaborators`</th>
+    <tr valign="top" align="left">
+      <th><code>Responsibilities</code></th>
+      <th><code>Collaborators</code></th>
     </tr>
   </thead>
   <tbody>
-    <tr valign="top">
-      <td width="65%">
-        <ul>
-          <li>What the class/object does
-          <li>The information it contains
-        </ul>
+    <tr valign="top" align="left">
+      <td width="50%">
+      <p>`Class name`'s activities and purpose:
+        <ol>
+          <li>What the class/object does.
+          <li>The information it maintains.
+        </ol>
       </td>
-      <td width="35%">
-        <ul>
-          <li>Other classes/objects invoked to do its jobs
-          <li>Pertinent information needed from others
-        </ul>
+      <td width="50%">
+      <p>Other classes/objects that `Class name`:
+        <ol>
+          <li>Assist `Class name` with its work.
+          <li>Provide info/data that `Class name` needs.
+        </ol>
       </td>
     </tr>
   </tbody>
 </table>
+<!--/crc-model-template:html,markdown -->
 
-> ### Examples
-> You can [read about examples in the wiki]().
+> ### Keep CRC Models simple
+
+> Try to focus on your class's **purpose** instead of its **mechanics**, and describe it in non-technical terms, if possible. CRC models should provide another perspective on your software, since "experience pollution" often prevents us from seeing simpler design possibilities.
 
 ## Installation
 

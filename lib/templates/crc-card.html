@@ -1,0 +1,27 @@
+<!-- crc-model-template:html,markdown -->
+<table width="100%">
+  <thead>
+    <tr valign="top" align="left">
+      <th colspan="2"><code><%- crc.name %></code></th>
+    </tr>
+    <tr valign="top" align="left">
+      <th><code>Responsibilities</code></th>
+      <th><code>Collaborators</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top" align="left">
+      <td width="65%">
+        <ol>
+          <% _.forEach(crc.responsibilities, function(responsibility) { %><li><%- responsibility %></li><% }); %>
+        </ol>
+      </td>
+      <td width="35%">
+        <ol>
+          <% _.forEach(crc.collaborators, function(collaborator) { %><li><%- collaborator %></li><% }); %>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--/crc-model-template:html,markdown -->

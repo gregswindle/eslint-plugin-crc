@@ -16,7 +16,7 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
     expect(crc.name).to.equal('User');
     expect(crc.responsibilities).to.be.empty;
     expect(crc.collaborators).to.be.empty;
-    expect(crc.astNode.locs).to.be.empty;
+    expect(crc.references).to.be.empty;
   });
 
   it('must have a name, or an error will be thrown', function() {
@@ -28,32 +28,37 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
 
   it('lists the object\'s responsibilities', function() {
     let verification = 'Verifies user-agent identity';
-    let crc = new CrcModel('Authenticator', [verification]);
+    let crc = new CrcModel('Authenticator', {responsibilities: verification});
     expect(crc.responsibilities).to.contain(verification);
   });
 
   it('lists other objects that it collaborates with', function() {
-    let responsibilities = ['Verifies user-agent identity'];
-    let collaborators = [new CrcModel('WebForm')];
-    let crc = new CrcModel('Authenticator', responsibilities, collaborators);
+    let options = {
+      responsibilities: ['Verifies user-agent identity'],
+      collaborators   : [new CrcModel('WebForm')]
+    };
+    let crc = new CrcModel('Authenticator', options);
     expect(_.first(crc.collaborators)).to.have.all.keys(
       'name',
       'responsibilities',
       'collaborators',
-      'astNode'
+      'references',
+      'identifier'
     );
   });
 
   it('provides an abstract syntax tree (AST) for static code analysis', function() {
     let ast = JSON.parse('{"type":"MockDeclaration","start":0,"end":14,"range":[0,14]}');
-    let responsibilities = null;
-    let collaborators = null;
-    let astNode = {
-      locs: [ast]
+    let options = {
+      responsibilities: null,
+      collaborators: null,
+      references: {
+        locs: [ast]
+      }
     };
-    let crc = new CrcModel('BloatedObject', responsibilities, collaborators, astNode);
-    expect(crc.astNode).to.exist;
-    expect(crc.astNode.locs).not.to.be.empty;
+    let crc = new CrcModel('BloatedObject', options);
+    expect(crc.identifier).not.to.exist;
+    expect(crc.references).not.to.be.empty;
 
   });
 

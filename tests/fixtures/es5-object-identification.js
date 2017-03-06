@@ -19,6 +19,14 @@ var Delta = Object.create(Charlie);
 
 var Echo = Object.create(Alpha.prototype);
 
+function Foxtrot() {
+  this.alpha = new Alpha();
+}
+
+Foxtrot.prototype.radio = function() {
+  return this.alpha.name;
+};
+
 module.exports = Alpha;
 
 module.exports = Bravo;

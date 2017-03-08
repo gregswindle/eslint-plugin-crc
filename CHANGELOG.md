@@ -16,15 +16,11 @@
 - Mocha and Chai
  testing tool support.
 - Code Coverage with istanbul.
-- Build process with Gulp.
+- Build process with npm.
 - Debugging your sources with sourcemaps.
-- Typescript Based node module output.
 - Automatic generation of CHANAGELOG.md and PULL_REQUEST_TEMPLATE.md.
 - Automatic table of content generation with [doctoc](https://github.com/thlorenz/doctoc).
-- Lint support with
-  - [JSHint](http://jshint.com/)
-  - [TSLint](https://www.npmjs.com/package/tslint)
-  
+- Lint support with [ESLint](http://jshint.com/)
 
 ---
 *To maintain a proper CHANGELOG.md read [Keep a CHANGELOG](http://keepachangelog.com/)*

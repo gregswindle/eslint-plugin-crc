@@ -17,6 +17,8 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
     expect(crc.responsibilities).to.be.empty;
     expect(crc.collaborators).to.be.empty;
     expect(crc.references).to.be.empty;
+    expect(crc.identifier).to.be.null;
+    expect(crc.declaration).to.be.null;
   });
 
   it('must have a name, or an error will be thrown', function() {
@@ -43,21 +45,24 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
       'responsibilities',
       'collaborators',
       'references',
-      'identifier'
+      'identifier',
+      'declaration'
     );
   });
 
   it('provides an abstract syntax tree (AST) for static code analysis', function() {
     let ast = JSON.parse('{"type":"MockDeclaration","start":0,"end":14,"range":[0,14]}');
     let options = {
-      responsibilities: null,
-      collaborators: null,
+      responsibilities: [],
+      collaborators: [],
       references: {
         locs: [ast]
-      }
+      },
+      identifier: {},
+      declaration: {}
     };
     let crc = new CrcModel('BloatedObject', options);
-    expect(crc.identifier).not.to.exist;
+    expect(crc.identifier).to.exist;
     expect(crc.references).not.to.be.empty;
 
   });

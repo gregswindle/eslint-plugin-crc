@@ -39,6 +39,7 @@
     "lines": 100
   },
   "dependencies": {
+    "babel-register": "^6.23.0",
     "chai": "^3.5.0",
     "eslint": "^3.17.0",
     "esrefactor": "^0.1.0",

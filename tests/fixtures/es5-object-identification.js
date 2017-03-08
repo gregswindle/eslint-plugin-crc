@@ -36,3 +36,5 @@ module.exports = Charlie;
 module.exports = Delta;
 
 module.exports = Echo;
+
+module.exports = Foxtrot;

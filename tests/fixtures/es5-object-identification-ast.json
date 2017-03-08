@@ -1,10 +1,10 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 571,
+  "end": 597,
   "range": [
     0,
-    570
+    597
   ],
   "body": [
     {
@@ -1167,6 +1167,65 @@
             569
           ],
           "name": "Echo"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "start": 572,
+      "end": 597,
+      "range": [
+        572,
+        597
+      ],
+      "expression": {
+        "type": "AssignmentExpression",
+        "start": 572,
+        "end": 596,
+        "range": [
+          572,
+          596
+        ],
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "start": 572,
+          "end": 586,
+          "range": [
+            572,
+            586
+          ],
+          "object": {
+            "type": "Identifier",
+            "start": 572,
+            "end": 578,
+            "range": [
+              572,
+              578
+            ],
+            "name": "module"
+          },
+          "property": {
+            "type": "Identifier",
+            "start": 579,
+            "end": 586,
+            "range": [
+              579,
+              586
+            ],
+            "name": "exports"
+          },
+          "computed": false
+        },
+        "right": {
+          "type": "Identifier",
+          "start": 589,
+          "end": 596,
+          "range": [
+            589,
+            596
+          ],
+          "name": "Foxtrot"
         }
       }
     }

@@ -1,4 +1,5 @@
 <!-- crc-model-template:html,markdown -->
+<% _.forEach(models, function(crc) { %>
 <table width="100%">
   <thead>
     <tr valign="top" align="left">
@@ -12,16 +13,21 @@
   <tbody>
     <tr valign="top" align="left">
       <td width="65%">
-        <ol>
-          <% _.forEach(crc.responsibilities, function(responsibility) { %><li><%- responsibility %></li><% }); %>
-        </ol>
+        <ol><% _.forEach(crc.responsibilities, function(responsibility) { %>
+            <li><%- responsibility %></li>
+        <% }); %></ol>
       </td>
       <td width="35%">
-        <ol>
-          <% _.forEach(crc.collaborators, function(collaborator) { %><li><%- collaborator %></li><% }); %>
-        </ol>
+        <ol><% _.forEach(crc.collaborators, function(collaborator) { %>
+            <li><%- collaborator.name %>
+              <% var start = collaborator.loc.start %>
+              <small>(line: <%- start.line %>, column: <%- start.column %>)</small>
+
+            </li>
+        <% }); %></ol>
       </td>
     </tr>
   </tbody>
 </table>
+<% }); %>
 <!--/crc-model-template:html,markdown -->

@@ -26,13 +26,6 @@ describe('IdentifierCollections group Identifiers by name. They', function () {
     let alpha = idCollection.find({name: 'Alpha'});
     expect(alpha).to.exist;
     expect(alpha.name).to.equal('Alpha');
-    expect(alpha.references.length).to.be.at.least(3);
-    let alphaCount = _.filter(idCollection.models, {
-      name: 'Alpha'
-    }).length;
-    expect(alphaCount).to.equal(1);
-
-    //console.log('alpha', alpha);
 
     expect(idCollection.find(function(node) {
       return node.name === 'Bravo';
@@ -51,6 +44,26 @@ describe('IdentifierCollections group Identifiers by name. They', function () {
   });
 
   it('associate collaborators with classes and objects', function () {
+    let alpha, bravo, charlie, delta, echo, foxtrot;
+    alpha   = idCollection.find({name: 'Alpha'});
+    bravo   = idCollection.find({name: 'Bravo'});
+    charlie = idCollection.find({name: 'Charlie'});
+    delta   = idCollection.find({name: 'Delta'});
+    echo    = idCollection.find({name: 'Echo'});
+    foxtrot = idCollection.find({name: 'Foxtrot'});
+
+    //console.log(delta.collaborators);
+    expect(_.find(delta.collaborators,   {name: charlie.name})).to.exist;
+    expect(_.find(echo.collaborators,    {name: alpha.name})).to.exist;
+    expect(_.find(foxtrot.collaborators, {name: alpha.name})).to.exist;
+
+    // console.log(`alpha.references: ${alpha.references}`);
+    // console.log(`bravo.references: ${bravo.references}`);
+    // console.log(`charlie.references: ${charlie.references}`);
+    // console.log(`delta.references: ${delta.references}`);
+    // console.log(`echo.references: ${echo.references}`);
+    // console.log(`foxtrot.references: ${foxtrot.references}`);
+    expect(alpha.references.length).to.be.at.least(3);
 
   });
 

@@ -9,12 +9,18 @@ const IdentifierCollection = libCrc.identifierCollection;
 const codeFixturePath = './fixtures/es5-object-identification.js';
 
 describe('IdentifierCollections group Identifiers by name. They', function () {
-  let idCollection = null;
+  let path, code, idCollection;
 
-  before(function() {
-    let path = relativePath(codeFixturePath);
-    let code = fs.readFileSync(path);
+  beforeEach(function() {
+    path = relativePath(codeFixturePath);
+    code = fs.readFileSync(path);
     idCollection = new IdentifierCollection(code);
+  });
+
+  afterEach(function() {
+    idCollection = null;
+    idCollection = (void 0);
+    console.log('idCollection:', idCollection);
   });
 
   it('identify all declared Objects', function() {
@@ -65,6 +71,15 @@ describe('IdentifierCollections group Identifiers by name. They', function () {
     // console.log(`foxtrot.references: ${foxtrot.references}`);
     expect(alpha.references.length).to.be.at.least(3);
 
+  });
+
+  specify('CRC models should not share arrays by reference', function () {
+    let alpha, bravo;
+    alpha   = idCollection.find({name: 'Alpha'});
+    bravo   = idCollection.find({name: 'Bravo'});
+    alpha.responsibilities.push('Aplha responsibility');
+    console.log(alpha.responsibilities, bravo.responsibilities);
+    expect(alpha.responsibilities.length).not.to.be.equal(bravo.responsibilities.length);
   });
 
   it('declare an object\'s prototypal inheritence', function () {

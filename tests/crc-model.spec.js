@@ -67,6 +67,16 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
 
   });
 
+  specify('CRC models should not share arrays by reference', function () {
+    let crc1, crc2;
+    crc1 = new CrcModel('crcModelOne', {responsibilities: [1,2,3]});
+    crc2 = new CrcModel('crcModelTwo', {responsibilities: [1,2,3]});
+    expect(crc1.responsibilities.length).to.be.equal(3);
+    expect(crc2.responsibilities.length).to.be.equal(3);
+    expect(crc1.responsibilities).to.eql(crc2.responsibilities);
+    expect(crc1.responsibilities).not.to.equal(crc2.responsibilities);
+  });
+
   it('declares its prototype');
 
   it('declares other prototypal extensions or assignments');

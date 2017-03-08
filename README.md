@@ -83,7 +83,7 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-As of now, there are no rules. The first MVP will likely use processors alone to generate reports. I plan on iterative releases, however, in hopes of parsing not only the syntactic structure of code, but also its semantic intent. I'd love to generate [excellent explanations are recommendations like these](https://refactoring.guru/smells/smells), but that's a hefty task.
+As of now, there are no rules. The first MVP will likely use processors alone to generate reports. I plan on iterative releases, however, in hopes of parsing not only the syntactic structure of code, but also its semantic intent. I'd love to generate [excellent explanations and recommendations like these](https://refactoring.guru/smells/smells), but that's a hefty task.
 
 ## How to Contribute
 Read to contribute [CONTRIBUTING.md](CONTRIBUTING.md)

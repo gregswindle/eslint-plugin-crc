@@ -1,5 +1,5 @@
 <a name="0.1.0"></a>
-# 0.1.0 (2017-03-08)
+# [0.1.0](https://github.com/gregswindle/eslint-plugin-crc/compare/80fe3bf...0.1.0) (2017-03-09)
 
 
 ### Features

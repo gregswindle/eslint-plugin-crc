@@ -1,46 +1,99 @@
 # `eslint-plugin-crc`
 
+[![Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Coverage)
+
 > Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
 ## What is a Class-Responsibility-Collaborator (CRC) Model?
 
 A CRC Model expresses how classes behave and interact using a simple and scannable template.
 
-<!-- crc-model-template:html,markdown -->
+> **Note** Since this product generates CRC models for the JavaScript language, I'm using the terms `class` and `object` synonymously to indicate objects with prototypal inheritance.
+
 <table width="100%">
   <thead>
     <tr valign="top" align="left">
-      <th colspan="2"><code>Class name</code></th>
+      <th colspan="2"><code>Class/Object name</code></th>
     </tr>
     <tr valign="top" align="left">
-      <th><code>Responsibilities</code></th>
-      <th><code>Collaborators</code></th>
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
     </tr>
   </thead>
   <tbody>
     <tr valign="top" align="left">
       <td width="50%">
-      <p><code>Class name</code>'s activities and purpose:
+      <p>The <code>class/object</code>'s activities and purpose:
         <ol>
           <li>What the class/object does.
           <li>The information it maintains.
-        </ol>
+        </ol></p>
       </td>
       <td width="50%">
-      <p>Other classes/objects that <code>Class name</code>:
+      <p>Objects that this <code>class</code> depends on to:
         <ol>
           <li>Assist <code>Class name</code> with its work.
           <li>Provide info/data that <code>Class name</code> needs.
+        </ol></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+### CRC models are great for refactoring
+
+CRC models are simple to read, write, and update. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.
+
+Over time you start to feel like seemingly simply tasks are harder than they should be. For example, adding a new content type to your Blog means you have to change methods for finding, displaying, and saving content.
+
+CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
+
+### CRC Models should be easy to understand
+
+Unlike UML diagrams (which I love, by the way), CRC models are meant to be scannable, readable, and comprehensible.
+
+> #### Recommendations for creating and using CRC models
+
+> Try to focus on your class's **purpose** instead of its **mechanics**, and describe it in non-technical terms, if possible. CRC models should provide another perspective on your software, since "experience pollution" often prevents us from seeing simpler design possibilities.
+
+#### An example of a bloated controller
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">`BlogController`</th>
+    </tr>
+    <tr>
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top">
+      <td width="50%">
+        <ol>
+          <li>Fetches content with web services
+          <li>Determines the type of content (e.g., Article, Comment, Version History, each of which has different interfaces)
+          <li>Adapts each content-type so it can be displayed in a single template
+          <li>Sanitizes users' comments
+          <li>Saves users' comments
+          <li>Displays comment status messages
+        </ol>
+      </td>
+      <td width="50%">
+        <ol>
+          <li>`$http` service
         </ol>
       </td>
     </tr>
   </tbody>
 </table>
-<!--/crc-model-template:html,markdown -->
 
-> ### Keep CRC Models simple
+This is an obvious case of code bloat, and a closer inspection of the source code reveals that `BlogController` has many source-lines of code, methods that are larger than 10 lines, and data represented as primitives. All of these symptoms point to violations of the Single Responsibility Principle.
 
-> Try to focus on your class's **purpose** instead of its **mechanics**, and describe it in non-technical terms, if possible. CRC models should provide another perspective on your software, since "experience pollution" often prevents us from seeing simpler design possibilities.
+I admit this example is simplistic, and it doesn't give recommendations for refactoring, yet. I'll be adding more examples as the product progresses. Please read about the [goals of `eslint-plugin-crc`](https://github.com/gregswindle/eslint-plugin-crc/wiki#goals-of-eslint-plugin-crc)  for details.
 
 ## Installation
 

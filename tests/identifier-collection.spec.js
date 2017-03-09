@@ -20,7 +20,6 @@ describe('IdentifierCollections group Identifiers by name. They', function () {
     afterEach(function () {
         idCollection = null;
         idCollection = (void 0);
-        console.log('idCollection:', idCollection);
     });
 
     it('identify all declared Objects', function () {
@@ -41,18 +40,15 @@ describe('IdentifierCollections group Identifiers by name. They', function () {
     });
 
     it('track an object\'s usage by line numbers and range', function () {
-        let bravo = idCollection.find({name: 'Bravo'});
-        expect(bravo).to.exist;
-
-        let range = bravo.references[0].range;
+        let alpha = idCollection.find({name: 'Alpha'});
+        let range = alpha.references[0].range;
         expect(_.first(range)).to.be.a('number');
         expect(_.last(range)).to.be.a('number');
     });
 
     it('associate collaborators with classes and objects', function () {
-        let alpha, bravo, charlie, delta, echo, foxtrot;
+        let alpha, charlie, delta, echo, foxtrot;
         alpha = idCollection.find({name: 'Alpha'});
-        bravo = idCollection.find({name: 'Bravo'});
         charlie = idCollection.find({name: 'Charlie'});
         delta = idCollection.find({name: 'Delta'});
         echo = idCollection.find({name: 'Echo'});
@@ -78,12 +74,8 @@ describe('IdentifierCollections group Identifiers by name. They', function () {
         alpha = idCollection.find({name: 'Alpha'});
         bravo = idCollection.find({name: 'Bravo'});
         alpha.responsibilities.push('Aplha responsibility');
-        console.log(alpha.responsibilities, bravo.responsibilities);
+        //console.log(alpha.responsibilities, bravo.responsibilities);
         expect(alpha.responsibilities.length).not.to.be.equal(bravo.responsibilities.length);
-    });
-
-    it('declare an object\'s prototypal inheritence', function () {
-        let Charlie = idCollection.getPrototypeOf('Charlie');
     });
 
 });

@@ -1,6 +1,5 @@
 'use strict';
 
-const relativePath = require('relative-path');
 const expect = require('chai').expect;
 const _ = require('lodash');
 const libCrc = require('require-dir')('../lib', {

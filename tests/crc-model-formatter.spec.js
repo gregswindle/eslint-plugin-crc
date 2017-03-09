@@ -65,7 +65,7 @@ describe('CrcModelFormatter', function () {
         report = formatter.format(idCollection);
         expect(report).to.exist;
         expect(report.length).to.be.at.least(10);
-        console.log(report);
+        //console.log(report);
     });
 
 });

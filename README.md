@@ -1,5 +1,7 @@
 # `eslint-plugin-crc`
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=badger)
+
 > Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
 ## What is a Class-Responsibility-Collaborator (CRC) Model?

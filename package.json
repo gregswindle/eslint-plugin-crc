@@ -54,6 +54,7 @@
     "eslint": "^3.17.0",
     "espree": "^3.4.0",
     "esrefactor": "^0.1.0",
+    "estraverse": "^4.2.0",
     "lodash": "^4.17.4",
     "mocha-junit-reporter": "^1.13.0",
     "nyc": "^10.1.2",

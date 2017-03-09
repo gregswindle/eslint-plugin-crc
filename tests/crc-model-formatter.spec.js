@@ -40,7 +40,7 @@ describe('CrcModelFormatter', function () {
         expect(formatter.template).not.to.exist;
     });
 
-    it('generates HTML/markdown-friendly into a CRC "card" format', function () {
+    it('formats an IdentifierCollection as an HTML/markdown-friendly report of CRC "cards"', function () {
         let report;
 
         function loadResponsibilities(letters) {

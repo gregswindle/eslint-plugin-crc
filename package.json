@@ -22,7 +22,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/nyc mocha tests --recursive",
+    "test": "./node_modules/.bin/nyc mocha $(find tests -name '*.spec.js') --recursive",
     "coverage": "./node_modules/.bin/nyc report",
     "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"

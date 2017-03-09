@@ -20,6 +20,3 @@
 ### Features
 
 * **identifier-collection:** group Identifiers by name with references to their occurances ([80fe3bf](https://github.com/gregswindle/eslint-plugin-crc/commit/80fe3bf))
-
-
-

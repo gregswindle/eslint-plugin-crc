@@ -2,9 +2,12 @@ machine:
   node:
     version: 6
     version: 7
+install:
+  - npm install -g codecov
 test:
   post:
     - mkdir -p $CIRCLE_ARTIFACTS/reports/coverage
     - mv coverage $CIRCLE_ARTIFACTS/reports
     - npm run docs
     - mv docs $CIRCLE_ARTIFACTS/reports
+    - codecov

@@ -7,13 +7,13 @@
 //     camelcase: true
 // });
 // const CrcModelFactory = libCrc.crcModelFactory;
-// const IdentifierCollection = libCrc.identifierCollection;
+// const CrcModelCollection = libCrc.crcModelCollection;
 //
 // describe('CrcModelFactory', function () {
 //     it('provides several static "helper" methods for generating CrcModel objects', function () {
-//         let idCollection, isInScope;
-//         idCollection = new IdentifierCollection('\'use strict\';');
-//         isInScope = CrcModelFactory.inOwnDeclarationScope({name: null}, idCollection);
+//         let crcModelCollection, isInScope;
+//         crcModelCollection = new CrcModelCollection('\'use strict\';');
+//         isInScope = CrcModelFactory.inOwnDeclarationScope({name: null}, crcModelCollection);
 //         expect(isInScope).to.be.false;
 //     });
 // });

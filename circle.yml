@@ -5,6 +5,6 @@ machine:
 test:
   post:
     - mkdir -p $CIRCLE_ARTIFACTS/reports/coverage
-    - mv coverage $CIRCLE_ARTIFACTS/reports/coverage
-    - npm docs
-    - mv docs $CIRCLE_ARTIFACTS/reports/docs
+    - mv coverage $CIRCLE_ARTIFACTS/reports
+    - npm run docs
+    - mv docs $CIRCLE_ARTIFACTS/reports

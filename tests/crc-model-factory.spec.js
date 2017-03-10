@@ -6,14 +6,14 @@
 // const libCrc = require('require-dir')('../lib', {
 //     camelcase: true
 // });
-// const CrcModelFactory = libCrc.crcModelFactory;
-// const CrcModelCollection = libCrc.crcModelCollection;
+// const CrcModelVisitor = libCrc.crcModelVisitor;
+// const CrcModelList = libCrc.crcModelList;
 //
-// describe('CrcModelFactory', function () {
+// describe('CrcModelVisitor', function () {
 //     it('provides several static "helper" methods for generating CrcModel objects', function () {
-//         let crcModelCollection, isInScope;
-//         crcModelCollection = new CrcModelCollection('\'use strict\';');
-//         isInScope = CrcModelFactory.inOwnDeclarationScope({name: null}, crcModelCollection);
+//         let crcModelList, isInScope;
+//         crcModelList = new CrcModelList('\'use strict\';');
+//         isInScope = CrcModelVisitor.inOwnDeclarationScope({name: null}, crcModelList);
 //         expect(isInScope).to.be.false;
 //     });
 // });

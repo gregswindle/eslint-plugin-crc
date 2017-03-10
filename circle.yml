@@ -2,8 +2,6 @@ machine:
   node:
     version: 6
     version: 7
-install:
-  - npm install -g codecov
 test:
   post:
     - mkdir -p $CIRCLE_ARTIFACTS/reports/coverage

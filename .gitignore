@@ -51,3 +51,4 @@ jspm_packages
 # Documentation
 docs
 .ci-cd/.keys
+reports

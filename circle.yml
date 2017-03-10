@@ -2,3 +2,9 @@ machine:
   node:
     version: 6
     version: 7
+test:
+  post:
+    - mkdir -p $CIRCLE_ARTIFACTS/reports/coverage
+    - mv coverage $CIRCLE_ARTIFACTS/reports/coverage
+    - npm docs
+    - mv docs $CIRCLE_ARTIFACTS/reports/docs

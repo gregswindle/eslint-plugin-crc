@@ -26,7 +26,8 @@
     "coverage": "./node_modules/.bin/nyc report",
     "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "docs": "./node_modules/.bin/jsdoc -c jsdoc.conf.json"
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
+    "push": "git push origin develop && git checkout master && git rebase develop && git push origin master && git checkout develop && git status"
   },
   "repository": {
     "type": "git",

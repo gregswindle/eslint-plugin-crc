@@ -1,14 +1,24 @@
 # `eslint-plugin-crc`
 
-[![Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Coverage)
+[![CircleCI](https://circleci.com/gh/gregswindle/eslint-plugin-crc.svg?style=svg)](https://circleci.com/gh/gregswindle/eslint-plugin-crc) [![Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Coverage) [![David-DM](https://david-dm.org/gregswindle/eslint-plugin-crc.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc)
 
 > Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
-## What is a Class-Responsibility-Collaborator (CRC) Model?
+## Assess and refactor your source code with Class-Responsibility-Collaborator (CRC) models
+
+### What are CRC models?
 
 A CRC Model expresses how classes behave and interact using a simple and scannable template.
 
 > **Note** Since this product generates CRC models for the JavaScript language, I'm using the terms `class` and `object` synonymously to indicate objects with prototypal inheritance.
+
+### CRC model template
+
+CRC models consist of three simple things:
+
+1. **Name**: what the class (or object) is called in source code.
+2. **Responsibilities**: the work that the class/object is supposed to perform, and the data it's supposed to maintain.
+3. **Collaborators**: other objects this class directly invokes in order to do its work.
 
 <table width="100%">
   <thead>
@@ -46,17 +56,15 @@ A CRC Model expresses how classes behave and interact using a simple and scannab
 
 CRC models are simple to read, write, and update. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.
 
-Over time you start to feel like seemingly simply tasks are harder than they should be. For example, adding a new content type to your Blog means you have to change methods for finding, displaying, and saving content.
+Maintaining and extending software over time can become challenging. Tasks that should be simple become harder to complete. For example, adding a new content type to your Blog means you have to change methods for finding, displaying, and saving content.
 
 CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
 
-### CRC Models should be easy to understand
+### CRC Models make design analysis easier
 
 Unlike UML diagrams (which I love, by the way), CRC models are meant to be scannable, readable, and comprehensible.
 
-> #### Recommendations for creating and using CRC models
-
-> Try to focus on your class's **purpose** instead of its **mechanics**, and describe it in non-technical terms, if possible. CRC models should provide another perspective on your software, since "experience pollution" often prevents us from seeing simpler design possibilities.
+CRC models focus on your class's **purpose** instead of its **mechanics**, and describe it in non-technical terms, if possible. CRC models should provide another perspective on your software, since "experience pollution" often prevents us from seeing simpler design possibilities.
 
 #### An example of a bloated controller
 

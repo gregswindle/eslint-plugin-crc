@@ -1,10 +1,10 @@
 # `eslint-plugin-crc`
 
-[![CircleCI](https://circleci.com/gh/gregswindle/eslint-plugin-crc.svg?style=svg)](https://circleci.com/gh/gregswindle/eslint-plugin-crc) [![Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Coverage) [![David-DM](https://david-dm.org/gregswindle/eslint-plugin-crc.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Coverage) [![CircleCI](https://circleci.com/gh/gregswindle/eslint-plugin-crc.svg?style=svg)](https://circleci.com/gh/gregswindle/eslint-plugin-crc) [![David-DM](https://david-dm.org/gregswindle/eslint-plugin-crc.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc)
 
 > Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
-## Assess and refactor your source code with Class-Responsibility-Collaborator (CRC) models
+## Refactoring with Class-Responsibility-Collaborator (CRC) models
 
 ### What are CRC models?
 
@@ -14,11 +14,13 @@ A CRC Model expresses how classes behave and interact using a simple and scannab
 
 ### CRC model template
 
-CRC models consist of three simple things:
+CRC models consist of three simple sections for:
 
 1. **Name**: what the class (or object) is called in source code.
 2. **Responsibilities**: the work that the class/object is supposed to perform, and the data it's supposed to maintain.
 3. **Collaborators**: other objects this class directly invokes in order to do its work.
+
+CRC models were originally written index cards. `eslint-plugin-crc` generates tables.
 
 <table width="100%">
   <thead>
@@ -50,21 +52,21 @@ CRC models consist of three simple things:
   </tbody>
 </table>
 
+### CRC Models make design analysis easier
 
+CRC models are meant to be scannable, readable, and comprehensible. They're useful for "Agile" teams and workflows, since they don't require a lot of time to create or understand.
+
+CRC models focus on the **purpose** of classes instead of their **mechanics**, and (ideally) describe them in non-technical terms. CRC models can provide another perspective on software product improvement, since "experience pollution" and technical tunnel-vision often obscure simpler design possibilities.
+
+#### CRCs and UML
+
+I'm a big fan of the UML, and I use it often for formal design proposals and documentation. But when I don't need a first-order logical transformation of a product, CRC models work well.
 
 ### CRC models are great for refactoring
 
 CRC models are simple to read, write, and update. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.
 
-Maintaining and extending software over time can become challenging. Tasks that should be simple become harder to complete. For example, adding a new content type to your Blog means you have to change methods for finding, displaying, and saving content.
-
 CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
-
-### CRC Models make design analysis easier
-
-Unlike UML diagrams (which I love, by the way), CRC models are meant to be scannable, readable, and comprehensible.
-
-CRC models focus on your class's **purpose** instead of its **mechanics**, and describe it in non-technical terms, if possible. CRC models should provide another perspective on your software, since "experience pollution" often prevents us from seeing simpler design possibilities.
 
 #### An example of a bloated controller
 
@@ -88,20 +90,36 @@ CRC models focus on your class's **purpose** instead of its **mechanics**, and d
           <li>Sanitizes users' comments
           <li>Saves users' comments
           <li>Displays comment status messages
+          <li>Validates form field input
+          <li>Transforms hyperlinks based on personalization rules
         </ol>
       </td>
       <td width="50%">
         <ol>
-          <li>`$http` service
+          <li>XMLHTTPRequest
         </ol>
       </td>
     </tr>
   </tbody>
 </table>
 
-This is an obvious case of code bloat, and a closer inspection of the source code reveals that `BlogController` has many source-lines of code, methods that are larger than 10 lines, and data represented as primitives. All of these symptoms point to violations of the Single Responsibility Principle.
+This is an obvious case of code bloat, and a closer inspection of the source code would likely reveal that `BlogController` has many source-lines of code; methods that are larger than 10 lines; and data primitives scattered all over the place. Regardless, the CRC model reveals that we're in the presence of a tyrannical [God object](https://en.wikipedia.org/wiki/God_object) that could benefit from [class extraction](https://refactoring.com/catalog/?filter=tags-class-extraction,books-radio-appear).
 
-I admit this example is simplistic, and it doesn't give recommendations for refactoring, yet. I'll be adding more examples as the product progresses. Please read about the [goals of `eslint-plugin-crc`](https://github.com/gregswindle/eslint-plugin-crc/wiki#goals-of-eslint-plugin-crc)  for details.
+## `eslint-plugin-crc` roadmap
+
+### [MVP 1](https://github.com/gregswindle/eslint-plugin-crc/milestone/1): report generation
+
+Create actionable reports with CRC model that are easy generate and consume.
+
+### MVP 2: `eslint` integration
+
+Add or remove additional information generated by `eslint` rules and plugins.
+
+### MVP 3: semantic analysis
+
+Research and develop techniques that express possible semantic intent based on the semantic patterns mined from identifiers, method names, associations, and their true actions.
+
+Please read about the [goals of `eslint-plugin-crc`](https://github.com/gregswindle/eslint-plugin-crc/wiki#goals-of-eslint-plugin-crc)  for more details.
 
 ## Installation
 
@@ -160,12 +178,3 @@ Read to contribute [PULL_REQUEST_TEMPLATE.md](PULL_REQUEST_TEMPLATE.md).
 
 Copyright (c) Greg Swindle.
 This source code is licensed under the [MIT license](LICENSE).
-
-[npm-image]: https://badge.fury.io/js/eslint-plugin-crc.svg
-[npm-url]: https://npmjs.org/package/eslint-plugin-crc
-[travis-image]: https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master
-[travis-url]: https://travis-ci.org/gregswindle/eslint-plugin-crc
-[daviddm-image]: https://david-dm.org/gregswindle/eslint-plugin-crc.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/gregswindle/eslint-plugin-crc
-[coveralls-image]: https://coveralls.io/repos/gregswindle/eslint-plugin-crc/badge.svg
-[coveralls-url]: https://coveralls.io/r/gregswindle/eslint-plugin-crc

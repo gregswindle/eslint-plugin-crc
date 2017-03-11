@@ -26,6 +26,7 @@
     "coverage": "./node_modules/.bin/nyc report",
     "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
     "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
+    "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "docs": "rm -rf ./docs && ./node_modules/.bin/jsdoc -c jsdoc.conf.json",
     "push": "git push origin develop && git checkout master && git rebase develop && git push origin master && git checkout develop && git status"
@@ -55,6 +56,7 @@
     "chai": "^3.5.0",
     "codacy-coverage": "^2.0.1",
     "codecov": "^1.0.1",
+    "coveralls": "^2.12.0",
     "eslint": "^3.17.0",
     "espree": "^3.4.0",
     "esrefactor": "^0.1.0",

@@ -2,10 +2,8 @@ language: node_js
 node_js:
   - "7"
   - "6"
-
 dist: trusty
 sudo: required
-
 addons:
   sonarqube:
     organization: "$SONAR_ORGANIZATION"
@@ -19,8 +17,8 @@ jdk:
 script:
   - npm test
   - cat coverage/lcov.info
-  - sed -i.bak 's@^SF:/.*eslint-plugin-crc/@SF:@' coverage/lcov.info
-  - cat coverage/lcov.info
+  - cp coverage/lcov.info .
+  - cat lcov.info
   - sonar-scanner
 cache:
   directories:

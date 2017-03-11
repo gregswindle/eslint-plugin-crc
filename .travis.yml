@@ -7,8 +7,6 @@ dist: trusty
 sudo: required
 
 addons:
-  srcclr:
-    debug: true
   sonarqube:
     organization: "$SONAR_ORGANIZATION"
     token:

@@ -18,6 +18,7 @@ jdk:
   - oraclejdk8
 script:
   - npm test
+  - ls coverage/
   - sonar-scanner
 cache:
   directories:

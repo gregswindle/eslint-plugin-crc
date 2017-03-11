@@ -27,6 +27,7 @@
     "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
     "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
     "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
+    "coverage:all": "npm run coverage:codacy && npm run coverage:codecov && npm run coverage:coveralls",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "docs": "rm -rf ./docs && ./node_modules/.bin/jsdoc -c jsdoc.conf.json",
     "push": "git push origin develop && git checkout master && git rebase develop && git push origin master && git checkout develop && git status",

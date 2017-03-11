@@ -29,7 +29,8 @@
     "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "docs": "rm -rf ./docs && ./node_modules/.bin/jsdoc -c jsdoc.conf.json",
-    "push": "git push origin develop && git checkout master && git rebase develop && git push origin master && git checkout develop && git status"
+    "push": "git push origin develop && git checkout master && git rebase develop && git push origin master && git checkout develop && git status",
+    "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties"
   },
   "repository": {
     "type": "git",

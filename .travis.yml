@@ -2,3 +2,22 @@ language: node_js
 node_js:
   - "7"
   - "6"
+
+dist: trusty
+sudo: required
+
+addons:
+  sonarqube:
+    organization: "$SONAR_ORGANIZATION"
+    token:
+      secure: "$SONAR_TOKEN"
+    branches:
+      - master
+      - develop
+jdk:
+  - oraclejdk8
+script:
+  - sonar-scanner
+cache:
+  directories:
+    - '$HOME/.sonar/cache'

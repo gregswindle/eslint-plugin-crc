@@ -1,5 +1,7 @@
 # `eslint-plugin-crc`
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg)](https://greenkeeper.io/)
+
 > Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
 | Code Quality | Test Coverage | Build Status | Dependency Drift |

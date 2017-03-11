@@ -17,6 +17,7 @@ addons:
 jdk:
   - oraclejdk8
 script:
+  - npm test
   - sonar-scanner
 cache:
   directories:

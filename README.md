@@ -1,10 +1,10 @@
 # `eslint-plugin-crc`
 
-| Code Quality | Test Coverage | Build Status | Dependency Drift |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade) | [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Coverage) [![Coverage Status](https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=develop)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=develop) [![codecov](https://codecov.io/gh/gregswindle/eslint-plugin-crc/branch/develop/graph/badge.svg)](https://codecov.io/gh/gregswindle/eslint-plugin-crc) | [![CircleCI](https://circleci.com/gh/gregswindle/eslint-plugin-crc.svg?style=svg)](https://circleci.com/gh/gregswindle/eslint-plugin-crc) [![Travis CI Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc) | [![David-DM](https://david-dm.org/gregswindle/eslint-plugin-crc.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc) [![devDependencies Status](https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc?type=dev) |
-
 > Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
+
+| Code Quality | Test Coverage | Build Status | Dependency Drift |
+|:---:|:---|:---|:---|
+| [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade) | [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Coverage) <br>[![Coverage Status](https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=develop)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=develop)<br> [![codecov](https://codecov.io/gh/gregswindle/eslint-plugin-crc/branch/develop/graph/badge.svg)](https://codecov.io/gh/gregswindle/eslint-plugin-crc) | [![CircleCI](https://circleci.com/gh/gregswindle/eslint-plugin-crc.svg?style=svg)](https://circleci.com/gh/gregswindle/eslint-plugin-crc) <br>[![Travis CI Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc) | [![David-DM](https://david-dm.org/gregswindle/eslint-plugin-crc.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc) <br>[![devDependencies Status](https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc?type=dev) |
 
 ## Refactoring with Class-Responsibility-Collaborator (CRC) models
 
@@ -75,7 +75,7 @@ CRC Models can help you pinpoint where problems might be, and reveal potential i
 <table width="100%">
   <thead>
     <tr>
-      <th colspan="2">`BlogController`</th>
+      <th colspan="2"><code>BlogController</code></th>
     </tr>
     <tr>
       <th>Responsibilities</th>
@@ -117,7 +117,7 @@ Create actionable reports with CRC model that are easy generate and consume.
 
 Add or remove additional information generated by `eslint` rules and plugins.
 
-### MVP 3: semantic analysis
+### MVP 3.._n_: semantic analysis
 
 Research and develop techniques that express possible semantic intent based on the semantic patterns mined from identifiers, method names, associations, and their true actions.
 
@@ -164,7 +164,7 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-As of now, there are no rules. The first MVP will likely use processors alone to generate reports. I plan on iterative releases, however, in hopes of parsing not only the syntactic structure of code, but also its semantic intent. I'd love to generate [excellent explanations and recommendations like these](https://refactoring.guru/smells/smells), but that's a hefty task.
+As of now, there are no rules. I plan on iterative releases, however, in hopes of parsing not only the syntactic structure of code, but also its semantic intent. I'd love to generate [excellent explanations and recommendations like these](https://refactoring.guru/smells/smells), but that's a hefty task.
 
 ## How to Contribute
 Read to contribute [CONTRIBUTING.md](CONTRIBUTING.md).

@@ -41,6 +41,9 @@
   },
   "contributors": [],
   "nyc": {
+    "include": [
+      "lib/**/*.js"
+    ],
     "exclude": [
       "**/*.spec.js",
       "**/fixtures/**/*.js"

@@ -18,7 +18,9 @@ jdk:
   - oraclejdk8
 script:
   - npm test
-  - ls coverage/
+  - cat coverage/lcov.info
+  - sed -i.bak 's@^SF:/.*eslint-plugin-crc/@SF:@' coverage/lcov.info
+  - cat coverage/lcov.info
   - sonar-scanner
 cache:
   directories:

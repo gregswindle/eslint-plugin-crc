@@ -16,8 +16,7 @@ jdk:
   - oraclejdk8
 script:
   - npm test
-  - cp coverage/lcov.info .
-  - cat lcov.info
+  - cat coverage/lcov.info
   - sonar-scanner
 cache:
   directories:

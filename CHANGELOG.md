@@ -1,5 +1,12 @@
-<a name="0.1.0"></a>
-# [0.1.0](https://github.com/gregswindle/eslint-plugin-crc/compare/0.1.1...v0.1.0) (2017-03-09)
+# CHANGELOG
+
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/gregswindle/eslint-plugin-crc/compare/0.1.1...0.1.2) (2017-03-12)
+
+
+### Features
+
+* **ci:** finalize codacy, sonar-qube, coveralls, codecov, circle-ci, travis-ci, greenkeeper, and david-dm badges for quality, coverage, build, and dependency status. ([16b32fb](https://github.com/gregswindle/eslint-plugin-crc/commit/16b32fb))
 
 
 

@@ -5,6 +5,7 @@ node_js:
 dist: trusty
 sudo: required
 addons:
+  srcclr: true
   sonarqube:
     organization: "$SONAR_ORGANIZATION"
     token:

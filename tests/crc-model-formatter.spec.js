@@ -13,7 +13,7 @@ const CrcModelFormatter = libCrc.crcModelFormatter;
 const CrcModelList = libCrc.crcModelList;
 
 describe('CrcModelFormatter', function () {
-    var crcModelList, formatter, template, libFilePath, code;
+    let crcModelList, formatter, template, libFilePath, code;
 
     beforeEach(function () {
         libFilePath = relativePath(codeFixturePath);
@@ -44,9 +44,8 @@ describe('CrcModelFormatter', function () {
         let report;
 
         function loadResponsibilities(letters) {
-            let info, action;
-            info = 'Disambiguation for the letter ';
-            action = 'Clarifies pronunciation when spelling with the letter ';
+            const info = 'Disambiguation for the letter ';
+            const action = 'Clarifies pronunciation when spelling with the letter ';
             _.forEach(letters, function (letter, idx) {
                 let faa = '"' + letter + '"';
                 crcModelList.models[idx].responsibilities.push(info + faa);

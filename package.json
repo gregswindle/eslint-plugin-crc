@@ -60,7 +60,7 @@
     "babel-register": "^6.23.0",
     "chai": "^3.5.0",
     "codacy-coverage": "^2.0.1",
-    "codecov": "^1.0.1",
+    "codecov": "^2.0.1",
     "coveralls": "^2.12.0",
     "eslint": "^3.17.0",
     "espree": "^3.4.0",

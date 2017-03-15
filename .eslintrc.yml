@@ -48,7 +48,7 @@ rules:
   no-unsafe-finally: off
   no-unsafe-negation: off
   use-isnan: error
-  valid-jsdoc: warn
+  valid-jsdoc: off
   valid-typeof: error
 
   # Best Practices

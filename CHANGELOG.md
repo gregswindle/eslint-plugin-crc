@@ -1,4 +1,12 @@
-# CHANGELOG
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/gregswindle/eslint-plugin-crc/compare/0.1.2...0.1.3) (2017-03-15)
+
+
+### Bug Fixes
+
+* **package:** update codecov to version 2.0.1 ([d8c3c74](https://github.com/gregswindle/eslint-plugin-crc/commit/d8c3c74))
+
+
 
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/gregswindle/eslint-plugin-crc/compare/0.1.1...0.1.2) (2017-03-12)
@@ -7,6 +15,11 @@
 ### Features
 
 * **ci:** finalize codacy, sonar-qube, coveralls, codecov, circle-ci, travis-ci, greenkeeper, and david-dm badges for quality, coverage, build, and dependency status. ([16b32fb](https://github.com/gregswindle/eslint-plugin-crc/commit/16b32fb))
+
+
+### Reverts
+
+* **source-clear:** blew up the travis build, so removing source-clear, for now ([6c5878c](https://github.com/gregswindle/eslint-plugin-crc/commit/6c5878c))
 
 
 
@@ -27,3 +40,6 @@
 ### Features
 
 * **identifier-collection:** group Identifiers by name with references to their occurances ([80fe3bf](https://github.com/gregswindle/eslint-plugin-crc/commit/80fe3bf))
+
+
+

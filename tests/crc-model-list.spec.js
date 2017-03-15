@@ -45,7 +45,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         expect(_.last(range)).to.be.a('number');
     });
 
-    it('associate collaborators with classes and objects', function () {
+    it('associate collaborators with classes and objects', () =>   {
         let alpha, charlie, delta, echo, foxtrot;
         alpha = crcModelList.find({name: 'Alpha'});
         charlie = crcModelList.find({name: 'Charlie'});
@@ -75,6 +75,20 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         alpha.responsibilities.push('Aplha responsibility');
         //console.log(alpha.responsibilities, bravo.responsibilities);
         expect(alpha.responsibilities.length).not.to.be.equal(bravo.responsibilities.length);
+    });
+
+    it('can identify a CrcModel\'s prototype', function () {
+        let path, code, crcModelList, codeFixturePath;
+        codeFixturePath = './fixtures/es5-object-prototypes.js';
+        path = relativePath(codeFixturePath);
+        code = fs.readFileSync(path);
+        crcModelList = new CrcModelList(code);
+
+        const crc = crcModelList.find({
+            name: 'Employee'
+        });
+        const proto = crcModelList.getPrototypeOf(crc);
+        expect(proto.name).to.equal('Person');
     });
 
 });

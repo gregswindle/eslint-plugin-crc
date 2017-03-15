@@ -1,0 +1,14 @@
+{
+    "critics": {
+        "lint": {
+            "engine": "eslint"
+        }
+    },
+    "ignore": [
+        "**/node_modules/**"
+    ],
+    "test": [
+        "**/tests/**",
+        "**/*.spec.js"
+    ]
+}

@@ -2,7 +2,7 @@
 
 const relativePath = require('relative-path');
 const libCrc = require('require-dir')('../lib', {camelcase: true});
-const expect = require('chai').expect;
+const {expect} = require('chai');
 const fs = require('fs');
 const _ = require('lodash');
 const CrcModelList = libCrc.crcModelList;
@@ -40,7 +40,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
 
     it('track an object\'s usage by line numbers and range', function () {
         let alpha = crcModelList.find({name: 'Alpha'});
-        let range = alpha.references[0].range;
+        let {range} = alpha.references[0];
         expect(_.first(range)).to.be.a('number');
         expect(_.last(range)).to.be.a('number');
     });
@@ -53,7 +53,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         echo = crcModelList.find({name: 'Echo'});
         foxtrot = crcModelList.find({name: 'Foxtrot'});
 
-        //Console.log(delta.collaborators);
+
         expect(_.find(delta.collaborators, {name: charlie.name})).to.exist;
         expect(_.find(echo.collaborators, {name: alpha.name})).to.exist;
         expect(_.find(foxtrot.collaborators, {name: alpha.name})).to.exist;

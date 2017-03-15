@@ -1,0 +1,6 @@
+{
+  "type": "MemberExpression",
+  "property": {
+    "name": "prototype"
+  }
+}

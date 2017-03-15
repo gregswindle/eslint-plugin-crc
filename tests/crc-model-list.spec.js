@@ -1,4 +1,4 @@
-'use strict';
+
 
 const relativePath = require('relative-path');
 const libCrc = require('require-dir')('../lib', {camelcase: true});
@@ -53,17 +53,17 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         echo = crcModelList.find({name: 'Echo'});
         foxtrot = crcModelList.find({name: 'Foxtrot'});
 
-        //console.log(delta.collaborators);
+        //Console.log(delta.collaborators);
         expect(_.find(delta.collaborators, {name: charlie.name})).to.exist;
         expect(_.find(echo.collaborators, {name: alpha.name})).to.exist;
         expect(_.find(foxtrot.collaborators, {name: alpha.name})).to.exist;
 
-        // console.log(`alpha.references: ${alpha.references}`);
-        // console.log(`bravo.references: ${bravo.references}`);
-        // console.log(`charlie.references: ${charlie.references}`);
-        // console.log(`delta.references: ${delta.references}`);
-        // console.log(`echo.references: ${echo.references}`);
-        // console.log(`foxtrot.references: ${foxtrot.references}`);
+        // Console.log(`alpha.references: ${alpha.references}`);
+        // Console.log(`bravo.references: ${bravo.references}`);
+        // Console.log(`charlie.references: ${charlie.references}`);
+        // Console.log(`delta.references: ${delta.references}`);
+        // Console.log(`echo.references: ${echo.references}`);
+        // Console.log(`foxtrot.references: ${foxtrot.references}`);
         expect(alpha.references.length).to.be.at.least(3);
 
     });
@@ -73,21 +73,23 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         alpha = crcModelList.find({name: 'Alpha'});
         bravo = crcModelList.find({name: 'Bravo'});
         alpha.responsibilities.push('Aplha responsibility');
-        //console.log(alpha.responsibilities, bravo.responsibilities);
+        //Console.log(alpha.responsibilities, bravo.responsibilities);
         expect(alpha.responsibilities.length).not.to.be.equal(bravo.responsibilities.length);
     });
 
     it('can identify a CrcModel\'s prototype', function () {
-        let path, code, crcModelList, codeFixturePath;
+        let path, code, crcModelList, codeFixturePath, crc, prototype;
         codeFixturePath = './fixtures/es5-object-prototypes.js';
         path = relativePath(codeFixturePath);
         code = fs.readFileSync(path);
         crcModelList = new CrcModelList(code);
 
-        const crc = crcModelList.find({
+        crc = crcModelList.find({
             name: 'Employee'
         });
-        const proto = crcModelList.getPrototypeOf(crc);
+
+        proto = crcModelList.getPrototypeOf(crc);
+
         expect(proto.name).to.equal('Person');
     });
 

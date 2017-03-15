@@ -10,7 +10,7 @@ const CrcModelVisitor = libCrc.crcModelVisitor;
 const codeFixturePath = './fixtures/es5-object-prototypes.js';
 
 
-describe('CrcModelList can identify an object\'s prototype', function() {
+describe('CrcModelList can identify an object\'s prototype', () => {
     'use strict';
 
     let path, code, crcModelList;

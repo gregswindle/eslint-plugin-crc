@@ -67,6 +67,7 @@
     "bithound": "^1.7.0",
     "chai": "^3.5.0",
     "codacy-coverage": "^2.0.1",
+    "codeclimate-test-reporter": "^0.4.1",
     "codecov": "^2.0.1",
     "coveralls": "^2.12.0",
     "dirty-chai": "^1.2.2",

@@ -4,10 +4,7 @@ parserOptions:
     jsx: false
 
 env:
-  amd: true
-  browser: true
   es6: true
-  jquery: false
   node: true
   mocha: true
 

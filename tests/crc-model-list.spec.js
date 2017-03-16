@@ -2,11 +2,15 @@
 
 const relativePath = require('relative-path');
 const libCrc = require('require-dir')('../lib', {camelcase: true});
-const {expect} = require('chai');
+const chai = require('chai');
+const dirtyChai = require('dirty-chai');
+const {expect} = chai;
 const fs = require('fs');
 const _ = require('lodash');
 const CrcModelList = libCrc.crcModelList;
 const codeFixturePath = './fixtures/es5-object-identification.js';
+
+chai.use(dirtyChai);
 
 describe('CrcModelLists group Identifiers by name. They', function () {
     let path, code, crcModelList;
@@ -28,19 +32,19 @@ describe('CrcModelLists group Identifiers by name. They', function () {
 
     it('can find an Identifier by name (by object literal or function predicate)', function () {
         let alpha = crcModelList.find({name: 'Alpha'});
-        expect(alpha).to.exist;
+        expect(alpha).to.exist();
         expect(alpha.name).to.equal('Alpha');
 
         expect(crcModelList.find(function (node) {
             return node.name === 'Bravo';
-        })).to.exist;
+        })).to.exist();
 
-        expect(crcModelList.find({name: 'foobar'})).not.to.exist;
+        expect(crcModelList.find({name: 'foobar'})).not.to.exist();
     });
 
     it('track an object\'s usage by line numbers and range', function () {
-        let alpha = crcModelList.find({name: 'Alpha'});
-        let {range} = alpha.references[0];
+        const alpha = crcModelList.find({name: 'Alpha'});
+        const {range} = _.first(alpha.references);
         expect(_.first(range)).to.be.a('number');
         expect(_.last(range)).to.be.a('number');
     });
@@ -54,9 +58,9 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         foxtrot = crcModelList.find({name: 'Foxtrot'});
 
 
-        expect(_.find(delta.collaborators, {name: charlie.name})).to.exist;
-        expect(_.find(echo.collaborators, {name: alpha.name})).to.exist;
-        expect(_.find(foxtrot.collaborators, {name: alpha.name})).to.exist;
+        expect(_.find(delta.collaborators, {name: charlie.name})).to.exist();
+        expect(_.find(echo.collaborators, {name: alpha.name})).to.exist();
+        expect(_.find(foxtrot.collaborators, {name: alpha.name})).to.exist();
 
         // Console.log(`alpha.references: ${alpha.references}`);
         // Console.log(`bravo.references: ${bravo.references}`);

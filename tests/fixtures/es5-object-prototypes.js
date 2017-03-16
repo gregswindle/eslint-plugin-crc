@@ -1,8 +1,8 @@
 'use strict';
 
-// Example taken from the MDN article "Object.prototype"
+// Example taken from the MDN article "Object.prototype", expect for the ClassDeclaration on line 38.
 // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
-const Person = function () {
+var Person = function () {
   this.canTalk = true;
 };
 
@@ -12,7 +12,7 @@ Person.prototype.greet = function() {
   }
 };
 
-const Employee = function(name, title) {
+var Employee = function(name, title) {
   Person.call(this);
   this.name = name;
   this.title = title;
@@ -35,21 +35,18 @@ var Customer = function(name) {
 Customer.prototype = Object.create(Person.prototype);
 Customer.prototype.constructor = Customer;
 
-let Mime = function(name) {
-  Person.call(this);
-  this.name = name;
-  this.canTalk = false;
-};
+class Mime extends Person {
+  constructor(name) {
+    super(name);
+    this.canTalk = false;
+  }
+}
 
-Mime.prototype = Object.create(Person.prototype);
-Mime.prototype.constructor = Mime;
-
-
-const bob = new Employee('Bob', 'Builder');
-const joe = new Customer('Joe');
-const rg = new Employee('Red Green', 'Handyman');
-const mike = new Customer('Mike');
-const mime = new Mime('Mime');
+var bob = new Employee('Bob', 'Builder');
+var joe = new Customer('Joe');
+var rg = new Employee('Red Green', 'Handyman');
+var mike = new Customer('Mike');
+var mime = new Mime('Mime');
 
 bob.greet();
 // Hi, I am Bob, the Builder
@@ -64,7 +61,6 @@ mike.greet();
 // Hi, I am Mike
 
 mime.greet();
-
 
 module.exports = Person;
 

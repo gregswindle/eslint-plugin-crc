@@ -72,7 +72,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         expect(alpha.responsibilities.length).not.to.be.equal(bravo.responsibilities.length);
     });
 
-    describe('can identify an object\'s prototype: when given reference to a CrcModel object', () => {
+    describe('also identify an object\'s prototype', () => {
 
         let path, code, crcModelList, codeFixturePath, crc, prototype;
 
@@ -84,14 +84,14 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         });
 
         after(() => {
-            _.forEach(crcModelList.models, (m) => {
-                let sn = m.superClass ? m.superClass.name : 'Object';
-                console.log(`${m.name} is a prototype of ${sn}`);
-            });
+            // _.forEach(crcModelList.models, (m) => {
+            //     let sn = m.superClass ? m.superClass.name : 'Object';
+            //     console.log(`\t${m.name} extends ${sn}`);
+            // });
             crcModelList = null;
         });
 
-        it('can identify its prototype with an Object.create expression statement', () => {
+        specify('with an Object.create expression statement', () => {
             crc = crcModelList.find({
                 name: 'Employee'
             });
@@ -100,11 +100,20 @@ describe('CrcModelLists group Identifiers by name. They', function () {
             expect(crc.superClass.name).to.equal('Person');
         });
 
-        it('can identify its prototype with class syntax and extends', () => {
+        specify('with class syntax and extends', () => {
             crc = crcModelList.find({name: 'Mime'});
             proto = crcModelList.getPrototypeOf(crc);
             expect(proto.name).to.equal('Person');
             expect(crc.superClass.name).to.equal('Person');
+        });
+
+        specify('with the "new" expression', () => {
+          crc = crcModelList.find({name: 'joe'});
+          expect(crc).to.exist();
+          proto = crcModelList.getPrototypeOf(crc);
+          expect(proto).to.exist();
+          expect(proto.name).to.equal('Person');
+          expect(crc.superClass.name).to.equal('Person');
         });
 
         it('returns undefined if a prototype is not found', () => {

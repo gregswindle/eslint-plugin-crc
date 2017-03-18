@@ -50,7 +50,9 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
             'collaborators',
             'references',
             'identifier',
-            'declaration'
+            'declaration',
+            'context',
+            'superClass'
         );
     });
 
@@ -63,7 +65,8 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
                 locs: [ast]
             },
             identifier      : {},
-            declaration     : {}
+            declaration     : {},
+            superClass      : Object
         };
         let crc = new CrcModel('BloatedObject', options);
         expect(crc.identifier).to.exist();
@@ -93,8 +96,9 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
         expect(crc1.responsibilities).not.to.equal(crc2.responsibilities);
     });
 
-    it('declares its prototype');
-
-    it('declares other prototypal extensions or assignments');
+    it('declares its prototype', () => {
+      let crc = new CrcModel('User');
+      expect(crc.superClass).to.equal(Object);
+    });
 
 });

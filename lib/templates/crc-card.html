@@ -3,11 +3,13 @@
 <table width="100%">
   <thead style="background-color:#eee">
     <tr valign="top" align="left">
-      <th colspan="2"><code><%- crc.name %></code></th>
+      <th colspan="2"><code>
+          <%- crc.name %> extends <%- _.get(crc.superClass, 'name') || 'Object' %>
+        </code></th>
     </tr>
     <tr valign="top" align="left">
-      <th><code>Responsibilities</code></th>
-      <th><code>Collaborators</code></th>
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
     </tr>
   </thead>
   <tbody>

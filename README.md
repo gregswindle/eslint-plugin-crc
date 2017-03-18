@@ -2,52 +2,16 @@
 
 > Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
-<details><summary>**Status of API docs, security, quality, coverage, builds, and dependencies**</summary>
-
-<table>
-<thead>
-<tfoot>
-<tbody>
-<tr>
-    <th>Documentation</th>
-    <th>Security</th>
-</tr>
-<tr>
-    <td style="vertical-align: top">[![Inline docs](http://inch-ci.org/github/gregswindle/eslint-plugin-crc.svg?branch=develop&style=shields)](http://inch-ci.org/github/gregswindle/eslint-plugin-crc)</td>
-    <td style="vertical-align: top">[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)</td>
-</tr>
-<tr>
-    <th>Quality</th>
-    <th>Coverage</th>
-</tr>
-<tr>
-    <td style="vertical-align: top">[![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade)
-        <br> [![Code Climate](https://codeclimate.com/github/gregswindle/eslint-plugin-crc/badges/gpa.svg)](https://codeclimate.com/github/gregswindle/eslint-plugin-crc)
-        <br> [![Quality Gate](https://sonarqube.com/api/badges/gate?key=gregswindle-eslint-plugin-crc%3Adevelop)](https://sonarqube.com/dashboard/index/gregswindle-eslint-plugin-crc%3Adevelop)
-        <br> [![bitHound Overall Score](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/score.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc)</td>
-    <td style="vertical-align: top">[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Coverage)
-    <br> [![Coverage Status](https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=develop)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=develop)
-    <br> [![codecov](https://codecov.io/gh/gregswindle/eslint-plugin-crc/branch/develop/graph/badge.svg)](https://codecov.io/gh/gregswindle/eslint-plugin-crc)</td>
-</tr>
-<tr>
-    <th>Builds</th>
-    <th>Dependencies</th>
-</tr>
-<tr>
-    <td style="vertical-align: top">[![CircleCI](https://circleci.com/gh/gregswindle/eslint-plugin-crc.svg?style=svg)](https://circleci.com/gh/gregswindle/eslint-plugin-crc)
-    <br> [![Travis CI Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc)</td>
-    <td style="vertical-align: top">[![Greenkeeper badge](https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg)](https://greenkeeper.io/)
-    <br> [![bitHound Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/dependencies.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
-    <br> [![bitHound Dev Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/devDependencies.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
-    <br> [![David-DM](https://david-dm.org/gregswindle/eslint-plugin-crc.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc)
-    <br> [![devDependencies Status](https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc?type=dev)</td>
-</tr>
-</tbody>
-</table>
+* Docs: [![Inline docs](http://inch-ci.org/github/gregswindle/eslint-plugin-crc.svg?branch=develop&style=shields)](http://inch-ci.org/github/gregswindle/eslint-plugin-crc)
+* Security: [![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)
+* Quality: [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade) [![Code Climate](https://codeclimate.com/github/gregswindle/eslint-plugin-crc/badges/gpa.svg)](https://codeclimate.com/github/gregswindle/eslint-plugin-crc) [![Quality Gate](https://sonarqube.com/api/badges/gate?key=gregswindle-eslint-plugin-crc%3Adevelop)](https://sonarqube.com/dashboard/index/gregswindle-eslint-plugin-crc%3Adevelop) [![bitHound Overall Score](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/score.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc)
+*  Coverage: [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Coverage) [![Coverage Status](https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=develop)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=develop) [![codecov](https://codecov.io/gh/gregswindle/eslint-plugin-crc/branch/develop/graph/badge.svg)](https://codecov.io/gh/gregswindle/eslint-plugin-crc)
+* Build:  [![CircleCI](https://circleci.com/gh/gregswindle/eslint-plugin-crc.svg?style=svg)](https://circleci.com/gh/gregswindle/eslint-plugin-crc) [![Travis CI Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc)
+* Dependencies: [![Greenkeeper badge](https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg)](https://greenkeeper.io/)
+    * [![bitHound Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/dependencies.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/devDependencies.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
+    * [![David-DM](https://david-dm.org/gregswindle/eslint-plugin-crc.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc) [![devDependencies Status](https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg)](https://david-dm.org/gregswindle/eslint-plugin-crc?type=dev)
 
 *** Please pardon the badgery! *** My team and I are evaluating third-party source code evaluation tools, so I'm listing all of them in one place.
-
-</ol></details>
 
 ## Refactoring with Class-Responsibility-Collaborator (CRC) models
 

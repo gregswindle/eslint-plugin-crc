@@ -13,8 +13,8 @@
     <th>Security</th>
 </tr>
 <tr>
-    <td style="vertical-align: top">[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)</td>
     <td style="vertical-align: top">[![Inline docs](http://inch-ci.org/github/gregswindle/eslint-plugin-crc.svg?branch=develop&style=shields)](http://inch-ci.org/github/gregswindle/eslint-plugin-crc)</td>
+    <td style="vertical-align: top">[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)</td>
 </tr>
 <tr>
     <th>Quality</th>

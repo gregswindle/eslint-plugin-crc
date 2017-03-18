@@ -15,13 +15,13 @@ chai.use(dirtyChai);
 describe('CrcModelLists group Identifiers by name. They', function () {
     let path, code, crcModelList;
 
-    beforeEach(function () {
+    before(function () {
         path = relativePath(codeFixturePath);
         code = fs.readFileSync(path);
         crcModelList = new CrcModelList(code);
     });
 
-    afterEach(function () {
+    after(function () {
         crcModelList = null;
     });
 
@@ -57,17 +57,9 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         echo = crcModelList.find({name: 'Echo'});
         foxtrot = crcModelList.find({name: 'Foxtrot'});
 
-
         expect(_.find(delta.collaborators, {name: charlie.name})).to.exist();
         expect(_.find(echo.collaborators, {name: alpha.name})).to.exist();
         expect(_.find(foxtrot.collaborators, {name: alpha.name})).to.exist();
-
-        // Console.log(`alpha.references: ${alpha.references}`);
-        // Console.log(`bravo.references: ${bravo.references}`);
-        // Console.log(`charlie.references: ${charlie.references}`);
-        // Console.log(`delta.references: ${delta.references}`);
-        // Console.log(`echo.references: ${echo.references}`);
-        // Console.log(`foxtrot.references: ${foxtrot.references}`);
         expect(alpha.references.length).to.be.at.least(3);
 
     });
@@ -77,24 +69,52 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         alpha = crcModelList.find({name: 'Alpha'});
         bravo = crcModelList.find({name: 'Bravo'});
         alpha.responsibilities.push('Aplha responsibility');
-        //Console.log(alpha.responsibilities, bravo.responsibilities);
         expect(alpha.responsibilities.length).not.to.be.equal(bravo.responsibilities.length);
     });
 
-    it('can identify a CrcModel\'s prototype', function () {
-        let path, code, crcModelList, codeFixturePath, crc, prototype;
-        codeFixturePath = './fixtures/es5-object-prototypes.js';
-        path = relativePath(codeFixturePath);
-        code = fs.readFileSync(path);
-        crcModelList = new CrcModelList(code);
+    describe('can identify an object\'s prototype: when given reference to a CrcModel object', () => {
 
-        crc = crcModelList.find({
-            name: 'Employee'
+        let path, code, crcModelList, codeFixturePath, crc, prototype;
+
+        before(() => {
+            codeFixturePath = './fixtures/es5-object-prototypes.js';
+            path = relativePath(codeFixturePath);
+            code = fs.readFileSync(path);
+            crcModelList = new CrcModelList(code);
         });
 
-        proto = crcModelList.getPrototypeOf(crc);
+        after(() => {
+            _.forEach(crcModelList.models, (m) => {
+                let sn = m.superClass ? m.superClass.name : 'Object';
+                console.log(`${m.name} is a prototype of ${sn}`);
+            });
+            crcModelList = null;
+        });
 
-        expect(proto.name).to.equal('Person');
+        it('can identify its prototype with an Object.create expression statement', () => {
+            crc = crcModelList.find({
+                name: 'Employee'
+            });
+            proto = crcModelList.getPrototypeOf(crc);
+            expect(proto.name).to.equal('Person');
+            expect(crc.superClass.name).to.equal('Person');
+        });
+
+        it('can identify its prototype with class syntax and extends', () => {
+            crc = crcModelList.find({name: 'Mime'});
+            proto = crcModelList.getPrototypeOf(crc);
+            expect(proto.name).to.equal('Person');
+            expect(crc.superClass.name).to.equal('Person');
+        });
+
+        it('returns undefined if a prototype is not found', () => {
+            crc = crcModelList.find({name: 'Person'});
+            proto = crcModelList.getPrototypeOf(crc);
+            expect(proto).to.be.undefined();
+
+            crc = null;
+            expect(crcModelList.getPrototypeOf(null)).to.be.undefined();
+        });
     });
 
 });

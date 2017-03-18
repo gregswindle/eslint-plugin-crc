@@ -5,7 +5,7 @@
     "operator": "=",
     "left": {
       "object": {
-        "name": "<%= name %>"
+        "name": null
       },
       "property": {
         "name": "prototype"

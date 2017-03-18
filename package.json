@@ -34,7 +34,14 @@
     "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
     "security": "./node_modules/.bin/nsp check",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
-    "test": "./node_modules/.bin/nyc mocha $(find tests -name '*.spec.js') --recursive"
+
+    "pretest": "yarn install && eslint lib --fix",
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js') --recursive",
+    "posttest": null,
+
+    "preversion": "npm run test",
+    "version": null,
+    "postversion": "npm run changelog && git commit --amend && git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -63,15 +70,15 @@
     ]
   },
   "dependencies": {
-    "babel-register": "^6.23.0",
+    "babel-register": "^6.24.0",
     "bithound": "^1.7.0",
     "chai": "^3.5.0",
     "codacy-coverage": "^2.0.1",
     "codeclimate-test-reporter": "^0.4.1",
-    "codecov": "^2.0.1",
+    "codecov": "^2.1.0",
     "coveralls": "^2.12.0",
     "dirty-chai": "^1.2.2",
-    "eslint": "^3.17.0",
+    "eslint": "^3.18.0",
     "espree": "^3.4.0",
     "esrefactor": "^0.1.0",
     "estraverse": "^4.2.0",

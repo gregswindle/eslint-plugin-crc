@@ -85,8 +85,8 @@ describe('CrcModelLists group Identifiers by name. They', function () {
 
         after(() => {
             // _.forEach(crcModelList.models, (m) => {
-            //     let sn = m.superClass ? m.superClass.name : 'Object';
-            //     console.log(`\t${m.name} extends ${sn}`);
+            //     Let sn = m.superClass ? m.superClass.name : 'Object';
+            //     Console.log(`\t${m.name} extends ${sn}`);
             // });
             crcModelList = null;
         });
@@ -108,12 +108,12 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         });
 
         specify('with the "new" expression', () => {
-          crc = crcModelList.find({name: 'joe'});
-          expect(crc).to.exist();
-          proto = crcModelList.getPrototypeOf(crc);
-          expect(proto).to.exist();
-          expect(proto.name).to.equal('Person');
-          expect(crc.superClass.name).to.equal('Person');
+            crc = crcModelList.find({name: 'joe'});
+            expect(crc).to.exist();
+            proto = crcModelList.getPrototypeOf(crc);
+            expect(proto).to.exist();
+            expect(proto.name).to.equal('Person');
+            expect(crc.superClass.name).to.equal('Person');
         });
 
         it('returns undefined if a prototype is not found', () => {

@@ -97,8 +97,8 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
     });
 
     it('declares its prototype', () => {
-      let crc = new CrcModel('User');
-      expect(crc.superClass).to.equal(Object);
+        let crc = new CrcModel('User');
+        expect(crc.superClass).to.equal(Object);
     });
 
 });

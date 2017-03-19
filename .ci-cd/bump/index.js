@@ -1,4 +1,3 @@
-'use strict';
 
 const {version} = require('../../package');
 const path = require('path');

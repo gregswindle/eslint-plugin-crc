@@ -1,0 +1,32 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.0
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:shelljs:20140723':
+    - eslint > shelljs:
+        reason: Will attempt to address by manually editing npm-shrinkwrap
+        expires: '2017-04-18T07:26:52.359Z'
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:handlebars:20151207':
+    - jsdoc-to-markdown > dmd > handlebars:
+        patched: '2017-03-19T07:22:44.829Z'
+  'npm:marked:20170112':
+    - jsdoc-to-markdown > jsdoc-api > jsdoc-75lb > marked:
+        patched: '2017-03-19T07:22:44.829Z'
+    - jsdoc > marked:
+        patched: '2017-03-19T07:22:44.829Z'
+    - jsdoc-to-markdown > dmd > marked:
+        patched: '2017-03-19T07:22:44.829Z'
+  'npm:minimatch:20160620':
+    - replace > minimatch:
+        patched: '2017-03-19T07:22:44.829Z'
+  'npm:moment:20161019':
+    - nsp > joi > moment:
+        patched: '2017-03-19T07:22:44.829Z'
+  'npm:uglify-js:20150824':
+    - jsdoc-to-markdown > dmd > handlebars > uglify-js:
+        patched: '2017-03-19T07:22:44.829Z'
+  'npm:uglify-js:20151024':
+    - jsdoc-to-markdown > dmd > handlebars > uglify-js:
+        patched: '2017-03-19T07:22:44.829Z'

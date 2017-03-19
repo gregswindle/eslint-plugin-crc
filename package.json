@@ -34,15 +34,13 @@
     "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
     "security": "./node_modules/.bin/nsp check",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
-    "pretest": "eslint lib --fix && npm i snyk -g",
-    "test": "./node_modules/.bin/snyk test && ./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js') --recursive",
+    "pretest": "eslint lib --fix",
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js') --recursive",
     "posttest": "./node_modules/.bin/nsp check",
     "preversion": "npm test && ./node_modules/.bin/nsp check",
     "version": null,
     "postversion": "npm run changelog && node ./.ci-cd/bump/ && git commit --amend && git push && git push --tags",
-    "prepublish": "./node_modules/.bin/snyk protect",
-    "snyk": "./node_modules/.bin/snyk check",
-    "snyk-protect": "./node_modules/.bin/snyk protect"
+    "prepublish": null
   },
   "repository": {
     "type": "git",
@@ -82,8 +80,7 @@
     "relative-path": "^1.1.0",
     "replace": "^0.3.0",
     "require-dir": "^0.3.1",
-    "requireindex": "~1.1.0",
-    "snyk": "^1.25.2"
+    "requireindex": "~1.1.0"
   },
   "devDependencies": {
     "bithound": "^1.7.0",
@@ -104,6 +101,5 @@
   "engines": {
     "node": ">=6"
   },
-  "license": "MIT",
-  "snyk": true
+  "license": "MIT"
 }

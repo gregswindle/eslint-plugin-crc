@@ -34,12 +34,10 @@
     "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
     "security": "./node_modules/.bin/nsp check",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
-
-    "pretest": "yarn install && eslint lib --fix",
+    "pretest": "npm install && eslint lib --fix",
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js') --recursive",
-    "posttest": null,
-
-    "preversion": "npm run test",
+    "posttest": "./node_modules/.bin/nsp check",
+    "preversion": "npm test && ./node_modules/.bin/nsp check",
     "version": null,
     "postversion": "npm run changelog && git commit --amend && git push && git push --tags"
   },

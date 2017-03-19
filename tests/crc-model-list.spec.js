@@ -74,7 +74,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
 
     describe('also identify an object\'s prototype', () => {
 
-        let path, code, crcModelList, codeFixturePath, crc, prototype;
+        let path, code, crcModelList, codeFixturePath, prototype;
 
         before(() => {
             codeFixturePath = './fixtures/es5-object-prototypes.js';
@@ -92,37 +92,37 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         });
 
         specify('with an Object.create expression statement', () => {
-            crc = crcModelList.find({
+            const crc = crcModelList.find({
                 name: 'Employee'
             });
-            proto = crcModelList.getPrototypeOf(crc);
+            const proto = crcModelList.getPrototypeOf(crc);
             expect(proto.name).to.equal('Person');
             expect(crc.superClass.name).to.equal('Person');
         });
 
         specify('with class syntax and extends', () => {
-            crc = crcModelList.find({name: 'Mime'});
-            proto = crcModelList.getPrototypeOf(crc);
+            const crc = crcModelList.find({name: 'Mime'});
+            const proto = crcModelList.getPrototypeOf(crc);
             expect(proto.name).to.equal('Person');
             expect(crc.superClass.name).to.equal('Person');
         });
 
         specify('with the "new" expression', () => {
-            crc = crcModelList.find({name: 'joe'});
+            const crc = crcModelList.find({name: 'joe'});
             expect(crc).to.exist();
-            proto = crcModelList.getPrototypeOf(crc);
+            const proto = crcModelList.getPrototypeOf(crc);
             expect(proto).to.exist();
             expect(proto.name).to.equal('Person');
             expect(crc.superClass.name).to.equal('Person');
         });
 
         it('returns undefined if a prototype is not found', () => {
-            crc = crcModelList.find({name: 'Person'});
-            proto = crcModelList.getPrototypeOf(crc);
-            expect(proto).to.be.undefined();
+            let crc = crcModelList.find({name: 'Person'});
+            const proto = crcModelList.getPrototypeOf(crc);
+            expect(proto).to.be.null();
 
             crc = null;
-            expect(crcModelList.getPrototypeOf(null)).to.be.undefined();
+            expect(crcModelList.getPrototypeOf(null)).to.be.null();
         });
     });
 

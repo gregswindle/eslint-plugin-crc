@@ -1,0 +1,10 @@
+{
+  "type": "ClassDeclaration",
+  "id": {
+    "type": "Identifier",
+    "name": null
+  },
+  "superClass": {
+    "type": "Identifier"
+  }
+}

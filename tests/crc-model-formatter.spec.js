@@ -1,7 +1,9 @@
-'use strict';
+
 
 const relativePath = require('relative-path');
-const expect = require('chai').expect;
+const chai = require('chai');
+const dirtyChai = require('dirty-chai');
+const {expect} = chai;
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
@@ -12,8 +14,10 @@ const libCrc = require('require-dir')('../lib', {
 const CrcModelFormatter = libCrc.crcModelFormatter;
 const CrcModelList = libCrc.crcModelList;
 
+chai.use(dirtyChai);
+
 describe('CrcModelFormatter', function () {
-    var crcModelList, formatter, template, libFilePath, code;
+    let crcModelList, formatter, template, libFilePath, code;
 
     beforeEach(function () {
         libFilePath = relativePath(codeFixturePath);
@@ -35,24 +39,23 @@ describe('CrcModelFormatter', function () {
     });
 
     it('takes a template string', function () {
-        expect(formatter.template).to.exist;
+        expect(formatter.template).to.exist();
         formatter = new CrcModelFormatter();
-        expect(formatter.template).not.to.exist;
+        expect(formatter.template).not.to.exist();
     });
 
     it('formats an CrcModelList as an HTML/markdown-friendly report of CRC "cards"', function () {
         let report;
 
-        function loadResponsibilities(letters) {
-            let info, action;
-            info = 'Disambiguation for the letter ';
-            action = 'Clarifies pronunciation when spelling with the letter ';
+        const loadResponsibilities = (letters) => {
+            const info = 'Disambiguation for the letter ';
+            const action = 'Clarifies pronunciation when spelling with the letter ';
             _.forEach(letters, function (letter, idx) {
                 let faa = '"' + letter + '"';
                 crcModelList.models[idx].responsibilities.push(info + faa);
                 crcModelList.models[idx].responsibilities.push(action + faa);
             });
-        }
+        };
 
         loadResponsibilities([
             'A',
@@ -63,9 +66,9 @@ describe('CrcModelFormatter', function () {
             'F'
         ]);
         report = formatter.format(crcModelList);
-        expect(report).to.exist;
+        expect(report).to.exist();
         expect(report.length).to.be.at.least(10);
-        //console.log(report);
+        //Console.log(report);
     });
 
 });

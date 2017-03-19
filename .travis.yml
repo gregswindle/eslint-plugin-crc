@@ -5,6 +5,7 @@ node_js:
 dist: trusty
 sudo: required
 addons:
+  srcclr: true
   sonarqube:
     organization: "$SONAR_ORGANIZATION"
     token:
@@ -16,8 +17,9 @@ jdk:
   - oraclejdk8
 script:
   - npm test
-  - cat coverage/lcov.info
   - sonar-scanner
+  - cat coverage/lcov.info | node_modules/.bin/coveralls
+  - CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
 cache:
   directories:
     - '$HOME/.sonar/cache'

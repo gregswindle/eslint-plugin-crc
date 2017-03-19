@@ -1,0 +1,26 @@
+{
+  "type": "ExpressionStatement",
+  "expression": {
+    "type": "AssignmentExpression",
+    "operator": "=",
+    "left": {
+      "object": {
+        "name": null
+      },
+      "property": {
+        "name": "prototype"
+      }
+    },
+    "right": {
+      "type": "CallExpression",
+      "callee": {
+        "object": {
+          "name": "Object"
+        },
+        "property": {
+          "name": "create"
+        }
+      }
+    }
+  }
+}

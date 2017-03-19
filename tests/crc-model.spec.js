@@ -1,30 +1,33 @@
-'use strict';
 
-const expect = require('chai').expect;
+
+const chai = require('chai');
+const dirtyChai = require('dirty-chai');
+const {expect} = chai;
 const _ = require('lodash');
 const libCrc = require('require-dir')('../lib', {
     camelcase: true
 });
 const CrcModel = libCrc.crcModel;
 
+chai.use(dirtyChai);
+
 describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel', function () {
 
     it('is identifiable by the object\'s name', function () {
         let crc = new CrcModel('User');
-        expect(crc.name).to.exist;
+        expect(crc.name).to.exist();
         expect(crc.name).to.equal('User');
-        expect(crc.responsibilities).to.be.empty;
-        expect(crc.collaborators).to.be.empty;
-        expect(crc.references).to.be.empty;
-        expect(crc.identifier).to.be.null;
-        expect(crc.declaration).to.be.null;
+        expect(crc.responsibilities).to.be.empty();
+        expect(crc.collaborators).to.be.empty();
+        expect(crc.references).to.be.empty();
+        expect(crc.identifier).to.be.null();
+        expect(crc.declaration).to.be.null();
     });
 
     it('must have a name, or an error will be thrown', function () {
         let crc = null;
         let fn = function () {
             crc = new CrcModel();
-            crc.name;
         };
         expect(fn).to.throw(TypeError);
     });
@@ -47,7 +50,9 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
             'collaborators',
             'references',
             'identifier',
-            'declaration'
+            'declaration',
+            'context',
+            'superClass'
         );
     });
 
@@ -60,11 +65,12 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
                 locs: [ast]
             },
             identifier      : {},
-            declaration     : {}
+            declaration     : {},
+            superClass      : Object
         };
         let crc = new CrcModel('BloatedObject', options);
-        expect(crc.identifier).to.exist;
-        expect(crc.references).not.to.be.empty;
+        expect(crc.identifier).to.exist();
+        expect(crc.references).not.to.be.empty();
 
     });
 
@@ -90,8 +96,9 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
         expect(crc1.responsibilities).not.to.equal(crc2.responsibilities);
     });
 
-    it('declares its prototype');
-
-    it('declares other prototypal extensions or assignments');
+    it('declares its prototype', () => {
+        let crc = new CrcModel('User');
+        expect(crc.superClass).to.equal(Object);
+    });
 
 });

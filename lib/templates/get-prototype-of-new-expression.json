@@ -1,0 +1,16 @@
+{
+  "type": "VariableDeclaration",
+  "declarations": [{
+    "type": "VariableDeclarator",
+    "id": {
+      "type": "Identifier",
+      "name": null
+    },
+    "init": {
+      "type": "NewExpression",
+      "callee": {
+        "type": "Identifier"
+      }
+    }
+  }]
+}

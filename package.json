@@ -39,9 +39,10 @@
     "posttest": "./node_modules/.bin/nsp check",
     "preversion": "npm test && ./node_modules/.bin/nsp check",
     "version": null,
-    "postversion": "npm run changelog && git commit --amend && git push && git push --tags",
-    "prepublish": null,
-    "snyk": "./node_modules/.bin/snyk check"
+    "postversion": "npm run changelog && node ./.ci-cd/bump/ && git commit --amend && git push && git push --tags",
+    "prepublish": "npm run snyk-protect",
+    "snyk": "./node_modules/.bin/snyk check",
+    "snyk-protect": "./node_modules/.bin/snyk protect"
   },
   "repository": {
     "type": "git",
@@ -81,7 +82,8 @@
     "relative-path": "^1.1.0",
     "replace": "^0.3.0",
     "require-dir": "^0.3.1",
-    "requireindex": "~1.1.0"
+    "requireindex": "~1.1.0",
+    "snyk": "^1.25.2"
   },
   "devDependencies": {
     "bithound": "^1.7.0",
@@ -97,7 +99,7 @@
     "mocha": "^3.1.2",
     "nsp": "^2.6.3",
     "nyc": "^10.1.2",
-    "snyk": "1.25.2"
+    "properties-parser": "0.3.1"
   },
   "engines": {
     "node": ">=6"

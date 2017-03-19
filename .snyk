@@ -4,8 +4,8 @@ version: v1.7.0
 ignore:
   'npm:shelljs:20140723':
     - eslint > shelljs:
-        reason: Will attempt to address by manually editing npm-shrinkwrap
-        expires: '2017-04-18T07:26:52.359Z'
+        reason: Fix unavailable
+        expires: '2017-04-18T09:31:37.921Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:handlebars:20151207':
@@ -20,7 +20,7 @@ patch:
         patched: '2017-03-19T07:22:44.829Z'
   'npm:minimatch:20160620':
     - replace > minimatch:
-        patched: '2017-03-19T09:04:49.956Z'
+        patched: '2017-03-19T09:31:09.655Z'
   'npm:moment:20161019':
     - nsp > joi > moment:
         patched: '2017-03-19T07:22:44.829Z'

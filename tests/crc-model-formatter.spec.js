@@ -8,16 +8,13 @@ const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
 const codeFixturePath = './fixtures/es5-object-identification.js';
-const libCrc = require('require-dir')('../lib', {
-    camelcase: true
-});
-const CrcModelFormatter = libCrc.crcModelFormatter;
-const CrcModelList = libCrc.crcModelList;
+const CrcModelFormatter = require('../lib/crc-model-formatter');
+const CrcModelList = require('../lib/crc-model-list');
 
 chai.use(dirtyChai);
 
 describe('CrcModelFormatter', function () {
-    let crcModelList, formatter, template, libFilePath, code;
+    let code, crcModelList, formatter, libFilePath, template;
 
     beforeEach(function () {
         libFilePath = relativePath(codeFixturePath);

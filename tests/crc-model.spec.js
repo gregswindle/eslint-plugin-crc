@@ -4,10 +4,7 @@ const chai = require('chai');
 const dirtyChai = require('dirty-chai');
 const {expect} = chai;
 const _ = require('lodash');
-const libCrc = require('require-dir')('../lib', {
-    camelcase: true
-});
-const CrcModel = libCrc.crcModel;
+const CrcModel = require('../lib/crc-model');
 
 chai.use(dirtyChai);
 
@@ -25,9 +22,9 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
     });
 
     it('must have a name, or an error will be thrown', function () {
-        let crc = null;
         let fn = function () {
-            crc = new CrcModel();
+            const crc = new CrcModel();
+            expect(crc).not.to.be.defined();
         };
         expect(fn).to.throw(TypeError);
     });

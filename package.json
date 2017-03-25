@@ -80,7 +80,6 @@
     "minami": "^1.1.1",
     "mkdirp": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
     "relative-path": "^1.1.0",
-    "replace": "^0.3.0",
     "require-dir": "^0.3.1",
     "requireindex": "~1.1.0"
   },
@@ -98,7 +97,7 @@
     "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.1.2",
     "mocha-junit-reporter": "1.13.0",
-    "nsp": "^2.6.3",
+    "nsp": "https://registry.npmjs.org/nsp/-/nsp-2.6.3.tgz",
     "nyc": "^10.1.2",
     "properties-parser": "0.3.1",
     "sinon": "2.1.0",

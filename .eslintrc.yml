@@ -139,7 +139,7 @@ rules:
   no-undef-init: error
   no-undef: off
   no-undefined: off
-  no-unused-vars: off
+  no-unused-vars: error
   no-use-before-define: off
 
   # Node.js and CommonJS
@@ -238,7 +238,7 @@ rules:
     - error
     - always
   sort-keys: off
-  sort-vars: off
+  sort-vars: warn
   space-before-blocks: off
   space-before-function-paren: off
   space-in-parens: off

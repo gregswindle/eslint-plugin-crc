@@ -1,13 +1,12 @@
 
 
 const relativePath = require('relative-path');
-const libCrc = require('require-dir')('../lib', {camelcase: true});
 const chai = require('chai');
 const dirtyChai = require('dirty-chai');
 const {expect} = chai;
 const fs = require('fs');
 const _ = require('lodash');
-const CrcModelList = libCrc.crcModelList;
+const CrcModelList = require('../lib/crc-model-list');
 const codeFixturePath = './fixtures/es5-object-identification.js';
 
 chai.use(dirtyChai);
@@ -84,10 +83,6 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         });
 
         after(() => {
-            // _.forEach(crcModelList.models, (m) => {
-            //     Let sn = m.superClass ? m.superClass.name : 'Object';
-            //     Console.log(`\t${m.name} extends ${sn}`);
-            // });
             crcModelList = null;
         });
 
@@ -95,7 +90,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
             const crc = crcModelList.find({
                 name: 'Employee'
             });
-            const proto = crcModelList.getPrototypeOf(crc);
+            let proto = crcModelList.getPrototypeOf(crc);
             expect(proto.name).to.equal('Person');
             expect(crc.superClass.name).to.equal('Person');
         });

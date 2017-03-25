@@ -22,9 +22,8 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
     });
 
     it('must have a name, or an error will be thrown', function () {
-        let crc = null;
         let fn = function () {
-            crc = new CrcModel();
+            const crc = new CrcModel();
         };
         expect(fn).to.throw(TypeError);
     });

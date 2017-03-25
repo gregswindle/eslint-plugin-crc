@@ -13,4 +13,4 @@ test:
     - npm run docs2html
     - mv docs $CIRCLE_ARTIFACTS/reports
     - codecov
-    
+    - curl -sSL https://download.sourceclear.com/ci.sh | sh

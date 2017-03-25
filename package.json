@@ -35,7 +35,7 @@
     "security": "./node_modules/.bin/nsp check",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
     "pretest": "eslint lib --fix",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js') --recursive",
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
     "posttest": "./node_modules/.bin/nsp check",
     "preversion": "npm test && ./node_modules/.bin/nsp check",
     "version": null,
@@ -52,10 +52,13 @@
   "contributors": [],
   "nyc": {
     "include": [
-      "lib/**/*.js"
+      "lib/**/*.js",
+      "!(lib/crc-model-cli.js)"
     ],
     "exclude": [
       "**/*.spec.js",
+      "lib/crc-model-cli.js",
+      "tests/crc-model-cli.spec.js",
       "**/fixtures/**/*.js"
     ],
     "reporter": [
@@ -73,7 +76,6 @@
     "concat": "3.0.0",
     "eslint": "^3.18.0",
     "espree": "^3.4.0",
-    "esrefactor": "^0.1.0",
     "estraverse": "^4.2.0",
     "global": "4.3.1",
     "lodash": "^4.17.4",

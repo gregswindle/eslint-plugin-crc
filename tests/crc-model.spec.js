@@ -24,6 +24,7 @@ describe('CrcModels represent objects\' behaviors and dependencies. A CrcModel',
     it('must have a name, or an error will be thrown', function () {
         let fn = function () {
             const crc = new CrcModel();
+            expect(crc).not.to.be.defined();
         };
         expect(fn).to.throw(TypeError);
     });

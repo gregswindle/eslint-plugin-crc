@@ -4,9 +4,9 @@ _Please provide a description of the change here If there are associated issues,
 
 ### Pull request (PR) check-list
 
-_Please make sure to review and check the appropriate items:_
+> **:white_check_mark: Please review and check the appropriate items.**
 
-1. Type of change:
+1. **Type of change**
     - [ ] BREAKING CHANGE (with documentation) _Please explain if selected_
     - [ ] Chore
     - [ ] Defect (bug) fix (with regression tests)
@@ -17,19 +17,19 @@ _Please make sure to review and check the appropriate items:_
     - [ ] Refactoring (with catalog reference)
     - [ ] Reversion
     - [ ] Tests
-2. Do the linters pass?
+2. **Code standards compliance**
     - [ ] Yes, `eslint` passes.
     - [ ] N/A (not applicable): _Please explain if selected_
-3. Do the quality gateways pass with an "A" grade?
+3. **Code quality**. Do the quality gateways pass with an "A" grade?
     - [ ] `Complexity`
     - [ ] `Duplications` (0.00%)
-    - [ ] `Issues` (0 issues or documentation for "won't fix cases")
+    - [ ] `Issues` (0 issues or documentation for "won't fix" cases)
     - [ ] `Maintainability`/`Technical Debt`
     - [ ] `Reliability`
     - [ ] `Security`
     - [ ] N/A (not applicable). _Please explain if selected_
-4. Does the change have 100% test coverage?
-    - [ ] Yes, the change is 100% covered with passing specs.
+4. **Test coverage**
+    - [ ] The source code is 100% covered with passing specs.
     - [ ] N/A (not applicable). _Please explain if selected_
 
-_NOTE: these things are not required to open a PR and can be done afterwards, or while the PR is open._
+> **:information_source: These tasks are not required to open a PR and can be done afterwards, or while the PR is open.**

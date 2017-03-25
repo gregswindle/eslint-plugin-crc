@@ -12,7 +12,7 @@ const codeFixturePath = './fixtures/es5-object-identification.js';
 chai.use(dirtyChai);
 
 describe('CrcModelLists group Identifiers by name. They', function () {
-    let path, code, crcModelList;
+    let code, crcModelList, path;
 
     before(function () {
         path = relativePath(codeFixturePath);
@@ -73,7 +73,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
 
     describe('also identify an object\'s prototype', () => {
 
-        let path, code, crcModelList, codeFixturePath, prototype;
+        let code, codeFixturePath, crcModelList, path, prototype;
 
         before(() => {
             codeFixturePath = './fixtures/es5-object-prototypes.js';

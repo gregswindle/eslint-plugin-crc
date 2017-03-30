@@ -73,7 +73,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
 
     describe('also identify an object\'s prototype', () => {
 
-        let code, codeFixturePath, crcModelList, path, prototype;
+        let code, codeFixturePath, crcModelList, path;
 
         before(() => {
             codeFixturePath = './fixtures/es5-object-prototypes.js';

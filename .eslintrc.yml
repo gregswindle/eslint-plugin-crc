@@ -110,7 +110,7 @@ rules:
   no-throw-literal: off
   no-unmodified-loop-condition: off
   no-unused-expressions: error
-  no-unused-labels: off
+  no-unused-labels: error
   no-useless-call: error
   no-useless-concat: error
   no-useless-escape: off

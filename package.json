@@ -32,12 +32,12 @@
     "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
     "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
-    "security": "./node_modules/.bin/nsp check",
+    "security": "./node_modules/.bin/nsp check --output summary",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
     "pretest": "./node_modules/.bin/eslint lib --fix",
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
-    "posttest": "./node_modules/.bin/nsp check",
-    "preversion": "npm test && ./node_modules/.bin/nsp check",
+    "posttest": "./node_modules/.bin/nsp check --output summary",
+    "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
     "version": null,
     "postversion": "npm run changelog && node ./.ci-cd/bump/ && git commit --amend && git push && git push --tags",
     "prepublish": null
@@ -100,11 +100,11 @@
     "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.1.2",
     "mocha-junit-reporter": "1.13.0",
-    "nsp": "https://registry.npmjs.org/nsp/-/nsp-2.6.3.tgz",
+    "nsp": "2.6.3",
     "nyc": "^10.1.2",
     "properties-parser": "0.3.1",
     "sinon": "2.1.0",
-    "uglify-js": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.13.tgz"
+    "uglify-js": "^2.8.18"
   },
   "engines": {
     "node": ">=6"

@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-crc",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaboration models.",
   "keywords": [
     "refactoring",

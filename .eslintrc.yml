@@ -1,3 +1,4 @@
+---
 parserOptions:
   sourceType: module
   ecmaFeatures:
@@ -9,6 +10,9 @@ env:
   mocha: true
 
 extends: 'eslint:recommended'
+
+plugins:
+  - security
 
 # http://eslint.org/docs/rules/
 rules:

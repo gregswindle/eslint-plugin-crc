@@ -1,3 +1,4 @@
+---
 parserOptions:
   sourceType: module
   ecmaFeatures:
@@ -9,6 +10,9 @@ env:
   mocha: true
 
 extends: 'eslint:recommended'
+
+plugins:
+  - security
 
 # http://eslint.org/docs/rules/
 rules:
@@ -140,7 +144,7 @@ rules:
   no-undef: off
   no-undefined: off
   no-unused-vars: error
-  no-use-before-define: off
+  no-use-before-define: error
 
   # Node.js and CommonJS
   callback-return: error

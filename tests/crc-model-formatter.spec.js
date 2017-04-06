@@ -4,7 +4,7 @@ const relativePath = require('relative-path');
 const chai = require('chai');
 const dirtyChai = require('dirty-chai');
 const {expect} = chai;
-const _ = require('lodash');
+const { forEach, map } = require('lodash');
 const fs = require('fs');
 const path = require('path');
 const codeFixturePath = './fixtures/es5-object-identification.js';
@@ -27,7 +27,7 @@ describe('CrcModelFormatter', function () {
 
     afterEach(function () {
         template = null;
-        _.map(crcModelList.models, function (model) {
+        map(crcModelList.models, function (model) {
             model.responsibilities = null;
         });
         crcModelList.models = null;
@@ -47,7 +47,7 @@ describe('CrcModelFormatter', function () {
         const loadResponsibilities = (letters) => {
             const info = 'Disambiguation for the letter ';
             const action = 'Clarifies pronunciation when spelling with the letter ';
-            _.forEach(letters, function (letter, idx) {
+            forEach(letters, function (letter, idx) {
                 let faa = '"' + letter + '"';
                 crcModelList.models[idx].responsibilities.push(info + faa);
                 crcModelList.models[idx].responsibilities.push(action + faa);

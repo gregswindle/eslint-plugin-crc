@@ -1,54 +1,115 @@
 
 const chai = require('chai');
-const cli = require('../lib/crc-model-cli');
+const cli = require('../lib/crc-reporter');
 let concat = require('concat');
+const CrcModelFormatter = require('../lib/crc-model-formatter');
+const CrcModelVisitor = require('../lib/crc-model-visitor');
 const dirtychai = require('dirty-chai');
 const fs = require('fs');
+let glob = require('glob');
 const noop = () => {};
+const path = require('path');
 const sinon = require('sinon').sandbox.create();
 const { expect } = chai;
 
 chai.use(dirtychai);
 
-describe('crc-model-cli is a command line program, that,', () => {
-    let open = null;
+describe('crc-reporter is a command line program, that,', () => {
 
     beforeEach(() => {
-        concat = sinon.spy(concat);
-        open = sinon.stub(fs, 'open').callsFake(noop);
+        sinon.stub(console, 'info').callsFake(noop);
+        sinon.stub(CrcModelFormatter.prototype, 'format').callsFake(noop);
     });
 
     afterEach(() => {
-        open = null;
+        console.info.reset();
         sinon.restore();
     });
 
     describe('when given a glob pattern,', () => {
-        it('concatenates the files into a single object for AST evaluation', () => {
-            console.log('waiting for a spec');
-        });
+        it('concatenates the files into a single object for AST evaluation', (done) => {
+            sinon.spy(fs, 'readFileSync');
 
-        it('writes to the console on error', () => {
-            const error = sinon.stub(console, 'error').callsFake(noop);
-            cli.parse('@#@$%#*)@)!&&&.bad');
-            expect(console.error.called).to.be.false();
+            cli.parse('./fixtures/cli-shebang.js');
+
+            expect(fs.readFileSync.called).to.be.true();
+            expect(CrcModelVisitor.customDeclarators).to.be.equal(CrcModelVisitor.defaultDeclarators);
+            done();
         });
     });
+
+    describe('when given a glob it cannot parse,', () => {
+        it('writes an error to the console', (done) => {
+            sinon.spy(console, 'error');
+            expect(() => {
+                cli.parse('****////***.');
+                expect(console.error.called).to.be.true();
+            }).to.throw(Error);
+
+            done();
+            console.error.reset();
+        });
+
+        it('specifies glob errors', (done) => {
+            let error = new TypeError('Bad glob');
+            // let callback = (err, files) => {
+            //     return error;
+            // };
+            sinon.spy(console, 'error');
+            glob = sinon.stub();
+            glob.withArgs(error, null).callsArg(0);
+            cli.parse('ssl://foobar');
+
+            console.log(console.error);
+
+            done();
+
+            glob.restore();
+            console.error.reset();
+        });
+    });
+
+    describe('when given file paths it cannot process,', () => {
+        it('writes a warning to the console', (done) => {
+            sinon.spy(console, 'warn');
+            expect(() => {
+                cli.parse('./fixtures/cli-shebang.js, -o ./reports/stub-report.md');
+                expect(console.warn.called).to.be.true();
+            }).to.throw(Error);
+
+            done();
+            console.warn.reset();
+        });
+    });
+
+    describe('when unable to open a file,', () => {
+        it('throws an Error', (done) => {
+            concat = sinon.stub();
+            concat.throws('Error');
+            expect(() => {
+                cli.parse('./fixtures/cli-shebang.js, -o ./reports/stub-report.md');
+                expect(console.warn.called).to.be.true();
+            }).to.throw(Error);
+
+            done();
+        });
+    });
+
+    // describe('when unable to write to file,', () => {
+    //     it('throws an Error', (done) => {
+    //         let callback = sinon.spy();
+    //         sinon.stub(fs, 'write').withArgs(1, null, 0, 0, null, callback);
+    //         cli.parse('./fixtures/fake-file.js');
+    //         expect(callback.called).to.be.true();
+    //         done();
+    //     });
+    // });
 
     describe('when given a file with a shebang (#!),', () => {
         it('will comment the shebang to prevent AST errors', () => {
             expect(() => {
-                cli.parse('./fixtures/cli-shebang.js');
+                cli.parse(path.resolve(__dirname, './fixtures/cli-shebang.js'));
             }).not.to.throw(Error);
-        });
-    });
-
-    describe('when given a path to a file,', () => {
-        it('creates a report in that location', () => {
-            const parse = sinon.stub(cli, 'parse').callsFake(noop);
-            cli.parse('./fixtures/cli-shebang.js, -o ./reports/stub-report.md');
-            console.log(cli.rawArgs);
-            expect(cli.rawArgs).to.contain('./fixtures/cli-shebang.js');
         });
     });
 
@@ -57,6 +118,14 @@ describe('crc-model-cli is a command line program, that,', () => {
             cli.parse('');
 
             expect(cli.rawArgs).to.equal('');
+        });
+    });
+
+    describe('when given the option', () => {
+        specify('--exclude, it will omit files from analysis', () => {
+            sinon.stub(cli, 'parse').callsFake(noop);
+            cli.parse('--exclude *.spec.js *.js');
+            console.log(cli.rawArgs);
         });
     });
 });

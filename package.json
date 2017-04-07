@@ -72,7 +72,7 @@
     ]
   },
   "dependencies": {
-    "babel-register": "^6.24.0",
+    "babel-register": "^6.24.1",
     "concat": "3.0.0",
     "eslint": "^3.19.0",
     "espree": "^3.4.0",

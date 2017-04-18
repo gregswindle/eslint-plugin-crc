@@ -79,7 +79,7 @@
     "estraverse": "^4.2.0",
     "global": "4.3.1",
     "lodash": "^4.17.4",
-    "minami": "^1.1.1",
+    "minami": "^1.2.3",
     "mkdirp": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
     "relative-path": "^1.1.0",
     "require-dir": "^0.3.1",

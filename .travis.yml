@@ -1,9 +1,3 @@
-env:
-  global:
-   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-   #   via the "travis encrypt" command using the project repo's public key
-   - secure: "$COVERITY_SCAN_TOKEN"
-
 language: node_js
 node_js:
   - "7"
@@ -11,19 +5,12 @@ node_js:
 dist: trusty
 sudo: required
 addons:
-  srcclr: true
-  coverity_scan:
-    project:
-      name: "gregswindle/eslint-plugin-crc"
-      description: "Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaboration models."
-    notification_email: greg@swindle.net
-    build_command_prepend: ""
-    build_command:   ""
-    branch_pattern: develop
   sonarqube:
     organization: "$SONAR_ORGANIZATION"
     token:
       secure: "$SONAR_TOKEN"
+    github_token:
+      secure: "$GITHUB_ACCESS_TOKEN"
     branches:
       - master
       - develop

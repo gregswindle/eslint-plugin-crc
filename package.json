@@ -77,7 +77,7 @@
     "eslint": "^3.19.0",
     "espree": "^3.4.0",
     "estraverse": "^4.2.0",
-    "global": "4.3.1",
+    "global": "4.3.2",
     "lodash": "^4.17.4",
     "minami": "^1.1.1",
     "mkdirp": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",

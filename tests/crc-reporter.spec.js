@@ -60,8 +60,6 @@ describe('crc-reporter is a command line program, that,', () => {
             glob.withArgs(error, null).callsArg(0);
             cli.parse('ssl://foobar');
 
-            console.log(console.error);
-
             done();
 
             glob.restore();

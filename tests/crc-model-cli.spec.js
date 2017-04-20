@@ -1,6 +1,6 @@
 
 const chai = require('chai');
-const cli = require('../lib/crc-model-cli');
+const cli = require('../lib/crc-reporter');
 let concat = require('concat');
 const dirtychai = require('dirty-chai');
 const fs = require('fs');

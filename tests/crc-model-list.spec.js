@@ -34,6 +34,7 @@ describe('CrcModelLists group Identifiers by name. They', () => {
         expect(alpha).to.exist();
         expect(alpha.name).to.equal('Alpha');
 
+        /*eslint arrow-body-style: ["error", "as-needed"]*/
         const result = crcModelList.find((node) => {
             return node.name === 'Bravo';
         });

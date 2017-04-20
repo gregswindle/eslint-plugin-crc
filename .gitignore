@@ -55,3 +55,6 @@ reports
 
 # Local tasks
 *.tasks.*
+
+# Sonar Scanner
+/.scannerwork

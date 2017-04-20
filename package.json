@@ -23,7 +23,7 @@
   "main": "lib/index.js",
   "scripts": {
     "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s",
-    "docs": "npm run docs2html && npm run docs2md",
+    "docs": "npm run docs2html && npm run docs2md && ./node_modules/.bin/eslint -f html lib > docs/eslint-report.html",
     "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
     "docs2md": "./node_modules/.bin/jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files ./lib/*.js > ../eslint-plugin-crc.wiki/API.md",
     "coverage": "./node_modules/.bin/nyc report",
@@ -40,7 +40,8 @@
     "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
     "version": null,
     "postversion": "npm run changelog && node ./.ci-cd/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
-    "prepublish": null
+    "prepublish": null,
+    "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test"
   },
   "repository": {
     "type": "git",
@@ -52,13 +53,10 @@
   "contributors": [],
   "nyc": {
     "include": [
-      "lib/**/*.js",
-      "!(lib/crc-model-cli.js)"
+      "lib/**/*.js"
     ],
     "exclude": [
       "**/*.spec.js",
-      "lib/crc-model-cli.js",
-      "tests/crc-model-cli.spec.js",
       "**/fixtures/**/*.js"
     ],
     "reporter": [
@@ -83,7 +81,8 @@
     "mkdirp": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
     "relative-path": "^1.1.0",
     "require-dir": "^0.3.1",
-    "requireindex": "~1.1.0"
+    "requireindex": "~1.1.0",
+    "shebang-loader": "https://registry.npmjs.org/shebang-loader/-/shebang-loader-0.0.1.tgz"
   },
   "devDependencies": {
     "bithound": "^1.7.0",
@@ -100,6 +99,7 @@
     "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.1.2",
     "mocha-junit-reporter": "1.13.0",
+    "nodemon": "1.11.0",
     "nsp": "2.6.3",
     "nyc": "^10.1.2",
     "properties-parser": "0.3.1",

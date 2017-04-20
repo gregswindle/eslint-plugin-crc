@@ -9,3 +9,5 @@
 /tests/performance/**
 /tmp/**
 test.js
+*.bundle.js
+*.spec.js

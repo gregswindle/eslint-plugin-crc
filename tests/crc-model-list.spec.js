@@ -30,11 +30,11 @@ describe('CrcModelLists group Identifiers by name. They', () => {
     });
 
     it('can find an Identifier by name (by object literal or function predicate)', () => {
-        let alpha = crcModelList.find({name: 'Alpha'});
+        const alpha = crcModelList.find({name: 'Alpha'});
         expect(alpha).to.exist();
         expect(alpha.name).to.equal('Alpha');
 
-        expect(crcModelList.find(function (node) {
+        expect(crcModelList.find((node) => {
             return node.name === 'Bravo';
         })).to.exist();
 

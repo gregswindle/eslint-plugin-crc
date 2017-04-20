@@ -1,3 +1,4 @@
+/*eslint no-console: ["error", { allow: ["info", "error", "log", "warn"] }] */
 
 const chai = require('chai');
 const cli = require('../lib/crc-reporter');
@@ -51,10 +52,7 @@ describe('crc-reporter is a command line program, that,', () => {
         });
 
         it('specifies glob errors', (done) => {
-            let error = new TypeError('Bad glob');
-            // let callback = (err, files) => {
-            //     return error;
-            // };
+            const error = new TypeError('Bad glob');
             sinon.spy(console, 'error');
             glob = sinon.stub();
             glob.withArgs(error, null).callsArg(0);
@@ -92,16 +90,6 @@ describe('crc-reporter is a command line program, that,', () => {
             done();
         });
     });
-
-    // describe('when unable to write to file,', () => {
-    //     it('throws an Error', (done) => {
-    //         let callback = sinon.spy();
-    //         sinon.stub(fs, 'write').withArgs(1, null, 0, 0, null, callback);
-    //         cli.parse('./fixtures/fake-file.js');
-    //         expect(callback.called).to.be.true();
-    //         done();
-    //     });
-    // });
 
     describe('when given a file with a shebang (#!),', () => {
         it('will comment the shebang to prevent AST errors', () => {

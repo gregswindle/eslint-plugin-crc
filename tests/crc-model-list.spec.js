@@ -11,25 +11,25 @@ const codeFixturePath = './fixtures/es5-object-identification.js';
 
 chai.use(dirtyChai);
 
-describe('CrcModelLists group Identifiers by name. They', function () {
+describe('CrcModelLists group Identifiers by name. They', () => {
     let code, crcModelList, path;
 
-    before(function () {
+    before(() => {
         path = relativePath(codeFixturePath);
         code = fs.readFileSync(path);
         crcModelList = new CrcModelList(code);
     });
 
-    after(function () {
+    after(() => {
         crcModelList = null;
     });
 
-    it('identify all declared Objects', function () {
-        let modelCount = crcModelList.models.length;
+    it('identify all declared Objects', () => {
+        const modelCount = crcModelList.models.length;
         expect(modelCount).to.be.at.least(6);
     });
 
-    it('can find an Identifier by name (by object literal or function predicate)', function () {
+    it('can find an Identifier by name (by object literal or function predicate)', () => {
         let alpha = crcModelList.find({name: 'Alpha'});
         expect(alpha).to.exist();
         expect(alpha.name).to.equal('Alpha');
@@ -41,7 +41,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
         expect(crcModelList.find({name: 'foobar'})).not.to.exist();
     });
 
-    it('track an object\'s usage by line numbers and range', function () {
+    it('track an object\'s usage by line numbers and range', () => {
         const alpha = crcModelList.find({name: 'Alpha'});
         const {range} = _.first(alpha.references);
         expect(_.first(range)).to.be.a('number');
@@ -49,12 +49,11 @@ describe('CrcModelLists group Identifiers by name. They', function () {
     });
 
     it('associate collaborators with classes and objects', () =>   {
-        let alpha, charlie, delta, echo, foxtrot;
-        alpha = crcModelList.find({name: 'Alpha'});
-        charlie = crcModelList.find({name: 'Charlie'});
-        delta = crcModelList.find({name: 'Delta'});
-        echo = crcModelList.find({name: 'Echo'});
-        foxtrot = crcModelList.find({name: 'Foxtrot'});
+        const alpha = crcModelList.find({name: 'Alpha'});
+        const charlie = crcModelList.find({name: 'Charlie'});
+        const delta = crcModelList.find({name: 'Delta'});
+        const echo = crcModelList.find({name: 'Echo'});
+        const foxtrot = crcModelList.find({name: 'Foxtrot'});
 
         expect(_.find(delta.collaborators, {name: charlie.name})).to.exist();
         expect(_.find(echo.collaborators, {name: alpha.name})).to.exist();
@@ -63,10 +62,9 @@ describe('CrcModelLists group Identifiers by name. They', function () {
 
     });
 
-    specify('CRC models should not share arrays by reference', function () {
-        let alpha, bravo;
-        alpha = crcModelList.find({name: 'Alpha'});
-        bravo = crcModelList.find({name: 'Bravo'});
+    specify('CRC models should not share arrays by reference', () => {
+        const alpha = crcModelList.find({name: 'Alpha'});
+        const bravo = crcModelList.find({name: 'Bravo'});
         alpha.responsibilities.push('Aplha responsibility');
         expect(alpha.responsibilities.length).not.to.be.equal(bravo.responsibilities.length);
     });
@@ -90,7 +88,7 @@ describe('CrcModelLists group Identifiers by name. They', function () {
             const crc = crcModelList.find({
                 name: 'Employee'
             });
-            let proto = crcModelList.getPrototypeOf(crc);
+            const proto = crcModelList.getPrototypeOf(crc);
             expect(proto.name).to.equal('Person');
             expect(crc.superClass.name).to.equal('Person');
         });

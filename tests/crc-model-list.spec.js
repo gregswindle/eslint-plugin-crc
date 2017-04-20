@@ -34,10 +34,10 @@ describe('CrcModelLists group Identifiers by name. They', () => {
         expect(alpha).to.exist();
         expect(alpha.name).to.equal('Alpha');
 
-        expect(crcModelList.find((node) => {
+        const result = crcModelList.find((node) => {
             return node.name === 'Bravo';
-        })).to.exist();
-
+        });
+        expect(result).to.exist();
         expect(crcModelList.find({name: 'foobar'})).not.to.exist();
     });
 

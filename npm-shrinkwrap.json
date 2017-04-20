@@ -930,9 +930,9 @@
           "optional": true
         },
         "handlebars": {
-          "version": "3.0.3",
-          "from": "handlebars@3.0.3",
-          "resolved": "https://registry.npmjs.org/handlebars/-/handlebars-3.0.3.tgz",
+          "version": "4.0.6",
+          "from": "handlebars@4.0.6",
+          "resolved": "https://registry.npmjs.org/handlebars/-/handlebars-4.0.6.tgz",
           "dev": true
         },
         "source-map": {
@@ -942,9 +942,9 @@
           "dev": true
         },
         "uglify-js": {
-          "version": "2.3.6",
-          "from": "uglify-js@>=2.3.0 <2.4.0",
-          "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.3.6.tgz",
+          "version": "2.8.22",
+          "from": "uglify-js@>=2.3.0 <2.8.22",
+          "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.22.tgz",
           "dev": true,
           "optional": true,
           "dependencies": {
@@ -4396,9 +4396,9 @@
           "dev": true
         },
         "uglify-js": {
-          "version": "2.8.16",
+          "version": "2.8.22",
           "from": "uglify-js@>=2.6.0 <3.0.0",
-          "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.16.tgz",
+          "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.22.tgz",
           "dev": true,
           "optional": true,
           "dependencies": {
@@ -5418,9 +5418,9 @@
       "dev": true
     },
     "uglify-js": {
-      "version": "2.8.13",
-      "from": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.13.tgz",
-      "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.13.tgz",
+      "version": "2.8.22",
+      "from": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.22.tgz",
+      "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.22.tgz",
       "dev": true,
       "optional": true
     },

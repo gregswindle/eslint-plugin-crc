@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-crc",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaboration models.",
   "keywords": [
     "refactoring",
@@ -42,6 +42,7 @@
     "postversion": "npm run changelog && node ./.ci-cd/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
     "prepublish": null,
     "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test",
+    "release": "standard-version",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -92,7 +93,6 @@
     "codeclimate-test-reporter": "^0.4.1",
     "codecov": "2.2.0",
     "commitplease": "2.7.10",
-    "conventional-changelog-cli": "1.3.1",
     "coveralls": "2.13.1",
     "dedupe": "2.1.0",
     "dirty-chai": "^1.2.2",
@@ -105,10 +105,11 @@
     "nsp": "2.6.3",
     "nyc": "10.3.2",
     "properties-parser": "0.3.1",
+    "semantic-release": "^6.3.6",
     "semantic-release-cli": "3.0.3",
     "sinon": "^2.3.1",
-    "uglify-js": "^3.0.11",
-    "semantic-release": "^6.3.6"
+    "standard-version": "4.0.0",
+    "uglify-js": "^3.0.11"
   },
   "engines": {
     "node": ">=6"

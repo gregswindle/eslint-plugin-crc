@@ -1787,9 +1787,9 @@
           "optional": true
         },
         "isarray": {
-          "version": "1.0.0",
-          "from": "isarray@>=1.0.0 <1.1.0",
-          "resolved": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz",
+          "version": "2.0.1",
+          "from": "isarray@>=1.0.0 <2.0.2",
+          "resolved": "https://registry.npmjs.org/isarray/-/isarray-2.0.1.tgz",
           "dev": true
         },
         "isstream": {
@@ -2673,9 +2673,9 @@
       "dev": true
     },
     "isarray": {
-      "version": "0.0.1",
-      "from": "isarray@0.0.1",
-      "resolved": "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz",
+      "version": "2.0.1",
+      "from": "isarray@2.0.1",
+      "resolved": "https://registry.npmjs.org/isarray/-/isarray-2.0.1.tgz",
       "dev": true
     },
     "isemail": {
@@ -4655,9 +4655,9 @@
                       "dev": true
                     },
                     "isarray": {
-                      "version": "0.0.1",
-                      "from": "isarray@0.0.1",
-                      "resolved": "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz",
+                      "version": "2.0.1",
+                      "from": "isarray@2.0.1",
+                      "resolved": "https://registry.npmjs.org/isarray/-/isarray-2.0.1.tgz",
                       "dev": true
                     },
                     "string_decoder": {

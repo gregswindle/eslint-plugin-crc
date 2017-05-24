@@ -26,7 +26,7 @@ after_success:
   - npm run semantic-release
 script:
   - npm test
-  - sonar-scanner -X
+  # - sonar-scanner -X
   - cat coverage/lcov.info | node_modules/.bin/coveralls
   - CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
 branches:

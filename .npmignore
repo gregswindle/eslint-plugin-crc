@@ -27,4 +27,6 @@ tsconfig.json 
 tsd.json 
 tslint.json 
 npm-debug.log
-
+reports
+.nyc_output
+.scannerwork

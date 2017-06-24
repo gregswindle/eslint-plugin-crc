@@ -74,7 +74,7 @@
   "dependencies": {
     "babel-register": "^6.24.1",
     "concat": "^1.0.3",
-    "eslint": "4.0.0",
+    "eslint": "4.1.0",
     "espree": "^3.4.3",
     "estraverse": "^4.2.0",
     "global": "^4.3.2",

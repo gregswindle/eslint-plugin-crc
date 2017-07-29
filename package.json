@@ -103,7 +103,7 @@
     "nodemon": "^1.11.0",
     "npmdoc-nsp": "2017.4.23",
     "nsp": "^2.6.3",
-    "nyc": "^11.0.2",
+    "nyc": "^11.1.0",
     "properties-parser": "^0.3.1",
     "semantic-release": "^6.3.6",
     "semantic-release-cli": "^3.0.3",

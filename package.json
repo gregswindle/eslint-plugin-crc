@@ -1,76 +1,33 @@
 {
   "name": "eslint-plugin-crc",
-  "version": "0.2.0",
   "description": "Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaboration models.",
-  "keywords": [
-    "refactoring",
-    "refactor",
-    "refactoring-tools",
-    "javascript",
-    "javascript-tools",
-    "code-analysis",
-    "cli",
-    "ast",
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin"
-  ],
+  "version": "0.2.0",
   "author": {
     "name": "Greg Swindle",
     "email": "greg@swindle.net",
     "url": "http://swindle.net"
   },
-  "main": "lib/index.js",
-  "scripts": {
-    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s",
-    "docs": "npm run docs2html && npm run docs2md && ./node_modules/.bin/eslint -f html lib > docs/eslint-report.html",
-    "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
-    "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files ./lib/*.js > ../eslint-plugin-crc.wiki/API.md",
-    "coverage": "./node_modules/.bin/nyc report",
-    "coverage:all": "npm run coverage:codacy && npm run coverage:codecov && npm run coverage:coveralls",
-    "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
-    "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
-    "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
-    "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
-    "security": "./node_modules/.bin/nsp check --output summary",
-    "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
-    "pretest": "./node_modules/.bin/eslint lib --fix",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
-    "posttest": "./node_modules/.bin/nsp check --output summary",
-    "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
-    "version": null,
-    "postversion": "npm run changelog && node ./.ci-cd/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
-    "prepublish": null,
-    "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test",
-    "release": "standard-version",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gregswindle/eslint-plugin-crc.git"
-  },
   "bugs": {
     "url": "https://github.com/gregswindle/eslint-plugin-crc/issues"
   },
-  "contributors": [],
-  "nyc": {
-    "include": [
-      "lib/**/*.js"
+  "commitplease": {
+    "style": "angular",
+    "types": [
+      "build",
+      "chore",
+      "ci",
+      "docs",
+      "feat",
+      "fix",
+      "perf",
+      "refactor",
+      "revert",
+      "style",
+      "test"
     ],
-    "exclude": [
-      "**/*.spec.js",
-      "**/fixtures/**/*.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "check-coverage": true,
-    "lines": 100,
-    "require": [
-      "babel-register"
-    ]
+    "scope": "\\S+.*"
   },
+  "contributors": [],
   "dependencies": {
     "babel-register": "^6.24.1",
     "concat": "^1.0.3",
@@ -102,7 +59,7 @@
     "mocha-junit-reporter": "^1.13.0",
     "nodemon": "^1.11.0",
     "npmdoc-nsp": "2017.4.23",
-    "nsp": "^2.6.3",
+    "nsp": "2.7.0",
     "nyc": "11.0.3",
     "properties-parser": "^0.3.1",
     "semantic-release": "^6.3.6",
@@ -114,22 +71,66 @@
   "engines": {
     "node": ">=6"
   },
+  "homepage": "https://github.com/gregswindle/eslint-plugin-crc/",
+  "keywords": [
+    "ast",
+    "cli",
+    "code-analysis",
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "javascript",
+    "javascript-tools",
+    "refactor",
+    "refactoring",
+    "refactoring-tools"
+  ],
   "license": "MIT",
-  "commitplease": {
-    "style": "angular",
-    "types": [
-      "build",
-      "chore",
-      "ci",
-      "docs",
-      "feat",
-      "fix",
-      "perf",
-      "refactor",
-      "revert",
-      "style",
-      "test"
+  "main": "lib/index.js",
+  "nyc": {
+    "include": [
+      "lib/**/*.js"
     ],
-    "scope": "\\S+.*"
+    "exclude": [
+      "**/*.spec.js",
+      "**/fixtures/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "check-coverage": true,
+    "lines": 100,
+    "require": [
+      "babel-register"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregswindle/eslint-plugin-crc.git"
+  },
+  "scripts": {
+    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s",
+    "coverage": "./node_modules/.bin/nyc report",
+    "coverage:all": "npm run coverage:codacy && npm run coverage:codecov && npm run coverage:coveralls",
+    "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
+    "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
+    "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
+    "docs": "npm run docs2html && npm run docs2md && ./node_modules/.bin/eslint -f html lib > docs/eslint-report.html",
+    "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
+    "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files ./lib/*.js > ../eslint-plugin-crc.wiki/API.md",
+    "posttest": "./node_modules/.bin/nsp check --output summary",
+    "postversion": "npm run changelog && node ./.ci-cd/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
+    "prepublish": null,
+    "pretest": "./node_modules/.bin/eslint lib --fix",
+    "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
+    "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
+    "release": "standard-version",
+    "security": "./node_modules/.bin/nsp check --output summary",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
+    "version": null,
+    "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test"
   }
 }

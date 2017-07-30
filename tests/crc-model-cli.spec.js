@@ -1,14 +1,12 @@
 /*eslint no-console: "off"*/
 const chai = require('chai');
 const cli = require('../lib/crc-reporter');
-let concat = require('concat');
 const dirtychai = require('dirty-chai');
 const fs = require('fs');
 const noop = () => {};
 const sinon = require('sinon').sandbox.create();
-const {
-  expect
-} = chai;
+const { expect } = chai;
+let concat = require('concat');
 
 chai.use(dirtychai);
 
@@ -44,7 +42,7 @@ describe('crc-model-cli is a command line program, that,', () => {
 
     describe('when given a path to a file,', () => {
         it('creates a report in that location', () => {
-      // Const parse = sinon.stub(cli, 'parse').callsFake(noop);
+            // Const parse = sinon.stub(cli, 'parse').callsFake(noop);
             cli.parse('./fixtures/cli-shebang.js, -o ./reports/stub-report.md');
             console.log(cli.rawArgs);
             expect(cli.rawArgs).to.contain('./fixtures/cli-shebang.js');

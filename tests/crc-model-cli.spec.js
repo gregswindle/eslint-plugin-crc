@@ -1,17 +1,16 @@
-
+/*eslint no-console: "off"*/
 const chai = require('chai');
 const cli = require('../lib/crc-reporter');
-let concat = require('concat');
 const dirtychai = require('dirty-chai');
 const fs = require('fs');
 const noop = () => {};
 const sinon = require('sinon').sandbox.create();
 const { expect } = chai;
+let concat = require('concat');
 
 chai.use(dirtychai);
 
 describe('crc-model-cli is a command line program, that,', () => {
-    let open = null;
 
     beforeEach(() => {
         concat = sinon.spy(concat);
@@ -24,12 +23,10 @@ describe('crc-model-cli is a command line program, that,', () => {
     });
 
     describe('when given a glob pattern,', () => {
-        it('concatenates the files into a single object for AST evaluation', () => {
-            console.log('waiting for a spec');
-        });
+        it('concatenates the files into a single object for AST evaluation');
 
         it('writes to the console on error', () => {
-            const error = sinon.stub(console, 'error').callsFake(noop);
+            sinon.stub(console, 'error').callsFake(noop);
             cli.parse('@#@$%#*)@)!&&&.bad');
             expect(console.error.called).to.be.false();
         });
@@ -45,7 +42,7 @@ describe('crc-model-cli is a command line program, that,', () => {
 
     describe('when given a path to a file,', () => {
         it('creates a report in that location', () => {
-            const parse = sinon.stub(cli, 'parse').callsFake(noop);
+            // Const parse = sinon.stub(cli, 'parse').callsFake(noop);
             cli.parse('./fixtures/cli-shebang.js, -o ./reports/stub-report.md');
             console.log(cli.rawArgs);
             expect(cli.rawArgs).to.contain('./fixtures/cli-shebang.js');

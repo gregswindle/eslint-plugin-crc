@@ -20,13 +20,13 @@
   * [3.3. Refactoring with CRC models](#33-refactoring-with-crc-models)
     + [3.3.1. Revealing legacy design](#331-revealing-legacy-design)
 - [4. `eslint-plugin-crc` roadmap](#4-eslint-plugin-crc-roadmap)
-  * [4.1. [MVP 1](https://github.com/gregswindle/eslint-plugin-crc/milestone/1): report generation](#41-mvp-1httpsgithubcomgregswindleeslint-plugin-crcmilestone1-report-generation)
+  * [4.1. MVP 1: report generation](#41-mvp-1-report-generation)
   * [4.2. MVP 2: `eslint` integration](#42-mvp-2-eslint-integration)
   * [4.3. MVP 3.._n_: semantic analysis](#43-mvp-3_n_-semantic-analysis)
 - [5. Supported Rules](#5-supported-rules)
 - [6. Contributing to `eslint-plugin-crc`](#6-contributing-to-eslint-plugin-crc)
-- [6. Version and CHANGELOG](#6-version-and-changelog)
-- [7. License](#7-license)
+- [7. Version and CHANGELOG](#7-version-and-changelog)
+- [8. License](#8-license)
 
 <!-- tocstop -->
 
@@ -234,9 +234,10 @@ CRC Models can help you pinpoint where problems might be, and reveal potential i
 
 ## 4. `eslint-plugin-crc` roadmap
 
-### 4.1. [MVP 1](https://github.com/gregswindle/eslint-plugin-crc/milestone/1): report generation
+### 4.1. MVP 1: report generation
 
-Create actionable reports with CRC model that are easy generate and consume.
+Create actionable reports with CRC model that are easy generate and consume
+([Milestone #1](https://github.com/gregswindle/eslint-plugin-crc/milestone/1)).
 
 ### 4.2. MVP 2: `eslint` integration
 
@@ -264,11 +265,11 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 - [Peruse open issues][issues-url] or
 - [Open a new pull request (PR)][pr-url]
 
-## 6. Version and CHANGELOG
+## 7. Version and CHANGELOG
 
 `eslint-plugin-crc`'s latest version is <!-- semver --> [`v1.0.0-beta.0`][changelog-url] <!-- semverend --> . Please read the [CHANGELOG][changelog-url] for details.
 
-## 7. License
+## 8. License
 
 [Apache-2.0][license-url] © [Greg Swindle][author-url]
 

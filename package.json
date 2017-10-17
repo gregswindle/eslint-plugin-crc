@@ -55,7 +55,7 @@
     "dirty-chai": "^2.0.0",
     "eslint-plugin-security": "^1.4.0",
     "jsdoc": "^3.4.3",
-    "mocha": "^3.4.2",
+    "mocha": "^4.0.1",
     "mocha-junit-reporter": "^1.13.0",
     "nodemon": "^1.11.0",
     "npmdoc-nsp": "2017.4.23",

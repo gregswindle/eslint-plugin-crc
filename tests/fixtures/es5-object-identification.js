@@ -1,30 +1,30 @@
-'use strict';
+
 
 function Alpha() {
-  this.name = 'alpha';
-  this.type = 'function contructor';
+    this.name = 'alpha';
+    this.type = 'function contructor';
 }
 
-var Bravo = {
-  name: 'Bravo',
-  type: 'object literal'
+const Bravo = {
+    name: 'Bravo',
+    type: 'object literal'
 };
 
-var Charlie = Object.create({
-  name: 'Charlie',
-  type: 'Object.create: literal'
+const Charlie = Object.create({
+    name: 'Charlie',
+    type: 'Object.create: literal'
 });
 
-var Delta = Object.create(Charlie);
+const Delta = Object.create(Charlie);
 
-var Echo = Object.create(Alpha.prototype);
+const Echo = Object.create(Alpha.prototype);
 
 function Foxtrot() {
-  this.alpha = new Alpha();
+    this.alpha = new Alpha();
 }
 
 Foxtrot.prototype.radio = function() {
-  return this.alpha.name;
+    return this.alpha.name;
 };
 
 module.exports = Alpha;

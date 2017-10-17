@@ -1,3 +1,4 @@
+---
 parserOptions:
   sourceType: module
   ecmaFeatures:
@@ -10,12 +11,15 @@ env:
 
 extends: 'eslint:recommended'
 
+plugins:
+  - security
+
 # http://eslint.org/docs/rules/
 rules:
   # Possible Errors
   no-await-in-loop: error
   no-cond-assign: error
-  no-console: off
+  no-console: error
   no-constant-condition: error
   no-control-regex: error
   no-debugger: error
@@ -110,7 +114,7 @@ rules:
   no-throw-literal: off
   no-unmodified-loop-condition: off
   no-unused-expressions: error
-  no-unused-labels: off
+  no-unused-labels: error
   no-useless-call: error
   no-useless-concat: error
   no-useless-escape: off
@@ -130,7 +134,7 @@ rules:
 
   # Variables
   init-declarations: off
-  no-catch-shadow: error
+  no-catch-shadow: off
   no-delete-var: error
   no-label-var: error
   no-restricted-globals: off
@@ -139,8 +143,8 @@ rules:
   no-undef-init: error
   no-undef: off
   no-undefined: off
-  no-unused-vars: off
-  no-use-before-define: off
+  no-unused-vars: error
+  no-use-before-define: error
 
   # Node.js and CommonJS
   callback-return: error
@@ -238,7 +242,7 @@ rules:
     - error
     - always
   sort-keys: off
-  sort-vars: off
+  sort-vars: warn
   space-before-blocks: off
   space-before-function-paren: off
   space-in-parens: off
@@ -250,35 +254,48 @@ rules:
   wrap-regex: off
 
   # ECMAScript 6
-  arrow-body-style: off
-  arrow-parens: off
-  arrow-spacing: off
-  constructor-super: off
-  generator-star-spacing: off
-  no-class-assign: off
-  no-confusing-arrow: off
-  no-const-assign: off
-  no-dupe-class-members: off
-  no-duplicate-imports: off
+  arrow-body-style: error
+  arrow-parens: error
+  arrow-spacing: error
+  constructor-super: error
+  generator-star-spacing: error
+  no-class-assign: error
+  no-confusing-arrow: error
+  no-const-assign: error
+  no-dupe-class-members: error
+  no-duplicate-imports: error
   no-new-symbol: off
   no-restricted-imports: off
-  no-this-before-super: off
-  no-useless-computed-key: off
-  no-useless-constructor: off
-  no-useless-rename: off
-  no-var: off
-  object-shorthand: off
-  prefer-arrow-callback: off
-  prefer-const: off
+  no-this-before-super: error
+  no-useless-computed-key: error
+  no-useless-constructor: error
+  no-useless-rename: error
+  no-var: error
+  object-shorthand: error
+  prefer-arrow-callback: error
+  prefer-const: error
   prefer-destructuring: error
-  prefer-numeric-literals: off
+  prefer-numeric-literals: error
   prefer-rest-params: off
   prefer-reflect: off
   prefer-spread: off
   prefer-template: off
   require-yield: off
   rest-spread-spacing: off
-  sort-imports: off
+  sort-imports: warn
   symbol-description: off
   template-curly-spacing: off
   yield-star-spacing: off
+  # https://github.com/nodesecurity/eslint-plugin-security#rules
+  # detect-buffer-noassert: error
+  # detect-child-process: error
+  # detect-disable-mustache-escape: error
+  # detect-eval-with-expression: error
+  # detect-no-csrf-before-method-override: error
+  # detect-non-literal-fs-filename: error
+  # detect-non-literal-regexp: error
+  # detect-non-literal-require: error
+  # detect-object-injection: error
+  # detect-possible-timing-attacks: error
+  # detect-pseudoRandomBytes: error
+  # detect-unsafe-regex: error

@@ -1,25 +1,19 @@
+sudo: false
 language: node_js
+notifications:
+  email: false
 node_js:
-  - "7"
-  - "6"
-dist: trusty
-sudo: required
-addons:
-  srcclr: true
-  sonarqube:
-    organization: "$SONAR_ORGANIZATION"
-    token:
-      secure: "$SONAR_TOKEN"
-    branches:
-      - master
-      - develop
-jdk:
-  - oraclejdk8
+  - 8
+  - 7
+  - 6
+before_script:
+  - npm prune
+  - npm i -g jsdoc-to-markdown
+after_success:
+  - npm run semantic-release
 script:
   - npm test
-  - sonar-scanner
   - cat coverage/lcov.info | node_modules/.bin/coveralls
-  - CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

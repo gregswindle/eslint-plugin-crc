@@ -48,7 +48,7 @@
     "chai": "^4.0.2",
     "codacy-coverage": "^2.0.2",
     "codeclimate-test-reporter": "^0.5.0",
-    "codecov": "^2.2.0",
+    "codecov": "^3.0.0",
     "commitplease": "2.7.10",
     "coveralls": "^2.13.1",
     "dedupe": "^2.1.0",

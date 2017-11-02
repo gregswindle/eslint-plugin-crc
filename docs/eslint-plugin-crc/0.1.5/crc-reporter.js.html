@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>crc-reporter.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CrcModel.html">CrcModel</a><ul class='methods'><li data-type='method'><a href="CrcModel.html#.factory">factory</a></li></ul></li><li><a href="CrcModelFormatter.html">CrcModelFormatter</a><ul class='methods'><li data-type='method'><a href="CrcModelFormatter.html#format">format</a></li></ul></li><li><a href="CrcModelList.html">CrcModelList</a><ul class='methods'><li data-type='method'><a href="CrcModelList.html#filterBy">filterBy</a></li><li data-type='method'><a href="CrcModelList.html#find">find</a></li><li data-type='method'><a href="CrcModelList.html#getPrototypeOf">getPrototypeOf</a></li><li data-type='method'><a href="CrcModelList.html#groupBy">groupBy</a></li></ul></li><li><a href="CrcModelPrototypeVisitor.html">CrcModelPrototypeVisitor</a><ul class='methods'><li data-type='method'><a href="CrcModelPrototypeVisitor.html#getPrototypeByClassExtends">getPrototypeByClassExtends</a></li><li data-type='method'><a href="CrcModelPrototypeVisitor.html#getPrototypeByNewExpression">getPrototypeByNewExpression</a></li><li data-type='method'><a href="CrcModelPrototypeVisitor.html#getPrototypeByObjectCreate">getPrototypeByObjectCreate</a></li><li data-type='method'><a href="CrcModelPrototypeVisitor.html#visit">visit</a></li></ul></li><li><a href="CrcModelVisitor.html">CrcModelVisitor</a><ul class='methods'><li data-type='method'><a href="CrcModelVisitor.html#.getCrcModelOptions">getCrcModelOptions</a></li><li data-type='method'><a href="CrcModelVisitor.html#.getModelDeclaredInRange">getModelDeclaredInRange</a></li><li data-type='method'><a href="CrcModelVisitor.html#.inOwnDeclarationScope">inOwnDeclarationScope</a></li><li data-type='method'><a href="CrcModelVisitor.html#.isDeclaration">isDeclaration</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="CrcModelListVisitor.html">CrcModelListVisitor</a><ul class='methods'><li data-type='method'><a href="CrcModelListVisitor.html#visit">visit</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#preprocessShebangs">preprocessShebangs</a></li><li><a href="global.html#saveToFile">saveToFile</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">crc-reporter.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>#!/usr/bin/env node --harmony
+/*eslint no-console: "off"*/
+const CrcModelFormatter = require('./crc-model-formatter');
+const CrcModelList = require('./crc-model-list');
+const CrcModelVisitor = require('./crc-model-visitor');
+const concat = require('concat');
+const fs = require('fs');
+const glob = require('glob');
+const mkdirp = require('mkdirp');
+const path = require('path');
+const program = require('commander');
+const { version } = require('../package');
+
+const logTag = '[crc-reporter]';
+
+/**
+ * Prepend JavaScript comments to shebangs (!#) to prevent breaking the AST parser.
+ *
+ * @private
+ * @param {string} code The source code to be parsed.
+ *
+ * @returns {string} The source code with shebangs commented (if any).
+ */
+const preprocessShebangs = (code) => code.replace('#!', '// #!');
+
+/**
+ * Saves a Class-Responsibility-Collaboration report to the filesystem.
+ *
+ * @private
+ * @param {string} report   The CRC Model report.
+ * @param {string} filepath The filesystem location for the report.
+ *
+ * @throws {Error} throws an `Error` if the report cannot be saved.
+ *
+ * @returns {void}
+ */
+const saveToFile = (report, filepath) => {
+    const buffer = new Buffer(report);
+    const msg = 'Class-Responsibility-Collaborators report';
+
+    fs.open(filepath, 'w', (err, fd) => {
+        /* istanbul ignore next: standard error handling for 3rd-party lib */
+        if (err) {
+            throw err;
+        }
+
+        fs.write(fd, buffer, 0, buffer.length, null, (err) => {
+            /* istanbul ignore next: standard error handling for 3rd-party lib */
+            if (err) {
+                throw err;
+            }
+            fs.close(fd, () => {
+                console.info(`${logTag} Saved ${msg} to ${filepath}.`);
+            });
+        });
+    });
+};
+
+/**
+ * Saves `CrcModels` to file.
+ *
+ * @private
+ * @param {array&lt;string>} files  A list of files to be parsed.
+ * @param {string} reportFilePath The filesystem location for the report.
+ *
+ * @returns {void}
+ */
+const generateReport = (files, output) => {
+    concat(files).then((code) => {
+        CrcModelVisitor.customDeclarators = [
+            'ClassDeclaration',
+            'ClassExpression',
+            'VariableDeclaration'
+        ];
+        const crcModelList = new CrcModelList(preprocessShebangs(code));
+        const template = fs.readFileSync(path.resolve(__dirname, 'templates', 'crc-card.html'));
+        const formatter = new CrcModelFormatter(template);
+        const report = formatter.format(crcModelList);
+        saveToFile(report, output);
+        CrcModelVisitor.customDeclarators = CrcModelVisitor.defaultDeclarators;
+    }, (reason) => {
+        console.error(logTag, reason);
+    });
+};
+
+/**
+ * A command-line interface that creates a Class-Responsibility-Collaborators report.
+ */
+program
+  .version(version)
+  .description('Generates a Class-Responsibility-Collaboration report for analysis and refactoring.')
+  .arguments('&lt;files>')
+  .option('-o, --output [output]', 'The report destination. Defaults to "./crc-model-report."')
+  .option('-x, --exclude [glob]', 'A glob of files to exclude from analysis."')
+  .action((filePattern) => {
+      glob(filePattern, (err, files) => {
+          /* istanbul ignore next: standard error handling for 3rd-party lib */
+          if (err) {
+              console.error(`${logTag} glob error`, err);
+          }
+          const destFile = program.output || './reports/crc-model-report.md';
+          const destPath = path.dirname(destFile);
+          mkdirp(destPath, (err) => {
+              /* istanbul ignore next: standard error handling for 3rd-party lib */
+              if (err) {
+                  console.error(`${logTag} mkdirp error`, err);
+              }
+              else {
+                  /* istanbul ignore next: standard error handling for 3rd-party lib */
+                  try {
+                      generateReport(files, destFile);
+                  }
+                  catch (err) {
+                      console.error(logTag, err);
+                  }
+              }
+          });
+      });
+  });
+
+const isCli = require.main === module;
+
+if (isCli) {
+    program.parse(process.argv);
+}
+
+module.exports = program;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Apr 06 2017 07:21:16 GMT-0500 (CDT) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

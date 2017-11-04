@@ -29,7 +29,7 @@
   },
   "contributors": [],
   "dependencies": {
-    "babel-register": "^6.24.1",
+    "babel-register": "6.24.1",
     "concat": "^1.0.3",
     "eslint": "4.4.1",
     "espree": "^3.4.3",
@@ -41,7 +41,8 @@
     "relative-path": "^1.1.0",
     "require-dir": "^0.3.2",
     "requireindex": "^1.1.0",
-    "shebang-loader": "https://registry.npmjs.org/shebang-loader/-/shebang-loader-0.0.1.tgz"
+    "shebang-loader": "https://registry.npmjs.org/shebang-loader/-/shebang-loader-0.0.1.tgz",
+    "snyk": "^1.47.0"
   },
   "devDependencies": {
     "bithound": "^1.7.0",
@@ -121,16 +122,20 @@
     "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files ./lib/*.js > ../eslint-plugin-crc.wiki/API.md",
     "posttest": "./node_modules/.bin/nsp check --output summary",
     "postversion": "npm run changelog && node ./.ci-cd/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
-    "prepublish": null,
+    "prepublish": "npm run snyk-protect",
     "pretest": "./node_modules/.bin/eslint lib --fix",
     "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
     "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
     "release": "standard-version",
     "security": "./node_modules/.bin/nsp check --output summary",
+    "security:patch": "snyk wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
+    "test": "snyk test && ./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
     "version": null,
-    "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test"
-  }
+    "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test",
+    "snyk-protect": "snyk protect",
+    "snyk-test": "snyk test"
+  },
+  "snyk": true
 }

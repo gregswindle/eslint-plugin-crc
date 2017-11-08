@@ -63,7 +63,7 @@
     "nyc": "11.3.0",
     "properties-parser": "0.3.1",
     "semantic-release": "8.2.0",
-    "semantic-release-cli": "3.2.4",
+    "semantic-release-cli": "3.2.5",
     "sinon": "4.1.1",
     "standard-version": "4.2.0",
     "uglify-js": "3.1.6"

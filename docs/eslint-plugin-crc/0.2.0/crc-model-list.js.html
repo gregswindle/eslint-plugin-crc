@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>crc-model-list.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModel.html">CrcModel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModel.html#.factory">factory</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelFormatter.html">CrcModelFormatter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelFormatter.html#format">format</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelList.html">CrcModelList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#filterBy">filterBy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#find">find</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#getPrototypeOf">getPrototypeOf</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#groupBy">groupBy</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html">CrcModelPrototypeVisitor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByClassExtends">getPrototypeByClassExtends</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByNewExpression">getPrototypeByNewExpression</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByObjectCreate">getPrototypeByObjectCreate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#visit">visit</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelVisitor.html">CrcModelVisitor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.getCrcModelOptions">getCrcModelOptions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.getModelDeclaredInRange">getModelDeclaredInRange</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.inOwnDeclarationScope">inOwnDeclarationScope</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.isDeclaration">isDeclaration</a></span></li><li class="nav-heading">Interfaces</li><li class="nav-heading"><span class="nav-item-type type-interface">I</span><span class="nav-item-name"><a href="CrcModelListVisitor.html">CrcModelListVisitor</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateReport">generateReport</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#preprocessShebangs">preprocessShebangs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveToFile">saveToFile</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">crc-model-list.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+const CrcModel = require('./crc-model');
+const CrcModelPrototypeVisitor = require('./crc-model-prototype-visitor');
+const CrcModelVisitor = require('./crc-model-visitor');
+const _ = require('lodash');
+const astConfig = require('./ast-config');
+const espree = require('espree');
+const estraverse = require('estraverse');
+
+
+(function() {
+    /**
+      *
+      * Traverses the [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+      * to identify collaborators and associate them the objects that depend on
+      * them.
+      *
+      * @param {CrcModelList} crcModelList An array of CrcModels.
+      *
+      * @returns {void}
+      */
+    const associateCollaborators = function (crcModelList) {
+        const getModel = (node) => {
+            if (!_.isNil(node) &amp;&amp; _.has(node, 'name')) {
+                return crcModelList.find({name: node.name});
+            }
+            return null;
+        };
+        estraverse.traverse(crcModelList.ast, {
+            enter: (node) => {
+                const model = getModel(node);
+                if (model &amp;&amp; !CrcModelVisitor.inOwnDeclarationScope(node, model)) {
+                    CrcModelVisitor.getModelDeclaredInRange(node, crcModelList);
+                }
+            }
+        });
+    };
+
+    const crcModelPrototypeVisitor = new CrcModelPrototypeVisitor();
+
+    /**
+     * Generates an ordered list of `CrcModels` based on source code strings or
+     * buffers.
+     */
+    class CrcModelList {
+
+        /**
+       * Create a hadow of `CrcModelList`.
+       *
+       * @param {string|buffer} code   The source code to be analyzed.
+       * @param {object} [astParsingOptions] [Espree parsing options](https://github.com/eslint/espree/blob/master/espree.js#L624) defining how to tokenize the AST.
+       *
+       * @returns {CrcModelList} A list of `CrcModels` and their relationships with one another.
+       */
+        constructor(code, astParsingOptions = astConfig) {
+            this.code = _.toString(code);
+            this.astParsingOptions = astParsingOptions;
+            this.ast = espree.parse(this.code, this.astParsingOptions);
+            this.models = this.groupBy('name', CrcModelVisitor.isDeclaration);
+            associateCollaborators(this);
+            crcModelPrototypeVisitor.visit(this);
+        }
+
+        /**
+       * Traverses the ast, returning an array of all elements predicate returns
+       * truthy for.
+       *
+       * @param {function|object} predicate The function or identity invoked per
+       * iteration.
+       *
+       * @returns {array} Returns a new, filtered array of zero or more CrcModels.
+       */
+        filterBy(predicate) {
+            const nodes = [];
+            estraverse.traverse(this.ast, {
+                enter: (node) => {
+                    if (!_.isNil(node) &amp;&amp; predicate(node, this)) {
+                        nodes.push(CrcModelVisitor.getCrcModelOptions(node));
+                    }
+                }
+            });
+            return nodes;
+        }
+
+        /**
+       * Iterates over the CrcModels collection, returning the first element
+       * predicate returns truthy for.
+       *
+       * @param {function|object} predicate The function or object literal
+       * "matcher" invoked per iteration.
+       *
+       * @example
+       * let alpha = crcModelList.find({name: 'Alpha'});
+       * // => [object Object] // Alpha reference
+       *
+       * @returns {CrcModel|null} Returns the matched CrcModel, else null.
+       */
+        find(predicate) {
+            return _.find(this.models, predicate);
+        }
+
+        /**
+          * Find a `CrcModel`'s prototype.
+          *
+          * @param {CrcModel} crcModel
+          *
+          * @see The article [Strategies for prototype detection](https://github.com/gregswindle/eslint-plugin-crc/wiki/Strategies-for-prototype-detection) describes the definitions for identifying an object's
+          * prototype from an AST.
+          *
+          * @returns {CrcModel|null} The prototype of the crcModel, or null if
+          * not found.
+          */
+        getPrototypeOf(crcModel) {
+            const isInvalidObject = (o) => _.isNil(o) || _.isError(o);
+            let prototype = crcModelPrototypeVisitor.getPrototypeByObjectCreate(crcModel, this);
+            if (isInvalidObject(prototype)) {
+                prototype = crcModelPrototypeVisitor.getPrototypeByClassExtends(crcModel, this);
+            }
+            if (isInvalidObject(prototype)) {
+                prototype = crcModelPrototypeVisitor.getPrototypeByNewExpression(crcModel, this);
+            }
+            return isInvalidObject(prototype) ? null : prototype;
+        }
+
+        /**
+        * Creates an object composed transformed AST nodes, each of which has
+        * property &lt;code>name&lt;/code>. The &lt;code>name&lt;/code> acts as "key" that can
+        * be used by other methods like {@link CrcModelList#find}. The order
+        * of grouped values is determined by the order they occur in the AST.
+        *
+        * @param {string} property  The property/key to group by.
+        * @param {function|object} predicate The iteratee to transform keys.
+        *
+        * @returns {array} Returns the composed aggregate object array.
+        */
+        groupBy(property, predicate) {
+            const models = [];
+            const options = _.values(_.omitBy(this.filterBy(predicate), _.isNil));
+            _
+                .chain(options)
+                .groupBy(property)
+                .map((opts) => {
+                    const crc = CrcModel.factory(opts, this.ast);
+                    models.push(crc);
+                })
+                .value();
+            return models;
+        }
+
+    }
+
+    module.exports = CrcModelList;
+
+}());
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Nov 13 2017 09:11:46 GMT-0600 (CST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

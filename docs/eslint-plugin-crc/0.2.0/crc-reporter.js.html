@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>crc-reporter.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModel.html">CrcModel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModel.html#.factory">factory</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelFormatter.html">CrcModelFormatter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelFormatter.html#format">format</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelList.html">CrcModelList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#filterBy">filterBy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#find">find</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#getPrototypeOf">getPrototypeOf</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#groupBy">groupBy</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html">CrcModelPrototypeVisitor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByClassExtends">getPrototypeByClassExtends</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByNewExpression">getPrototypeByNewExpression</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByObjectCreate">getPrototypeByObjectCreate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#visit">visit</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelVisitor.html">CrcModelVisitor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.getCrcModelOptions">getCrcModelOptions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.getModelDeclaredInRange">getModelDeclaredInRange</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.inOwnDeclarationScope">inOwnDeclarationScope</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.isDeclaration">isDeclaration</a></span></li><li class="nav-heading">Interfaces</li><li class="nav-heading"><span class="nav-item-type type-interface">I</span><span class="nav-item-name"><a href="CrcModelListVisitor.html">CrcModelListVisitor</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateReport">generateReport</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#preprocessShebangs">preprocessShebangs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveToFile">saveToFile</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">crc-reporter.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>#!/usr/bin/env node --harmony
+/*eslint no-console: "off"*/
+const CrcModelFormatter = require('./crc-model-formatter');
+const CrcModelList = require('./crc-model-list');
+const CrcModelVisitor = require('./crc-model-visitor');
+const concat = require('concat');
+const fs = require('fs');
+const glob = require('glob');
+const mkdirp = require('mkdirp');
+const path = require('path');
+const program = require('commander');
+const { version } = require('../package');
+
+const logTag = '[crc-reporter]';
+
+/**
+ * Prepend JavaScript comments to shebangs (!#) to prevent breaking the AST parser.
+ *
+ * @private
+ * @param {string} code The source code to be parsed.
+ *
+ * @returns {string} The source code with shebangs commented (if any).
+ */
+const preprocessShebangs = (code) => code.replace('#!', '// #!');
+
+/**
+ * Saves a Class-Responsibility-Collaboration report to the filesystem.
+ *
+ * @private
+ * @param {string} report   The CRC Model report.
+ * @param {string} filepath The filesystem location for the report.
+ *
+ * @throws {Error} throws an `Error` if the report cannot be saved.
+ *
+ * @returns {void}
+ */
+const saveToFile = (report, filepath) => {
+    const buffer = new Buffer(report);
+    const msg = 'Class-Responsibility-Collaborators report';
+
+    fs.open(filepath, 'w', (err, fd) => {
+        /* istanbul ignore next: standard error handling for 3rd-party lib */
+        if (err) {
+            throw err;
+        }
+
+        fs.write(fd, buffer, 0, buffer.length, null, (err) => {
+            /* istanbul ignore next: standard error handling for 3rd-party lib */
+            if (err) {
+                throw err;
+            }
+            fs.close(fd, () => {
+                console.info(`${logTag} Saved ${msg} to ${filepath}.`);
+            });
+        });
+    });
+};
+
+/**
+ * Saves `CrcModels` to file.
+ *
+ * @private
+ * @param {array&lt;string>} files  A list of files to be parsed.
+ * @param {string} reportFilePath The filesystem location for the report.
+ *
+ * @returns {void}
+ */
+const generateReport = (files, output) => {
+    concat(files).then((code) => {
+        CrcModelVisitor.customDeclarators = [
+            'ClassDeclaration',
+            'ClassExpression',
+            'VariableDeclaration',
+            'VariableDeclarator'
+        ];
+        const crcModelList = new CrcModelList(preprocessShebangs(code));
+        const template = fs.readFileSync(path.resolve(__dirname, 'templates', 'crc-card.html'));
+        const formatter = new CrcModelFormatter(template);
+        const report = formatter.format(crcModelList);
+        saveToFile(report, output);
+        CrcModelVisitor.customDeclarators = CrcModelVisitor.defaultDeclarators;
+    }, (reason) => {
+        console.error(logTag, reason);
+    });
+};
+
+/**
+ * A command-line interface that creates a Class-Responsibility-Collaborators report.
+ */
+program
+    .version(version)
+    .description('Generates a Class-Responsibility-Collaboration report for analysis and refactoring.')
+    .arguments('&lt;files>')
+    .option('-o, --output [output]', 'The report destination. Defaults to "./crc-model-report."')
+    .option('-x, --exclude [glob]', 'A glob of files to exclude from analysis."')
+    .action((filePattern) => {
+        glob(filePattern, (err, files) => {
+            /* istanbul ignore next: standard error handling for 3rd-party lib */
+            if (err) {
+                console.error(`${logTag} glob error`, err);
+            }
+            const destFile = program.output || './reports/crc-model-report.md';
+            const destPath = path.dirname(destFile);
+            mkdirp(destPath, (err) => {
+                /* istanbul ignore next: standard error handling for 3rd-party lib */
+                if (err) {
+                    console.error(`${logTag} mkdirp error`, err);
+                }
+                else {
+                    /* istanbul ignore next: standard error handling for 3rd-party lib */
+                    try {
+                        generateReport(files, destFile);
+                    }
+                    catch (err) {
+                        console.error(logTag, err);
+                    }
+                }
+            });
+        });
+    });
+
+const isCli = require.main === module;
+
+/* istanbul ignore next */
+if (isCli) {
+    program.parse(process.argv);
+}
+
+module.exports = program;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Nov 13 2017 09:11:46 GMT-0600 (CST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

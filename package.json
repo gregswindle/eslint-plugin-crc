@@ -130,7 +130,7 @@
     "security:patch": "snyk wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
-    "test": "snyk test && ./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
     "version": null,
     "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test",
     "snyk-protect": "snyk protect",

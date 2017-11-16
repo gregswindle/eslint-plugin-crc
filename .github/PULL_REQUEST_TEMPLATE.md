@@ -35,10 +35,6 @@ replace this line and the following task completion line._
 
 - [ ] The source code is 100% covered with passing specs.
 
-#### 4. Contributor License Agreement (CLA)
-
-- [ ] I have signed the [Contributor License Agreement (CLA)][cla-individual-url].
-
 > **:information_source: These tasks are not required to open a PR, and may be addresses while the PR is open.**
 
 [cla-individual-url]: https://www.clahub.com/agreements/gregswindle/eslint-plugin-crc

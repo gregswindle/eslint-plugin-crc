@@ -29,18 +29,26 @@
   },
   "contributors": [],
   "dependencies": {
+    "async": "2.6.0",
+    "caniuse-lite": "1.0.30000766",
+    "color-convert": "1.9.1",
     "concat": "1.0.3",
+    "conventional-changelog": "1.1.7",
+    "conventional-recommended-bump": "1.0.3",
+    "diff": "3.4.0",
     "eslint": "4.11.0",
     "espree": "3.5.2",
     "estraverse": "4.2.0",
     "global": "4.3.2",
     "lodash": "4.17.4",
     "minami": "1.2.3",
+    "minimist": "1.2.0",
     "mkdirp": "0.5.1",
     "relative-path": "1.1.0",
     "require-dir": "0.3.2",
     "requireindex": "1.1.0",
-    "shebang-loader": "0.0.1"
+    "shebang-loader": "0.0.1",
+    "type-detect": "4.0.5"
   },
   "devDependencies": {
     "babel-register": "6.26.0",
@@ -64,9 +72,9 @@
     "semantic-release": "8.2.0",
     "semantic-release-cli": "3.2.5",
     "sinon": "4.1.2",
-    "snyk": "1.49.2",
+    "snyk": "1.49.3",
     "standard-version": "4.2.0",
-    "uglify-js": "3.1.9"
+    "uglify-js": "3.1.10"
   },
   "engines": {
     "node": ">=6"

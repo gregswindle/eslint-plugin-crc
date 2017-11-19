@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>crc-model-list-visitor.js - Documentation</title>
+    <title>rules/generate-crc.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">crc-model-list-visitor.js</h1>
+    <h1 class="page-title">rules/generate-crc.js</h1>
     
 
     
@@ -40,28 +40,49 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * The API contract that most visitors should extend.
- *
- * @interface
+ * @fileoverview Generate class-responsibilities-collaborators models to assess and refactor JavaScript source code.
+ * @author Greg Swindle
  */
-class CrcModelListVisitor {
 
-    /**
-     * Perform operations on a `CrcModelList`.
-     *
-     * @abstract
-     * @param {CrcModelList} crcModelList An array of `CrcModels`.
-     *
-     * @returns {void}
-     */
-    /*eslint no-unused-vars: "off"*/
-    /* istanbul ignore next: this is an interface method */
-    visit(crcModelList) {
-        throw new Error('Not implemented.');
+
+//------------------------------------------------------------------------------
+// Rule Definition
+//------------------------------------------------------------------------------
+
+module.exports = {
+    meta: {
+        docs: {
+            description: 'Generate class-responsibilities-collaborators models to assess and refactor JavaScript source code.',
+            category: 'Fill me in',
+            recommended: false
+        },
+        fixable: null,  // Or "code" or "whitespace"
+        schema: [
+            // Fill in your schema
+        ]
+    },
+
+    create(/*Context*/) {
+
+        // Variables should be defined here
+
+        //----------------------------------------------------------------------
+        // Helpers
+        //----------------------------------------------------------------------
+
+        // Any helper functions should go here or else delete this section
+
+        //----------------------------------------------------------------------
+        // Public
+        //----------------------------------------------------------------------
+
+        return {
+
+            // Give me methods
+
+        };
     }
-}
-
-module.exports = CrcModelListVisitor;
+};
 </code></pre>
         </article>
     </section>

@@ -1,10 +1,116 @@
-## Refactoring catalog
+> Fowler, M. (2013, December 10). Catalog of Refactorings. Retrieved November 18, 2017, from https://refactoring.com/catalog/
 
-### Add Parameter
+## Table of contents
 
-**Tags:** method calls
+<!-- toc -->
+
+1. [Add Parameter](#add-parameter)
+1. [Change Bidirectional Association to Unidirectional](#change-bidirectional-association-to-unidirectional)
+1. [Change Reference to Value](#change-reference-to-value)
+1. [Change Unidirectional Association to Bidirectional](#change-unidirectional-association-to-bidirectional)
+1. [Change Value to Reference](#change-value-to-reference)
+1. [Collapse Hierarchy](#collapse-hierarchy)
+1. [Consolidate Conditional Expression](#consolidate-conditional-expression)
+1. [Consolidate Duplicate Conditional Fragments](#consolidate-duplicate-conditional-fragments)
+1. [Decompose Conditional](#decompose-conditional)
+1. [Duplicate Observed Data](#duplicate-observed-data)
+1. [Dynamic Method Definition](#dynamic-method-definition)
+1. [Eagerly Initialized Attribute](#eagerly-initialized-attribute)
+1. [Encapsulate Collection](#encapsulate-collection)
+1. [Encapsulate Downcast](#encapsulate-downcast)
+1. [Encapsulate Field](#encapsulate-field)
+1. [Extract Class](#extract-class)
+1. [Extract Interface](#extract-interface)
+1. [Extract Method](#extract-method)
+1. [Extract Module](#extract-module)
+1. [Extract Subclass](#extract-subclass)
+1. [Extract Superclass](#extract-superclass)
+1. [Extract Surrounding Method](#extract-surrounding-method)
+1. [Extract Variable](#extract-variable)
+1. [Form Template Method](#form-template-method)
+1. [Hide Delegate](#hide-delegate)
+1. [Hide Method](#hide-method)
+1. [Inline Class](#inline-class)
+1. [Inline Method](#inline-method)
+1. [Inline Module](#inline-module)
+1. [Inline Temp](#inline-temp)
+1. [Introduce Assertion](#introduce-assertion)
+1. [Introduce Class Annotation](#introduce-class-annotation)
+1. [Introduce Expression Builder](#introduce-expression-builder)
+1. [Introduce Foreign Method](#introduce-foreign-method)
+1. [Introduce Gateway](#introduce-gateway)
+1. [Introduce Local Extension](#introduce-local-extension)
+1. [Introduce Named Parameter](#introduce-named-parameter)
+1. [Introduce Null Object](#introduce-null-object)
+1. [Introduce Parameter Object](#introduce-parameter-object)
+1. [Isolate Dynamic Receptor](#isolate-dynamic-receptor)
+1. [Lazily Initialized Attribute](#lazily-initialized-attribute)
+1. [Move Eval from Runtime to Parse Time](#move-eval-from-runtime-to-parse-time)
+1. [Move Field](#move-field)
+1. [Move Method](#move-method)
+1. [Parameterize Method](#parameterize-method)
+1. [Preserve Whole Object](#preserve-whole-object)
+1. [Pull Up Constructor Body](#pull-up-constructor-body)
+1. [Pull Up Field](#pull-up-field)
+1. [Pull Up Method](#pull-up-method)
+1. [Push Down Field](#push-down-field)
+1. [Push Down Method](#push-down-method)
+1. [Recompose Conditional](#recompose-conditional)
+1. [Remove Assignments to Parameters](#remove-assignments-to-parameters)
+1. [Remove Control Flag](#remove-control-flag)
+1. [Remove Middle Man](#remove-middle-man)
+1. [Remove Named Parameter](#remove-named-parameter)
+1. [Remove Parameter](#remove-parameter)
+1. [Remove Setting Method](#remove-setting-method)
+1. [Remove Unused Default Parameter](#remove-unused-default-parameter)
+1. [Rename Method](#rename-method)
+1. [Replace Abstract Superclass with Module](#replace-abstract-superclass-with-module)
+1. [Replace Array with Object](#replace-array-with-object)
+1. [Replace Conditional with Polymorphism](#replace-conditional-with-polymorphism)
+1. [Replace Constructor with Factory Method](#replace-constructor-with-factory-method)
+1. [Replace Data Value with Object](#replace-data-value-with-object)
+1. [Replace Delegation With Hierarchy](#replace-delegation-with-hierarchy)
+1. [Replace Delegation with Inheritance](#replace-delegation-with-inheritance)
+1. [Replace Dynamic Receptor with Dynamic Method Definition](#replace-dynamic-receptor-with-dynamic-method-definition)
+1. [Replace Error Code with Exception](#replace-error-code-with-exception)
+1. [Replace Exception with Test](#replace-exception-with-test)
+1. [Replace Hash with Object](#replace-hash-with-object)
+1. [Replace Inheritance with Delegation](#replace-inheritance-with-delegation)
+1. [Replace Loop with Collection Closure Method](#replace-loop-with-collection-closure-method)
+1. [Replace Magic Number with Symbolic Constant](#replace-magic-number-with-symbolic-constant)
+1. [Replace Method with Method Object](#replace-method-with-method-object)
+1. [Replace Nested Conditional with Guard Clauses](#replace-nested-conditional-with-guard-clauses)
+1. [Replace Parameter with Explicit Methods](#replace-parameter-with-explicit-methods)
+1. [Replace Parameter with Method](#replace-parameter-with-method)
+1. [Replace Record with Data Class](#replace-record-with-data-class)
+1. [Replace Subclass with Fields](#replace-subclass-with-fields)
+1. [Replace Temp with Chain](#replace-temp-with-chain)
+1. [Replace Temp with Query](#replace-temp-with-query)
+1. [Replace Type Code with Class](#replace-type-code-with-class)
+1. [Replace Type Code with Module Extension](#replace-type-code-with-module-extension)
+1. [Replace Type Code With Polymorphism](#replace-type-code-with-polymorphism)
+1. [Replace Type Code with State/Strategy](#replace-type-code-with-statestrategy)
+1. [Replace Type Code with Subclasses](#replace-type-code-with-subclasses)
+1. [Self Encapsulate Field](#self-encapsulate-field)
+1. [Separate Query from Modifier](#separate-query-from-modifier)
+1. [Split Temporary Variable](#split-temporary-variable)
+1. [Substitute Algorithm](#substitute-algorithm)
+
+<!-- tocstop -->
+
+<!-- tocend -->
+
+---
+
+## Add Parameter
+
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 A method needs more information from its caller.
+
+### Solution
 
 Add a parameter for an object that can pass on this information.
 
@@ -12,11 +118,15 @@ Add a parameter for an object that can pass on this information.
 
 ---
 
-### Change Bidirectional Association to Unidirectional
+## Change Bidirectional Association to Unidirectional
 
-**Tags:** associations, organizing data
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have a two-way association but one class no longer needs features from the other.
+
+### Solution
 
 Drop the unneeded end of the association.
 
@@ -24,11 +134,15 @@ Drop the unneeded end of the association.
 
 ---
 
-### Change Reference to Value
+## Change Reference to Value
 
-**Tags:** associations, organizing data
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have a reference object that is small, immutable, and awkward to manage.
+
+### Solution
 
 Turn it into a value object.
 
@@ -36,11 +150,15 @@ Turn it into a value object.
 
 ---
 
-### Change Unidirectional Association to Bidirectional
+## Change Unidirectional Association to Bidirectional
 
-**Tags:** associations, organizing data
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have two classes that need to use each other's features, but there is only a one-way link.
+
+### Solution
 
 Add back pointers, and change modifiers to update both sets.
 
@@ -48,11 +166,15 @@ Add back pointers, and change modifiers to update both sets.
 
 ---
 
-### Change Value to Reference
+## Change Value to Reference
 
-**Tags:** associations, organizing data
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have a class with many equal instances that you want to replace with a single object.
+
+### Solution
 
 Turn the object into a reference object.
 
@@ -60,11 +182,15 @@ Turn the object into a reference object.
 
 ---
 
-### Collapse Hierarchy
+## Collapse Hierarchy
 
-**Tags:** inheritance
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 A superclass and subclass are not very different.
+
+### Solution
 
 Merge them together.
 
@@ -72,11 +198,15 @@ Merge them together.
 
 ---
 
-### Consolidate Conditional Expression
+## Consolidate Conditional Expression
 
-**Tags:** conditionals, composing methods
+**Categories:** <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You have a sequence of conditional tests with the same result.
+
+### Solution
 
 Combine them into a single conditional expression and extract it.
 
@@ -84,11 +214,15 @@ Combine them into a single conditional expression and extract it.
 
 ---
 
-### Consolidate Duplicate Conditional Fragments
+## Consolidate Duplicate Conditional Fragments
 
-**Tags:** conditionals
+**Categories:** <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd>
+
+### Problem
 
 The same fragment of code is in all branches of a conditional expression.
+
+### Solution
 
 Move it outside of the expression.
 
@@ -96,11 +230,15 @@ Move it outside of the expression.
 
 ---
 
-### Decompose Conditional
+## Decompose Conditional
 
-**Tags:** conditionals, composing methods
+**Categories:** <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You have a complicated conditional (if-then-else) statement.
+
+### Solution
 
 Extract methods from the condition, then part, and else parts.
 
@@ -108,11 +246,15 @@ Extract methods from the condition, then part, and else parts.
 
 ---
 
-### Duplicate Observed Data
+## Duplicate Observed Data
 
-**Tags:** associations, organizing data
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have domain data available only in a GUI control, and domain methods need access.
+
+### Solution
 
 Copy the data to a domain object. Set up an observer to synchronize the two pieces of data.
 
@@ -120,11 +262,15 @@ Copy the data to a domain object. Set up an observer to synchronize the two piec
 
 ---
 
-### Dynamic Method Definition
+## Dynamic Method Definition
 
-**Tags:** defining methods
+**Categories:** <kbd>[defining methods](Refactorings-by-category#defining-methods)</kbd>
+
+### Problem
 
 You have methods that can be defined more concisely if defined dynamically.
+
+### Solution
 
 Define the methods dynamically.
 
@@ -132,11 +278,15 @@ Define the methods dynamically.
 
 ---
 
-### Eagerly Initialized Attribute
+## Eagerly Initialized Attribute
 
-**Tags:** organizing data
+**Categories:** <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 Lazily initialization is causing more confusion than benefit
+
+### Solution
 
 Initialize the attribute when you instantiate the object
 
@@ -144,11 +294,15 @@ Initialize the attribute when you instantiate the object
 
 ---
 
-### Encapsulate Collection
+## Encapsulate Collection
 
-**Tags:** encapsulation, organizing data
+**Categories:** <kbd>[encapsulation](Refactorings-by-category#encapsulation)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 A method returns a collection.
+
+### Solution
 
 Make it return a read-only view and provide add/remove methods.
 
@@ -156,11 +310,15 @@ Make it return a read-only view and provide add/remove methods.
 
 ---
 
-### Encapsulate Downcast
+## Encapsulate Downcast
 
-**Tags:** encapsulation, method calls, inheritance
+**Categories:** <kbd>[encapsulation](Refactorings-by-category#encapsulation)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 A method returns an object that needs to be downcasted by its callers.
+
+### Solution
 
 Move the downcast to within the method.
 
@@ -168,11 +326,15 @@ Move the downcast to within the method.
 
 ---
 
-### Encapsulate Field
+## Encapsulate Field
 
-**Tags:** encapsulation, organizing data
+**Categories:** <kbd>[encapsulation](Refactorings-by-category#encapsulation)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 There is a public field.
+
+### Solution
 
 Make it private and provide accessors.
 
@@ -180,11 +342,15 @@ Make it private and provide accessors.
 
 ---
 
-### Extract Class
+## Extract Class
 
-**Tags:** associations, class extraction, moving features
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[class extraction](Refactorings-by-category#class-extraction)</kbd> , <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 You have one class doing work that should be done by two.
+
+### Solution
 
 Create a new class and move the relevant fields and methods from the old class into the new class.
 
@@ -192,11 +358,15 @@ Create a new class and move the relevant fields and methods from the old class i
 
 ---
 
-### Extract Interface
+## Extract Interface
 
-**Tags:** interfaces, class extraction, inheritance
+**Categories:** <kbd>[interfaces](Refactorings-by-category#interfaces)</kbd> , <kbd>[class extraction](Refactorings-by-category#class-extraction)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
 
-Several clients use the same subset of a class's interface, or two classes have part of their interfaces in common.
+### Problem
+
+Several clients use the same subset of a class's interface, or two classes have part of their <kbd>[interfaces](Refactorings-by-category#interfaces)</kbd>  in common.
+
+### Solution
 
 Extract the subset into an interface.
 
@@ -204,11 +374,15 @@ Extract the subset into an interface.
 
 ---
 
-### Extract Method
+## Extract Method
 
-**Tags:** composing methods
+**Categories:** <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You have a code fragment that can be grouped together.
+
+### Solution
 
 Turn the fragment into a method whose name explains the purpose of the method.
 
@@ -216,11 +390,15 @@ Turn the fragment into a method whose name explains the purpose of the method.
 
 ---
 
-### Extract Module
+## Extract Module
 
-**Tags:** class extraction, inheritance, moving features
+**Categories:** <kbd>[class extraction](Refactorings-by-category#class-extraction)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd> , <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 You have duplicated behavior in two or more classes.
+
+### Solution
 
 You have duplicated behavior in two or more classes.
 
@@ -228,11 +406,15 @@ You have duplicated behavior in two or more classes.
 
 ---
 
-### Extract Subclass
+## Extract Subclass
 
-**Tags:** class extraction, inheritance
+**Categories:** <kbd>[class extraction](Refactorings-by-category#class-extraction)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 A class has features that are used only in some instances.
+
+### Solution
 
 Create a subclass for that subset of features.
 
@@ -240,11 +422,15 @@ Create a subclass for that subset of features.
 
 ---
 
-### Extract Superclass
+## Extract Superclass
 
-**Tags:** class extraction, inheritance
+**Categories:** <kbd>[class extraction](Refactorings-by-category#class-extraction)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 You have two classes with similar features.
+
+### Solution
 
 Create a superclass and move the common features to the superclass.
 
@@ -252,11 +438,15 @@ Create a superclass and move the common features to the superclass.
 
 ---
 
-### Extract Surrounding Method
+## Extract Surrounding Method
 
-**Tags:** composing methods
+**Categories:** <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You have two methods that contain nearly identical code. The variance is in the middle of the method.
+
+### Solution
 
 Extract the duplication into a method that accepts a block and yields back to the caller to execute the unique code.
 
@@ -264,11 +454,15 @@ Extract the duplication into a method that accepts a block and yields back to th
 
 ---
 
-### Extract Variable
+## Extract Variable
 
-**Tags:** local variables, composing methods
+**Categories:** <kbd>[local variables](Refactorings-by-category#local-variables)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You have a complicated expression.
+
+### Solution
 
 Put the result of the expression, or parts of the expression, in a temporary variable with a name that explains the purpose.
 
@@ -276,11 +470,15 @@ Put the result of the expression, or parts of the expression, in a temporary var
 
 ---
 
-### Form Template Method
+## Form Template Method
 
-**Tags:** GOF Patterns, inheritance, composing methods
+**Categories:** <kbd>[GOF Patterns](Refactorings-by-category#GOF-Patterns)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You have two methods in subclasses that perform similar steps in the same order, yet the steps are different.
+
+### Solution
 
 Get the steps into methods with the same signature, so that the original methods become the same. Then you can pull them up.
 
@@ -288,11 +486,15 @@ Get the steps into methods with the same signature, so that the original methods
 
 ---
 
-### Hide Delegate
+## Hide Delegate
 
-**Tags:** encapsulation, moving features
+**Categories:** <kbd>[encapsulation](Refactorings-by-category#encapsulation)</kbd> , <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 A client is calling a delegate class of an object.
+
+### Solution
 
 Create methods on the server to hide the delegate.
 
@@ -300,11 +502,15 @@ Create methods on the server to hide the delegate.
 
 ---
 
-### Hide Method
+## Hide Method
 
-**Tags:** encapsulation, method calls
+**Categories:** <kbd>[encapsulation](Refactorings-by-category#encapsulation)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 A method is not used by any other class.
+
+### Solution
 
 Make the method private.
 
@@ -312,11 +518,15 @@ Make the method private.
 
 ---
 
-### Inline Class
+## Inline Class
 
-**Tags:** associations, moving features
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 A class isn't doing very much.
+
+### Solution
 
 Move all its features into another class and delete it.
 
@@ -324,11 +534,15 @@ Move all its features into another class and delete it.
 
 ---
 
-### Inline Method
+## Inline Method
 
-**Tags:** composing methods
+**Categories:** <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 A method's body is just as clear as its name.
+
+### Solution
 
 Put the method's body into the body of its callers and remove the method.
 
@@ -336,11 +550,15 @@ Put the method's body into the body of its callers and remove the method.
 
 ---
 
-### Inline Module
+## Inline Module
 
-**Tags:** moving features
+**Categories:** <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 The resultant indirection of the included module is no longer worth the duplica- tion it is preventing.
+
+### Solution
 
 Merge the module into the including class.
 
@@ -348,11 +566,15 @@ Merge the module into the including class.
 
 ---
 
-### Inline Temp
+## Inline Temp
 
-**Tags:** local variables, composing methods
+**Categories:** <kbd>[local variables](Refactorings-by-category#local-variables)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You have a temp that is assigned to once with a simple expression, and the temp is getting in the way of other refactorings.
+
+### Solution
 
 Replace all references to that temp with the expression.
 
@@ -360,11 +582,15 @@ Replace all references to that temp with the expression.
 
 ---
 
-### Introduce Assertion
+## Introduce Assertion
 
-**Tags:** conditionals
+**Categories:** <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd>
+
+### Problem
 
 A section of code assumes something about the state of the program.
+
+### Solution
 
 Make the assumption explicit with an assertion.
 
@@ -372,11 +598,15 @@ Make the assumption explicit with an assertion.
 
 ---
 
-### Introduce Class Annotation
+## Introduce Class Annotation
 
-**Tags:** defining methods
+**Categories:** <kbd>[defining methods](Refactorings-by-category#defining-methods)</kbd>
+
+### Problem
 
 You have a method whose implementation steps are so common that they can safely be hidden away.
+
+### Solution
 
 Declare the behavior by calling a class method from the class definition.
 
@@ -384,11 +614,15 @@ Declare the behavior by calling a class method from the class definition.
 
 ---
 
-### Introduce Expression Builder
+## Introduce Expression Builder
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 You want to interact with a public interface in a more fluent manner and not muddy the interface of an existing object.
+
+### Solution
 
 Introduce an Expression Builder and create an interface specific to your application.
 
@@ -396,11 +630,15 @@ Introduce an Expression Builder and create an interface specific to your applica
 
 ---
 
-### Introduce Foreign Method
+## Introduce Foreign Method
 
-**Tags:** vendor libraries, moving features
+**Categories:** <kbd>[vendor libraries](Refactorings-by-category#vendor-libraries)</kbd> , <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 A server class you are using needs an additional method, but you can't modify the class.
+
+### Solution
 
 Create a method in the client class with an instance of the server class as its first argument.
 
@@ -408,11 +646,15 @@ Create a method in the client class with an instance of the server class as its 
 
 ---
 
-### Introduce Gateway
+## Introduce Gateway
 
-**Tags:** vendor libraries, method calls
+**Categories:** <kbd>[vendor libraries](Refactorings-by-category#vendor-libraries)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 You want to interact with a complex API of an external system or resource in a simplified way
+
+### Solution
 
 Introduce a Gateway that encapsulates access to an external system or resource
 
@@ -420,11 +662,15 @@ Introduce a Gateway that encapsulates access to an external system or resource
 
 ---
 
-### Introduce Local Extension
+## Introduce Local Extension
 
-**Tags:** vendor libraries, moving features
+**Categories:** <kbd>[vendor libraries](Refactorings-by-category#vendor-libraries)</kbd> , <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 A server class you are using needs several additional methods, but you can't modify the class.
+
+### Solution
 
 Create a new class that contains these extra methods. Make this extension class a subclass or a wrapper of the original.
 
@@ -432,11 +678,15 @@ Create a new class that contains these extra methods. Make this extension class 
 
 ---
 
-### Introduce Named Parameter
+## Introduce Named Parameter
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 The parameters in a method call cannot easily be deduced from the name of the method you are calling.
+
+### Solution
 
 Convert the parameter list into a Hash, and use the keys of the Hash as names for the parameters.
 
@@ -444,11 +694,15 @@ Convert the parameter list into a Hash, and use the keys of the Hash as names fo
 
 ---
 
-### Introduce Null Object
+## Introduce Null Object
 
-**Tags:** inheritance, conditionals
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd> , <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd>
+
+### Problem
 
 You have repeated checks for a null value.
+
+### Solution
 
 Replace the null value with a null object.
 
@@ -456,11 +710,15 @@ Replace the null value with a null object.
 
 ---
 
-### Introduce Parameter Object
+## Introduce Parameter Object
 
-**Tags:** class extraction, method calls
+**Categories:** <kbd>[class extraction](Refactorings-by-category#class-extraction)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 You have a group of parameters that naturally go together.
+
+### Solution
 
 Replace them with an object.
 
@@ -468,11 +726,15 @@ Replace them with an object.
 
 ---
 
-### Isolate Dynamic Receptor
+## Isolate Dynamic Receptor
 
-**Tags:** defining methods
+**Categories:** <kbd>[defining methods](Refactorings-by-category#defining-methods)</kbd>
+
+### Problem
 
 A class utilizing method_missing has become painful to alter.
+
+### Solution
 
 Introduce a new class and move the method_missing logic to that class.
 
@@ -480,11 +742,15 @@ Introduce a new class and move the method_missing logic to that class.
 
 ---
 
-### Lazily Initialized Attribute
+## Lazily Initialized Attribute
 
-**Tags:** organizing data
+**Categories:** <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 An attribute takes time to initialize but is only accessed rarely
+
+### Solution
 
 Initialize when it's first used
 
@@ -492,11 +758,15 @@ Initialize when it's first used
 
 ---
 
-### Move Eval from Runtime to Parse Time
+## Move Eval from Runtime to Parse Time
 
-**Tags:** composing methods
+**Categories:** <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You need to use eval but want to limit the number of times eval is necessary.
+
+### Solution
 
 Move the use of eval from within the method definition to defining the method itself.
 
@@ -504,11 +774,15 @@ Move the use of eval from within the method definition to defining the method it
 
 ---
 
-### Move Field
+## Move Field
 
-**Tags:** moving features
+**Categories:** <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 A field is, or will be, used by another class more than the class on which it is defined.
+
+### Solution
 
 Create a new field in the target class, and change all its users.
 
@@ -516,11 +790,15 @@ Create a new field in the target class, and change all its users.
 
 ---
 
-### Move Method
+## Move Method
 
-**Tags:** moving features
+**Categories:** <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 A method is, or will be, using or used by more features of another class than the class on which it is defined.
+
+### Solution
 
 Create a new method with a similar body in the class it uses most. Either turn the old method into a simple delegation, or remove it altogether.
 
@@ -528,11 +806,15 @@ Create a new method with a similar body in the class it uses most. Either turn t
 
 ---
 
-### Parameterize Method
+## Parameterize Method
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 Several methods do similar things but with different values contained in the method body.
+
+### Solution
 
 Create one method that uses a parameter for the different values.
 
@@ -540,11 +822,15 @@ Create one method that uses a parameter for the different values.
 
 ---
 
-### Preserve Whole Object
+## Preserve Whole Object
 
-**Tags:** encapsulation, method calls
+**Categories:** <kbd>[encapsulation](Refactorings-by-category#encapsulation)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 You are getting several values from an object and passing these values as parameters in a method call.
+
+### Solution
 
 Send the whole object instead.
 
@@ -555,11 +841,15 @@ Send the whole object instead.
 
 ---
 
-### Pull Up Constructor Body
+## Pull Up Constructor Body
 
-**Tags:** inheritance
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 You have constructors on subclasses with mostly identical bodies.
+
+### Solution
 
 Create a superclass constructor; call this from the subclass methods.
 
@@ -567,11 +857,15 @@ Create a superclass constructor; call this from the subclass methods.
 
 ---
 
-### Pull Up Field
+## Pull Up Field
 
-**Tags:** inheritance
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 Two subclasses have the same field.
+
+### Solution
 
 Move the field to the superclass.
 
@@ -579,11 +873,15 @@ Move the field to the superclass.
 
 ---
 
-### Pull Up Method
+## Pull Up Method
 
-**Tags:** inheritance
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 You have methods with identical results on subclasses.
+
+### Solution
 
 Move them to the superclass.
 
@@ -591,11 +889,15 @@ Move them to the superclass.
 
 ---
 
-### Push Down Field
+## Push Down Field
 
-**Tags:** inheritance
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 A field is used only by some subclasses.
+
+### Solution
 
 Move the field to those subclasses.
 
@@ -603,11 +905,15 @@ Move the field to those subclasses.
 
 ---
 
-### Push Down Method
+## Push Down Method
 
-**Tags:** inheritance
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 Behavior on a superclass is relevant only for some of its subclasses.
+
+### Solution
 
 Move it to those subclasses.
 
@@ -615,11 +921,15 @@ Move it to those subclasses.
 
 ---
 
-### Recompose Conditional
+## Recompose Conditional
 
-**Tags:** conditionals
+**Categories:** <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd>
+
+### Problem
 
 You have conditional code that is unnecessarily verbose and does not use the most readable Ruby construct.
+
+### Solution
 
 Replace the conditional code with the more idiomatic Ruby construct.
 
@@ -627,11 +937,15 @@ Replace the conditional code with the more idiomatic Ruby construct.
 
 ---
 
-### Remove Assignments to Parameters
+## Remove Assignments to Parameters
 
-**Tags:** local variables, composing methods
+**Categories:** <kbd>[local variables](Refactorings-by-category#local-variables)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 The code assigns to a parameter.
+
+### Solution
 
 Use a temporary variable instead.
 
@@ -639,11 +953,15 @@ Use a temporary variable instead.
 
 ---
 
-### Remove Control Flag
+## Remove Control Flag
 
-**Tags:** method calls, conditionals
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd> , <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd>
+
+### Problem
 
 You have a variable that is acting as a control flag for a series of boolean expressions.
+
+### Solution
 
 Use a break or return instead.
 
@@ -651,11 +969,15 @@ Use a break or return instead.
 
 ---
 
-### Remove Middle Man
+## Remove Middle Man
 
-**Tags:** moving features
+**Categories:** <kbd>[moving features](Refactorings-by-category#moving-features)</kbd>
+
+### Problem
 
 A class is doing too much simple delegation.
+
+### Solution
 
 Get the client to call the delegate directly.
 
@@ -663,11 +985,15 @@ Get the client to call the delegate directly.
 
 ---
 
-### Remove Named Parameter
+## Remove Named Parameter
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 The fluency that the named parameter brings is no longer worth the complexity on the receiver.
+
+### Solution
 
 Convert the named parameter Hash to a standard parameter list.
 
@@ -675,11 +1001,15 @@ Convert the named parameter Hash to a standard parameter list.
 
 ---
 
-### Remove Parameter
+## Remove Parameter
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 A parameter is no longer used by the method body.
+
+### Solution
 
 Remove it.
 
@@ -687,11 +1017,15 @@ Remove it.
 
 ---
 
-### Remove Setting Method
+## Remove Setting Method
 
-**Tags:** encapsulation, method calls
+**Categories:** <kbd>[encapsulation](Refactorings-by-category#encapsulation)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 A field should be set at creation time and never altered.
+
+### Solution
 
 Remove any setting method for that field.
 
@@ -699,11 +1033,15 @@ Remove any setting method for that field.
 
 ---
 
-### Remove Unused Default Parameter
+## Remove Unused Default Parameter
 
-**Tags:** defining methods
+**Categories:** <kbd>[defining methods](Refactorings-by-category#defining-methods)</kbd>
+
+### Problem
 
 A parameter has a default value, but the method is never called without the parameter.
+
+### Solution
 
 Remove the default value
 
@@ -711,11 +1049,15 @@ Remove the default value
 
 ---
 
-### Rename Method
+## Rename Method
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 The name of a method does not reveal its purpose.
+
+### Solution
 
 Change the name of the method.
 
@@ -723,11 +1065,15 @@ Change the name of the method.
 
 ---
 
-### Replace Abstract Superclass with Module
+## Replace Abstract Superclass with Module
 
-**Tags:** inheritance
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
 
-You have an inheritance hierarchy, but never intend to explicitly instantiate an instance of the superclass.
+### Problem
+
+You have an <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>  hierarchy, but never intend to explicitly instantiate an instance of the superclass.
+
+### Solution
 
 Replace the superclass with a module to better communicate your intention.
 
@@ -735,11 +1081,15 @@ Replace the superclass with a module to better communicate your intention.
 
 ---
 
-### Replace Array with Object
+## Replace Array with Object
 
-**Tags:** generic types, organizing data
+**Categories:** <kbd>[generic types](Refactorings-by-category#generic-types)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have an array in which certain elements mean different things.
+
+### Solution
 
 Replace the array with an object that has a field for each element.
 
@@ -747,11 +1097,15 @@ Replace the array with an object that has a field for each element.
 
 ---
 
-### Replace Conditional with Polymorphism
+## Replace Conditional with Polymorphism
 
-**Tags:** inheritance, conditionals
+**Categories:** <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd> , <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd>
+
+### Problem
 
 You have a conditional that chooses different behavior depending on the type of an object.
+
+### Solution
 
 Move each leg of the conditional to an overriding method in a subclass. Make the original method abstract.
 
@@ -759,11 +1113,15 @@ Move each leg of the conditional to an overriding method in a subclass. Make the
 
 ---
 
-### Replace Constructor with Factory Method
+## Replace Constructor with Factory Method
 
-**Tags:** interfaces, method calls
+**Categories:** <kbd>[interfaces](Refactorings-by-category#interfaces)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 You want to do more than simple construction when you create an object.
+
+### Solution
 
 Replace the constructor with a factory method.
 
@@ -771,11 +1129,15 @@ Replace the constructor with a factory method.
 
 ---
 
-### Replace Data Value with Object
+## Replace Data Value with Object
 
-**Tags:** generic types, organizing data
+**Categories:** <kbd>[generic types](Refactorings-by-category#generic-types)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have a data item that needs additional data or behavior.
+
+### Solution
 
 Turn the data item into an object.
 
@@ -783,11 +1145,15 @@ Turn the data item into an object.
 
 ---
 
-### Replace Delegation With Hierarchy
+## Replace Delegation With Hierarchy
 
-**Tags:** associations, inheritance
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 You’re using delegation and are often writing many simple delegations for the entire interface
+
+### Solution
 
 Make the delegate a module and include it into the delegating class.
 
@@ -795,11 +1161,15 @@ Make the delegate a module and include it into the delegating class.
 
 ---
 
-### Replace Delegation with Inheritance
+## Replace Delegation with Inheritance</kbd>
 
-**Tags:** associations, inheritance
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 You're using delegation and are often writing many simple delegations for the entire interface.
+
+### Solution
 
 Make the delegating class a subclass of the delegate.
 
@@ -807,11 +1177,15 @@ Make the delegating class a subclass of the delegate.
 
 ---
 
-### Replace Dynamic Receptor with Dynamic Method Definition
+## Replace Dynamic Receptor with Dynamic Method Definition
 
-**Tags:** defining methods
+**Categories:** <kbd>[defining methods](Refactorings-by-category#defining-methods)</kbd>
+
+### Problem
 
 You have methods you want to handle dynamically without the pain of debug- gingmethod_missing.
+
+### Solution
 
 Use dynamic method definition to define the necessary methods.
 
@@ -819,11 +1193,15 @@ Use dynamic method definition to define the necessary methods.
 
 ---
 
-### Replace Error Code with Exception
+## Replace Error Code with Exception
 
-**Tags:** errors, method calls
+**Categories:** <kbd>[errors](Refactorings-by-category#errors)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 A method returns a special code to indicate an error.
+
+### Solution
 
 Throw an exception instead.
 
@@ -831,11 +1209,15 @@ Throw an exception instead.
 
 ---
 
-### Replace Exception with Test
+## Replace Exception with Test
 
-**Tags:** errors, method calls, conditionals
+**Categories:** <kbd>[errors](Refactorings-by-category#errors)</kbd> , <kbd>[method calls](Refactorings-by-category#method-calls)</kbd> , <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd>
+
+### Problem
 
 You are throwing an exception on a condition the caller could have checked first.
+
+### Solution
 
 Change the caller to make the test first.
 
@@ -843,11 +1225,15 @@ Change the caller to make the test first.
 
 ---
 
-### Replace Hash with Object
+## Replace Hash with Object
 
-**Tags:** generic types
+**Categories:** <kbd>[generic types](Refactorings-by-category#generic-types)</kbd>
+
+### Problem
 
 You have a hash that stores several different types of objects, and is passed around and used for more than one purpose.
+
+### Solution
 
 Replace the hash with an object that has a field for each key
 
@@ -855,11 +1241,15 @@ Replace the hash with an object that has a field for each key
 
 ---
 
-### Replace Inheritance with Delegation
+## Replace Inheritance with Delegation
 
-**Tags:** associations, inheritance
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 A subclass uses only part of a superclasses interface or does not want to inherit data.
+
+### Solution
 
 Create a field for the superclass, adjust methods to delegate to the superclass, and remove the subclassing.
 
@@ -867,11 +1257,15 @@ Create a field for the superclass, adjust methods to delegate to the superclass,
 
 ---
 
-### Replace Loop with Collection Closure Method
+## Replace Loop with Collection Closure Method
 
-**Tags:** composing methods
+**Categories:** <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You are processing the elements of a collection in a loop.
+
+### Solution
 
 Replace the loop with a collection closure method.
 
@@ -879,11 +1273,15 @@ Replace the loop with a collection closure method.
 
 ---
 
-### Replace Magic Number with Symbolic Constant
+## Replace Magic Number with Symbolic Constant
 
-**Tags:** generic types, organizing data
+**Categories:** <kbd>[generic types](Refactorings-by-category#generic-types)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have a literal number with a particular meaning.
+
+### Solution
 
 Create a constant, name it after the meaning, and replace the number with it.
 
@@ -891,23 +1289,31 @@ Create a constant, name it after the meaning, and replace the number with it.
 
 ---
 
-### Replace Method with Method Object
+## Replace Method with Method Object
 
-**Tags:** associations, local variables, composing methods, defining methods
+**Categories:** <kbd>[associations](Refactorings-by-category#associations)</kbd> , <kbd>[local variables](Refactorings-by-category#local-variables)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd> , <kbd>[defining methods](Refactorings-by-category#defining-methods)</kbd>
 
-You have a long method that uses local variables in such a way that you cannot apply
+### Problem
 
-Turn the method into its own object so that all the local variables become fields on that object. You can then decompose the method into other methods on the same object.
+You have a long method that uses <kbd>[local variables](Refactorings-by-category#local-variables)</kbd>  in such a way that you cannot apply
+
+### Solution
+
+Turn the method into its own object so that all the <kbd>[local variables](Refactorings-by-category#local-variables)</kbd>  become fields on that object. You can then decompose the method into other methods on the same object.
 
 [more…](https://refactoring.com/catalog/replaceMethodWithMethodObject.html)
 
 ---
 
-### Replace Nested Conditional with Guard Clauses
+## Replace Nested Conditional with Guard Clauses
 
-**Tags:** conditionals
+**Categories:** <kbd>[conditionals](Refactorings-by-category#conditionals)</kbd>
+
+### Problem
 
 A method has conditional behavior that does not make clear what the normal path of execution is
+
+### Solution
 
 Use Guard Clauses for all the special cases
 
@@ -915,11 +1321,15 @@ Use Guard Clauses for all the special cases
 
 ---
 
-### Replace Parameter with Explicit Methods
+## Replace Parameter with Explicit Methods
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 You have a method that runs different code depending on the values of an enumerated parameter.
+
+### Solution
 
 Create a separate method for each value of the parameter.
 
@@ -927,11 +1337,15 @@ Create a separate method for each value of the parameter.
 
 ---
 
-### Replace Parameter with Method
+## Replace Parameter with Method
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 An object invokes a method, then passes the result as a parameter for a method. The receiver can also invoke this method.
+
+### Solution
 
 Remove the parameter and let the receiver invoke the method.
 
@@ -939,11 +1353,15 @@ Remove the parameter and let the receiver invoke the method.
 
 ---
 
-### Replace Record with Data Class
+## Replace Record with Data Class
 
-**Tags:** generic types, organizing data
+**Categories:** <kbd>[generic types](Refactorings-by-category#generic-types)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You need to interface with a record structure in a traditional programming environment.
+
+### Solution
 
 Make a dumb data object for the record.
 
@@ -951,11 +1369,15 @@ Make a dumb data object for the record.
 
 ---
 
-### Replace Subclass with Fields
+## Replace Subclass with Fields
 
-**Tags:** organizing data, inheritance
+**Categories:** <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 You have subclasses that vary only in methods that return constant data.
+
+### Solution
 
 Change the methods to superclass fields and eliminate the subclasses.
 
@@ -963,11 +1385,15 @@ Change the methods to superclass fields and eliminate the subclasses.
 
 ---
 
-### Replace Temp with Chain
+## Replace Temp with Chain
 
-**Tags:** local variables
+**Categories:** <kbd>[local variables](Refactorings-by-category#local-variables)</kbd>
+
+### Problem
 
 You are using a temporary variable to hold the result of an expression
+
+### Solution
 
 Change the methods to support chaining, thus removing the need for a temp.
 
@@ -975,11 +1401,15 @@ Change the methods to support chaining, thus removing the need for a temp.
 
 ---
 
-### Replace Temp with Query
+## Replace Temp with Query
 
-**Tags:** local variables, composing methods
+**Categories:** <kbd>[local variables](Refactorings-by-category#local-variables)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You are using a temporary variable to hold the result of an expression.
+
+### Solution
 
 Extract the expression into a method. Replace all references to the temp with the expression. The new method can then be used in other methods.
 
@@ -987,11 +1417,15 @@ Extract the expression into a method. Replace all references to the temp with th
 
 ---
 
-### Replace Type Code with Class
+## Replace Type Code with Class
 
-**Tags:** type codes, organizing data
+**Categories:** <kbd>[type codes](Refactorings-by-category#type-codes)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 A class has a numeric type code that does not affect its behavior.
+
+### Solution
 
 Replace the number with a new class.
 
@@ -999,11 +1433,15 @@ Replace the number with a new class.
 
 ---
 
-### Replace Type Code with Module Extension
+## Replace Type Code with Module Extension
 
-**Tags:** type codes
+**Categories:** <kbd>[type codes](Refactorings-by-category#type-codes)</kbd>
+
+### Problem
 
 You have a type code that affects the behavior of a class.
+
+### Solution
 
 Replace the type code with dynamic module extension.
 
@@ -1011,11 +1449,15 @@ Replace the type code with dynamic module extension.
 
 ---
 
-### Replace Type Code With Polymorphism
+## Replace Type Code With Polymorphism
 
-**Tags:** type codes
+**Categories:** <kbd>[type codes](Refactorings-by-category#type-codes)</kbd>
+
+### Problem
 
 You have a type code that affects the behavior of a class.
+
+### Solution
 
 Replace the type code with classes: one for each type code variant.
 
@@ -1023,11 +1465,15 @@ Replace the type code with classes: one for each type code variant.
 
 ---
 
-### Replace Type Code with State/Strategy
+## Replace Type Code with State/Strategy
 
-**Tags:** GOF Patterns, type codes, organizing data
+**Categories:** <kbd>[GOF Patterns](Refactorings-by-category#GOF-Patterns)</kbd> , <kbd>[type codes](Refactorings-by-category#type-codes)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You have a type code that affects the behavior of a class, but you cannot use subclassing.
+
+### Solution
 
 Replace the type code with a state object.
 
@@ -1035,11 +1481,15 @@ Replace the type code with a state object.
 
 ---
 
-### Replace Type Code with Subclasses
+## Replace Type Code with Subclasses
 
-**Tags:** type codes, organizing data, inheritance
+**Categories:** <kbd>[type codes](Refactorings-by-category#type-codes)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd> , <kbd>[inheritance](Refactorings-by-category#inheritance)</kbd>
+
+### Problem
 
 You have an immutable type code that affects the behavior of a class.
+
+### Solution
 
 Replace the type code with subclasses.
 
@@ -1047,11 +1497,15 @@ Replace the type code with subclasses.
 
 ---
 
-### Self Encapsulate Field
+## Self Encapsulate Field
 
-**Tags:** encapsulation, organizing data
+**Categories:** <kbd>[encapsulation](Refactorings-by-category#encapsulation)</kbd> , <kbd>[organizing data](Refactorings-by-category#organizing-data)</kbd>
+
+### Problem
 
 You are accessing a field directly, but the coupling to the field is becoming awkward.
+
+### Solution
 
 Create getting and setting methods for the field and use only those to access the field.
 
@@ -1059,11 +1513,15 @@ Create getting and setting methods for the field and use only those to access th
 
 ---
 
-### Separate Query from Modifier
+## Separate Query from Modifier
 
-**Tags:** method calls
+**Categories:** <kbd>[method calls](Refactorings-by-category#method-calls)</kbd>
+
+### Problem
 
 You have a method that returns a value but also changes the state of an object.
+
+### Solution
 
 Create two methods, one for the query and one for the modification.
 
@@ -1071,11 +1529,15 @@ Create two methods, one for the query and one for the modification.
 
 ---
 
-### Split Temporary Variable
+## Split Temporary Variable
 
-**Tags:** local variables, composing methods
+**Categories:** <kbd>[local variables](Refactorings-by-category#local-variables)</kbd> , <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You have a temporary variable assigned to more than once, but is not a loop variable nor a collecting temporary variable.
+
+### Solution
 
 Make a separate temporary variable for each assignment.
 
@@ -1083,11 +1545,15 @@ Make a separate temporary variable for each assignment.
 
 ---
 
-### Substitute Algorithm
+## Substitute Algorithm
 
-**Tags:** composing methods
+**Categories:** <kbd>[composing methods](Refactorings-by-category#composing-methods)</kbd>
+
+### Problem
 
 You want to replace an algorithm with one that is clearer.
+
+### Solution
 
 Replace the body of the method with the new algorithm.
 

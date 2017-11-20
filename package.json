@@ -64,7 +64,7 @@
     "semantic-release": "8.2.0",
     "semantic-release-cli": "3.2.5",
     "sinon": "4.1.2",
-    "snyk": "1.49.2",
+    "snyk": "1.49.4",
     "standard-version": "4.2.0",
     "uglify-js": "3.1.9"
   },

@@ -1,0 +1,20 @@
+install:
+  - ps: Install-Product node '7'
+  - npm install -g npm --silent --quiet
+  - npm install --silent --quiet
+
+platform:
+  - x64
+
+build: off
+
+test_script:
+  - node --version
+  - npm --version
+  - git --version
+  # Run tests sequentially to avoid io async issues
+  - npm test -- --runInBand
+
+branches:
+  only:
+  - master

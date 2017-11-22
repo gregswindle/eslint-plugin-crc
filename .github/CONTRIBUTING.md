@@ -788,7 +788,7 @@
  | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
  | [semantic-release@8.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 8.2.0 | MIT | dev | 
- | [snyk@1.49.4](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.49.4 | Apache-2.0 | dev | 
+ | [snyk@1.49.5](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.49.5 | Apache-2.0 | dev | 
  | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | ISC | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->

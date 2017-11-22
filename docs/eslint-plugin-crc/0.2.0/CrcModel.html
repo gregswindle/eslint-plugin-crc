@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModel.html">CrcModel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModel.html#.factory">factory</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelFormatter.html">CrcModelFormatter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelFormatter.html#format">format</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelList.html">CrcModelList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#filterBy">filterBy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#find">find</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#getPrototypeOf">getPrototypeOf</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelList.html#groupBy">groupBy</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html">CrcModelPrototypeVisitor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByClassExtends">getPrototypeByClassExtends</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByNewExpression">getPrototypeByNewExpression</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#getPrototypeByObjectCreate">getPrototypeByObjectCreate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelPrototypeVisitor.html#visit">visit</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModelVisitor.html">CrcModelVisitor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.getCrcModelOptions">getCrcModelOptions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.getModelDeclaredInRange">getModelDeclaredInRange</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.inOwnDeclarationScope">inOwnDeclarationScope</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModelVisitor.html#.isDeclaration">isDeclaration</a></span></li><li class="nav-heading">Interfaces</li><li class="nav-heading"><span class="nav-item-type type-interface">I</span><span class="nav-item-name"><a href="CrcModelListVisitor.html">CrcModelListVisitor</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateReport">generateReport</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#preprocessShebangs">preprocessShebangs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveToFile">saveToFile</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModel.html">CrcModel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModel.html#.factory">factory</a></span></li>
 </nav>
 
 <div id="main">
@@ -105,7 +105,7 @@ on to fulfill its responsibilities (collaborators).</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc-model.js.html">crc-model.js</a>, <a href="crc-model.js.html#line44">line 44</a>
+        <a href="rules_crc-model.js.html">rules/crc-model.js</a>, <a href="rules_crc-model.js.html#line93">line 93</a>
     </li></ul></dd>
     
 
@@ -504,7 +504,7 @@ on to fulfill its responsibilities (collaborators).</p></div>
 
     
 
-    <h4 class="name" id=".factory"><span class="type-signature">(static) </span>factory<span class="signature">(options, ast)</span><span class="type-signature"> &rarr; {<a href="CrcModel.html">CrcModel</a>}</span></h4>
+    <h4 class="name" id=".factory"><span class="type-signature">(static) </span>factory<span class="signature">(node, context)</span><span class="type-signature"> &rarr; {<a href="CrcModel.html">CrcModel</a>}</span></h4>
 
     
 
@@ -543,12 +543,19 @@ on to fulfill its responsibilities (collaborators).</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc-model.js.html">crc-model.js</a>, <a href="crc-model.js.html#line76">line 76</a>
+        <a href="rules_crc-model.js.html">rules/crc-model.js</a>, <a href="rules_crc-model.js.html#line121">line 121</a>
     </li></ul></dd>
     
 
     
 
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://eslint.org/docs/developer-guide/working-with-rules-new#the-context-object">https://eslint.org/docs/developer-guide/working-with-rules-new#the-context-object</a></li>
+        </ul>
+    </dd>
     
 
     
@@ -587,13 +594,13 @@ on to fulfill its responsibilities (collaborators).</p></div>
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>node</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>object</code></span>
+<span class="param-type"><code>ASTNode</code></span>
 
 
             
@@ -604,60 +611,7 @@ on to fulfill its responsibilities (collaborators).</p></div>
             
 
             <td class="description last">
-                <p>A parameter object that optionally sets all of the CrcModel's properties.</p>
-                
-                    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>The source code identifier of the class or object to be modeled.</p>
+                <p>An abstract syntax tree node</p>
                 
             </td>
         </tr>
@@ -666,199 +620,13 @@ on to fulfill its responsibilities (collaborators).</p></div>
 
         <tr>
             
-                <td class="name"><code>collaborators</code></td>
+                <td class="name"><code>context</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>array</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>A collection of zero or more CrcModels that this object depends on.</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>references</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>array</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>A collection of zero or more Espree Tokens representing where this object is used in the source code.</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>identifier</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>object</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>An Espree Identifier object.</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>responsibilities</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>array</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>A list of data this object must maintain and/or operations it must perform.</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>declaration</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>object</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>The Espree Identifier that represents &quot;where&quot; this object was declared into being.</p>
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ast</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>object</code></span>
+<span class="param-type"><code>Context</code></span>
 
 
             
@@ -869,7 +637,7 @@ on to fulfill its responsibilities (collaborators).</p></div>
             
 
             <td class="description last">
-                <p>The Espree abstract syntax tree used to analyze the codebase.</p>
+                <p>An object with relevant information.</p>
                 
             </td>
         </tr>
@@ -910,7 +678,7 @@ on to fulfill its responsibilities (collaborators).</p></div>
 
 
 <div class="param-desc">
-    <p>A shadow of CrcModel.</p>
+    <p>A shadow CrcModel.</p>
 </div>
 
     
@@ -937,7 +705,7 @@ on to fulfill its responsibilities (collaborators).</p></div>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Nov 16 2017 22:17:04 GMT-0600 (CST) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Nov 21 2017 22:00:16 GMT-0600 (CST) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

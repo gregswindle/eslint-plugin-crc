@@ -150,7 +150,7 @@
     "posttest": "./node_modules/.bin/nsp check --output summary",
     "postversion": "npm run changelog && node ./.ci-cd/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
     "prepublish": "npm run snyk-protect",
-    "pretest": "./node_modules/.bin/eslint lib --fix",
+    "pretest": "./node_modules/.bin/eslint . --fix",
     "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
     "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
     "release": "standard-version",

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>rules/crc-model.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CrcModel.html">CrcModel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CrcModel.html#.factory">factory</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">rules/crc-model.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { assign, clone, defaults, first } = require("lodash");
+
+(function () {
+    /**
+   * @private
+   * @see https://www.codacy.com/app/greg_7/eslint-plugin-crc/file/5650722498/issues/source?bid=4284512&amp;fileBranchId=4284512#l23
+   * @param {array} options - An array of CrcModel property values.
+   * @returns {array} opts - An array of CrcModel property values.
+   */
+    const loadOptions = function (options) {
+        const defaultOptions = {
+            collaborators: [],
+            context: null,
+            declaration: null,
+            identifier: null,
+            references: [],
+            responsibilities: []
+        };
+        const opts = defaults(options, defaultOptions);
+        return clone(opts);
+    };
+
+    /**
+     * @private
+     * Return a superClass.name for NewExpressions, e.g., Square.prototype = new Polygon().
+     *
+     * @param {ASTNode} node The abstract syntax tree node.
+     *
+     * @returns {string} The name of the superClass.
+     */
+    const getSuperClassByNewExpression = (node) => {
+        if (node.right &amp;&amp; node.right.type === "NewExpression") {
+            return node.right.callee.name;
+        }
+        return null;
+    };
+
+    /**
+     * @private
+     * Return a superClass.name for CallExpressions with Object.create, e.g., Square.prototype = Object.create(Polygon.prototype).
+     *
+     * @param {ASTNode} node The abstract syntax tree node.
+     *
+     * @returns {string} The name of the superClass.
+     */
+    const getSuperClassByObjectCreate = (node) => {
+        if (node.left &amp;&amp; node.left.property.name === "prototype" &amp;&amp; node.right &amp;&amp; node.right.callee.type === "MemberExpression") {
+            const rhs = node.right.callee;
+            /* istanbul ignore else */
+            if (rhs.object.name === "Object" &amp;&amp; rhs.property.name === "create") {
+                return first(node.right.arguments).object.name;
+            }
+        }
+
+        return null;
+    };
+
+    /**
+     * @private
+     * Return a superClass.name for constructor AssignmentExpressions, e.g., Square.prototype.constructor = Polygon.
+     *
+     * @param {ASTNode} node The abstract syntax tree node.
+     *
+     * @returns {string} The name of the superClass.
+     */
+    const getSuperClassByConstructorAssignment = (node) => {
+        /* istanbul ignore else */
+        if (node.left &amp;&amp; node.left.type === "MemberExpression") {
+            /* istanbul ignore else */
+            if (node.left.object.property.name === "prototype" &amp;&amp; node.left.property.name === "constructor") {
+                return node.right.name;
+            }
+        }
+        /* istanbul ignore next */
+        return null;
+    };
+
+    /**
+     * @private
+     * Driver function to return a superClass.name.
+     *
+     * @param {ASTNode} node The abstract syntax tree node.
+     *
+     * @returns {string} The name of the superClass.
+     */
+    const getSuperClass = (node) => getSuperClassByNewExpression(node) || getSuperClassByObjectCreate(node) || getSuperClassByConstructorAssignment(node) || node.superClass.name;
+
+    /**
+     * Represents a Class-Responsibility-Collaboration model, which expresses the
+     * scope of an object's behaviors (responsibilities) and the objects it depends
+     * on to fulfill its responsibilities (collaborators).
+     */
+    class CrcModel {
+        /**
+         * Create a shadow Class-Responsibility-Collaboration model.
+         * @param {string} name - The source code identifier of the class or object to be modeled.
+         * @param {object} [options] - A parameter object that optionally sets all of the CrcModel's properties.
+         * @param {array} [options.collaborators] - A collection of zero or more CrcModels that this object depends on.
+         * @param {array} [options.references] - A collection of zero or more Espree Tokens representing where this object is used in the source code.
+         * @param {object} [options.identifier] - An Espree Identifier object.
+         * @param {array} [options.responsibilities] - A list of data this object must maintain and/or operations it must perform.
+         * @param {object} [options.declaration] - The Espree Identifier that represents "where" this object was declared into being.
+         * @param {object} [options.superClass] - The `prototype` of the object being modeled. Defaults to `Object`.
+         */
+        constructor(name, options) {
+            this.name = name;
+            const opts = loadOptions(options);
+            assign(this, opts);
+        }
+
+
+        /**
+         * @static factory - Create a CrcModel.
+         *
+         * @param {ASTNode} node An abstract syntax tree node
+         * @param {Context} context  An object with relevant information.
+         * @see https://eslint.org/docs/developer-guide/working-with-rules-new#the-context-object
+         *
+         * @returns {CrcModel} A shadow CrcModel.
+         */
+        static factory(node, context) {
+            const lhs = node.left ? node.left.object : node.id;
+            const name = lhs.name || lhs.object.name;
+            const options = {
+                collaborators: [],
+                context: {
+                    fileName: context.getFilename(),
+                    sourceCode: context.getSourceCode().text
+                },
+                declarations: context.getDeclaredVariables(node),
+                references: [],
+                responsibilities: [],
+                superClass: getSuperClass(node)
+            };
+
+            return new CrcModel(name, options);
+        }
+    }
+
+    module.exports = CrcModel;
+
+}());
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Nov 21 2017 22:00:16 GMT-0600 (CST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

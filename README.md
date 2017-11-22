@@ -4,7 +4,7 @@
 
 [![License][license-image]][license-url]
 [![FOSSA Status][fossa-image]][fossa-url]
-[![NSP Status][nsp-image]][nsp-url]<br>
+[![NSP Status][nsp-image]][nsp-url]
 [![Dependencies][daviddm-image]][daviddm-url]
 [![Dependencies][daviddm-dev-image]][daviddm-dev-url]<br>
 [![Travis branch][travis-image]][travis-url]

@@ -2,7 +2,6 @@
  * @fileoverview Generate class-responsibilities-collaborators models to assess and refactor JavaScript source code.
  * @author Greg Swindle
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements

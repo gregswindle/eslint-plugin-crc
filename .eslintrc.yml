@@ -235,7 +235,7 @@ rules:
   quote-props: off
   quotes:
     - error
-    - single
+    - double
   require-jsdoc: error
   semi-spacing: off
   semi:

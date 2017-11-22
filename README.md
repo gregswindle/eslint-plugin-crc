@@ -3,17 +3,15 @@
 > Analyze, model, and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
 [![License][license-image]][license-url]
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield&style=flat-square)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield)
-[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)<br><!-- [![bitHound](https://img.shields.io/bithound/dependencies/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
-[![bitHound](https://img.shields.io/bithound/devDependencies/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm) -->
+[![FOSSA Status][fossa-image]][fossa-url]
+[![NSP Status][nsp-image]][nsp-url]<br>
 [![Dependencies][daviddm-image]][daviddm-url]
 [![Dependencies][daviddm-dev-image]][daviddm-dev-url]<br>
-[![Travis branch](https://img.shields.io/travis/gregswindle/eslint-plugin-crc/master.svg?style=flat-square)](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)
-[![AppVeyor Windows build status](https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&logo=appveyor)](https://ci.appveyor.com/project/gregswindle/eslint-plugin-crc)
- [![Codacy Badge](https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade)
-[![Coveralls coverage](https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master)
- [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=gregswindle-eslint-plugin-crc)](https://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc)
-
+[![Travis branch][travis-image]][travis-url]
+[![AppVeyor Windows build status][appveyor-image]][appveyor-url]
+[![Coveralls coverage][coveralls-image]][coveralls-url]
+ [![Codacy Badge][codacy-image]][codacy-url]
+ [![Quality Gate][sonar-quality-gate-image]][sonar-quality-gate-url]
 
 ## Table of contents
 
@@ -263,17 +261,17 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 
 [api-docs-url]: https://github.com/gregswindle/eslint-plugin-crc/docs/API.md
 [apigee-edge-js-url]: http://docs.apigee.com/api-services/reference/javascript-object-model
-[appveyor-img]: https://ci.appveyor.com/api/projects/status/qcsxteena4etjlfe?svg=true
+[appveyor-image]: https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&logo=appveyor
 [appveyor-url]: https://ci.appveyor.com/project/gregswindle/eslint-plugin-crc
 [author-url]: https://github.com/gregswindle
 [changelog-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md
 [codacy-coverage-image]: https://api.codacy.com/project/badge/Coverage/fa4ade3f68a04b9cad26165a59ceb88e
 [codacy-coverage-url]: https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Coverage
-[codacy-img]: https://api.codacy.com/project/badge/Grade/fa4ade3f68a04b9cad26165a59ceb88e
+[codacy-image]: https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square
 [codacy-url]: https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade
 [code-of-conduct-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CODE_OF_CONDUCT.md
 [complexity-report-url]: https://github.com/escomplex/complexity-report
-[coveralls-img]: https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=master
+[coveralls-image]: https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master
 [daviddm-dev-image]: https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg?style=flat-square
 [daviddm-dev-url]: https://david-dm.org/gregswindle/eslint-plugin-crc?type=dev
@@ -281,9 +279,9 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [daviddm-url]: https://david-dm.org/gregswindle/eslint-plugin-crc
 [editorconfig-url]: http://editorconfig.org/
 [eslint-github-url]: https://github.com/eslint/eslint
-[fossa-image]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield
-[fossa-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield
-[greenkeeper-img]: https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg
+[fossa-image]: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield&style=flat-square
+[fossa-url]: https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield
+[greenkeeper-img]: https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg?style=flat-square
 [greenkeeper-url]: https://greenkeeper.io/
 [issues-url]: https://github.com/gregswindle/eslint-plugin-crc/issues
 [jsdoc2md-url]: https://github.com/jsdoc2md/jsdoc-to-markdown
@@ -294,8 +292,8 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [makeapullrequest-url]: http://makeapullrequest.com
 [npm-image]: https://badge.fury.io/js/eslint-plugin-crc.svg
 [npm-url]: https://npmjs.org/package/eslint-plugin-crc
-[nsp-img]: https://nodesecurity.io/orgs/gregswindle/projects/a3912719-529f-457f-9ff6-53fa70d8f475/badge
-[nsp-url]: https://nodesecurity.io/orgs/gregswindle/projects/a3912719-529f-457f-9ff6-53fa70d8f475
+[nsp-image]: https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square
+[nsp-url]: https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a
 [pr-url]: https://github.com/gregswindle/eslint-plugin-crc/pulls
 [readme-score-img]: http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/gregswindle/eslint-plugin-crc
 [readme-score-url]: http://clayallsopp.github.io/readme-score?url=https://github.com/gregswindle/eslint-plugin-crc
@@ -306,14 +304,9 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [sonar-complexity-url]: https://sonarcloud.io/component_measures/domain/Complexity?id=gregswindle-eslint-plugin-crc
 [sonar-coverage-img]: http://sonarcloud.io/api/badges/measure?key=gregswindle-eslint-plugin-crc&metric=coverage
 [sonar-coverage-url]: https://sonarcloud.io/component_measures/domain/Coverage?id=gregswindle-eslint-plugin-crc
-[sonar-gate-img]: http://sonarcloud.io/api/badges/gate?key=gregswindle-eslint-plugin-crc
-[sonar-gate-url]: http://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc
+[sonar-quality-gate-image]: https://sonarcloud.io/api/badges/gate?key=gregswindle-eslint-plugin-crc
+[sonar-quality-gate-url]: https://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc
 [sonar-tech-debt-img]: https://sonarcloud.io/api/badges/measure?key=gregswindle-eslint-plugin-crc&metric=sqale_debt_ratio
 [sonar-tech-debt-url]: https://sonarcloud.io/component_measures/metric/sqale_index/list?id=gregswindle-eslint-plugin-crc
-[swagger-cli-url]: https://github.com/BigstickCarpet/swagger-cli
-[swagger-logo-20-img]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/.assets/media/img/swagger-logo-20.png
-[swagger-markdown-url]: https://github.com/syroegkin/swagger-markdown
-[swagger-validity-img]: https://img.shields.io/swagger/valid/2.0/http/api.swindle.net/cordova/v6/contacts/openapi.json.svg
-[swagger-validity-url]: http://online.swagger.io/validator/debug?url=http://api.swindle.net/cordova/v6/contacts/openapi.json
-[travis-image]: https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master
+[travis-image]: https://img.shields.io/travis/gregswindle/eslint-plugin-crc/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/gregswindle/eslint-plugin-crc

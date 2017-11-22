@@ -95,6 +95,10 @@ rules:
   - error
   - before:                                                     true
     after:                                                      true
+  max-len:
+    - warn
+    - code: 180
+    - comments: 180
   new-cap:
   - error
   - newIsCap:                                                   true

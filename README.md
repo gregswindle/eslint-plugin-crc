@@ -16,22 +16,87 @@
 ## Table of contents
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-- [1. Installation](#1-installation)
-- [2. Usage](#2-usage)
-  * [2.1. Configuration](#21-configuration)
-  * [2.2. Report generation](#22-report-generation)
-- [3. Benefits](#3-benefits)
-  * [3.1. Agile, behavior-driven modeling](#31-agile-behavior-driven-modeling)
-  * [3.2. Anatomy of a CRC model](#32-anatomy-of-a-crc-model)
-  * [3.3. Refactoring with CRC models](#33-refactoring-with-crc-models)
-- [4. Supported Rules](#4-supported-rules)
-- [5. Contributing](#5-contributing)
-- [6. Version](#6-version)
-- [7. License](#7-license)
+- [1. Refactoring with CRC models](#1-refactoring-with-crc-models)
+- [2. Installation](#2-installation)
+- [3. Configuration and usage](#3-configuration-and-usage)
+- [4. Anatomy of a CRC model](#4-anatomy-of-a-crc-model)
+- [5. Benefits](#5-benefits)
+  * [5.1. Simplicity](#51-simplicity)
+  * [5.2. Behavior-driven development](#52-behavior-driven-development)
+- [6. Contributing](#6-contributing)
+- [7. Version](#7-version)
+- [8. License](#8-license)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
-## 1. Installation
+
+## 1. Refactoring with CRC models
+
+> Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
+>
+> Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.
+>
+> Learning More. (n.d.). Retrieved July 30, 2017, from https://refactoring.com/
+
+CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
+
+<table width="100%">
+  <thead>
+    <tr valign="top" align="left">
+      <th colspan="2"><code>Delta</code></th>
+    </tr>
+    <tr valign="top" align="left">
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top" align="left">
+      <td width="50%">
+        <ol>
+            <li>Disambiguation for the letter &quot;D&quot;</li>
+            <li>Clarifies pronunciation when spelling with the letter &quot;D&quot;</li></ol>
+      </td>
+      <td width="50%">
+        <ol>
+            <li><code>Charlie</code>
+              <a style="font-size:small">18:26</a>
+            </li></ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table width="100%">
+  <thead>
+    <tr valign="top" align="left">
+      <th colspan="2"><code>Echo</code></th>
+    </tr>
+    <tr valign="top" align="left">
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top" align="left">
+      <td width="50%">
+        <ol>
+            <li>Disambiguation for the letter &quot;E&quot;</li>
+            <li>Clarifies pronunciation when spelling with the letter &quot;E&quot;</li></ol>
+      </td>
+      <td width="50%">
+        <ol>
+            <li><code>Alpha</code>
+              <a style="font-size:small">20:25</a>
+            </li></ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+## 2. Installation
 
 You'll first need to install [ESLint](http://eslint.org):
 
@@ -47,9 +112,7 @@ $ npm install eslint-plugin-crc --save-dev
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-crc` globally.
 
-## 2. Usage
-
-### 2.1. Configuration
+## 3. Configuration and usage
 
 Add `crc` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
@@ -66,62 +129,12 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "crc/rule-name": 2
+        "crc/generate-crc": 2
     }
 }
 ```
-### 2.2. Report generation
 
-Invoke the crc-reporter to generate CRC models:
-
-```bash
-$ lib/crc-reporter.js --help
-
-  Usage: crc-reporter [options] <files>
-
-  Generates a Class-Responsibility-Collaboration report for analysis and refactoring.
-
-
-  Options:
-
-    -V, --version          output the version number
-    -o, --output [output]  The report destination. Defaults to "./crc-model-report."
-    -x, --exclude [glob]   A glob of files to exclude from analysis."
-    -h, --help             output usage information
-```
-
-For convenience, create an `npm-script`:
-
-```json
-"scripts": {
-  "crc-models": "crc-reporter --output ./reports ./lib/**/*.js"
-}
-```
-
-To automate behavior-driven development's "specify, code, and refactor" cycles, generate CRC models with a `posttest` script:
-
-```json
-"scripts": {
-  "crc-models": "crc-reporter --output ./reports ./lib/**/*.js",
-  "posttest": "npm run crc-models"
-}
-```
-
-## 3. Benefits
-
-Agile methodologies, as well as DevSecOps activities, attempt to incorporate design exercises as a routine component of product delivery. For example, behavior-driven development (BDD) prescribes iterative activities intended to redefine and contextualize design, testing, and programming as unified activities that share common specifications expressing a product's behavior instead of its technical implementation. BDD extends TDD's focus on refactoring to how classes behave with each other. The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior instead of technical assertions.
-
-### 3.1. Agile, behavior-driven modeling
-
-CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.
-
-> :speech_balloon: A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.
->
-> Ambler, S. W. (n.d.). Class Responsibility Collaborator (CRC) Models: An Agile Introduction. Retrieved July 30, 2017, from http://agilemodeling.com/artifacts/crcModel.htm
-
-CRC models are simple to read, write, and update. CRC models focus on the **purpose** of classes instead of their **mechanics**. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.
-
-### 3.2. Anatomy of a CRC model
+## 4. Anatomy of a CRC model
 
 CRC Models use a simple and scannable template that consist of three simple sections for:
 
@@ -161,81 +174,27 @@ CRC Models use a simple and scannable template that consist of three simple sect
 
 > :memo: Despite the implementation of the `class`, `constructor`, `static`, `extends`, and `super` keywords in ES2015, JavaScript _still_ achieves encapsulation, inheritance, and polymorphism with `prototype` chains. Nevertheless, I use the word `class` to refer to JavaScript objects with `prototype`-based inheritance.
 
-### 3.3. Refactoring with CRC models
 
-> :speech_balloon: Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
+## 5. Benefits
+
+### 5.1. Simplicity
+
+CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.
+
+> A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.
 >
-> Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.
->
-> Learning More. (n.d.). Retrieved July 30, 2017, from https://refactoring.com/
+> Ambler, S. W. (n.d.). Class Responsibility Collaborator (CRC) Models: An Agile Introduction. Retrieved July 30, 2017, from http://agilemodeling.com/artifacts/crcModel.htm
 
-CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
+CRC models are simple to read, write, and update. CRC models focus on the **purpose** of classes instead of their **mechanics**. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.
 
-<!-- crc-model-template:html,markdown -->
-<table width="100%">
-  <thead>
-    <tr valign="top" align="left">
-      <th colspan="2"><code>Delta</code></th>
-    </tr>
-    <tr valign="top" align="left">
-      <th>Responsibilities</th>
-      <th>Collaborators</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr valign="top" align="left">
-      <td width="50%">
-        <ol>
-            <li>Disambiguation for the letter &quot;D&quot;</li>
-            <li>Clarifies pronunciation when spelling with the letter &quot;D&quot;</li></ol>
-      </td>
-      <td width="50%">
-        <ol>
-            <li><code>Charlie</code>
-              <a style="font-size:small">18:26</a>
-            </li></ol>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<!--/crc-model-template:html,markdown -->
+### 5.2. Behavior-driven development
 
-<!-- crc-model-template:html,markdown -->
-<table width="100%">
-  <thead>
-    <tr valign="top" align="left">
-      <th colspan="2"><code>Echo</code></th>
-    </tr>
-    <tr valign="top" align="left">
-      <th>Responsibilities</th>
-      <th>Collaborators</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr valign="top" align="left">
-      <td width="50%">
-        <ol>
-            <li>Disambiguation for the letter &quot;E&quot;</li>
-            <li>Clarifies pronunciation when spelling with the letter &quot;E&quot;</li></ol>
-      </td>
-      <td width="50%">
-        <ol>
-            <li><code>Alpha</code>
-              <a style="font-size:small">20:25</a>
-            </li></ol>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<!--/crc-model-template:html,markdown -->
+Behavior-driven development (BDD) seeks to incorporate **_design_** as a routine exercise during product delivery. BDD prescribes iterative activities intended to redefine and contextualize design, testing, and programming as unified activities that share common specifications expressing a product's behavior instead of its technical implementation. BDD extends TDD's focus on refactoring to how classes behave with each other. The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior instead of technical assertions.
 
-## 4. Supported Rules
+## 6. Contributing
+> [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributors and pull requests.
 
-As of now, there are no rules. I plan on iterative releases, however, in hopes of parsing not only the syntactic structure of code, but also its semantic intent. I'd love to generate [excellent explanations and recommendations like these](https://refactoring.guru/smells/smells), but that's a hefty task.
-
-## 5. Contributing
-
-[![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributors and pull requests. Check out the guidelines for
+Check out the guidelines for
 
 - [Contributing to `eslint-plugin-crc`](https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md) and our
 - [Contributor Covenant Code of Conduct][code-of-conduct-url].
@@ -243,13 +202,13 @@ As of now, there are no rules. I plan on iterative releases, however, in hopes o
 Contributions are stories with a beginning, a middle, and an end, all told through issues, comments, commit logs, and pull requests.
 
 - [Peruse open issues][issues-url] or
-- [Open a new pull request (PR)][pr-url]
+- [Open a new pull request (PR)][pr-url].
 
-## 6. Version
+## 7. Version
 
 `eslint-plugin-crc`'s latest version is <!-- semver --> [`v0.2.0`][changelog-url] <!-- semverend --> . Please read the [CHANGELOG][changelog-url] for details.
 
-## 7. License
+## 8. License
 
 [MIT][license-url] © [Greg Swindle][author-url]
 
@@ -288,7 +247,7 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE
 [lint-def-url]: https://en.wikipedia.org/wiki/Lint_(software)
-[makeapullrequest-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat
+[makeapullrequest-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [makeapullrequest-url]: http://makeapullrequest.com
 [npm-image]: https://badge.fury.io/js/eslint-plugin-crc.svg
 [npm-url]: https://npmjs.org/package/eslint-plugin-crc

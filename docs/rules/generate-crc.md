@@ -1,4 +1,4 @@
-# Generate class-responsibilities-collaborators models to assess and refactor JavaScript source code. (crc-generator)
+# Generate class-responsibilities-collaborators models to assess and refactor JavaScript source code. (generate-crc)
 
 Please describe the origin of the rule here.
 

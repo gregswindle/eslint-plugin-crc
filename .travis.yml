@@ -11,6 +11,7 @@ addons:
       - /[build|chore|ci|docs|feat|fix|perf|refactor|revert|spike|style|test].*/
 jdk:
   - oraclejdk8
+os: osx
 language: node_js
 cache:
   directories:

@@ -26,6 +26,7 @@
 - [6. Contributing](#6-contributing)
 - [7. Version](#7-version)
 - [8. License](#8-license)
+- [9. Bibliography](#9-bibliography)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
@@ -210,7 +211,7 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large)
 
-## 9. Bibliography
+## 9. References
 
 <a name="ref-refactoring-definition"></a>
 **[1]** M. Fowler, "Refactoring", Refactoring.com, 2017. [Online]. Available: https://refactoring.com/. [Accessed: 22- Nov- 2017]

@@ -4,13 +4,15 @@
 
 [![License][license-image]][license-url]
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield&style=flat-square)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield)
-[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)
- [![Inline docs](http://inch-ci.org/github/gregswindle/eslint-plugin-crc.svg?branch=develop&style=flat-sqaure)](http://inch-ci.org/github/gregswindle/eslint-plugin-crc?branch=develop)<br>
-[![bitHound Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/dependencies.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
-[![bitHound Dev Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/devDependencies.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)<br>
- [![Travis CI Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master&style=flat-square)](https://travis-ci.org/gregswindle/eslint-plugin-crc)
- [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a?style=flat-square)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade)
- [![Coverage Status](https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=develop)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master&style=flat-square)
+[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)<br>
+<!-- [![bitHound](https://img.shields.io/bithound/dependencies/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
+[![bitHound](https://img.shields.io/bithound/devDependencies/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm) -->
+[![Dependencies][daviddm-image]][daviddm-url]
+[![Dependencies][daviddm-dev-image]][daviddm-dev-url]<br>
+ [![Travis CI Build Status](https://img.shields.io/travis/gregswindle/eslint-plugin-crc.svg?branch=master&style=flat-square)](https://travis-ci.org/gregswindle/eslint-plugin-crc)
+[![AppVeyor Windows build status](https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&logo=appveyor)](https://ci.appveyor.com/project/gregswindle/eslint-plugin-crc)
+ [![Codacy Badge](https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade)
+[![Coveralls coverage](https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master)
  [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=gregswindle-eslint-plugin-crc)](https://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc)
 
 
@@ -286,7 +288,7 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [greenkeeper-url]: https://greenkeeper.io/
 [issues-url]: https://github.com/gregswindle/eslint-plugin-crc/issues
 [jsdoc2md-url]: https://github.com/jsdoc2md/jsdoc-to-markdown
-[license-image]: https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE
 [lint-def-url]: https://en.wikipedia.org/wiki/Lint_(software)
 [makeapullrequest-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat

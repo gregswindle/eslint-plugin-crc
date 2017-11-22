@@ -3,23 +3,23 @@
  * @author Greg Swindle
  */
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 // Requirements
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 const { RuleTester } = require("eslint");
 const rule = require("../../../lib/rules/generate-crc");
 
 RuleTester.setDefaultConfig({
-    parserOptions: {
-        ecmaVersion: 6,
-        sourceType: "module"
-    }
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: "module"
+  }
 });
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 // Tests
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester();
 // Const invalidPattern = {
@@ -32,15 +32,15 @@ const ruleTester = new RuleTester();
 
 ruleTester.run("generate-crc", rule, {
 
-    valid: [
-        // Give me some code that won't trigger a warning
-        "Square.prototype = new Polygon()",
-        "Square.prototype = Object.create(Polygon.prototype)",
-        "Square.prototype.constructor = Polygon",
-        "class Square extends Polygon {}"
-    ],
+  valid: [
+    // Give me some code that won't trigger a warning
+    "Square.prototype = new Polygon()",
+    "Square.prototype = Object.create(Polygon.prototype)",
+    "Square.prototype.constructor = Polygon",
+    "class Square extends Polygon {}"
+  ],
 
-    invalid: [
+  invalid: [
 
-    ]
+  ]
 });

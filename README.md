@@ -26,7 +26,7 @@
 - [6. Contributing](#6-contributing)
 - [7. Version](#7-version)
 - [8. License](#8-license)
-- [9. Bibliography](#9-bibliography)
+- [9. References](#9-references)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 

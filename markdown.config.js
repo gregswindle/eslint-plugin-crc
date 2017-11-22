@@ -1,13 +1,16 @@
-/*eslint global-require: "off"*/
+/* eslint global-require: "off" */
+/* eslint node/no-unpublished-require: "off" */
 const path = require("path");
 const markdownMagic = require("markdown-magic");
+const markdownMagicDependencyTable = require("markdown-magic-dependency-table");
+const markdownMagicPackageScripts = require("markdown-magic-package-scripts");
 
 const config = {
-    transforms: {
-        DEPENDENCYTABLE: require("markdown-magic-dependency-table"),
-        SCRIPTS: require("markdown-magic-package-scripts")
-    },
-    DEBUG: true
+  transforms: {
+    DEPENDENCYTABLE: markdownMagicDependencyTable,
+    SCRIPTS: markdownMagicPackageScripts
+  },
+  DEBUG: true
 };
 
 let markdownPath = path.join(__dirname, "*.md");

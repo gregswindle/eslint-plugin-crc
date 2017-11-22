@@ -32,11 +32,9 @@
 
 ## 1. Refactoring with CRC models
 
-> Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
+> [![Citation][icon-quote-left-image]]() Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
 >
-> Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.
->
-> Learning More. (n.d.). Retrieved July 30, 2017, from https://refactoring.com/
+> [![Citation][icon-quote-left-image]]() Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.<sup><a href="#ref-refactoring-definition">[1]</a></sup>
 
 CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
 
@@ -172,7 +170,7 @@ CRC Models use a simple and scannable template that consist of three simple sect
   </tbody>
 </table>
 
-> :memo: Despite the implementation of the `class`, `constructor`, `static`, `extends`, and `super` keywords in ES2015, JavaScript _still_ achieves encapsulation, inheritance, and polymorphism with `prototype` chains. Nevertheless, I use the word `class` to refer to JavaScript objects with `prototype`-based inheritance.
+> [![Use of terms][icon-info-image]]() Despite the implementation of the `class`, `constructor`, `static`, `extends`, and `super` keywords in ES2015, JavaScript _still_ achieves encapsulation, inheritance, and polymorphism with `prototype` chains. Nevertheless, I use the word `class` to refer to JavaScript objects with `prototype`-based inheritance.
 
 
 ## 5. Benefits
@@ -181,9 +179,7 @@ CRC Models use a simple and scannable template that consist of three simple sect
 
 CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.
 
-> A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.
->
-> Ambler, S. W. (n.d.). Class Responsibility Collaborator (CRC) Models: An Agile Introduction. Retrieved July 30, 2017, from http://agilemodeling.com/artifacts/crcModel.htm
+> [![Citation][icon-quote-left-image]]() A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[2]</a></sup>
 
 CRC models are simple to read, write, and update. CRC models focus on the **purpose** of classes instead of their **mechanics**. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.
 
@@ -214,6 +210,14 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large)
 
+## 9. Bibliography
+
+<a name="ref-refactoring-definition"></a>
+**[1]** M. Fowler, "Refactoring", Refactoring.com, 2017. [Online]. Available: https://refactoring.com/. [Accessed: 22- Nov- 2017]
+
+<a name="ref-crc-definition"></a>
+**[2]** S. Ambler, "Class Responsibility Collaborator (CRC) Models: An Agile Introduction", Agilemodeling.com, 2017. [Online]. Available: http://agilemodeling.com/artifacts/crcModel.htm. [Accessed: 22- Nov- 2017]
+
 ---
 
 [![License][license-image]][license-url] [![Readme Score][readme-score-img]][readme-score-url] [![Greenkeeper][greenkeeper-img]][greenkeeper-url]
@@ -243,6 +247,8 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [greenkeeper-img]: https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg?style=flat-square
 [greenkeeper-url]: https://greenkeeper.io/
 [issues-url]: https://github.com/gregswindle/eslint-plugin-crc/issues
+[icon-info-image]: docs/img/icons8/icon-info-30.png
+[icon-quote-left-image]: docs/img/icons8/icon-quote-left-25.png
 [jsdoc2md-url]: https://github.com/jsdoc2md/jsdoc-to-markdown
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE

@@ -4,12 +4,11 @@
 
 [![License][license-image]][license-url]
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield&style=flat-square)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield)
-[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)<br>
-<!-- [![bitHound](https://img.shields.io/bithound/dependencies/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
+[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)<br><!-- [![bitHound](https://img.shields.io/bithound/dependencies/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
 [![bitHound](https://img.shields.io/bithound/devDependencies/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm) -->
 [![Dependencies][daviddm-image]][daviddm-url]
 [![Dependencies][daviddm-dev-image]][daviddm-dev-url]<br>
- [![Travis CI Build Status](https://img.shields.io/travis/gregswindle/eslint-plugin-crc.svg?branch=master&style=flat-square)](https://travis-ci.org/gregswindle/eslint-plugin-crc)
+[![Travis branch](https://img.shields.io/travis/gregswindle/eslint-plugin-crc/master.svg?style=flat-square)](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)
 [![AppVeyor Windows build status](https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&logo=appveyor)](https://ci.appveyor.com/project/gregswindle/eslint-plugin-crc)
  [![Codacy Badge](https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade)
 [![Coveralls coverage](https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master)
@@ -276,9 +275,9 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [complexity-report-url]: https://github.com/escomplex/complexity-report
 [coveralls-img]: https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master
-[daviddm-dev-image]: https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg
+[daviddm-dev-image]: https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg?style=flat-square
 [daviddm-dev-url]: https://david-dm.org/gregswindle/eslint-plugin-crc?type=dev
-[daviddm-image]: https://david-dm.org/gregswindle/eslint-plugin-crc.svg?theme=shields.io
+[daviddm-image]: https://david-dm.org/gregswindle/eslint-plugin-crc.svg?theme=shields.io&style=flat-square
 [daviddm-url]: https://david-dm.org/gregswindle/eslint-plugin-crc
 [editorconfig-url]: http://editorconfig.org/
 [eslint-github-url]: https://github.com/eslint/eslint

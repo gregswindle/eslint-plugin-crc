@@ -6,7 +6,7 @@
 // ------------------------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------------------------
-
+// eslint-disable-next-line node/no-unsupported-features
 const { RuleTester } = require("eslint");
 const rule = require("../../../lib/rules/generate-crc");
 

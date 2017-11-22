@@ -153,7 +153,7 @@
     "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
     "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files ./lib/rules/*.js > ../eslint-plugin-crc.wiki/API.md && markdown-toc -i ../eslint-plugin-crc.wiki/API.md",
     "posttest": "./node_modules/.bin/nsp check --output summary",
-    "postversion": "npm run changelog && node ./.ci-cd/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
+    "postversion": "npm run changelog && node ./.ci/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
     "prepublish": "npm run snyk-protect",
     "pretest": "./node_modules/.bin/eslint . --fix",
     "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",

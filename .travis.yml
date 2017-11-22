@@ -1,8 +1,24 @@
-sudo: false
+---
+addons:
+  sonarcloud:
+    organization:   "$SONAR_ORGANIZATION"
+    token:
+      secure:       "$SONAR_TOKEN"
+    github_token:
+      secure:       "$GH_TOKEN"
+    branches:
+      - master
+      - /[build|chore|ci|docs|feat|fix|perf|refactor|revert|spike|style|test].*/
+jdk:
+  - oraclejdk8
 language: node_js
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
 notifications:
   email: false
 node_js:
+  - node
   - 8
   - 7
   - 6
@@ -13,7 +29,9 @@ after_success:
   - npm run semantic-release
 script:
   - npm test
+after_script:
   - cat coverage/lcov.info | node_modules/.bin/coveralls
+  - sonar-scanner -Dproject.settings=./sonar-project.properties -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -X
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/

@@ -57,8 +57,9 @@
 <a href="https://travis-ci.org/gregswindle/eslint-plugin-crc"><img src="https://img.shields.io/travis/gregswindle/eslint-plugin-crc/master.svg?style=flat-square" alt="Travis branch"></a>
 <a href="https://ci.appveyor.com/project/gregswindle/eslint-plugin-crc"><img src="https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&amp;logo=appveyor" alt="AppVeyor Windows build status"></a>
 <a href="https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master"><img src="https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square" alt="Coveralls coverage"></a>
- <a href="https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square" alt="Codacy Badge"></a>
- <a href="https://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc"><img src="https://sonarcloud.io/api/badges/gate?key=gregswindle-eslint-plugin-crc" alt="Quality Gate"></a></p>
+<a href="https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square" alt="Codacy Badge"></a>
+<a href="https://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc"><img src="https://sonarcloud.io/api/badges/gate?key=gregswindle-eslint-plugin-crc" alt="Quality Gate"></a>
+<a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a></p>
 <h2>Table of contents</h2><!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <ul>
 <li><a href="#1-refactoring-with-crc-models">1. Refactoring with CRC models</a></li>
@@ -73,13 +74,13 @@
 <li><a href="#6-contributing">6. Contributing</a></li>
 <li><a href="#7-version">7. Version</a></li>
 <li><a href="#8-license">8. License</a></li>
-<li><a href="#9-bibliography">9. Bibliography</a><!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+<li><a href="#9-references">9. References</a><!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 </li>
 </ul>
 <h2>1. Refactoring with CRC models</h2><blockquote>
-<p><a href=""><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"></a> Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.</p>
-<p><a href=""><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"></a> Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.<sup><a href="#ref-refactoring-definition">[1]</a></sup></p>
+<p><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"> Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.</p>
+<p> Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.<sup><a href="#ref-refactoring-definition">[1]</a></sup></p>
 </blockquote>
 <p>CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.</p>
 <table width="100%">
@@ -141,7 +142,7 @@
 <h2>2. Installation</h2><p>You'll first need to install <a href="http://eslint.org">ESLint</a>:</p>
 <pre class="prettyprint source"><code>$ npm i eslint --save-dev</code></pre><p>Next, install <code>eslint-plugin-crc</code>:</p>
 <pre class="prettyprint source"><code>$ npm install eslint-plugin-crc --save-dev</code></pre><p><strong>Note:</strong> If you installed ESLint globally (using the <code>-g</code> flag) then you must also install <code>eslint-plugin-crc</code> globally.</p>
-<h2>3. Configuration and usage</h2><p>Add <code>crc</code> to the plugins section of your <code>.eslintrc</code> configuration file. You can omit the <code>eslint-plugin-</code> prefix:</p>
+<h2>3. Configuration</h2><p>Add <code>crc</code> to the plugins section of your <code>.eslintrc</code> configuration file. You can omit the <code>eslint-plugin-</code> prefix:</p>
 <pre class="prettyprint source lang-json"><code>{
     &quot;plugins&quot;: [
         &quot;crc&quot;
@@ -151,7 +152,13 @@
     &quot;rules&quot;: {
         &quot;crc/generate-crc&quot;: 2
     }
-}</code></pre><h2>4. Anatomy of a CRC model</h2><p>CRC Models use a simple and scannable template that consist of three simple sections for:</p>
+}</code></pre><h2>4. Usage</h2><p>For local installations, run:</p>
+<pre class="prettyprint source lang-bash"><code>$ node_modules/.bin/eslint .</code></pre><p>If you installed <code>eslint-plugin-crc</code> globally, run:</p>
+<pre class="prettyprint source lang-bash"><code>$ eslint .</code></pre><p>You can also add it as an <code>npm-script</code>:</p>
+<pre class="prettyprint source lang-json"><code>  &quot;scripts&quot;: {
+    &quot;lint&quot;: &quot;eslint . --fix&quot;
+  }</code></pre><p>Once added as an <code>npm-script</code>, run:</p>
+<pre class="prettyprint source lang-bash"><code>$ npm run lint</code></pre><h2>5. Anatomy of a CRC model</h2><p>CRC Models use a simple and scannable template that consist of three simple sections for:</p>
 <ol>
 <li><strong>Name</strong>: what the class (or object) is called in source code.</li>
 <li><strong>Responsibilities</strong>: the work that the class/object is supposed to perform, and the data it's supposed to maintain.</li>
@@ -188,15 +195,15 @@
 </table>
 
 <blockquote>
-<p><a href=""><img src="docs/img/icons8/icon-info-30.png" alt="Use of terms"></a> Despite the implementation of the <code>class</code>, <code>constructor</code>, <code>static</code>, <code>extends</code>, and <code>super</code> keywords in ES2015, JavaScript <em>still</em> achieves encapsulation, inheritance, and polymorphism with <code>prototype</code> chains. Nevertheless, I use the word <code>class</code> to refer to JavaScript objects with <code>prototype</code>-based inheritance.</p>
+<p><img src="docs/img/icons8/icon-info-30.png" alt="Use of terms"> Despite the implementation of the <code>class</code>, <code>constructor</code>, <code>static</code>, <code>extends</code>, and <code>super</code> keywords in ES2015, JavaScript <em>still</em> achieves encapsulation, inheritance, and polymorphism with <code>prototype</code> chains. Nevertheless, I use the word <code>class</code> to refer to JavaScript objects with <code>prototype</code>-based inheritance.</p>
 </blockquote>
-<h2>5. Benefits</h2><h3>5.1. Simplicity</h3><p>CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.</p>
+<h2>6. Benefits</h2><h3>6.1. Simplicity</h3><p>CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.</p>
 <blockquote>
-<p><a href=""><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"></a> A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[2]</a></sup></p>
+<p><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"> A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[2]</a></sup></p>
 </blockquote>
 <p>CRC models are simple to read, write, and update. CRC models focus on the <strong>purpose</strong> of classes instead of their <strong>mechanics</strong>. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.</p>
-<h3>5.2. Behavior-driven development</h3><p>Behavior-driven development (BDD) seeks to incorporate <strong><em>design</em></strong> as a routine exercise during product delivery. BDD prescribes iterative activities intended to redefine and contextualize design, testing, and programming as unified activities that share common specifications expressing a product's behavior instead of its technical implementation. BDD extends TDD's focus on refactoring to how classes behave with each other. The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior instead of technical assertions.</p>
-<h2>6. Contributing</h2><blockquote>
+<h3>6.2. Behavior-driven development</h3><p>Behavior-driven development (BDD) seeks to incorporate <strong><em>design</em></strong> as a routine exercise during product delivery. BDD prescribes iterative activities intended to redefine and contextualize design, testing, and programming as unified activities that share common specifications expressing a product's behavior instead of its technical implementation. BDD extends TDD's focus on refactoring to how classes behave with each other. The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior instead of technical assertions.</p>
+<h2>7. Contributing</h2><blockquote>
 <p><a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a> We welcome contributors and pull requests.</p>
 </blockquote>
 <p>Check out the guidelines for</p>
@@ -209,10 +216,10 @@
 <li><a href="https://github.com/gregswindle/eslint-plugin-crc/issues">Peruse open issues</a> or</li>
 <li><a href="https://github.com/gregswindle/eslint-plugin-crc/pulls">Open a new pull request (PR)</a>.</li>
 </ul>
-<h2>7. Version</h2><p><code>eslint-plugin-crc</code>'s latest version is <!-- semver --> <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md"><code>v0.2.0</code></a> <!-- semverend --> . Please read the <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md">CHANGELOG</a> for details.</p>
-<h2>8. License</h2><p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE">MIT</a> © <a href="https://github.com/gregswindle">Greg Swindle</a></p>
+<h2>8. Version</h2><p><code>eslint-plugin-crc</code>'s latest version is <!-- semver --> <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md"><code>v0.2.0</code></a> <!-- semverend --> . Please read the <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md">CHANGELOG</a> for details.</p>
+<h2>9. License</h2><p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE">MIT</a> © <a href="https://github.com/gregswindle">Greg Swindle</a></p>
 <p><a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large"><img src="https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large" alt="FOSSA Status"></a></p>
-<h2>9. References</h2><p><a name="ref-refactoring-definition"></a>
+<h2>10. References</h2><p><a name="ref-refactoring-definition"></a>
 <strong>[1]</strong> M. Fowler, &quot;Refactoring&quot;, Refactoring.com, 2017. [Online]. Available: https://refactoring.com/. [Accessed: 22- Nov- 2017]</p>
 <p><a name="ref-crc-definition"></a>
 <strong>[2]</strong> S. Ambler, &quot;Class Responsibility Collaborator (CRC) Models: An Agile Introduction&quot;, Agilemodeling.com, 2017. [Online]. Available: http://agilemodeling.com/artifacts/crcModel.htm. [Accessed: 22- Nov- 2017]</p>
@@ -534,7 +541,7 @@ Class-Responsibility-Collaboration models.</p></div>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Nov 22 2017 07:30:01 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Nov 22 2017 07:49:39 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

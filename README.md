@@ -10,32 +10,34 @@
 [![Travis branch][travis-image]][travis-url]
 [![AppVeyor Windows build status][appveyor-image]][appveyor-url]
 [![Coveralls coverage][coveralls-image]][coveralls-url]
- [![Codacy Badge][codacy-image]][codacy-url]
- [![Quality Gate][sonar-quality-gate-image]][sonar-quality-gate-url]
+[![Codacy Badge][codacy-image]][codacy-url]
+[![Quality Gate][sonar-quality-gate-image]][sonar-quality-gate-url]
+[![PRs Welcome][makeapullrequest-image]][makeapullrequest-url]
 
 ## Table of contents
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 - [1. Refactoring with CRC models](#1-refactoring-with-crc-models)
 - [2. Installation](#2-installation)
-- [3. Configuration and usage](#3-configuration-and-usage)
-- [4. Anatomy of a CRC model](#4-anatomy-of-a-crc-model)
-- [5. Benefits](#5-benefits)
-  * [5.1. Simplicity](#51-simplicity)
-  * [5.2. Behavior-driven development](#52-behavior-driven-development)
-- [6. Contributing](#6-contributing)
-- [7. Version](#7-version)
-- [8. License](#8-license)
-- [9. References](#9-references)
+- [3. Configuration](#3-configuration)
+- [4. Usage](#4-usage)
+- [5. Anatomy of a CRC model](#5-anatomy-of-a-crc-model)
+- [6. Benefits](#6-benefits)
+  * [6.1. Simplicity](#61-simplicity)
+  * [6.2. Behavior-driven development](#62-behavior-driven-development)
+- [7. Contributing](#7-contributing)
+- [8. Version](#8-version)
+- [9. License](#9-license)
+- [10. References](#10-references)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
 
 ## 1. Refactoring with CRC models
 
-> [![Citation][icon-quote-left-image]]() Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
+> ![Citation][icon-quote-left-image] Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
 >
-> [![Citation][icon-quote-left-image]]() Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.<sup><a href="#ref-refactoring-definition">[1]</a></sup>
+>  Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.<sup><a href="#ref-refactoring-definition">[1]</a></sup>
 
 CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
 
@@ -111,7 +113,7 @@ $ npm install eslint-plugin-crc --save-dev
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-crc` globally.
 
-## 3. Configuration and usage
+## 3. Configuration
 
 Add `crc` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
@@ -133,7 +135,35 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
-## 4. Anatomy of a CRC model
+## 4. Usage
+
+For local installations, run:
+
+```bash
+$ node_modules/.bin/eslint .
+```
+
+If you installed `eslint-plugin-crc` globally, run:
+
+```bash
+$ eslint .
+```
+
+You can also add it as an `npm-script`:
+
+```json
+  "scripts": {
+    "lint": "eslint . --fix"
+  }
+```
+
+Once added as an `npm-script`, run:
+
+```bash
+$ npm run lint
+```
+
+## 5. Anatomy of a CRC model
 
 CRC Models use a simple and scannable template that consist of three simple sections for:
 
@@ -171,24 +201,24 @@ CRC Models use a simple and scannable template that consist of three simple sect
   </tbody>
 </table>
 
-> [![Use of terms][icon-info-image]]() Despite the implementation of the `class`, `constructor`, `static`, `extends`, and `super` keywords in ES2015, JavaScript _still_ achieves encapsulation, inheritance, and polymorphism with `prototype` chains. Nevertheless, I use the word `class` to refer to JavaScript objects with `prototype`-based inheritance.
+> ![Use of terms][icon-info-image] Despite the implementation of the `class`, `constructor`, `static`, `extends`, and `super` keywords in ES2015, JavaScript _still_ achieves encapsulation, inheritance, and polymorphism with `prototype` chains. Nevertheless, I use the word `class` to refer to JavaScript objects with `prototype`-based inheritance.
 
 
-## 5. Benefits
+## 6. Benefits
 
-### 5.1. Simplicity
+### 6.1. Simplicity
 
 CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.
 
-> [![Citation][icon-quote-left-image]]() A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[2]</a></sup>
+> ![Citation][icon-quote-left-image] A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[2]</a></sup>
 
 CRC models are simple to read, write, and update. CRC models focus on the **purpose** of classes instead of their **mechanics**. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.
 
-### 5.2. Behavior-driven development
+### 6.2. Behavior-driven development
 
 Behavior-driven development (BDD) seeks to incorporate **_design_** as a routine exercise during product delivery. BDD prescribes iterative activities intended to redefine and contextualize design, testing, and programming as unified activities that share common specifications expressing a product's behavior instead of its technical implementation. BDD extends TDD's focus on refactoring to how classes behave with each other. The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior instead of technical assertions.
 
-## 6. Contributing
+## 7. Contributing
 > [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributors and pull requests.
 
 Check out the guidelines for
@@ -201,17 +231,17 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 - [Peruse open issues][issues-url] or
 - [Open a new pull request (PR)][pr-url].
 
-## 7. Version
+## 8. Version
 
 `eslint-plugin-crc`'s latest version is <!-- semver --> [`v0.2.0`][changelog-url] <!-- semverend --> . Please read the [CHANGELOG][changelog-url] for details.
 
-## 8. License
+## 9. License
 
 [MIT][license-url] © [Greg Swindle][author-url]
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large)
 
-## 9. References
+## 10. References
 
 <a name="ref-refactoring-definition"></a>
 **[1]** M. Fowler, "Refactoring", Refactoring.com, 2017. [Online]. Available: https://refactoring.com/. [Accessed: 22- Nov- 2017]

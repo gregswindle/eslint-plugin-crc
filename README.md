@@ -16,8 +16,7 @@
 
 ## Table of contents
 
-<!-- toc -->
-
+<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 - [1. Installation](#1-installation)
 - [2. Usage](#2-usage)
   * [2.1. Configuration](#21-configuration)
@@ -30,10 +29,8 @@
 - [5. Contributing](#5-contributing)
 - [6. Version](#6-version)
 - [7. License](#7-license)
-
-<!-- tocstop -->
-
-<!-- tocend -->
+<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
 ## 1. Installation
 

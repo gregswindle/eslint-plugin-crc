@@ -4,6 +4,7 @@
 
 [![Inline docs](http://inch-ci.org/github/gregswindle/eslint-plugin-crc.svg?branch=develop&style=flat-sqaure)](http://inch-ci.org/github/gregswindle/eslint-plugin-crc?branch=develop) [![Travis CI Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc) [![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade) [![Coverage Status](https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=develop)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=develop) [![Quality Gate](https://sonarqube.com/api/badges/gate?key=gregswindle-eslint-plugin-crc)](https://sonarqube.com/dashboard/index/gregswindle-eslint-plugin-crc)
 [![bitHound Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/dependencies.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/devDependencies.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield)
 
 <!--
 * Quality:  [![Code Climate](https://codeclimate.com/github/gregswindle/eslint-plugin-crc/badges/gpa.svg)](https://codeclimate.com/github/gregswindle/eslint-plugin-crc)  [![bitHound Overall Score](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/score.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc)
@@ -188,3 +189,6 @@ Read to contribute [PULL_REQUEST_TEMPLATE.md](PULL_REQUEST_TEMPLATE.md).
 
 Copyright (c) Greg Swindle.
 This source code is licensed under the [MIT license](LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large)

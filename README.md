@@ -2,8 +2,17 @@
 
 > Analyze, model, and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
-[![Inline docs](http://inch-ci.org/github/gregswindle/eslint-plugin-crc.svg?branch=develop&style=flat-sqaure)](http://inch-ci.org/github/gregswindle/eslint-plugin-crc?branch=develop) [![Travis CI Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master)](https://travis-ci.org/gregswindle/eslint-plugin-crc) [![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade) [![Coverage Status](https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=develop)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=develop) [![Quality Gate](https://sonarqube.com/api/badges/gate?key=gregswindle-eslint-plugin-crc)](https://sonarqube.com/dashboard/index/gregswindle-eslint-plugin-crc)
-[![bitHound Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/dependencies.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/devDependencies.svg)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
+[![License][license-image]][license-url]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield&style=flat-square)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield)
+[![NSP Status](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square)](https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a)
+ [![Inline docs](http://inch-ci.org/github/gregswindle/eslint-plugin-crc.svg?branch=develop&style=flat-sqaure)](http://inch-ci.org/github/gregswindle/eslint-plugin-crc?branch=develop)<br>
+[![bitHound Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/dependencies.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/badges/devDependencies.svg?style=flat-square)](https://www.bithound.io/github/gregswindle/eslint-plugin-crc/develop/dependencies/npm)<br>
+ [![Travis CI Build Status](https://travis-ci.org/gregswindle/eslint-plugin-crc.svg?branch=master&style=flat-square)](https://travis-ci.org/gregswindle/eslint-plugin-crc)
+ [![Codacy Badge](https://api.codacy.com/project/badge/Grade/685cb41fec6746038e6deaa1bfddb71a?style=flat-square)](https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade)
+ [![Coverage Status](https://coveralls.io/repos/github/gregswindle/eslint-plugin-crc/badge.svg?branch=develop)](https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master&style=flat-square)
+ [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=gregswindle-eslint-plugin-crc)](https://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc)
+
 
 ## Table of contents
 
@@ -246,7 +255,7 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 
 ## 7. License
 
-[Apache-2.0][license-url] © [Greg Swindle][author-url]
+[MIT][license-url] © [Greg Swindle][author-url]
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large)
 
@@ -280,7 +289,7 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [greenkeeper-url]: https://greenkeeper.io/
 [issues-url]: https://github.com/gregswindle/eslint-plugin-crc/issues
 [jsdoc2md-url]: https://github.com/jsdoc2md/jsdoc-to-markdown
-[license-image]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat
+[license-image]: https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square
 [license-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE
 [lint-def-url]: https://en.wikipedia.org/wiki/Lint_(software)
 [makeapullrequest-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat

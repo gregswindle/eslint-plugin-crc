@@ -415,37 +415,36 @@
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 | **Dependency** | **Description** | **Version** | **License** | **Type** |
 | -------------- | --------------- | ----------- | ----------- | -------- |
- | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev |
- | [bithound@1.7.0](https://github.com/bithound/cli.bithound.io) | Commands for interacting with bitHound: https://bithound.io | 1.7.0 | MIT | dev |
- | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev |
- | [codacy-coverage@2.0.3](https://github.com/codacy/node-codacy-coverage) | Code Coverage reporter for Codacy.com | 2.0.3 | MIT | dev |
- | [codeclimate-test-reporter@0.5.0](https://github.com/codeclimate/javascript-test-reporter) | Code Climate test reporter client for javascript projects | 0.5.0 | MIT | dev |
- | [commitplease@3.1.0](https://github.com/jzaefferer/commitplease#readme) | Validates strings as commit messages | 3.1.0 | MIT | dev |
- | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev |
- | [dedupe@2.1.0](https://github.com/seriousManual/dedupe#readme) | easy deduplication of array values | 2.1.0 | MIT | dev |
- | [dirty-chai@2.0.1](https://github.com/prodatakey/dirty-chai) | Extends Chai with lint-friendly terminating assertions. | 2.0.1 | MIT | dev |
- | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev |
- | [esdoc-external-nodejs-plugin@1.0.0](https://github.com/esdoc/esdoc-plugins) | A external Node.js plugin for ESDoc | 1.0.0 | MIT | dev |
- | [esdoc-standard-plugin@1.0.0](https://github.com/esdoc/esdoc-plugins) | A standard plugin for ESDoc | 1.0.0 | MIT | dev |
- | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | Apache-2.0 | dev |
- | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev |
- | [markdown-magic@0.1.19](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.19 | MIT | dev |
- | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev |
- | [markdown-magic-install-command@1.3.1](https://github.com/camacho/markdown-magic-install-command#readme) | Print install command for markdown file | 1.3.1 | MIT | dev |
- | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev |
- | [mocha@4.0.1](https://mochajs.org) | simple, flexible, fun test framework | 4.0.1 | MIT | dev |
- | [mocha-junit-reporter@1.15.0](https://github.com/michaelleeallen/mocha-junit-reporter#readme) | A JUnit reporter for mocha. | 1.15.0 | MIT | dev |
- | [nodemon@1.12.1](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.12.1 | MIT | dev |
- | [npmdoc-nsp@2017.4.23](https://github.com/npmdoc/node-npmdoc-nsp) | #### api documentation for  [nsp (v2.6.3)](https://github.com/nodesecurity/nsp#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-nsp.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-nsp) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-nsp.svg)](https://travis-ci.org/npmdoc/node-npmdoc-nsp) | 2017.4.23 | MIT | dev |
- | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev |
- | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev |
- | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev |
- | [semantic-release@8.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 8.2.0 | MIT | dev |
- | [semantic-release-cli@3.2.5](https://github.com/semantic-release/cli) | setup automated semver compliant package publishing | 3.2.5 | MIT | dev |
- | [sinon@4.1.2](http://sinonjs.org/) | JavaScript test spies, stubs and mocks. | 4.1.2 | BSD-3-Clause | dev |
- | [snyk@1.49.4](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.49.4 | Apache-2.0 | dev |
- | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | ISC | dev |
- | [uglify-js@3.1.10](http://lisperator.net/uglifyjs) | JavaScript parser, mangler/compressor and beautifier toolkit | 3.1.10 | BSD-2-Clause | dev |
+ | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev | 
+ | [bithound@1.7.0](https://github.com/bithound/cli.bithound.io) | Commands for interacting with bitHound: https://bithound.io | 1.7.0 | MIT | dev | 
+ | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev | 
+ | [codacy-coverage@2.0.3](https://github.com/codacy/node-codacy-coverage) | Code Coverage reporter for Codacy.com | 2.0.3 | MIT | dev | 
+ | [codeclimate-test-reporter@0.5.0](https://github.com/codeclimate/javascript-test-reporter) | Code Climate test reporter client for javascript projects | 0.5.0 | MIT | dev | 
+ | [commitplease@3.1.0](https://github.com/jzaefferer/commitplease#readme) | Validates strings as commit messages | 3.1.0 | MIT | dev | 
+ | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev | 
+ | [dedupe@2.1.0](https://github.com/seriousManual/dedupe#readme) | easy deduplication of array values | 2.1.0 | MIT | dev | 
+ | [dirty-chai@2.0.1](https://github.com/prodatakey/dirty-chai) | Extends Chai with lint-friendly terminating assertions. | 2.0.1 | MIT | dev | 
+ | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev | 
+ | [esdoc-external-nodejs-plugin@1.0.0](https://github.com/esdoc/esdoc-plugins) | A external Node.js plugin for ESDoc | 1.0.0 | MIT | dev | 
+ | [esdoc-standard-plugin@1.0.0](https://github.com/esdoc/esdoc-plugins) | A standard plugin for ESDoc | 1.0.0 | MIT | dev | 
+ | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | Apache-2.0 | dev | 
+ | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev | 
+ | [markdown-magic@0.1.19](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.19 | MIT | dev | 
+ | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev | 
+ | [markdown-magic-install-command@1.3.1](https://github.com/camacho/markdown-magic-install-command#readme) | Print install command for markdown file | 1.3.1 | MIT | dev | 
+ | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev | 
+ | [mocha@4.0.1](https://mochajs.org) | simple, flexible, fun test framework | 4.0.1 | MIT | dev | 
+ | [mocha-junit-reporter@1.15.0](https://github.com/michaelleeallen/mocha-junit-reporter#readme) | A JUnit reporter for mocha. | 1.15.0 | MIT | dev | 
+ | [nodemon@1.12.1](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.12.1 | MIT | dev | 
+ | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
+ | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev | 
+ | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
+ | [semantic-release@8.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 8.2.0 | MIT | dev | 
+ | [semantic-release-cli@3.2.5](https://github.com/semantic-release/cli) | setup automated semver compliant package publishing | 3.2.5 | MIT | dev | 
+ | [sinon@4.1.2](http://sinonjs.org/) | JavaScript test spies, stubs and mocks. | 4.1.2 | BSD-3-Clause | dev | 
+ | [snyk@1.49.4](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.49.4 | Apache-2.0 | dev | 
+ | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | ISC | dev | 
+ | [uglify-js@3.1.10](http://lisperator.net/uglifyjs) | JavaScript parser, mangler/compressor and beautifier toolkit | 3.1.10 | BSD-2-Clause | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->
 

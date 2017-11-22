@@ -784,7 +784,6 @@
  | [mocha@4.0.1](https://mochajs.org) | simple, flexible, fun test framework | 4.0.1 | MIT | dev | 
  | [mocha-junit-reporter@1.15.0](https://github.com/michaelleeallen/mocha-junit-reporter#readme) | A JUnit reporter for mocha. | 1.15.0 | MIT | dev | 
  | [nodemon@1.12.1](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.12.1 | MIT | dev | 
- | [npmdoc-nsp@2017.4.23](https://github.com/npmdoc/node-npmdoc-nsp) | #### api documentation for  [nsp (v2.6.3)](https://github.com/nodesecurity/nsp#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-nsp.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-nsp) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-nsp.svg)](https://travis-ci.org/npmdoc/node-npmdoc-nsp) | 2017.4.23 | MIT | dev | 
  | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
  | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 

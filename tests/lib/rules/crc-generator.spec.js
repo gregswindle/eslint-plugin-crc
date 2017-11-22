@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 const { RuleTester } = require("eslint");
-const rule = require("../../../lib/rules/generate-crc");
+const rule = require("../../../lib/rules/crc-generator");
 
 RuleTester.setDefaultConfig({
     parserOptions: {
@@ -29,7 +29,8 @@ const ruleTester = new RuleTester();
 //         Type: "Me too"
 //     }]
 // };
-ruleTester.run("generate-crc", rule, {
+
+ruleTester.run("crc-generator", rule, {
 
     valid: [
         // Give me some code that won't trigger a warning

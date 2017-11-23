@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CrcModel.html">CrcModel</a><ul class='methods'><li data-type='method'><a href="CrcModel.html#.factory">factory</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-crc-generator.html">crc-generator</a><ul class='methods'><li data-type='method'><a href="module-crc-generator.html#~create">create</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#pluralize">pluralize</a></li><li><a href="global.html#renderColor">renderColor</a></li><li><a href="global.html#renderMessages">renderMessages</a></li><li><a href="global.html#renderResults">renderResults</a></li><li><a href="global.html#renderSummary">renderSummary</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CrcModel.html">CrcModel</a><ul class='methods'><li data-type='method'><a href="CrcModel.html#.factory">factory</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-crc-generator.html">crc-generator</a><ul class='methods'><li data-type='method'><a href="module-crc-generator.html#~create">create</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -61,6 +61,7 @@ const loadOptions = function (options) {
     collaborators: [],
     context: null,
     declaration: null,
+    description: null,
     identifier: null,
     references: [],
     responsibilities: []
@@ -86,16 +87,19 @@ const getSuperClassByNewExpression = (node) => {
 };
 
 /**
- * Return a superClass.name for CallExpressions with Object.create, e.g., Square.prototype = Object.create(Polygon.prototype).
+ *
+ * Return a superClass.name for CallExpressions with Object.create.
  *
  * @param {ASTNode} node - The abstract syntax tree node.
  * @example
+ * // Square.prototype = Object.create(Polygon.prototype);
  * getSuperClassByObjectCreate(node);
  * @returns {string} - The name of the superClass.
  * @private
  */
 const getSuperClassByObjectCreate = (node) => {
-  if (node.left &amp;&amp; node.left.property.name === "prototype" &amp;&amp; node.right &amp;&amp; node.right.callee.type === "MemberExpression") {
+  if (node.left &amp;&amp; node.left.property.name === "prototype" &amp;&amp;
+    node.right &amp;&amp; node.right.callee.type === "MemberExpression") {
     const rhs = node.right.callee;
     /* istanbul ignore else */
     if (rhs.object.name === "Object" &amp;&amp; rhs.property.name === "create") {
@@ -107,10 +111,11 @@ const getSuperClassByObjectCreate = (node) => {
 };
 
 /**
- * Return a superClass.name for constructor AssignmentExpressions, e.g., Square.prototype.constructor = Polygon.
+ * Return a superClass.name for constructor AssignmentExpressions.
  *
  * @param {ASTNode} node - The abstract syntax tree node.
  * @example
+ * // Square.prototype.constructor = Polygon;
  * getSuperClassByConstructorAssignment(node);
  * @returns {string} - The name of the superClass.
  * @private
@@ -119,7 +124,8 @@ const getSuperClassByConstructorAssignment = (node) => {
   /* istanbul ignore else */
   if (node.left &amp;&amp; node.left.type === "MemberExpression") {
     /* istanbul ignore else */
-    if (node.left.object.property.name === "prototype" &amp;&amp; node.left.property.name === "constructor") {
+    if (node.left.object.property.name === "prototype" &amp;&amp;
+      node.left.property.name === "constructor") {
       return node.right.name;
     }
   }
@@ -136,7 +142,12 @@ const getSuperClassByConstructorAssignment = (node) => {
  * @returns {string} - The name of the superClass.
  * @private
  */
-const getSuperClass = (node) => getSuperClassByNewExpression(node) || getSuperClassByObjectCreate(node) || getSuperClassByConstructorAssignment(node) || node.superClass.name;
+const getSuperClass = (node) => {
+  return getSuperClassByNewExpression(node) ||
+    getSuperClassByObjectCreate(node) ||
+    getSuperClassByConstructorAssignment(node) ||
+    node.superClass.name;
+};
 
 /**
  * Represents a **Class-Responsibility-Collaboration model**, which expresses
@@ -148,14 +159,23 @@ class CrcModel {
    * Create a shadow Class-Responsibility-Collaboration model.
    *
    * @class
-   * @param {string} name - The source code identifier of the class or object to be modeled.
-   * @param {Object} [options] - A parameter object that optionally sets all of the CrcModel's properties.
-   * @param {array.&lt;CrcModel>} [options.collaborators] - A collection of zero or more CrcModels that this object depends on.
-   * @param {array.&lt;CrcModel>} [options.references] - A collection of zero or more Espree Tokens representing where this object is used in the source code.
+   * @param {string} name - The source code identifier of the class or object to
+   * be modeled.
+   * @param {Object} [options] - A parameter object that optionally sets all of
+   * the CrcModel's properties.
+   * @param {array.&lt;CrcModel>} [options.collaborators] - A collection of zero or
+   * more CrcModels that this object depends on.
+   * @param {string} [options.description] - A summary of the
+   * object's purpose.
+   * @param {array.&lt;CrcModel>} [options.references] - A collection of zero or
+   * more Espree Tokens representing where this object is used in the source code.
    * @param {Object} [options.identifier] - An Espree Identifier object.
-   * @param {array.&lt;string>} [options.responsibilities] - A list of data this object must maintain and/or operations it must perform.
-   * @param {Object} [options.declaration] - The Espree Identifier that represents "where" this object was declared into being.
-   * @param {Object} [options.superClass] - The `prototype` of the object being modeled. Defaults to `Object`.
+   * @param {array.&lt;string>} [options.responsibilities] - A list of data this
+   * object must maintain and/or operations it must perform.
+   * @param {Object} [options.declaration] - The Espree Identifier that represents
+   * "where" this object was declared into being.
+   * @param {Object} [options.superClass] - The `prototype` of the object being
+   * modeled. Defaults to `Object`.
    * @example
    * const crcModel = new CrcModel("Bravo", {
    *   superClass: Alpha
@@ -209,7 +229,7 @@ module.exports = CrcModel;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Nov 22 2017 08:57:12 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Nov 24 2017 16:10:06 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

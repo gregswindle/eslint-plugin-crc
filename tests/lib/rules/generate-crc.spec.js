@@ -30,7 +30,7 @@ const ruleTester = new RuleTester();
 //     }]
 // };
 
-ruleTester.run("generate-crc", rule, {
+ruleTester.run("rule:generate-crc", rule, {
 
   valid: [
     // Give me some code that won't trigger a warning

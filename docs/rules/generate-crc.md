@@ -1,21 +1,21 @@
-# Generate class-responsibilities-collaborators models to assess and refactor JavaScript source code. (generate-crc)
+# generate class-responsibilities-collaborators models to assess and refactor JavaScript source code. (generate-crc)
 
-Please describe the origin of the rule here.
-
+Analyze, model, and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
 ## Rule Details
 
-This rule aims to...
+generate-crc identifies JavaScript:
 
-Examples of **incorrect** code for this rule:
+ * `Objects` that *behave* like classes through constructor-based inheritance, and
+ * `classes` themselves.
 
-```js
 
-// fill me in
 
-```
+### Examples of **incorrect** code for this rule
 
-Examples of **correct** code for this rule:
+This rule *must* be enabled in order for `eslint-plugin-crc` to generate reports.
+
+### Examples of **correct** code for this rule
 
 ```js
 
@@ -28,9 +28,14 @@ Examples of **correct** code for this rule:
 If there are any options, describe them here. Otherwise, delete this section.
 
 ## When Not To Use It
+> ![Information][icon-info-image] `eslint-plugin-crc` currently only handles JavaScript `Objects` and `classes`.
 
-Give a short description of when it would be appropriate to turn off this rule.
+If the codebase uses the [functional programming paradigm](https://en.wikipedia.org/wiki/Functional_programming), this rule&mdash;as well as `eslint-plugin-crc` in general&mdash;is unnecessary.
 
 ## Further Reading
 
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+The (draft) whitepaper [Refactoring JavaScript: parsing source code syntax and semantics to generate CRC Models][refactoring-javascript-url] explains the motivations behind this rule.
+
+
+[icon-info-image]: /docs/img/icons8/icon-info-30.png
+[refactoring-javascript-url]: https://gregswindle.gitbooks.io/refactoring-javascript/content/

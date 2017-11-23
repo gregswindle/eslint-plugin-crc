@@ -764,6 +764,7 @@
 | **Dependency** | **Description** | **Version** | **License** | **Type** |
 | -------------- | --------------- | ----------- | ----------- | -------- |
  | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev | 
+ | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev | 
  | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev | 
  | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev | 
  | [eslint-config-xo-space@0.17.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.17.0 | MIT | dev | 
@@ -782,13 +783,14 @@
  | [markdown-magic@0.1.19](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.19 | MIT | dev | 
  | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev | 
  | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev | 
+ | [marky-markdown-lite@1.2.0](https://github.com/zeke/marky-markdown-lite#readme) | A version of marky-markdown that does less | 1.2.0 | MIT | dev | 
  | [mocha@4.0.1](https://mochajs.org) | simple, flexible, fun test framework | 4.0.1 | MIT | dev | 
  | [nodemon@1.12.1](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.12.1 | MIT | dev | 
  | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
  | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
  | [semantic-release@8.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 8.2.0 | MIT | dev | 
- | [snyk@1.49.5](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.49.5 | Apache-2.0 | dev | 
+ | [snyk@1.50.0](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.50.0 | Apache-2.0 | dev | 
  | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | ISC | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->

@@ -10,7 +10,7 @@ const config = {
     DEPENDENCYTABLE: markdownMagicDependencyTable,
     SCRIPTS: markdownMagicPackageScripts
   },
-  DEBUG: true
+  DEBUG: false
 };
 
 let markdownPath = path.join(__dirname, "*.md");

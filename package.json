@@ -130,7 +130,7 @@
     "snyk-protect": "snyk protect",
     "snyk-test": "snyk test",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha tests/**/*.spec.js",
     "version": null,
     "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test"
   },

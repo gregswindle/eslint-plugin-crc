@@ -7,11 +7,10 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
+// eslint-disable-next-line node/no-unsupported-features, node/no-unpublished-require
 const { expect } = require("chai");
 const formatter = require("../../../../lib/formatters/markdown");
-const markyMarkdownLite = require("marky-markdown-lite");
 const squareCrcModel = require("../../../fixtures/formatters/square-crc-model");
-const shapeCrcModelList = require("../../../fixtures/formatters/shape-crc-model-list");
 
 // ------------------------------------------------------------------------------
 // Helpers
@@ -22,7 +21,6 @@ const shapeCrcModelList = require("../../../fixtures/formatters/shape-crc-model-
 // ------------------------------------------------------------------------------
 
 describe("formatter:markdown,", () => {
-
   describe("when passed an array of CrcModels,", () => {
     const code = [{
       filePath: "foo.js",
@@ -40,6 +38,7 @@ describe("formatter:markdown,", () => {
       const result = formatter(code);
       expect(result).to.contain("# CRC Model results");
       expect(result).to.contain("0 problems.");
+      // eslint-disable-next-line max-len
       expect(result).to.contain("Square extends <a rel=\"noopener\" href=\"https://is.gd/ZZBLcn\" target=\"mdn\">Object</a>");
     });
   });
@@ -63,7 +62,5 @@ describe("formatter:markdown,", () => {
       const result = formatter(code);
       expect(result).to.contain("3 problems (2 errors, 1 warning).");
     });
-
-
   });
 });

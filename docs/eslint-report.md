@@ -1,3 +1,7 @@
+
+> eslint-plugin-crc@0.2.0 lint /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc
+> eslint . --fix "-f" "html" "lib"
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -91,35 +95,105 @@
         <div id="overview" class="bg-0">
             <h1>ESLint Report</h1>
             <div>
-                <span>0 problems</span> - Generated on Wed Nov 22 2017 01:47:34 GMT-0600 (CST)
+                <span>0 problems</span> - Generated on Mon Nov 27 2017 21:05:05 GMT-0600 (CST)
             </div>
         </div>
         <table>
             <tbody>
                 <tr class="bg-0" data-group="f-0">
     <th colspan="4">
-        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/index.js
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/class-declaration-crc-class.js
         <span>0 problems</span>
     </th>
 </tr>
 
 <tr class="bg-0" data-group="f-1">
     <th colspan="4">
-        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/rules/crc-generator.js
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/class-expression-crc-class.js
         <span>0 problems</span>
     </th>
 </tr>
 
 <tr class="bg-0" data-group="f-2">
     <th colspan="4">
-        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/rules/crc-model.js
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-class.js
         <span>0 problems</span>
     </th>
 </tr>
 
 <tr class="bg-0" data-group="f-3">
     <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-model.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-4">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-responsibilities-builder.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-5">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/index.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-6">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/new-expression-crc-class.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-7">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/object-expression-crc-class.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-8">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/prototype-constructor-crc-class.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-9">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/formatters/markdown/index.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-10">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/index.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-11">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/rules/crc-report.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-12">
+    <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/rules/index.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-13">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/markdown.config.js
         <span>0 problems</span>
     </th>
 </tr>

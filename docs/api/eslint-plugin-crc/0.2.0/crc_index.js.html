@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>crc/index.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">crc/index.js</h1>
     
 
     
@@ -38,32 +38,39 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Analyze and refactor JavaScript codebases with auto-generated
- * Class-Responsibility-Collaboration models.
+ * `crc` module.
+ * @module eslint-plugin-crc/crc
  * @author Greg Swindle &lt;greg@swindle.net>
  */
 
 // ------------------------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------------------------
-const path = require("path");
-const requireIndex = require("requireindex");
+const CrcClass = require("./crc-class");
+const CrcModel = require("./crc-model");
 
 // ------------------------------------------------------------------------------
 // Plugin Definition
 // ------------------------------------------------------------------------------
 
+/**
+ * Create class-responsibilities-collaborators
+ * reporting model objects.
+ */
 module.exports = {
-  // Import the markdown formatter
-  formatters: {
-    markdown: requireIndex(path.resolve(__dirname, "formatters/markdown"))
-  },
+  /**
+   * A `class` "summary" `Object` used for reporting.
+   * @see CrcClass
+   */
+  CrcClass,
 
-  // Import processors
-  processors: {},
-
-  // Import all rules in lib/rules
-  rules: requireIndex(path.resolve(__dirname, "rules"))
+  /**
+   * Represents a Class-Responsibility-Collaboration model, which expresses the
+   * scope of an object's behaviors (**responsibilities**) and the objects it
+   * depends on to fulfill its responsibilities (**collaborators**).
+   * @see CrcModel
+   */
+  CrcModel
 };
 </code></pre>
         </article>

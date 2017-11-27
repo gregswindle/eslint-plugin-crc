@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>crc/object-expression-crc-class.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">crc/object-expression-crc-class.js</h1>
     
 
     
@@ -37,34 +37,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Analyze and refactor JavaScript codebases with auto-generated
- * Class-Responsibility-Collaboration models.
- * @author Greg Swindle &lt;greg@swindle.net>
- */
+            <pre class="prettyprint source linenums"><code>const CrcClass = require("./crc-class");
+// eslint-disable-next-line node/no-unsupported-features
+const { first } = require("lodash");
 
-// ------------------------------------------------------------------------------
-// Requirements
-// ------------------------------------------------------------------------------
-const path = require("path");
-const requireIndex = require("requireindex");
+class ObjectExpressionCrcClass extends CrcClass {
+  /**
+   * Create a `CrcClass` from ESTree `Nodes` and ESLint Rule `Contexts`.
+   *
+   * @static
+   * @param {ASTNode} node - An abstract syntax tree node.
+   * @param {Context} context  - An ESLint
+   * {@link https://goo.gl/tuUSG5 Context} object with relevant information.
+   * @example
+   * const crcClass = ObjectExpressionCrcClass.factory(node, context);
+   * @returns {CrcClass} A NullObject for CrcClass.
+   */
+  static factory (node, context) {
+    const lhs = node.left;
+    const rhs = node.right;
+    const params = {
+      astNode: node,
+      description: null,
+      name: lhs.object.name,
+      src: context.getSourceCode(),
+      superClass: first(rhs.arguments).object.name
+    };
 
-// ------------------------------------------------------------------------------
-// Plugin Definition
-// ------------------------------------------------------------------------------
+    return new CrcClass(params);
+  }
+}
 
-module.exports = {
-  // Import the markdown formatter
-  formatters: {
-    markdown: requireIndex(path.resolve(__dirname, "formatters/markdown"))
-  },
-
-  // Import processors
-  processors: {},
-
-  // Import all rules in lib/rules
-  rules: requireIndex(path.resolve(__dirname, "rules"))
-};
+module.exports = ObjectExpressionCrcClass;
 </code></pre>
         </article>
     </section>

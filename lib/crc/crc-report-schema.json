@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "$id": "https://github.com/gregswindle/eslint-plugin-crc/lib/rules/crc-report-schema.json",
+  "definitions": {
+    "class": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "superClass": {
+          "type": "object"
+        },
+        "astNode": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "superClass",
+        "astNode"
+      ]
+    },
+    "crcModel": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "ClassDeclaration",
+            "ClassExpression",
+            "AssignmentExpression",
+            "ExpressionStatement"
+          ]
+        },
+        "class": {
+          "$ref": "#/definitions/class"
+        },
+        "responsibilities": {
+          "description": "The behaviors and objectives the class is expected to fulfill.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "maxItems": 10,
+          "uniqueItems": true
+        },
+        "collaborators": {
+          "description": "Objects used to fullfil responsibilities.",
+          "type": "array",
+          "$ref": "#/definitions/class",
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "class",
+        "responsibilities",
+        "collaborators"
+      ]
+    }
+  },
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "crcModels": {
+      "type": "array",
+      "$ref": "#/definitions/crcModel",
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ]
+}

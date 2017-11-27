@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>crc/class-declaration-crc-class.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">crc/class-declaration-crc-class.js</h1>
     
 
     
@@ -37,34 +37,40 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Analyze and refactor JavaScript codebases with auto-generated
- * Class-Responsibility-Collaboration models.
- * @author Greg Swindle &lt;greg@swindle.net>
+            <pre class="prettyprint source linenums"><code>const CrcClass = require("./crc-class");
+
+/**
+ * Create a `class` representation for use in a CrcClass
+ * (Class-Responsibility-Collaboration model).
+ *
+ * @extends CrcClass
  */
+class ClassDeclarationCrcClass extends CrcClass {
+  /**
+   * Create a `CrcClass` from ESTree `Nodes` and ESLint Rule `Contexts`.
+   *
+   * @param {ASTNode} node - An abstract syntax tree node.
+   * @param {Context} context  - An object with relevant information.
+   * @see https://goo.gl/tuUSG5
+   * @param {string}
+   * @example
+   * const crcClass.factory(node, context);
+   * @returns {CrcClass} A NullObject for CrcClass.
+   */
+  static factory (node, context) {
+    const params = {
+      astNode: node,
+      description: null,
+      name: node.id.name,
+      src: context.getSourceCode(),
+      superClass: node.superClass.name
+    };
 
-// ------------------------------------------------------------------------------
-// Requirements
-// ------------------------------------------------------------------------------
-const path = require("path");
-const requireIndex = require("requireindex");
+    return new CrcClass(params);
+  }
+}
 
-// ------------------------------------------------------------------------------
-// Plugin Definition
-// ------------------------------------------------------------------------------
-
-module.exports = {
-  // Import the markdown formatter
-  formatters: {
-    markdown: requireIndex(path.resolve(__dirname, "formatters/markdown"))
-  },
-
-  // Import processors
-  processors: {},
-
-  // Import all rules in lib/rules
-  rules: requireIndex(path.resolve(__dirname, "rules"))
-};
+module.exports = ClassDeclarationCrcClass;
 </code></pre>
         </article>
     </section>

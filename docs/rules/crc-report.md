@@ -1,10 +1,10 @@
-# generate class-responsibilities-collaborators models to assess and refactor JavaScript source code. (generate-crc)
+# class-responsibilities-collaborators reports (crc-report)
 
 Analyze, model, and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
 
 ## Rule Details
 
-generate-crc identifies JavaScript:
+crc-report identifies JavaScript:
 
  * `Objects` that *behave* like classes through constructor-based inheritance, and
  * `classes` themselves.

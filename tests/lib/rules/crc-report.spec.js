@@ -8,7 +8,7 @@
 // ------------------------------------------------------------------------------
 // eslint-disable-next-line node/no-unsupported-features
 const { RuleTester } = require("eslint");
-const rule = require("../../../lib/rules/generate-crc");
+const rule = require("../../../lib/rules/crc-report");
 
 RuleTester.setDefaultConfig({
   parserOptions: {
@@ -30,7 +30,7 @@ const ruleTester = new RuleTester();
 //     }]
 // };
 
-ruleTester.run("rule:generate-crc", rule, {
+ruleTester.run("rule:crc-report", rule, {
 
   valid: [
     // Give me some code that won't trigger a warning
@@ -40,7 +40,5 @@ ruleTester.run("rule:generate-crc", rule, {
     "class Square extends Polygon {}"
   ],
 
-  invalid: [
-
-  ]
+  invalid: []
 });

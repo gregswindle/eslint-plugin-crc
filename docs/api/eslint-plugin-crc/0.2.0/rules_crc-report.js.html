@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>rules/generate-crc.js - Documentation</title>
+    <title>rules/crc-report.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -22,12 +22,12 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a><ul class='methods'><li data-type='method'><a href="CrcModel.html#.factory">factory</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-crc-generator.html">crc-generator</a><ul class='methods'><li data-type='method'><a href="module-crc-generator.html#~create">create</a></li></ul></li><li><a href="module-rules_crc-report.html">rules/crc-report</a><ul class='methods'><li data-type='method'><a href="module-rules_crc-report.html#~create">create</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_markdown.html">eslint-plugin-crc/formatters/markdown</a></li><li><a href="module-eslint-plugin-crc_rules_crc-report.html">eslint-plugin-crc/rules/crc-report</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_rules_crc-report.html#~create">create</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">rules/generate-crc.js</h1>
+    <h1 class="page-title">rules/crc-report.js</h1>
     
 
     
@@ -44,6 +44,10 @@
  */
 
 const CrcModel = require("../crc/crc-model");
+const ClassDeclarationCrcClass = require("../crc/class-declaration-crc-class");
+const NewExpressionCrcClass = require("../crc/new-expression-crc-class");
+const ObjectExpressionCrcClass = require("../crc/object-expression-crc-class");
+const PrototypeConstructorCrcClass = require("../crc/prototype-constructor-crc-class");
 const crcReportSchema = require("../crc/crc-report-schema");
 
 // ------------------------------------------------------------------------------
@@ -52,8 +56,8 @@ const crcReportSchema = require("../crc/crc-report-schema");
 
 /**
  * An ESLint rule to identify ECMAScript `classes` and generate CRC Model reports.
- * @module crc-generator
- * @alias CrcGenerator
+ * @module eslint-plugin-crc/rules/crc-report
+ * @alias CrcReport
  * @property {Object} meta - Provides metadata about the Rule.
  * @property {String} meta.fixable - Either `"code"` or `"whitespace"` if the
  * `--fix` option on the
@@ -79,9 +83,9 @@ const crcReportSchema = require("../crc/crc-report-schema");
  */
 module.exports = {
   meta: {
-    /** @lends CrcGenerator.meta **/
+    /** @lends CrcReport.meta **/
     docs: {
-      /** @lends CrcGenerator.meta.description **/
+      /** @lends CrcReport.meta.description **/
       description: "Generate class-responsibilities-collaborators models to" +
       " assess and refactor JavaScript source code.",
       category: "Best Practices",
@@ -124,7 +128,6 @@ module.exports = {
     // ----------------------------------------------------------------------
 
     // Any helper functions should go here or else delete this section
-
     /**
      * Create a CrcModel and add it to the crcModelList.
      *
@@ -132,17 +135,24 @@ module.exports = {
      * @param {Context} context - Contains information that is relevant to the
      * [context](https://eslint.org/docs/developer-guide/working-with-rules#the-context-object)
      * of the rule.
+     * @param {CrcClass} crcClass - A `CrcClass` instance.
      * @example
      * addCrcModel(node, context);
      *
      * @private
      */
-    const addCrcModel = (node, context) => {
-      // eslint-disable-next-line no-console
-      // console.log(JSON.stringify(CrcModel.factory(node, context), null, 2));
+    const addCrcModel = (node, context, crcClass) => {
+      const crcModel = new CrcModel({
+        class: crcClass.factory(node, context),
+        responsibilities: [],
+        collaborators: []
+      });
       context.report({
         node,
-        message: CrcModel.factory(node, context)
+        message: {
+          message: "",
+          crcModel
+        }
       });
     };
 
@@ -155,19 +165,35 @@ module.exports = {
       // Detect constructor-based prototypal inheritance, i.e., "classes"
       /* eslint-disable max-len */
       "ExpressionStatement > [left.property.name=\"prototype\"][right.type=\"NewExpression\"]" (node) {
-        addCrcModel(node, context);
+        addCrcModel(
+          node,
+          context,
+          new NewExpressionCrcClass()
+        );
       },
 
       "AssignmentExpression[left.property.name=\"prototype\"][right.type=\"CallExpression\"],[right.callee.object.name=\"Object\"][callee.property.name=\"create\"][arguments] [object][property.name=\"prototype\"]" (node) {
-        addCrcModel(node, context);
+        addCrcModel(
+          node,
+          context,
+          new ObjectExpressionCrcClass()
+        );
       },
 
       "AssignmentExpression[left.property.name=\"constructor\"][right.type=\"Identifier\"]" (node) {
-        addCrcModel(node, context);
+        addCrcModel(
+          node,
+          context,
+          new PrototypeConstructorCrcClass()
+        );
       },
 
       "ClassDeclaration[superClass]" (node) {
-        addCrcModel(node, context);
+        addCrcModel(
+          node,
+          context,
+          ClassDeclarationCrcClass
+        );
       }
       /* eslint-enable */
     };
@@ -185,7 +211,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Nov 25 2017 20:49:13 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Nov 27 2017 11:51:49 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

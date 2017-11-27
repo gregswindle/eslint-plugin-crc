@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>crc/crc-class.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">crc/crc-class.js</h1>
     
 
     
@@ -38,33 +38,82 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Analyze and refactor JavaScript codebases with auto-generated
- * Class-Responsibility-Collaboration models.
- * @author Greg Swindle &lt;greg@swindle.net>
+ * @fileoverview Create a `class` summary object for CrcModels.
+ * @author Greg Swindle (https://github.com/gregswindle)
  */
 
-// ------------------------------------------------------------------------------
-// Requirements
-// ------------------------------------------------------------------------------
-const path = require("path");
-const requireIndex = require("requireindex");
-
-// ------------------------------------------------------------------------------
-// Plugin Definition
-// ------------------------------------------------------------------------------
-
-module.exports = {
-  // Import the markdown formatter
-  formatters: {
-    markdown: requireIndex(path.resolve(__dirname, "formatters/markdown"))
-  },
-
-  // Import processors
-  processors: {},
-
-  // Import all rules in lib/rules
-  rules: requireIndex(path.resolve(__dirname, "rules"))
+/**
+ * Default NullObject constructor parameters.
+ *
+ * @private
+ */
+const defaultParams = {
+  node: null,
+  description: null,
+  name: null,
+  superClass: null
 };
+
+/**
+ * Represents `class` "summary" `Object` used for reporting.
+ */
+class CrcClass {
+  /**
+   * @classdesc Create a `class` representation for use in a CrcClass
+   * (Class-Responsibility-Collaboration model).
+   * @class
+   * @public
+   * @param {Object} params - A parameter object that sets all of
+   * the CrcClass's properties.
+   * @param {string} params.name - The source code identifier of the class or
+   * object to be modeled.
+   * @param {string} params.description - A summary of the
+   * object's purpose.
+   * @param {ASTNode} params.node - The abstract syntax tree node emitted by
+   * a {@link https://goo.gl/WngFV9 compatible parser}.
+   * @param {Object} [params.superClass] - The `prototype` of the object being
+   * modeled. Defaults to `Object`.
+   * @example
+   * const crcClass = new CrcClass({
+   *   name: "Bravo",
+   *   description: "Disambiguates the letter \"B\" when stating english letters.",
+   *   superClass: Alpha,
+   *   node: node
+   * });
+   */
+  constructor (params = defaultParams) {
+    this.node = params.node;
+    this.description = params.description;
+    this.name = params.name;
+    this.superClass = params.superClass;
+  }
+
+  /**
+   * Create a `CrcClass` from ESTree `Nodes` and ESLint Rule `Contexts`.
+   *
+   * @param {ASTNode} node - An abstract syntax tree node.
+   * @param {Context} context  - An object with relevant information.
+   * @see https://goo.gl/tuUSG5
+   * @param {string}
+   * @example
+   * const crcClassFactory = new CrcModel();
+   * const crcClass = crcClassFactory.factory(node, context);
+   * @returns {CrcClass} A NullObject for CrcClass.
+   */
+  static factory (node, context) {
+    const params = {
+      node,
+      description: null,
+      name: node.id.name,
+      src: context.getSourceCode(),
+      superClass: node.superClass
+    };
+
+    return new CrcClass(params);
+  }
+}
+
+module.exports = CrcClass;
 </code></pre>
         </article>
     </section>

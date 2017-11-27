@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>crc/crc-model.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">crc/crc-model.js</h1>
     
 
     
@@ -38,33 +38,48 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Analyze and refactor JavaScript codebases with auto-generated
- * Class-Responsibility-Collaboration models.
- * @author Greg Swindle &lt;greg@swindle.net>
+ * Default parameters for a CrcModel NullObject.
+ *
+ * @private
  */
-
-// ------------------------------------------------------------------------------
-// Requirements
-// ------------------------------------------------------------------------------
-const path = require("path");
-const requireIndex = require("requireindex");
-
-// ------------------------------------------------------------------------------
-// Plugin Definition
-// ------------------------------------------------------------------------------
-
-module.exports = {
-  // Import the markdown formatter
-  formatters: {
-    markdown: requireIndex(path.resolve(__dirname, "formatters/markdown"))
-  },
-
-  // Import processors
-  processors: {},
-
-  // Import all rules in lib/rules
-  rules: requireIndex(path.resolve(__dirname, "rules"))
+const defaultParams = {
+  class: null,
+  collaborators: [],
+  responsibilities: []
 };
+
+/**
+ * Represents a **Class-Responsibility-Collaboration model**, which expresses
+ * the scope of an object's behaviors (**_responsibilities_**) and the objects
+ * it depends on to fulfill its responsibilities (**_collaborators_**).
+ */
+class CrcModel {
+  /**
+   * Create a shadow Class-Responsibility-Collaboration model.
+   *
+   * @class
+   * @param {Object} params - A parameter object that optionally sets all of
+   * the CrcModel's properties.
+   * @param {CrcClass} [params.class] - A `class` representation.
+   * @param {array.&lt;CrcClass>} [params.collaborators] - A collection of zero or
+   * more CrcClasses that this object depends on.
+   * @param {array.&lt;string>} params.responsibilities - A list of data this
+   * object must maintain and/or operations it must perform.
+   * @example
+   * const crcModel = new CrcModel({
+   *   class,
+   *   responsibilities,
+   *   collaborators
+   * });
+   */
+  constructor (params = defaultParams) {
+    this.class = params.class;
+    this.responsibilities = params.responsibilities;
+    this.collaborators = params.collaborators;
+  }
+}
+
+module.exports = CrcModel;
 </code></pre>
         </article>
     </section>

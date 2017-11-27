@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CrcModel.html">CrcModel</a><ul class='methods'><li data-type='method'><a href="CrcModel.html#.factory">factory</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-crc-generator.html">crc-generator</a><ul class='methods'><li data-type='method'><a href="module-crc-generator.html#~create">create</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_markdown.html">eslint-plugin-crc/formatters/markdown</a></li><li><a href="module-eslint-plugin-crc_rules_crc-report.html">eslint-plugin-crc/rules/crc-report</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_rules_crc-report.html#~create">create</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -39,6 +39,7 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * @fileoverview Markdown reporter
+ * @module eslint-plugin-crc/formatters/markdown
  * @author Greg Swindle
  */
 
@@ -75,7 +76,7 @@
   };
   const crcPageTemplate = getTempate("crc-page-template.md");
   const crcModelTemplate = getTempate("crc-model-template.md");
-  const crcSummaryTemplate = getTempate("crc-summary-template.md");
+  // const crcSummaryTemplate = getTempate("crc-summary-template.md");
 
   /**
    * Renders text along the template of x problems (x errors, x warnings).
@@ -103,31 +104,31 @@
    * Get HTML (table rows) describing the messages.
    *
    * @example
-   * const messages = renderMessages(result.messages, 0));
+   * const messages = renderCrcModels(result.messages, 0));
    * @param {Array} messages - Messages.
    * @param {int} parentIndex - Index of the parent HTML row.
    * @returns {string} HTML (table rows) describing the messages.
    * @private
    */
-  function renderMessages (messages, parentIndex) {
-  /**
+  function renderCrcModels (messages, parentIndex) {
+    // eslint-disable-next-line no-console
+    // console.log(result);
+    /**
    * Get HTML (table row) describing a message.
    * @param {Object} message - Message.
    * @returns {string} HTML (table row) describing a message.
    * @private
    */
-    return map(messages, (message) => {
-      const lineNumber = message.line || 0;
-      const columnNumber = message.column || 0;
+    return map(messages, (crcModel) => {
+      // const lineNumber = message.line || 0;
+      // const columnNumber = message.column || 0;
+      // eslint-disable-next-line no-console
+      // console.log(crcModel);
 
       return crcModelTemplate({
-        parentIndex,
-        lineNumber,
-        columnNumber,
-        severityNumber: message.severity,
-        severityName: message.severity === 1 ? "Warning" : "Error",
-        message: JSON.parse(message.message),
-        ruleId: message.ruleId
+        crcModel,
+        index: parentIndex,
+        messages
       });
     }).join("\n");
   }
@@ -142,18 +143,32 @@
    * @private
    */
   function renderResults (results) {
-    return map(results, (result, index) => crcSummaryTemplate({
+    return map(results, (result, index) => crcModelTemplate({
       index,
       filePath: result.filePath,
-      summary: renderSummary(result.errorCount, result.warningCount)
-
-    }) + renderMessages(result.messages, index)).join("\n");
+      summary: renderSummary(result.errorCount, result.warningCount),
+      results: renderCrcModels(result.messages, index, result)
+    }));
   }
 
   // --------------------------------------------------------------------------
   // Public Interface
   // --------------------------------------------------------------------------
 
+  /**
+   * Create a markdown-based report of CrcModels.
+   *
+   * @function
+   * @param {array.&lt;Result>} results - A list of ESLint rule parser results.
+   * @example
+   * # Run from a Terminal or CLI:
+   * eslint \
+   *   --format 'eslint-plugin-crc/formatters/markdown/index.js' \
+   *   --output 'reports/crc-model-report.md' \
+   *   lib/ \
+   *   --fix
+   * @returns {string} CrcModels rendered as markdown.
+   */
   module.exports = function (results) {
     let totalErrors,
       totalWarnings;
@@ -186,7 +201,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Nov 24 2017 20:12:53 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Nov 27 2017 11:51:49 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

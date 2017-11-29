@@ -95,7 +95,7 @@
         <div id="overview" class="bg-0">
             <h1>ESLint Report</h1>
             <div>
-                <span>0 problems</span> - Generated on Mon Nov 27 2017 21:05:05 GMT-0600 (CST)
+                <span>0 problems</span> - Generated on Tue Nov 28 2017 18:10:25 GMT-0600 (CST)
             </div>
         </div>
         <table>

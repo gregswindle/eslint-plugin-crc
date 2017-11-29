@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>rules/ast-config.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">rules/ast-config.js</h1>
     
 
     
@@ -38,33 +38,84 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Analyze and refactor JavaScript codebases with auto-generated
- * Class-Responsibility-Collaboration models.
- * @author Greg Swindle &lt;greg@swindle.net>
+ @fileoverview Espree AST parsing options. Ensure that the "tokens" property is set to true
+ in order for CRC models to maintain a list of "references", i.e., where they
+ themselves are referenced.
  */
+(function () {
+  module.exports = {
 
-// ------------------------------------------------------------------------------
-// Requirements
-// ------------------------------------------------------------------------------
-const path = require("path");
-const requireIndex = require("requireindex");
+    /**
+       * Attach range information to each node.
+       */
+    range: true,
 
-// ------------------------------------------------------------------------------
-// Plugin Definition
-// ------------------------------------------------------------------------------
+    /**
+       * Attach line/column location information to each node.
+       */
+    loc: true,
 
-module.exports = {
-  // Import the markdown formatter
-  formatters: {
-    markdown: requireIndex(path.resolve(__dirname, "formatters/markdown"))
-  },
+    /**
+       * Create a top-level comments array containing all comments.
+       */
+    comment: true,
 
-  // Import processors
-  processors: {},
+    /**
+       * Attach comments to the closest relevant node as leadingComments and
+       * trailingComments.
+       */
+    attachComment: true,
 
-  // Import all rules in lib/rules
-  rules: requireIndex(path.resolve(__dirname, "rules"))
-};
+    /**
+       * Create a top-level tokens array containing all tokens
+       */
+    tokens: true,
+
+    /**
+       * Specify the version of ECMAScript syntax you want to use. Valid versions are
+       * * 3
+       * * 5 (default)
+       * * 6
+       * * 7
+       * * 8
+       * You can also set to 2015 (same as 6), 2016 (same as 7), or 2017
+       * (same as 8) to use the year-based naming.
+       */
+    ecmaVersion: 6,
+
+    /**
+       * Specify which type of script you're parsing (script or module, default
+       * is script)
+       */
+    sourceType: "module",
+
+    /**
+       * Specify additional language features
+       */
+    ecmaFeatures: {
+
+      /**
+           * Enable JSX parsing
+           */
+      jsx: true,
+
+      /**
+           * Enable return in global scope
+           */
+      globalReturn: true,
+
+      /**
+           * Enable implied strict mode (if ecmaVersion >= 5)
+           */
+      impliedStrict: true,
+
+      /**
+           * Allow experimental object rest/spread
+           */
+      experimentalObjectRestSpread: true
+    }
+  };
+}());
 </code></pre>
         </article>
     </section>

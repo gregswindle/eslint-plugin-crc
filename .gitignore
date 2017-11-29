@@ -58,3 +58,5 @@ reports
 
 # Sonar Scanner
 /.scannerwork
+
+.DS_Store

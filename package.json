@@ -29,7 +29,9 @@
   },
   "contributors": [],
   "dependencies": {
-    "eslint": "4.11.0",
+    "eslint": "4.12.1",
+    "espree": "3.5.2",
+    "esquery": "1.0.0",
     "lodash": "4.17.4",
     "pluralize": "7.0.0",
     "requireindex": "1.1.0"
@@ -44,7 +46,7 @@
     "eslint-plugin-jest": "21.3.2",
     "eslint-plugin-jsdoc": "3.2.0",
     "eslint-plugin-no-unsafe-innerhtml": "1.0.16",
-    "eslint-plugin-no-unsanitized": "2.0.1",
+    "eslint-plugin-no-unsanitized": "2.0.2",
     "eslint-plugin-node": "5.2.1",
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-scanjs-rules": "0.2.1",
@@ -61,7 +63,7 @@
     "nyc": "11.3.0",
     "properties-parser": "0.3.1",
     "semantic-release": "8.2.0",
-    "snyk": "1.50.0",
+    "snyk": "1.53.0",
     "standard-version": "4.2.0"
   },
   "engines": {

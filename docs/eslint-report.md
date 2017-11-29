@@ -92,10 +92,10 @@
         </style>
     </head>
     <body>
-        <div id="overview" class="bg-0">
+        <div id="overview" class="bg-1">
             <h1>ESLint Report</h1>
             <div>
-                <span>0 problems</span> - Generated on Mon Nov 27 2017 21:05:05 GMT-0600 (CST)
+                <span>1 problem (0 errors, 1 warning)</span> - Generated on Wed Nov 29 2017 11:24:55 GMT-0600 (CST)
             </div>
         </div>
         <table>
@@ -179,19 +179,34 @@
 
 <tr class="bg-0" data-group="f-11">
     <th colspan="4">
-        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/rules/crc-report.js
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/rules/ast-config.js
         <span>0 problems</span>
     </th>
 </tr>
 
-<tr class="bg-0" data-group="f-12">
+<tr class="bg-1" data-group="f-12">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/rules/crc-report.js
+        <span>1 problem (0 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-12">
+    <td>13:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Line 13 exceeds the maximum line length of 80.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/max-len" target="_blank">max-len</a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-13">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/rules/index.js
         <span>0 problems</span>
     </th>
 </tr>
 
-<tr class="bg-0" data-group="f-13">
+<tr class="bg-0" data-group="f-14">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/markdown.config.js
         <span>0 problems</span>

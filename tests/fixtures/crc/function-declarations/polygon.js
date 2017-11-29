@@ -3,6 +3,4 @@ function Polygon(height, width) {
   this.width = width
 }
 
-module.exports = {
-  Polygon
-};
+module.exports = Polygon

@@ -1,6 +1,6 @@
 const { expect } = require("chai");
-const CrcClass = require("../../lib/crc/crc-class");
-const CrcModel = require("../../lib/crc/crc-model");
+const CrcClass = require("../../../lib/crc/crc-class");
+const CrcModel = require("../../../lib/crc/crc-model");
 
 // ------------------------------------------------------------------------------
 // Tests

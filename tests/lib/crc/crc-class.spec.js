@@ -1,10 +1,9 @@
 const { expect } = require("chai");
-const CrcClass = require("../../lib/crc/crc-class");
+const CrcClass = require("../../../lib/crc/crc-class");
 
 describe("crc-class", () => {
 
   let crcClass = null;
-  const srcCode = "class Rectangle extends Polygon {}";
 
   afterEach(() => { crcClass = null; })
 
@@ -12,13 +11,12 @@ describe("crc-class", () => {
 
     beforeEach(() => {
       crcClass = new CrcClass({
-        node: {},
         name: "Square",
         description: "A polygon with equilateral sides.",
         superClass: {
           name: "Polygon"
         },
-        src: srcCode
+        code: {}
       });
     });
 
@@ -35,59 +33,45 @@ describe("crc-class", () => {
       expect(crcClass.description).to.equal("A polygon with equilateral sides.");
     });
 
-    specify("declaring AST Node", () => {
-      expect(crcClass.node).to.be.ok;
+    specify("associated ESLint SourceCode", () => {
+      expect(crcClass.code).to.be.ok;
     });
 
-    specify("source code", () => {
-      expect(crcClass.src).to.equal(srcCode);
-    });
-
-    specify("`NullObject`", () => {
+    specify("NullObject", () => {
       crcClass = new CrcClass();
-      expect(crcClass.node).to.be.null;
+      expect(crcClass.code).to.be.null;
       expect(crcClass.description).to.be.null;
+      expect(crcClass.name).to.be.null;
       expect(crcClass.superClass).to.be.null;
-      expect(crcClass.src).to.be.null;
     });
   });
 
-  describe("factory:can create a CrcClass", () => {
-
-    const astNodeMock = {
-      id: {
-        name: "Rectangle"
-      },
-      superClass: {
-        name: "Polygon"
-      }
-    };
+  describe("factory: can create a Null CrcClass", () => {
 
     const contextMock = {
-      getSourceCode: () => srcCode
+      code: {}
     };
 
     afterEach(() => {
       crcClass = null;
     });
 
-    specify("from an ESLint rule's ASTNode and Context", () => {
-      crcClass = CrcClass.factory(astNodeMock, contextMock);
+    specify("from an ESLint Context object", () => {
+      crcClass = CrcClass.factory(contextMock);
 
-      expect(crcClass.name).to.be.ok;
-      expect(crcClass.superClass.name).to.be.ok;
+      expect(crcClass.name).to.be.null;
+      expect(crcClass.superClass).to.be.null;
       expect(crcClass.description).to.be.null;
-      expect(crcClass.node).to.be.ok;
-      expect(crcClass.src).to.equal(srcCode);
+      expect(crcClass.code).to.be.ok;
     });
 
-    specify("`NullObject`", () => {
+    specify("NullObject", () => {
       crcClass = CrcClass.factory();
 
       expect(crcClass.name).to.be.null;
-      expect(crcClass.superClass.name).to.be.null;
+      expect(crcClass.superClass).to.be.null;
       expect(crcClass.description).to.be.null;
-      expect(crcClass.src).to.be.null;
+      expect(crcClass.code).to.be.null;
     });
   });
 });

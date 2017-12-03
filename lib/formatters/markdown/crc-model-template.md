@@ -1,6 +1,4 @@
 
-
-
 <!-- crc-model-template:html,markdown -->
 <table width="100%">
   <thead>
@@ -40,7 +38,7 @@
 <details>
   <summary><img src="icon-javascript-filled-25.png" alt="Select to toggle" align="top">
     <tt><%- crcModel.class.name %>'s</tt> source code.</summary>
-  <pre><code language="javascript"><%- crcModel.source %></code></pre>
+  <pre><code language="javascript"><%- crcModel.class.code.text %></code></pre>
 </details>
 
 ---

@@ -23,6 +23,7 @@ describe("crc-reporter", () => {
   describe("iterates through ESLint results in order to", () => {
     it("fetch the source code from each result's filePath", () => {
       expect(eslintResults).to.be.ok;
+
     });
 
     it("create an AST for each file");

@@ -140,27 +140,17 @@ Then configure the rules you want to use under the rules section.
 For local installations, run:
 
 ```bash
-$ node_modules/.bin/eslint .
+$ ./node_modules/.bin/eslint \
+  -f './lib/formatters/markdown/index.js' tests/fixtures/crc/class-declaration/*.js \
+  -o reports/crc-model-report.md
 ```
 
 If you installed `eslint-plugin-crc` globally, run:
 
 ```bash
-$ eslint .
-```
-
-You can also add it as an `npm-script`:
-
-```json
-  "scripts": {
-    "lint": "eslint . --fix"
-  }
-```
-
-Once added as an `npm-script`, run:
-
-```bash
-$ npm run lint
+$ eslint \
+  -f './lib/formatters/markdown/index.js' tests/fixtures/crc/class-declaration/*.js \
+  -o reports/crc-model-report.md
 ```
 
 ## 5. Anatomy of a CRC model

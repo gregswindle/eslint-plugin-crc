@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_markdown.html">eslint-plugin-crc/formatters/markdown</a></li><li><a href="module-eslint-plugin-crc_rules_crc-report.html">eslint-plugin-crc/rules/crc-report</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_rules_crc-report.html#~create">create</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='members'><li data-type='member'><a href="ClassDeclarationCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_markdown.html">eslint-plugin-crc/formatters/markdown</a></li></ul>
 </nav>
 
 <div id="main">
@@ -44,11 +44,12 @@
  */
 
 (() => {
+  const CrcReporter = require("../../crc/crc-reporter");
   const fs = require("fs");
   const path = require("path");
-  const pluralize = require("pluralize");
+  // const pluralize = require("pluralize");
   // eslint-disable-next-line node/no-unsupported-features
-  const { map, template } = require("lodash");
+  const { template } = require("lodash");
 
   // --------------------------------------------------------------------------
   // Helpers
@@ -76,80 +77,6 @@
   };
   const crcPageTemplate = getTempate("crc-page-template.md");
   const crcModelTemplate = getTempate("crc-model-template.md");
-  // const crcSummaryTemplate = getTempate("crc-summary-template.md");
-
-  /**
-   * Renders text along the template of x problems (x errors, x warnings).
-   *
-   * @example
-   * const summary = renderSummary(result.errorCount, result.warningCount);
-   * @param {string} totalErrors - Total errors.
-   * @param {string} totalWarnings - Total warnings.
-   * @returns {string} The formatted string, pluralized where necessary.
-   * @private
-   */
-  function renderSummary (totalErrors, totalWarnings) {
-    const totalProblems = totalErrors + totalWarnings;
-    let renderedText =
-      `${totalProblems} ${pluralize("problem", totalProblems)}`;
-
-    if (totalProblems !== 0) {
-      // eslint-disable-next-line max-len
-      renderedText += ` (${totalErrors} ${pluralize("error", totalErrors)}, ${totalWarnings} ${pluralize("warning", totalWarnings)})`;
-    }
-    return renderedText;
-  }
-
-  /**
-   * Get HTML (table rows) describing the messages.
-   *
-   * @example
-   * const messages = renderCrcModels(result.messages, 0));
-   * @param {Array} messages - Messages.
-   * @param {int} parentIndex - Index of the parent HTML row.
-   * @returns {string} HTML (table rows) describing the messages.
-   * @private
-   */
-  function renderCrcModels (messages, parentIndex) {
-    // eslint-disable-next-line no-console
-    // console.log(result);
-    /**
-   * Get HTML (table row) describing a message.
-   * @param {Object} message - Message.
-   * @returns {string} HTML (table row) describing a message.
-   * @private
-   */
-    return map(messages, (crcModel) => {
-      // const lineNumber = message.line || 0;
-      // const columnNumber = message.column || 0;
-      // eslint-disable-next-line no-console
-      // console.log(crcModel);
-
-      return crcModelTemplate({
-        crcModel,
-        index: parentIndex,
-        messages
-      });
-    }).join("\n");
-  }
-
-  /**
-   * Render results.
-   *
-   * @example
-   * const report = renderResults(results);
-   * @param {Array} results - Test results.
-   * @returns {string} HTML string describing the results.
-   * @private
-   */
-  function renderResults (results) {
-    return map(results, (result, index) => crcModelTemplate({
-      index,
-      filePath: result.filePath,
-      summary: renderSummary(result.errorCount, result.warningCount),
-      results: renderCrcModels(result.messages, index, result)
-    }));
-  }
 
   // --------------------------------------------------------------------------
   // Public Interface
@@ -170,22 +97,15 @@
    * @returns {string} CrcModels rendered as markdown.
    */
   module.exports = function (results) {
-    let totalErrors,
-      totalWarnings;
-
-    totalErrors = 0;
-    totalWarnings = 0;
-
-    // Iterate over results to get totals
-    results.forEach((result) => {
-      totalErrors += result.errorCount;
-      totalWarnings += result.warningCount;
-    });
+    const crcReporter = new CrcReporter();
+    const crcModels = crcReporter.report(results);
 
     return crcPageTemplate({
       date: new Date(),
-      reportSummary: renderSummary(totalErrors, totalWarnings),
-      results: renderResults(results)
+      reportSummary: `Object count: ${crcModels.length}`,
+      results: crcModels.map((crcModel) => crcModelTemplate({
+        crcModel
+      }))
     });
   };
 })();
@@ -201,7 +121,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Nov 28 2017 18:10:22 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Dec 03 2017 22:13:09 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

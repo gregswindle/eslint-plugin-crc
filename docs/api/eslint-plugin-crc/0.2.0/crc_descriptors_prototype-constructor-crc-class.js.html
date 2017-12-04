@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>crc/class-expression-crc-class.js - Documentation</title>
+    <title>crc/descriptors/prototype-constructor-crc-class.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">crc/class-expression-crc-class.js</h1>
+    <h1 class="page-title">crc/descriptors/prototype-constructor-crc-class.js</h1>
     
 
     
@@ -37,9 +37,12 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const CrcClass = require("./crc-class");
+            <pre class="prettyprint source linenums"><code>
+const CrcClass = require("../crc-class");
+const esquery = require("esquery");
+const { first } = require("lodash");
 
-class ClassExpressionCrcClass extends CrcClass {
+class PrototypeConstructorCrcClass extends CrcClass {
   /**
    * Create a `CrcClass` from ESTree `Nodes` and ESLint Rule `Contexts`.
    *
@@ -48,23 +51,46 @@ class ClassExpressionCrcClass extends CrcClass {
    * @param {Context} context  - An ESLint
    * {@link https://goo.gl/tuUSG5 Context} object with relevant information.
    * @example
-   * const crcClass = ClassExpressionCrcClass.factory(node, context);
+   * const crcClass = PrototypeConstructorCrcClass.factory(node, context);
    * @returns {CrcClass} A NullObject for CrcClass.
    */
-  static factory (node, context) {
-    const params = {
-      astNode: node,
-      description: null,
-      name: node.id.name,
-      src: context.getSourceCode(),
-      superClass: node.superClass.name
-    };
 
-    return new CrcClass(params);
+  static factory (context) {
+    // const lhs = node.left;
+    // const rhs = node.right;
+    // const params = {
+    //   node,
+    //   description: null,
+    //   name: lhs.object.object.name,
+    //   src: context.getSourceCode(),
+    //   superClass: rhs.name
+    // };
+
+    const node = first(esquery.match(
+      context.code.ast,
+      esquery.parse(PrototypeConstructorCrcClass.descriptor)
+    ));
+
+    return Object.assign(super.factory(context), {
+      name: node.left.object.object.name,
+      superClass: node.right
+    });
+  }
+
+  /**
+   * @static selector - Identify prototypal inheritance by `constructor`
+   * `AssignmentExpression`.
+   * @example
+   * // Identifies
+   * Square.prototype.constructor = Polygon
+   * @returns {string} An ESQuery selector.
+   */
+  static get descriptor () {
+    return "AssignmentExpression[left.property.name=\"constructor\"][right.type=\"Identifier\"]";
   }
 }
 
-module.exports = ClassExpressionCrcClass;
+module.exports = PrototypeConstructorCrcClass;
 </code></pre>
         </article>
     </section>

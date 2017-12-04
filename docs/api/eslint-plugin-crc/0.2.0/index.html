@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_markdown.html">eslint-plugin-crc/formatters/markdown</a></li><li><a href="module-eslint-plugin-crc_rules_crc-report.html">eslint-plugin-crc/rules/crc-report</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_rules_crc-report.html#~create">create</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='members'><li data-type='member'><a href="ClassDeclarationCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_markdown.html">eslint-plugin-crc/formatters/markdown</a></li></ul>
 </nav>
 
 <div id="main">
@@ -154,12 +154,12 @@
         &quot;crc/generate-crc&quot;: 2
     }
 }</code></pre><h2>4. Usage</h2><p>For local installations, run:</p>
-<pre class="prettyprint source lang-bash"><code>$ node_modules/.bin/eslint .</code></pre><p>If you installed <code>eslint-plugin-crc</code> globally, run:</p>
-<pre class="prettyprint source lang-bash"><code>$ eslint .</code></pre><p>You can also add it as an <code>npm-script</code>:</p>
-<pre class="prettyprint source lang-json"><code>  &quot;scripts&quot;: {
-    &quot;lint&quot;: &quot;eslint . --fix&quot;
-  }</code></pre><p>Once added as an <code>npm-script</code>, run:</p>
-<pre class="prettyprint source lang-bash"><code>$ npm run lint</code></pre><h2>5. Anatomy of a CRC model</h2><p>CRC Models use a simple and scannable template that consist of three simple sections for:</p>
+<pre class="prettyprint source lang-bash"><code>$ ./node_modules/.bin/eslint \
+  -f './lib/formatters/markdown/index.js' tests/fixtures/crc/class-declaration/*.js \
+  -o reports/crc-model-report.md</code></pre><p>If you installed <code>eslint-plugin-crc</code> globally, run:</p>
+<pre class="prettyprint source lang-bash"><code>$ eslint \
+  -f './lib/formatters/markdown/index.js' tests/fixtures/crc/class-declaration/*.js \
+  -o reports/crc-model-report.md</code></pre><h2>5. Anatomy of a CRC model</h2><p>CRC Models use a simple and scannable template that consist of three simple sections for:</p>
 <ol>
 <li><strong>Name</strong>: what the class (or object) is called in source code.</li>
 <li><strong>Responsibilities</strong>: the work that the class/object is supposed to perform, and the data it's supposed to maintain.</li>
@@ -229,6 +229,102 @@
     </section>
 
 
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        crc/ast-config.js
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="crc_ast-config.js.html">crc/ast-config.js</a>, <a href="crc_ast-config.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+            <div class="description"><p>Espree AST parsing options. Ensure that the &quot;tokens&quot; property is set to true
+ in order for CRC models to maintain a list of &quot;references&quot;, i.e., where they
+ themselves are referenced.</p></div>
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
@@ -436,114 +532,12 @@ Class-Responsibility-Collaboration models.</p></div>
 
 
 
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        rules/crc-report.js
-        </h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rules_crc-report.js.html">rules/crc-report.js</a>, <a href="rules_crc-report.js.html#line1">line 1</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Greg Swindle (https://github.com/gregswindle)</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-        
-            <div class="description"><p>Generate class-responsibilities-collaborators models to assess
-and refactor JavaScript source code.</p></div>
-        
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Nov 28 2017 18:10:22 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Dec 03 2017 22:13:09 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

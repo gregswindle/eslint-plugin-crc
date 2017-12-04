@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_markdown.html">eslint-plugin-crc/formatters/markdown</a></li><li><a href="module-eslint-plugin-crc_rules_crc-report.html">eslint-plugin-crc/rules/crc-report</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_rules_crc-report.html#~create">create</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='members'><li data-type='member'><a href="ClassDeclarationCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_markdown.html">eslint-plugin-crc/formatters/markdown</a></li></ul>
 </nav>
 
 <div id="main">
@@ -41,7 +41,7 @@
  * @fileoverview Create a `class` summary object for CrcModels.
  * @author Greg Swindle (https://github.com/gregswindle)
  */
-
+const { defaults } = require("lodash");
 /**
  * Default NullObject constructor parameters.
  *
@@ -49,33 +49,10 @@
  * @private
  */
 const defaultConstructorParams = {
-  node: null,
+  code: null,
   description: null,
   name: null,
-  superClass: null,
-  src: null
-};
-
-/**
- * Default `NullObject` factory parameters.
- *
- * @ignore
- * @private
- */
-const defaultFactoryParams = {
-  context: {
-    getSourceCode: function () {
-      return null;
-    }
-  },
-  node: {
-    id: {
-      name: null
-    },
-    superClass: {
-      name: null
-    }
-  }
+  superClass: null
 };
 
 /**
@@ -93,50 +70,41 @@ class CrcClass {
    * object to be modeled.
    * @param {string} [params.description] - A summary of the
    * object's purpose.
-   * @param {ASTNode} [params.node] - The abstract syntax tree node emitted by
-   * a {@link https://goo.gl/WngFV9 compatible parser}.
+   * @param {SourceCode} [params.code] - The ESLint
+   * {@link http://bit.ly/2kfR79f `SourceCode`} object.
    * @param {Object} [params.superClass] - The `prototype` of the object being
    * modeled. Defaults to `Object`.
    * @example
    * const crcClass = new CrcClass({
-   *   name: "Bravo",
+   *   code: sourceCode,
    *   description: "Disambiguates the letter \"B\" when stating english letters.",
-   *   superClass: Alpha,
-   *   node: node
+   *   name: "Bravo",
+   *   superClass: Alpha
    * });
    */
   // eslint-disable-next-line node/no-unsupported-features
   constructor (params = defaultConstructorParams) {
-    this.node = params.node;
     this.description = params.description;
     this.name = params.name;
+    this.code = params.code;
     this.superClass = params.superClass;
-    this.src = params.src;
   }
 
   /**
    * Create a `CrcClass` from ESTree `Nodes` and ESLint Rule `Contexts`.
    *
-   * @param {ASTNode} node - An abstract syntax tree node.
-   * @param {Context} context  - An object with relevant information.
-   * @see https://goo.gl/tuUSG5
-   * @param {string}
+   * @param {object} contest - A summary object with information to derive
+   * a CrcModel.
    * @example
-   * const crcClassFactory = new CrcModel();
-   * const crcClass = crcClassFactory.factory(node, context);
+   * const crcClass = CrcClass.factory(context);
    * @returns {CrcClass} A NullObject for CrcClass.
    */
   // eslint-disable-next-line node/no-unsupported-features
-  static factory (node = defaultFactoryParams.node,
-    // eslint-disable-next-line node/no-unsupported-features
-    context = defaultFactoryParams.context) {
-    const params = {
-      node,
-      description: null,
-      name: node.id.name,
-      src: context.getSourceCode(),
-      superClass: node.superClass
-    };
+  static factory (context) {
+    const ctxt = context || { code: null };
+    const params = defaults({
+      code: ctxt.code
+    }, defaultConstructorParams);
 
     return new CrcClass(params);
   }
@@ -155,7 +123,7 @@ module.exports = CrcClass;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Nov 28 2017 18:10:22 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Dec 03 2017 22:13:09 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

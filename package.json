@@ -56,7 +56,7 @@
     "jsdoc": "3.5.5",
     "mocha": "4.0.1",
     "mocha-junit-reporter": "1.15.0",
-    "nodemon": "1.12.1",
+    "nodemon": "1.12.2",
     "npmdoc-nsp": "2017.4.23",
     "nsp": "3.1.0",
     "nyc": "11.3.0",

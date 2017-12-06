@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>eslint-plugin-crc/crc - Documentation</title>
+    <title>eslint-plugin-crc/formatters/crc - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">eslint-plugin-crc/crc</h1>
+    <h1 class="page-title">eslint-plugin-crc/formatters/crc</h1>
     
 
     
@@ -51,96 +51,15 @@
     <div class="container-overview">
     
         
-            <div class="description"><p><code>crc</code> module.</p></div>
+            <div class="description"><p>Markdown reporter</p></div>
         
 
         
             
 
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_index.js.html">crc/index.js</a>, <a href="crc_index.js.html#line1">line 1</a>
-    </li></ul></dd>
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li><a href="mailto:greg@swindle.net">Greg Swindle</a></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="module:eslint-plugin-crc/crc"><span class="type-signature"></span>module:eslint-plugin-crc/crc<span class="type-signature"></span></h4>
+    <h4 class="name" id="module:eslint-plugin-crc/formatters/crc"><span class="type-signature"></span>(require("eslint-plugin-crc/formatters/crc"))<span class="signature">(results)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
 
@@ -152,7 +71,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_index.js.html">crc/index.js</a>, <a href="crc_index.js.html#line21">line 21</a>
+        <a href="formatters_crc_index.js.html">formatters/crc/index.js</a>, <a href="formatters_crc_index.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -192,9 +111,170 @@
 
 
 <div class="description">
-    <p>Create class-responsibilities-collaborators
-reporting model objects.</p>
+    <p>Create a markdown-based report of CrcModels.</p>
 </div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code># Run from a Terminal or CLI:
+eslint \
+  --format 'eslint-plugin-crc/formatters/crc/index.js' \
+  --output 'reports/crc-model-report.md' \
+  lib/ \
+  --fix</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>results</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;Result></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A list of ESLint rule parser results.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>CrcModels rendered as markdown.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="formatters_crc_index.js.html">formatters/crc/index.js</a>, <a href="formatters_crc_index.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Greg Swindle</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
 
 
 
@@ -234,152 +314,6 @@ reporting model objects.</p>
 
     
 
-    
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id=".CrcClass"><span class="type-signature">(static) </span>CrcClass<span class="type-signature"></span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_index.js.html">crc/index.js</a>, <a href="crc_index.js.html#line26">line 26</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="CrcClass.html">CrcClass</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>A <code>class</code> &quot;summary&quot; <code>Object</code> used for reporting.</p>
-</div>
-
-
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".CrcModel"><span class="type-signature">(static) </span>CrcModel<span class="type-signature"></span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_index.js.html">crc/index.js</a>, <a href="crc_index.js.html#line34">line 34</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="CrcModel.html">CrcModel</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Represents a Class-Responsibility-Collaboration model, which expresses the
-scope of an object's behaviors (<strong>responsibilities</strong>) and the objects it
-depends on to fulfill its responsibilities (<strong>collaborators</strong>).</p>
-</div>
-
-
-
-
-
-
-
-
-        
     
 
     

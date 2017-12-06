@@ -9,7 +9,7 @@
 
 // eslint-disable-next-line node/no-unsupported-features, node/no-unpublished-require
 const { expect } = require("chai");
-const formatter = require("../../../../lib/formatters/markdown");
+const formatter = require("../../../../lib/formatters/crc");
 const squareCrcModel = require("../../../fixtures/formatters/square-crc-model");
 const results = require("../../../fixtures/formatters/eslint-results");
 

@@ -141,7 +141,7 @@ For local installations, run:
 
 ```bash
 $ ./node_modules/.bin/eslint \
-  -f './lib/formatters/markdown/index.js' tests/fixtures/crc/class-declaration/*.js \
+  -f './lib/formatters/crc/index.js' tests/fixtures/crc/class-declaration/*.js \
   -o reports/crc-model-report.md
 ```
 
@@ -149,7 +149,7 @@ If you installed `eslint-plugin-crc` globally, run:
 
 ```bash
 $ eslint \
-  -f './lib/formatters/markdown/index.js' tests/fixtures/crc/class-declaration/*.js \
+  -f './lib/formatters/crc/index.js' tests/fixtures/crc/class-declaration/*.js \
   -o reports/crc-model-report.md
 ```
 

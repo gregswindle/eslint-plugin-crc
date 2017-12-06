@@ -48,7 +48,7 @@
   * [3.1. Use the Standard JS Style.](#31-use-the-standard-js-style)
   * [3.2. Use ESLint to analyze source code.](#32-use-eslint-to-analyze-source-code)
 - [4. **Unit testing**](#4-unit-testing)
-  * [4.1. Write Jest tests.](#41-write-jest-tests)
+  * [4.1. Write specs with Mocha and Chai.](#41-write-specs-with-mocha-and-chai)
   * [4.2. Reach 100% code coverage.](#42-reach-100%25-code-coverage)
 - [5. **Directory structure**](#5-directory-structure)
 - [6. **Logging**](#6-logging)
@@ -715,33 +715,46 @@
 
   * **Use the `.spec.js` suffix for all tests.**
 
+  _Tip:_
+  > **:bulb: Test continuously during development.**
+  >
+  > Run `npm run watch:test` to execute all specs every time you save a file.
+
 * ### 4.2. Reach 100% code coverage.
 
   _Why:_
-  > ⌦ Full coverage makes automated dependency drift updates safer.
+  > ⌦ Full coverage makes automated dependency drift updates easier to address, and makes accepting contributions safer.
 
-  * View a test coverage summary in the Terminal:
+  * A test coverage summary report appears after each test run in the Terminal:
 
-    ```shell
-    npm test
+    ```bash
+    18 passing (76ms)
+    11 pending
 
-    > jest --config=jest.config.json
+    -------------------------------------|----------|----------|----------|----------|----------------|
+    File                                 |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+    -------------------------------------|----------|----------|----------|----------|----------------|
+    All files                            |      100 |      100 |      100 |      100 |                |
+     crc                                 |      100 |      100 |      100 |      100 |                |
+      ast-config.js                      |      100 |      100 |      100 |      100 |                |
+      crc-class.js                       |      100 |      100 |      100 |      100 |                |
+      crc-model.js                       |      100 |      100 |      100 |      100 |                |
+      crc-reporter.js                    |      100 |      100 |      100 |      100 |                |
+      eslint-context-factory.js          |      100 |      100 |      100 |      100 |                |
+     crc/descriptors                     |      100 |      100 |      100 |      100 |                |
+      class-declaration-crc-class.js     |      100 |      100 |      100 |      100 |                |
+      index.js                           |      100 |      100 |      100 |      100 |                |
+      new-expression-crc-class.js        |      100 |      100 |      100 |      100 |                |
+      object-expression-crc-class.js     |      100 |      100 |      100 |      100 |                |
+      prototype-constructor-crc-class.js |      100 |      100 |      100 |      100 |                |
+     formatters/crc                      |      100 |      100 |      100 |      100 |                |
+      index.js                           |      100 |      100 |      100 |      100 |                |
+    -------------------------------------|----------|----------|----------|----------|----------------|
 
-      PASS  **tests**/app.js
-       eslint-plugin-crc:app
-        ✓ creates files (1ms)
+    > eslint-plugin-crc@0.2.0 posttest /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc
+    > nsp check --output summary
 
-    Test Suites: 1 passed, 1 total
-    Tests:       1 passed, 1 total
-    Snapshots:   0 total
-    Time:        2.595s
-    Ran all test suites.
-    ----------|----------|----------|----------|----------|----------------|
-    File      |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
-    ----------|----------|----------|----------|----------|----------------|
-    All files |      100 |      100 |      100 |      100 |                |
-     index.js |      100 |      100 |      100 |      100 |                |
-    ----------|----------|----------|----------|----------|----------------|
+    (+) No known vulnerabilities found
     ```
 
   * Open `/coverage/lcov-report/index.html` in a Web browser to view detailed coverage reports.
@@ -788,7 +801,7 @@
 │   │   ├── object-expression-crc-class.js
 │   │   └── prototype-constructor-crc-class.js
 │   ├── formatters
-│   │   └── markdown
+│   │   └── crc
 │   │       ├── crc-model-template.md
 │   │       ├── crc-page-template.md
 │   │       ├── crc-summary-template.md
@@ -857,40 +870,40 @@
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE) -->
 | **Dependency** | **Description** | **Version** | **License** | **Type** |
 | -------------- | --------------- | ----------- | ----------- | -------- |
- | [eslint@4.12.1](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.12.1 | MIT | production |
- | [espree@3.5.2](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.2 | BSD-2-Clause | production |
- | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production |
- | [lodash@4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | MIT | production |
- | [pluralize@7.0.0](https://github.com/blakeembrey/pluralize#readme) | Pluralize and singularize any word | 7.0.0 | MIT | production |
- | [requireindex@1.1.0](https://github.com/stephenhandley/requireindex#readme) | Write minimal node index.js files that require and export siblings by file basename | 1.1.0 | MIT | production |
- | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev |
- | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev |
- | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev |
- | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev |
- | [eslint-config-xo-space@0.17.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.17.0 | MIT | dev |
- | [eslint-plugin-import@2.8.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.8.0 | MIT | dev |
- | [eslint-plugin-jest@21.3.2](https://github.com/jest-community/eslint-plugin-jest#readme) | Eslint rules for Jest | 21.3.2 | MIT | dev |
- | [eslint-plugin-jsdoc@3.2.0](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.2.0 | BSD-3-Clause | dev |
- | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | MPL-2.0 | dev |
- | [eslint-plugin-no-unsanitized@2.0.2](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 2.0.2 | MPL-2.0 | dev |
- | [eslint-plugin-node@5.2.1](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 5.2.1 | MIT | dev |
- | [eslint-plugin-promise@3.6.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.6.0 | ISC | dev |
- | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | MPL-2.0 | dev |
- | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | Apache-2.0 | dev |
- | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | MIT | dev |
- | [eslint-plugin-xss@0.1.8](https://npmjs.org/package/eslint-plugin-xss) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.8 | ISC | dev |
- | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev |
- | [markdown-magic@0.1.19](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.19 | MIT | dev |
- | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev |
- | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev |
- | [mocha@4.0.1](https://mochajs.org) | simple, flexible, fun test framework | 4.0.1 | MIT | dev |
- | [nodemon@1.12.1](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.12.1 | MIT | dev |
- | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev |
- | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev |
- | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev |
- | [semantic-release@8.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 8.2.0 | MIT | dev |
- | [snyk@1.53.0](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.53.0 | Apache-2.0 | dev |
- | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | ISC | dev |
+ | [eslint@4.12.1](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.12.1 | MIT | production | 
+ | [espree@3.5.2](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.2 | BSD-2-Clause | production | 
+ | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production | 
+ | [lodash@4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | MIT | production | 
+ | [pluralize@7.0.0](https://github.com/blakeembrey/pluralize#readme) | Pluralize and singularize any word | 7.0.0 | MIT | production | 
+ | [requireindex@1.1.0](https://github.com/stephenhandley/requireindex#readme) | Write minimal node index.js files that require and export siblings by file basename | 1.1.0 | MIT | production | 
+ | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev | 
+ | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev | 
+ | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev | 
+ | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev | 
+ | [eslint-config-xo-space@0.17.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.17.0 | MIT | dev | 
+ | [eslint-plugin-import@2.8.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.8.0 | MIT | dev | 
+ | [eslint-plugin-jest@21.3.2](https://github.com/jest-community/eslint-plugin-jest#readme) | Eslint rules for Jest | 21.3.2 | MIT | dev | 
+ | [eslint-plugin-jsdoc@3.2.0](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.2.0 | BSD-3-Clause | dev | 
+ | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | MPL-2.0 | dev | 
+ | [eslint-plugin-no-unsanitized@2.0.2](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 2.0.2 | MPL-2.0 | dev | 
+ | [eslint-plugin-node@5.2.1](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 5.2.1 | MIT | dev | 
+ | [eslint-plugin-promise@3.6.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.6.0 | ISC | dev | 
+ | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | MPL-2.0 | dev | 
+ | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | Apache-2.0 | dev | 
+ | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | MIT | dev | 
+ | [eslint-plugin-xss@0.1.8](https://npmjs.org/package/eslint-plugin-xss) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.8 | ISC | dev | 
+ | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev | 
+ | [markdown-magic@0.1.19](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.19 | MIT | dev | 
+ | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev | 
+ | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev | 
+ | [mocha@4.0.1](https://mochajs.org) | simple, flexible, fun test framework | 4.0.1 | MIT | dev | 
+ | [nodemon@1.12.1](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.12.1 | MIT | dev | 
+ | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
+ | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev | 
+ | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
+ | [semantic-release@8.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 8.2.0 | MIT | dev | 
+ | [snyk@1.53.0](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.53.0 | Apache-2.0 | dev | 
+ | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | ISC | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->
 

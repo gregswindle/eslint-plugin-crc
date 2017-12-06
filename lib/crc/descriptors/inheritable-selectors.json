@@ -1,0 +1,19 @@
+{
+  ":function :matches(AssignmentExpression[left.object.type=\"ThisExpression\"], CallExpression[callee] [property.name=\"call\"] ~ ThisExpression, CallExpression[callee] [property.name=\"apply\"] ~ ThisExpression)": [{
+      "name": "left.object.name",
+      "superClass": "right.callee"
+    },
+    {
+      "name": "left.object.name",
+      "superClass": ":expression[right] [arguments] :first-child Identifier[name!=\"prototype\"]"
+    },
+    {
+      "name": "left.object.object.name",
+      "superClass": "right"
+    }
+  ],
+  ":matches(ClassDeclaration, ClassExpression)": [{
+    "name": "id.name",
+    "superClass": "superClass"
+  }]
+}

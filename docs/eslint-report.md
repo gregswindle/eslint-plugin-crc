@@ -92,10 +92,10 @@
         </style>
     </head>
     <body>
-        <div id="overview" class="bg-1">
+        <div id="overview" class="bg-2">
             <h1>ESLint Report</h1>
             <div>
-                <span>21 problems (0 errors, 21 warnings)</span> - Generated on Fri Dec 08 2017 02:18:03 GMT-0600 (CST)
+                <span>23 problems (1 error, 22 warnings)</span> - Generated on Fri Dec 08 2017 08:47:25 GMT-0600 (CST)
             </div>
         </div>
         <table>
@@ -122,20 +122,62 @@
     </td>
 </tr>
 
-<tr class="bg-0" data-group="f-2">
+<tr class="bg-1" data-group="f-2">
+    <th colspan="4">
+        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-context.js
+        <span>3 problems (0 errors, 3 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-2">
+    <td>5:7</td>
+    <td class="clr-1">Warning</td>
+    <td>Destructuring are not supported yet on Node 4.0.0.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/node/no-unsupported-features" target="_blank">node/no-unsupported-features</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-2">
+    <td>12:3</td>
+    <td class="clr-1">Warning</td>
+    <td>Invalid JSDoc @param &quot;descriptorFactory&quot; type &quot;object&quot;.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/jsdoc/check-types" target="_blank">jsdoc/check-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-2">
+    <td>12:3</td>
+    <td class="clr-1">Warning</td>
+    <td>Missing JSDoc @example declaration.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/jsdoc/require-example" target="_blank">jsdoc/require-example</a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-3">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-model.js
         <span>0 problems</span>
     </th>
 </tr>
 
-<tr class="bg-1" data-group="f-3">
+<tr class="bg-2" data-group="f-4">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-reporter.js
-        <span>2 problems (0 errors, 2 warnings)</span>
+        <span>3 problems (1 error, 2 warnings)</span>
     </th>
 </tr>
-<tr style="display:none" class="f-3">
+<tr style="display:none" class="f-4">
+    <td>2:28</td>
+    <td class="clr-2">Error</td>
+    <td>&quot;./eslint-context-factory&quot; is not found.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/node/no-missing-require" target="_blank">node/no-missing-require</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
     <td>3:7</td>
     <td class="clr-1">Warning</td>
     <td>Destructuring are not supported yet on Node 4.0.0.</td>
@@ -144,7 +186,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-3">
+<tr style="display:none" class="f-4">
     <td>4:7</td>
     <td class="clr-1">Warning</td>
     <td>Destructuring are not supported yet on Node 4.0.0.</td>
@@ -153,13 +195,13 @@
     </td>
 </tr>
 
-<tr class="bg-1" data-group="f-4">
+<tr class="bg-1" data-group="f-5">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-responsibility.js
-        <span>6 problems (0 errors, 6 warnings)</span>
+        <span>5 problems (0 errors, 5 warnings)</span>
     </th>
 </tr>
-<tr style="display:none" class="f-4">
+<tr style="display:none" class="f-5">
     <td>3:7</td>
     <td class="clr-1">Warning</td>
     <td>Destructuring are not supported yet on Node 4.0.0.</td>
@@ -168,7 +210,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-4">
+<tr style="display:none" class="f-5">
     <td>12:1</td>
     <td class="clr-1">Warning</td>
     <td>Missing JSDoc @example declaration.</td>
@@ -177,7 +219,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-4">
+<tr style="display:none" class="f-5">
     <td>28:1</td>
     <td class="clr-1">Warning</td>
     <td>Line 28 exceeds the maximum line length of 80.</td>
@@ -186,7 +228,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-4">
+<tr style="display:none" class="f-5">
     <td>41:1</td>
     <td class="clr-1">Warning</td>
     <td>Missing JSDoc @example declaration.</td>
@@ -195,16 +237,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-4">
-    <td>65:3</td>
-    <td class="clr-1">Warning</td>
-    <td>Invalid JSDoc @returns &quot;&quot; type &quot;object&quot;.</td>
-    <td>
-        <a href="https://eslint.org/docs/rules/jsdoc/check-types" target="_blank">jsdoc/check-types</a>
-    </td>
-</tr>
-
-<tr style="display:none" class="f-4">
+<tr style="display:none" class="f-5">
     <td>65:3</td>
     <td class="clr-1">Warning</td>
     <td>Missing JSDoc @example declaration.</td>
@@ -213,13 +246,13 @@
     </td>
 </tr>
 
-<tr class="bg-1" data-group="f-5">
+<tr class="bg-1" data-group="f-6">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/descriptors/class-declaration-crc-class.js
         <span>2 problems (0 errors, 2 warnings)</span>
     </th>
 </tr>
-<tr style="display:none" class="f-5">
+<tr style="display:none" class="f-6">
     <td>3:7</td>
     <td class="clr-1">Warning</td>
     <td>Destructuring are not supported yet on Node 4.0.0.</td>
@@ -228,7 +261,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-5">
+<tr style="display:none" class="f-6">
     <td>34:3</td>
     <td class="clr-1">Warning</td>
     <td>Missing JSDoc @example declaration.</td>
@@ -237,20 +270,20 @@
     </td>
 </tr>
 
-<tr class="bg-0" data-group="f-6">
+<tr class="bg-0" data-group="f-7">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/descriptors/class-expression-crc-class.js
         <span>0 problems</span>
     </th>
 </tr>
 
-<tr class="bg-1" data-group="f-7">
+<tr class="bg-1" data-group="f-8">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/descriptors/index.js
         <span>1 problem (0 errors, 1 warning)</span>
     </th>
 </tr>
-<tr style="display:none" class="f-7">
+<tr style="display:none" class="f-8">
     <td>2:7</td>
     <td class="clr-1">Warning</td>
     <td>Destructuring are not supported yet on Node 4.0.0.</td>
@@ -259,13 +292,13 @@
     </td>
 </tr>
 
-<tr class="bg-1" data-group="f-8">
+<tr class="bg-1" data-group="f-9">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/descriptors/new-expression-crc-class.js
         <span>3 problems (0 errors, 3 warnings)</span>
     </th>
 </tr>
-<tr style="display:none" class="f-8">
+<tr style="display:none" class="f-9">
     <td>3:7</td>
     <td class="clr-1">Warning</td>
     <td>Destructuring are not supported yet on Node 4.0.0.</td>
@@ -274,7 +307,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-8">
+<tr style="display:none" class="f-9">
     <td>6:3</td>
     <td class="clr-1">Warning</td>
     <td>Expected @param names to be &quot;context&quot;. Got &quot;node, context&quot;.</td>
@@ -283,7 +316,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-8">
+<tr style="display:none" class="f-9">
     <td>30:1</td>
     <td class="clr-1">Warning</td>
     <td>Line 30 exceeds the maximum line length of 80.</td>
@@ -292,13 +325,13 @@
     </td>
 </tr>
 
-<tr class="bg-1" data-group="f-9">
+<tr class="bg-1" data-group="f-10">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/descriptors/object-expression-crc-class.js
         <span>3 problems (0 errors, 3 warnings)</span>
     </th>
 </tr>
-<tr style="display:none" class="f-9">
+<tr style="display:none" class="f-10">
     <td>3:7</td>
     <td class="clr-1">Warning</td>
     <td>Destructuring are not supported yet on Node 4.0.0.</td>
@@ -307,7 +340,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-9">
+<tr style="display:none" class="f-10">
     <td>34:3</td>
     <td class="clr-1">Warning</td>
     <td>Missing JSDoc @example declaration.</td>
@@ -316,7 +349,7 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-9">
+<tr style="display:none" class="f-10">
     <td>41:1</td>
     <td class="clr-1">Warning</td>
     <td>Line 41 exceeds the maximum line length of 80.</td>
@@ -325,13 +358,13 @@
     </td>
 </tr>
 
-<tr class="bg-1" data-group="f-10">
+<tr class="bg-1" data-group="f-11">
     <th colspan="4">
         [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/descriptors/prototype-constructor-crc-class.js
         <span>2 problems (0 errors, 2 warnings)</span>
     </th>
 </tr>
-<tr style="display:none" class="f-10">
+<tr style="display:none" class="f-11">
     <td>4:7</td>
     <td class="clr-1">Warning</td>
     <td>Destructuring are not supported yet on Node 4.0.0.</td>
@@ -340,27 +373,12 @@
     </td>
 </tr>
 
-<tr style="display:none" class="f-10">
+<tr style="display:none" class="f-11">
     <td>50:1</td>
     <td class="clr-1">Warning</td>
     <td>Line 50 exceeds the maximum line length of 80.</td>
     <td>
         <a href="https://eslint.org/docs/rules/max-len" target="_blank">max-len</a>
-    </td>
-</tr>
-
-<tr class="bg-1" data-group="f-11">
-    <th colspan="4">
-        [+] /Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/eslint-context-factory.js
-        <span>1 problem (0 errors, 1 warning)</span>
-    </th>
-</tr>
-<tr style="display:none" class="f-11">
-    <td>5:7</td>
-    <td class="clr-1">Warning</td>
-    <td>Destructuring are not supported yet on Node 4.0.0.</td>
-    <td>
-        <a href="https://eslint.org/docs/rules/node/no-unsupported-features" target="_blank">node/no-unsupported-features</a>
     </td>
 </tr>
 

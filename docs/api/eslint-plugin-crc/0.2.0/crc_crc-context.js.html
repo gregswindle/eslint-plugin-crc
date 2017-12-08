@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>crc/crc-class.js - Documentation</title>
+    <title>crc/crc-context.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">crc/crc-class.js</h1>
+    <h1 class="page-title">crc/crc-context.js</h1>
     
 
     
@@ -37,80 +37,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Create a `class` summary object for CrcModels.
- * @author Greg Swindle (https://github.com/gregswindle)
- */
-const { defaults } = require("lodash");
+            <pre class="prettyprint source linenums"><code>const astConfig = require("./ast-config");
+const espree = require("espree");
+const fs = require("fs");
+const path = require("path");
+const { SourceCode } = require("eslint");
+
 /**
- * Default NullObject constructor parameters.
+ * Provides contextual information about source code.
  *
- * @ignore
- * @private
  */
-const defaultConstructorParams = {
-  code: null,
-  description: null,
-  name: null,
-  superClass: null
-};
-
-/**
- * Represents `class` "summary" `Object` used for reporting.
- */
-class CrcClass {
+class CrcContext {
   /**
-   * @classdesc Create a `class` representation for use in a CrcClass
-   * (Class-Responsibility-Collaboration model).
-   * @class
-   * @public
-   * @param {Object} [params] - A parameter object that sets all of
-   * the CrcClass's properties.
-   * @param {SourceCode} [params.code] - The ESLint
-   * {@link http://bit.ly/2kfR79f `SourceCode`} object.
-   * @param {string} [params.name] - The source code identifier of the class or
-   * object to be modeled.
-   * @param {string} [params.description] - A summary of the
-   * object's purpose.
-   * @param {CrcClass} [params.superClass] - The `prototype` of the object being
-   * modeled. Defaults to `Object`.
-   * @example
-   * const crcClass = new CrcClass({
-   *   code: sourceCode,
-   *   description: "Disambiguates the letter \"B\" when stating english letters.",
-   *   name: "Bravo",
-   *   superClass: Alpha
-   * });
-   */
-  // eslint-disable-next-line node/no-unsupported-features
-  constructor (params = defaultConstructorParams) {
-    this.description = params.description;
-    this.name = params.name;
-    this.code = params.code;
-    this.superClass = params.superClass;
-  }
-
-  /**
-   * Create a `CrcClass` from ESTree `Nodes` and ESLint Rule `Contexts`.
+   * Factory method for generating a CrcContext object.
    *
-   * @param {CrcContext} context - A summary object with information to derive
-   * a CrcModel.
-   * @example
-   * const crcClass = CrcClass.factory(context);
-   * @returns {CrcClass} A `NullObject` for CrcClass.
+   * @static
+   * @param {Result} result - An ESLint Rule Result.
+   * @param  {object} descriptorFactory - An object that identifies ASTNodes
+   * with ESQuery selectors.
+   * @returns {CrcContext} A CrcContext object.
    */
-  // eslint-disable-next-line node/no-unsupported-features
-  static factory (context) {
-    const ctxt = context || { code: null };
-    const params = defaults({
-      code: ctxt.code
-    }, defaultConstructorParams);
-
-    return new CrcClass(params);
+  static create (result, descriptorFactory) {
+    // eslint-disable-next-line security/detect-non-literal-fs-filename
+    const src = fs.readFileSync(path.resolve(result.filePath)).toString();
+    const ast = espree.parse(src, astConfig);
+    return {
+      code: new SourceCode(src, ast),
+      filePath: result.filePath,
+      descriptor: descriptorFactory.descriptor
+    };
   }
 }
 
-module.exports = CrcClass;
+module.exports = CrcContext;
 </code></pre>
         </article>
     </section>

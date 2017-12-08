@@ -115,7 +115,7 @@
     "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
     "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
     "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
-    "docs": "npm run docs2html && npm run docs2md && npm run lint -- -f html lib > docs/eslint-report.md && npm run docs:markdown",
+    "docs": "npm run docs2html && npm run docs2md && npm run docs:markdown",
     "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
     "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files ./lib/**/*.js > ../eslint-plugin-crc.wiki/API.md && markdown-toc -i ../eslint-plugin-crc.wiki/API.md",
     "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./markdown.config.js",

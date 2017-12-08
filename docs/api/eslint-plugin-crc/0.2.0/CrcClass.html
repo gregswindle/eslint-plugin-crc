@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='members'><li data-type='member'><a href="ClassDeclarationCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='members'><li data-type='member'><a href="ClassDeclarationCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.create">create</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul>
 </nav>
 
 <div id="main">
@@ -200,6 +200,40 @@ the CrcClass's properties.</p>
 
         <tr>
             
+                <td class="name"><code>code</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">SourceCode</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The ESLint
+<a href="http://bit.ly/2kfR79f"><code>SourceCode</code></a> object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>name</code></td>
             
 
@@ -268,47 +302,13 @@ object's purpose.</p></td>
 
         <tr>
             
-                <td class="name"><code>code</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">SourceCode</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>The ESLint
-<a href="http://bit.ly/2kfR79f"><code>SourceCode</code></a> object.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>superClass</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><a href="CrcClass.html">CrcClass</a></span>
 
 
             
@@ -381,7 +381,7 @@ modeled. Defaults to <code>Object</code>.</p></td>
 
     
 
-    <h4 class="name" id=".factory"><span class="type-signature">(static) </span>factory<span class="signature">(contest)</span><span class="type-signature"> &rarr; {<a href="CrcClass.html">CrcClass</a>}</span></h4>
+    <h4 class="name" id=".factory"><span class="type-signature">(static) </span>factory<span class="signature">(context)</span><span class="type-signature"> &rarr; {<a href="CrcClass.html">CrcClass</a>}</span></h4>
 
     
 
@@ -476,13 +476,13 @@ modeled. Defaults to <code>Object</code>.</p></td>
 
         <tr>
             
-                <td class="name"><code>contest</code></td>
+                <td class="name"><code>context</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type"><a href="CrcContext.html">CrcContext</a></span>
 
 
             
@@ -517,7 +517,7 @@ a CrcModel.</p></td>
 
         
 <div class="param-desc">
-    <p>A NullObject for CrcClass.</p>
+    <p>A <code>NullObject</code> for CrcClass.</p>
 </div>
 
 
@@ -555,7 +555,7 @@ a CrcModel.</p></td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Dec 08 2017 02:18:00 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Dec 08 2017 09:05:16 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

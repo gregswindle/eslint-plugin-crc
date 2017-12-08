@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const CrcContext = require("../../../lib/crc/eslint-context-factory");
+const CrcContext = require("../../../lib/crc/crc-context");
 
 
 describe("CrcContext", () => {

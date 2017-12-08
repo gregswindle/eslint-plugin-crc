@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='members'><li data-type='member'><a href="ClassDeclarationCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassDeclarationCrcClass.html">ClassDeclarationCrcClass</a><ul class='members'><li data-type='member'><a href="ClassDeclarationCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassDeclarationCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul>
 </nav>
 
 <div id="main">
@@ -42,80 +42,80 @@
  in order for CRC models to maintain a list of "references", i.e., where they
  themselves are referenced.
  */
-(function () {
-  module.exports = {
+
+module.exports = {
+
+  /**
+   * Attach range information to each node.
+   */
+  range: true,
+
+  /**
+   * Attach line/column location information to each node.
+   */
+  loc: true,
+
+  /**
+   * Create a top-level comments array containing all comments.
+   */
+  comment: true,
+
+  /**
+   * Attach comments to the closest relevant node as leadingComments and
+   * trailingComments.
+   */
+  attachComment: true,
+
+  /**
+   * Create a top-level tokens array containing all tokens
+   */
+  tokens: true,
+
+  /**
+   * Specify the version of ECMAScript syntax you want to use.
+   * Valid versions are:
+   * * 3
+   * * 5 (default)
+   * * 6
+   * * 7
+   * * 8
+   * You can also set to 2015 (same as 6), 2016 (same as 7), or 2017
+   * (same as 8) to use the year-based naming.
+   */
+  ecmaVersion: 6,
+
+  /**
+   * Specify which type of script you're parsing (script or module, default
+   * is script)
+   */
+  sourceType: "module",
+
+  /**
+   * Specify additional language features
+   */
+  ecmaFeatures: {
 
     /**
-       * Attach range information to each node.
-       */
-    range: true,
+     * Enable JSX parsing
+     */
+    jsx: true,
 
     /**
-       * Attach line/column location information to each node.
-       */
-    loc: true,
+     * Enable return in global scope
+     */
+    globalReturn: true,
 
     /**
-       * Create a top-level comments array containing all comments.
-       */
-    comment: true,
+     * Enable implied strict mode (if ecmaVersion >= 5)
+     */
+    impliedStrict: true,
 
     /**
-       * Attach comments to the closest relevant node as leadingComments and
-       * trailingComments.
-       */
-    attachComment: true,
-
-    /**
-       * Create a top-level tokens array containing all tokens
-       */
-    tokens: true,
-
-    /**
-       * Specify the version of ECMAScript syntax you want to use. Valid versions are
-       * * 3
-       * * 5 (default)
-       * * 6
-       * * 7
-       * * 8
-       * You can also set to 2015 (same as 6), 2016 (same as 7), or 2017
-       * (same as 8) to use the year-based naming.
-       */
-    ecmaVersion: 6,
-
-    /**
-       * Specify which type of script you're parsing (script or module, default
-       * is script)
-       */
-    sourceType: "module",
-
-    /**
-       * Specify additional language features
-       */
-    ecmaFeatures: {
-
-      /**
-           * Enable JSX parsing
-           */
-      jsx: true,
-
-      /**
-           * Enable return in global scope
-           */
-      globalReturn: true,
-
-      /**
-           * Enable implied strict mode (if ecmaVersion >= 5)
-           */
-      impliedStrict: true,
-
-      /**
-           * Allow experimental object rest/spread
-           */
-      experimentalObjectRestSpread: true
-    }
-  };
-}());
+     * Allow experimental object rest/spread
+     */
+    experimentalObjectRestSpread: true
+  }
+};
 </code></pre>
         </article>
     </section>
@@ -128,7 +128,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Dec 05 2017 20:39:58 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Dec 08 2017 02:18:00 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

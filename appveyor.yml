@@ -13,7 +13,7 @@ test_script:
   - npm --version
   - git --version
   # Run tests sequentially to avoid io async issues
-  - npm test -- --runInBand
+  - npm test #-- --runInBand
 
 branches:
   only:

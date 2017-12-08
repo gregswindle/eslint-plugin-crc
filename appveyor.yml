@@ -13,7 +13,7 @@ test_script:
   - npm --version
   - git --version
   # Run tests sequentially to avoid io async issues
-  - npm test #-- --runInBand
+  - ./node_modules/.bin/nyc ./node_modules/.bin/mocha '$APPVEYOR_BUILD_FOLDER/tests/**/*.spec.js'
 
 branches:
   only:

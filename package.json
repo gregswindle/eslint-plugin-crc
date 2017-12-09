@@ -91,18 +91,15 @@
       "lib/**/*.js"
     ],
     "exclude": [
-      "**/*.spec.js",
-      "**/fixtures/**/*.js"
+      "tests/*.spec.js",
+      "tests/fixtures/**/*.js"
     ],
     "reporter": [
       "lcov",
       "text"
     ],
     "check-coverage": true,
-    "lines": 100,
-    "require": [
-      "babel-register"
-    ]
+    "lines": 100
   },
   "repository": {
     "type": "git",

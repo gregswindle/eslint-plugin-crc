@@ -5,7 +5,7 @@
   "author": {
     "name": "Greg Swindle",
     "email": "greg@swindle.net",
-    "url": "http://swindle.net"
+    "url": "https://github.com/gregswindle"
   },
   "bugs": {
     "url": "https://github.com/gregswindle/eslint-plugin-crc/issues"
@@ -29,44 +29,43 @@
   },
   "contributors": [],
   "dependencies": {
-    "concat": "1.0.3",
-    "eslint": "4.11.0",
+    "bunyan": "1.8.12",
+    "doctrine": "2.0.2",
+    "eslint": "4.13.0",
     "espree": "3.5.2",
-    "estraverse": "4.2.0",
-    "global": "4.3.2",
+    "esquery": "1.0.0",
     "lodash": "4.17.4",
-    "minami": "1.2.3",
-    "mkdirp": "0.5.1",
-    "relative-path": "1.1.0",
-    "require-dir": "0.3.2",
-    "requireindex": "1.1.0",
-    "shebang-loader": "0.0.1"
+    "pluralize": "7.0.0",
+    "requireindex": "1.1.0"
   },
   "devDependencies": {
     "babel-register": "6.26.0",
-    "bithound": "1.7.0",
     "chai": "4.1.2",
-    "codacy-coverage": "2.0.3",
-    "codeclimate-test-reporter": "0.5.0",
-    "commitplease": "3.1.0",
     "coveralls": "3.0.0",
-    "dedupe": "2.1.0",
-    "dirty-chai": "2.0.1",
+    "docdash": "0.4.0",
+    "eslint-config-xo-space": "0.17.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsdoc": "3.2.0",
+    "eslint-plugin-no-unsafe-innerhtml": "1.0.16",
+    "eslint-plugin-no-unsanitized": "2.0.2",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-scanjs-rules": "0.2.1",
     "eslint-plugin-security": "1.4.0",
+    "eslint-plugin-standard": "3.0.1",
+    "eslint-plugin-xss": "0.1.9",
     "jsdoc": "3.5.5",
+    "markdown-magic": "0.1.19",
+    "markdown-magic-dependency-table": "1.3.2",
+    "markdown-magic-package-scripts": "1.2.1",
     "mocha": "4.0.1",
-    "mocha-junit-reporter": "1.15.0",
-    "nodemon": "1.12.1",
-    "npmdoc-nsp": "2017.4.23",
+    "nodemon": "1.12.5",
     "nsp": "3.1.0",
     "nyc": "11.3.0",
     "properties-parser": "0.3.1",
     "semantic-release": "8.2.0",
-    "semantic-release-cli": "3.2.5",
-    "sinon": "4.1.2",
-    "snyk": "1.49.2",
-    "standard-version": "4.2.0",
-    "uglify-js": "3.1.9"
+    "snyk": "1.54.1",
+    "standard-version": "4.2.0"
   },
   "engines": {
     "node": ">=6"
@@ -92,18 +91,15 @@
       "lib/**/*.js"
     ],
     "exclude": [
-      "**/*.spec.js",
-      "**/fixtures/**/*.js"
+      "tests/*.spec.js",
+      "tests/fixtures/**/*.js"
     ],
     "reporter": [
       "lcov",
       "text"
     ],
     "check-coverage": true,
-    "lines": 100,
-    "require": [
-      "babel-register"
-    ]
+    "lines": 100
   },
   "repository": {
     "type": "git",
@@ -116,21 +112,27 @@
     "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
     "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
     "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
-    "docs": "npm run docs2html && npm run docs2md && ./node_modules/.bin/eslint -f html lib > docs/eslint-report.html",
+    "docs": "npm run docs2html && npm run docs2md && npm run docs:markdown",
     "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
-    "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files ./lib/*.js > ../eslint-plugin-crc.wiki/API.md",
+    "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files './lib/**/*.js' './lib/**/**/*.js' './lib/formatters/**/*.js' './lib/formatters/crc/*.js' > ../eslint-plugin-crc.wiki/API.md && markdown-toc -i ../eslint-plugin-crc.wiki/API.md",
+    "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./markdown.config.js",
+    "docs:script": "node ./markdown.config.js",
+    "lint": "./node_modules/.bin/eslint . --fix",
     "posttest": "./node_modules/.bin/nsp check --output summary",
-    "postversion": "npm run changelog && node ./.ci-cd/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
-    "prepublish": null,
-    "pretest": "./node_modules/.bin/eslint lib --fix",
+    "postversion": "npm run changelog && node ./.ci/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
+    "pretest": "npm run lint",
     "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
     "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
     "release": "standard-version",
     "security": "./node_modules/.bin/nsp check --output summary",
+    "security:patch": "snyk wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "snyk-protect": "snyk protect",
+    "snyk-test": "snyk test",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha $(find tests -name '*.spec.js')",
+    "test": "nyc mocha 'tests/**/*.spec.js'",
     "version": null,
-    "watch:test": "./node_modules/.bin/nodemon -w ./tests -w ./lib -e js,json -x npm test"
-  }
+    "watch:test": "nodemon -w ./tests -w ./lib -e js,json -x npm test"
+  },
+  "snyk": true
 }

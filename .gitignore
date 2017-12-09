@@ -49,7 +49,7 @@ jspm_packages
 .node_repl_history
 
 # Documentation
-docs
+# docs
 .ci-cd/.keys
 reports
 
@@ -58,3 +58,5 @@ reports
 
 # Sonar Scanner
 /.scannerwork
+
+.DS_Store

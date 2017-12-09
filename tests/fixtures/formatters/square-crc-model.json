@@ -1,0 +1,20 @@
+{
+  "name": "Square",
+  "collaborators": [],
+  "context": {
+    "fileName": "square.js",
+    "sourceCode": "Square.prototype = new Polygon()"
+  },
+  "declarations": [],
+  "description": null,
+  "references": [
+
+  ],
+  "responsibilities": [
+    "Get the number of unit squares equal in measure to the surface.",
+    "Set the number of unit squares equal in measure to the surface."
+  ],
+  "superClass": "Polygon",
+  "declaration": null,
+  "identifier": null
+}

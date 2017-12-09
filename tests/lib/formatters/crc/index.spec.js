@@ -29,7 +29,7 @@ describe("formatter:markdown,", () => {
       const result = formatter(code);
       expect(result).to.contain("# CRC Model results");
       // eslint-disable-next-line max-len
-      expect(result).to.contain("Square extends <a rel=\"noopener\" href=\"https://is.gd/ZZBLcn\" target=\"mdn\">Object</a>");
+      expect(result).to.contain("<a rel=\"noopener\" href=\"https://is.gd/ZZBLcn\" target=\"mdn\">Object</a>");
     });
   });
 });

@@ -41,60 +41,202 @@
 
 CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
 
+---
+
+**Example:** two prototypes (classes) called Polygon and Square:
+
+<!-- crc-model-template:html,markdown -->
+<table width="100%">
+ <thead>
+   <tr valign="top" align="left">
+     <th colspan="2">
+       <h3>
+         <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
+           Polygon
+           <tt>extends
+           <a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn">Object</a></tt>
+      </h3>
+      <blockquote>
+
+      </blockquote>
+      </th>
+   </tr>
+   <tr valign="top" align="left">
+     <th>Responsibilities</th>
+     <th>Collaborators</th>
+   </tr>
+ </thead>
+ <tfoot valign="top" align="left">
+   <tr valign="top" align="left" width="100%">
+     <td bgcolor="#fcfcfc" colspan="2">
+       <details>
+         <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
+           <dl>
+           <dt><strong>Source code</strong></dt>
+           <dd><blockquote>
+
+```js
+class Polygon {
+ constructor(height, width) {
+   this.height = height
+   this.width = width
+   this.name = 'Polygon'
+ }
+}
+
+module.exports = Polygon;
+
+```
+
+</blockquote></dd>
+           <dt><strong>References</strong></dt>
+           <dd>
+             <blockquote><strong>Polygon is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
+           <ol>
+             <li>TODO: reference one.</li>
+             <li>TODO: reference two.</li>
+             <li>TODO: reference one.</li>
+          </ol></blockquote></dd>
+           </dl>
+       </details>
+     </td>
+   </tr>
+ </tfoot>
+ <tbody>
+   <tr valign="top" align="left">
+   <td width="50%">
+     <ol> Undetermined. </ol>
+   </td>
+   <td width="50%">
+     <ol> None found. </ol>
+   </td>
+   </tr>
+ </tbody>
+</table>
+
+<!--/crc-model-template:html,markdown -->
+
+<!-- crc-model-template:html,markdown -->
 <table width="100%">
   <thead>
     <tr valign="top" align="left">
-      <th colspan="2"><code>Delta</code></th>
+      <th colspan="2">
+        <h3>
+          <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
+            <strong>Square</strong>
+            <tt>extends
+            <a href="Polygon">Polygon</a></tt>
+       </h3>
+       <blockquote>
+         A plane figure with four equal straight sides and four right angles.
+       </blockquote>
+       </th>
     </tr>
     <tr valign="top" align="left">
       <th>Responsibilities</th>
       <th>Collaborators</th>
     </tr>
   </thead>
+  <tfoot valign="top" align="left">
+    <tr valign="top" align="left" width="100%">
+      <td bgcolor="#fcfcfc" colspan="2">
+        <details>
+          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
+            <dl>
+            <dt><strong>Example</dt>
+            <dd><blockquote>
+
+```js
+let shape = new Square(5)
+console.log(`${shape.name} has
+  a height ${shape.height} and
+  a width of ${shape.width},
+  for an area of ${shape.area}.`)
+// =>
+// Square has
+//  a height 5 and
+//  a width of 5,
+//  for an area of 25.
+```
+
+</blockquote>
+</dd>
+            <dt><strong>Source code</strong></dt>
+            <dd><blockquote>
+
+```js
+/**
+ * A plane figure with four equal straight sides and four right
+ * angles.
+ *
+ * @property {number} area - The extent of a two-dimensional figure
+ * or shape, or planar lamina, in the plane.
+ * @property {string=Square} name - The geometric `object`'s name.
+ * @example
+ * let shape = new Square(5)
+ * console.log(`${shape.name} has
+ *   a height ${shape.height} and
+ *   a width of ${shape.width},
+ *   for an area of ${shape.area}.`)
+ * @extends Polygon
+ */
+class Square extends Polygon {
+  /**
+    * Call the parent class's constructor with lengths
+    * provided for the Polygon's width and height.
+    * @param {!number=0} length - The length of all sides.
+    * @constructor
+    */
+  constructor(length = 0) {
+    super(length, length)
+    this.name = 'Square'
+  }
+
+  get area() {
+    return this.height * this.width
+  }
+
+  set area(value) {
+    this.height = this.width = Math.sqrt(value)
+  }
+}
+
+module.exports = Square
+```
+
+</blockquote></dd>
+            <dt><strong>References</strong></dt>
+            <dd>
+              <blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
+            <ol>
+              <li>TODO: reference one.</li>
+              <li>TODO: reference two.</li>
+              <li>TODO: reference one.</li>
+           </ol></blockquote></dd>
+            </dl>
+        </details>
+      </td>
+    </tr>
+  </tfoot>
   <tbody>
     <tr valign="top" align="left">
       <td width="50%">
         <ol>
-            <li>Disambiguation for the letter &quot;D&quot;</li>
-            <li>Clarifies pronunciation when spelling with the letter &quot;D&quot;</li></ol>
+            <li>Get the extent of a two-dimensional figure
+            or shape, or planar lamina, in the plane.</li>
+            <li>Set the extent of a two-dimensional figure
+            or shape, or planar lamina, in the plane.</li></ol>
       </td>
       <td width="50%">
         <ol>
-            <li><code>Charlie</code>
-              <a style="font-size:small">18:26</a>
-            </li></ol>
+          <li><code><a rel="noopener" title="View documentation for Math." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a> [<a title="Introduced on line 10, column 20." href="#">10</a>:<a title="Introduced on line 10, column 20." href="#">20</a>]</code>
+        </ol>
       </td>
     </tr>
   </tbody>
 </table>
 
-
-<table width="100%">
-  <thead>
-    <tr valign="top" align="left">
-      <th colspan="2"><code>Echo</code></th>
-    </tr>
-    <tr valign="top" align="left">
-      <th>Responsibilities</th>
-      <th>Collaborators</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr valign="top" align="left">
-      <td width="50%">
-        <ol>
-            <li>Disambiguation for the letter &quot;E&quot;</li>
-            <li>Clarifies pronunciation when spelling with the letter &quot;E&quot;</li></ol>
-      </td>
-      <td width="50%">
-        <ol>
-            <li><code>Alpha</code>
-              <a style="font-size:small">20:25</a>
-            </li></ol>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<!--/crc-model-template:html,markdown -->
 
 
 ## 2. Installation

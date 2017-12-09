@@ -1,13 +1,13 @@
 const { expect } = require("chai");
-const ClassDeclarationCrcClass = require("../../../../lib/crc/descriptors/class-declaration-crc-class");
+const ClassMatcherCrcClass = require("../../../../lib/crc/descriptors/class-matcher-crc-class");
 const Polygon = require("../../../fixtures/crc/class-declaration/polygon.js");
 const Square = require("../../../fixtures/crc/class-declaration/square.js");
 const context = require("../../../fixtures/crc/class-declaration/context.json");
 
-describe("ClassDeclarationCrcClass", () => {
+describe("ClassMatcherCrcClass", () => {
   describe("overrides the static CrcClass.factory function and", () => {
     it("creates a CrcClass from context", () => {
-      const crcClass = ClassDeclarationCrcClass.factory(context);
+      const crcClass = ClassMatcherCrcClass.factory(context);
 
       expect(crcClass.name).to.equal("Polygon");
       expect(crcClass.superClass).to.be.null;

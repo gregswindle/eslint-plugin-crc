@@ -54,34 +54,33 @@ class Polygon {
 
 /**
  * A plane figure with four equal straight sides and four right angles.
+ *
+ * @property {number} area - The extent of a two-dimensional figure or shape,
+ * or planar lamina, in the plane.
+ * @property {string=Square} name - The geometric `object`'s name.
+ * @example
+ * let shape = new Square(5)
+ * console.log(`${shape.name} has a height ${shape.height} and a width of ${shape.width}, for an area of ${shape.area}.`)
  * @extends Polygon
  */
 class Square extends Polygon {
   /**
     * Call the parent class's constructor with lengths
     * provided for the Polygon's width and height.
-    * @param {number} length - The length of all sides.
+    * @param {!number=0} length - The length of all sides.
     * @constructor
     */
-  constructor(length) {
+  constructor(length = 0) {
     super(length, length)
-
-    // Note: In derived classes, super() must be called before you
-    // can use 'this'. Leaving this out will cause a reference error.
     this.name = 'Square'
   }
 
-  /**
-   * @description The extent of a two-dimensional figure or shape, or planar
-   * lamina, in the plane.
-   */
   get area() {
     return this.height * this.width
   }
 
   set area(value) {
     this.height = this.width = Math.sqrt(value)
-    this.area = value
   }
 }
 

@@ -180,7 +180,7 @@
 | -------------- | --------------- | ----------- | ----------- | -------- |
  | [bunyan@1.8.12](https://github.com/trentm/node-bunyan#readme) | a JSON logging library for node.js services | 1.8.12 | MIT | production | 
  | [doctrine@2.0.2](https://github.com/eslint/doctrine) | JSDoc parser | 2.0.2 | Apache-2.0 | production | 
- | [eslint@4.12.1](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.12.1 | MIT | production | 
+ | [eslint@4.13.0](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.13.0 | MIT | production | 
  | [espree@3.5.2](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.2 | BSD-2-Clause | production | 
  | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production | 
  | [lodash@4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | MIT | production | 

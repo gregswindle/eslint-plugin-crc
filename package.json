@@ -30,7 +30,7 @@
   "contributors": [],
   "dependencies": {
     "bunyan": "1.8.12",
-    "doctrine": "2.0.2",
+    "doctrine": "2.1.0",
     "eslint": "4.13.0",
     "espree": "3.5.2",
     "esquery": "1.0.0",

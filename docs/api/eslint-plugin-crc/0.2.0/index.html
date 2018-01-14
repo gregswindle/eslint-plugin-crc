@@ -62,112 +62,88 @@
 <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a></p>
 <h2>Table of contents</h2><!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <ul>
-<li><a href="#1-refactoring-with-crc-models">1. Refactoring with CRC models</a></li>
-<li><a href="#2-installation">2. Installation</a></li>
-<li><a href="#3-configuration">3. Configuration</a></li>
-<li><a href="#4-usage">4. Usage</a></li>
-<li><a href="#5-anatomy-of-a-crc-model">5. Anatomy of a CRC model</a></li>
-<li><a href="#6-benefits">6. Benefits</a><ul>
-<li><a href="#61-simplicity">6.1. Simplicity</a></li>
-<li><a href="#62-behavior-driven-development">6.2. Behavior-driven development</a></li>
+<li><a href="#1-overview-anatomy-of-a-crc-model">1. Overview: anatomy of a CRC model</a><ul>
+<li><a href="#11-example-class-polygon">1.1. Example: <code>class Polygon</code></a></li>
+<li><a href="#12-example-class-square">1.2. Example: <code>class Square</code></a></li>
 </ul>
 </li>
-<li><a href="#7-contributing">7. Contributing</a></li>
-<li><a href="#8-version">8. Version</a></li>
-<li><a href="#9-license">9. License</a></li>
-<li><a href="#10-references">10. References</a><!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+<li><a href="#2-refactoring-with-crc-models">2. Refactoring with CRC models</a></li>
+<li><a href="#3-installation">3. Installation</a></li>
+<li><a href="#4-usage">4. Usage</a><ul>
+<li><a href="#41-generate-crc-model-reports">4.1. Generate CRC Model reports</a></li>
+<li><a href="#42-reporting-options">4.2. Reporting options</a></li>
+</ul>
+</li>
+<li><a href="#5-benefits">5. Benefits</a><ul>
+<li><a href="#51-readability">5.1. Readability</a></li>
+<li><a href="#52-simplicity">5.2. Simplicity</a></li>
+<li><a href="#53-design-thinking">5.3. Design thinking</a></li>
+<li><a href="#54-behavior-driven-development">5.4. Behavior-driven development</a></li>
+</ul>
+</li>
+<li><a href="#6-contributing">6. Contributing</a></li>
+<li><a href="#7-version">7. Version</a></li>
+<li><a href="#8-license">8. License</a></li>
+<li><a href="#9-references">9. References</a><!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 </li>
 </ul>
-<h2>1. Refactoring with CRC models</h2><blockquote>
-<p><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"> Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.</p>
-<p> Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.<sup><a href="#ref-refactoring-definition">[1]</a></sup></p>
-</blockquote>
-<p>CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.</p>
-<hr>
-<p><strong>Example:</strong> two prototypes (classes) called Polygon and Square:</p>
-<!-- crc-model-template:html,markdown -->
+<h2>1. Overview: anatomy of a CRC model</h2><p>CRC Models are portraits of source code. CRC Models use a simple and scannable template that consist of three simple sections for:</p>
+<ol>
+<li><strong>Name</strong>: what the class (or object) is called in source code.</li>
+<li><strong>Responsibilities</strong>: the work that the object is supposed to perform, and the data it's supposed to maintain.</li>
+<li><strong>Collaborators</strong>: other objects this class directly invokes in order to do its work.</li>
+</ol>
 <table width="100%">
- <thead>
-   <tr valign="top" align="left">
-     <th colspan="2">
-       <h3>
-         <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
-           Polygon
-           <tt>extends
-           <a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn">Object</a></tt>
-      </h3>
-      <blockquote>
-
-      </blockquote>
+  <thead>
+    <tr valign="top" align="left">
+      <th colspan="2"><h3><code>class</code> ClassName <code>extends Object</code></h3>
+      <blockquote>Description of the prototyped object.</blockquote>
       </th>
-   </tr>
-   <tr valign="top" align="left">
-     <th>Responsibilities</th>
-     <th>Collaborators</th>
-   </tr>
- </thead>
- <tfoot valign="top" align="left">
-   <tr valign="top" align="left" width="100%">
-     <td bgcolor="#fcfcfc" colspan="2">
-       <details>
-         <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
-           <dl>
-           <dt><strong>Source code</strong></dt>
-           <dd><blockquote>
-
-<code>js
-class Polygon {
- constructor(height, width) {
-   this.height = height
-   this.width = width
-   this.name = 'Polygon'
- }
-}
-
-module.exports = Polygon;</code>
-
-</blockquote></dd>
-           <dt><strong>References</strong></dt>
-           <dd>
-             <blockquote><strong>Polygon is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
-           <ol>
-             <li>TODO: reference one.</li>
-             <li>TODO: reference two.</li>
-             <li>TODO: reference one.</li>
-          </ol></blockquote></dd>
-           </dl>
-       </details>
-     </td>
-   </tr>
- </tfoot>
- <tbody>
-   <tr valign="top" align="left">
-   <td width="50%">
-     <ol> Undetermined. </ol>
-   </td>
-   <td width="50%">
-     <ol> None found. </ol>
-   </td>
-   </tr>
- </tbody>
+    </tr>
+    <tr valign="top" align="left">
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top" align="left">
+      <td width="50%">
+      <p><code>ClassName</code>'s activities and purpose:
+        <ol>
+          <li>What <code>ClassName</code> does.
+          <li>The information it maintains.
+        </ol></p>
+      </td>
+      <td width="50%">
+      <p>Objects that <code>ClassName</code> depends on to:
+        <ol>
+          <li>Assist <code>ClassName</code> with its work.
+          <li>Provide info/data that <code>ClassName</code> needs.
+        </ol></p>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-<!--/crc-model-template:html,markdown -->
-<!-- crc-model-template:html,markdown -->
+<blockquote>
+<p><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"> A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[2]</a></sup></p>
+</blockquote>
+<h3>1.1. Example: <code>class Polygon</code></h3><blockquote>
+<p>Object count: 2. Generated on 2018-01-13T12:44:42.724Z.</p>
+</blockquote>
+ <!-- crc-model-template:html,markdown -->
 <table width="100%">
   <thead>
     <tr valign="top" align="left">
       <th colspan="2">
         <h3>
           <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
-            <strong>Square</strong>
+            Polygon
             <tt>extends
-            <a href="Polygon">Polygon</a></tt>
+            <a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn">Object</a></tt>
        </h3>
-       <blockquote>
-         A plane figure with four equal straight sides and four right angles.
-       </blockquote>
+       <blockquote></blockquote>
        </th>
     </tr>
     <tr valign="top" align="left">
@@ -181,27 +157,84 @@ module.exports = Polygon;</code>
         <details>
           <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
             <dl>
-            <dt><strong>Example</dt>
-            <dd><blockquote>
-
-<code>js
-let shape = new Square(5)
-console.log(`${shape.name} has
-  a height ${shape.height} and
-  a width of ${shape.width},
-  for an area of ${shape.area}.`)
-// =&gt;
-// Square has
-//  a height 5 and
-//  a width of 5,
-//  for an area of 25.</code>
-
-</blockquote>
-</dd>
             <dt><strong>Source code</strong></dt>
             <dd><blockquote>
 
 <code>js
+class Polygon {
+  constructor(height, width) {
+    this.height = height
+    this.width = width
+    this.name = 'Polygon'
+  }
+}
+
+module.exports = Polygon;</code>
+
+</blockquote></dd>
+            <dt><strong>References</strong></dt>
+            <dd>
+              <blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
+            <ol>
+              <li>TODO: reference one.</li>
+              <li>TODO: reference two.</li>
+              <li>TODO: reference one.</li>
+           </ol></blockquote></dd>
+           <dt><strong>Path</strong></dt>
+           <dd>
+            <blockquote>
+              /path/to/eslint-plugin-crc/tests/fixtures/crc/class-declaration/polygon.js
+            </blockquote>
+           </dd>
+            </dl>
+        </details>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr valign="top" align="left">
+    <td width="50%">
+      <ol> Undetermined. </ol>
+    </td>
+    <td width="50%">
+      <ol> None found. </ol>
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--/crc-model-template:html,markdown -->
+<h3>1.2. Example: <code>class Square</code></h3><!-- crc-model-template:html,markdown -->
+<table width="100%">
+  <thead>
+    <tr valign="top" align="left">
+      <th colspan="2">
+        <h3>
+          <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
+            Square
+            <tt>extends
+            Polygon</tt>
+       </h3>
+       <blockquote>A plane figure with four equal straight sides and four right angles.</blockquote>
+       </th>
+    </tr>
+    <tr valign="top" align="left">
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tfoot valign="top" align="left">
+    <tr valign="top" align="left" width="100%">
+      <td bgcolor="#fcfcfc" colspan="2">
+        <details>
+          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
+            <dl>
+            <dt><strong>Source code</strong></dt>
+            <dd><blockquote>
+
+<code>js
+const Polygon = require(&quot;./polygon&quot;);
+
 /**
  * A plane figure with four equal straight sides and four right
  * angles.
@@ -209,12 +242,6 @@ console.log(`${shape.name} has
  * @property {number} area - The extent of a two-dimensional figure
  * or shape, or planar lamina, in the plane.
  * @property {string=Square} name - The geometric `object`'s name.
- * @example
- * let shape = new Square(5)
- * console.log(`${shape.name} has
- *   a height ${shape.height} and
- *   a width of ${shape.width},
- *   for an area of ${shape.area}.`)
  * @extends Polygon
  */
 class Square extends Polygon {
@@ -238,7 +265,7 @@ class Square extends Polygon {
   }
 }
 
-module.exports = Square</code>
+module.exports = Square;</code>
 
 </blockquote></dd>
             <dt><strong>References</strong></dt>
@@ -249,6 +276,12 @@ module.exports = Square</code>
               <li>TODO: reference two.</li>
               <li>TODO: reference one.</li>
            </ol></blockquote></dd>
+           <dt><strong>Path</strong></dt>
+           <dd>
+            <blockquote>
+              /path/to/eslint-plugin-crc/tests/fixtures/crc/class-declaration/square.js
+            </blockquote>
+           </dd>
             </dl>
         </details>
       </td>
@@ -256,109 +289,128 @@ module.exports = Square</code>
   </tfoot>
   <tbody>
     <tr valign="top" align="left">
-      <td width="50%">
-        <ol>
-            <li>Get the extent of a two-dimensional figure
-            or shape, or planar lamina, in the plane.</li>
-            <li>Set the extent of a two-dimensional figure
-            or shape, or planar lamina, in the plane.</li></ol>
-      </td>
-      <td width="50%">
-        <ol>
-          <li><code><a rel="noopener" title="View documentation for Math." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a> [<a title="Introduced on line 10, column 20." href="#">10</a>:<a title="Introduced on line 10, column 20." href="#">20</a>]</code>
-        </ol>
-      </td>
+    <td width="50%">
+      <ol> Undetermined. </ol>
+    </td>
+    <td width="50%">
+      <ol> None found. </ol>
+    </td>
     </tr>
   </tbody>
 </table>
 
 <!--/crc-model-template:html,markdown -->
-<h2>2. Installation</h2><p>You'll first need to install <a href="http://eslint.org">ESLint</a>:</p>
-<pre class="prettyprint source"><code>$ npm i eslint --save-dev</code></pre><p>Next, install <code>eslint-plugin-crc</code>:</p>
-<pre class="prettyprint source"><code>$ npm install eslint-plugin-crc --save-dev</code></pre><p><strong>Note:</strong> If you installed ESLint globally (using the <code>-g</code> flag) then you must also install <code>eslint-plugin-crc</code> globally.</p>
-<h2>3. Configuration</h2><p>Add <code>crc</code> to the plugins section of your <code>.eslintrc</code> configuration file. You can omit the <code>eslint-plugin-</code> prefix:</p>
-<pre class="prettyprint source lang-json"><code>{
-    &quot;plugins&quot;: [
-        &quot;crc&quot;
-    ]
-}</code></pre><p>Then configure the rules you want to use under the rules section.</p>
-<pre class="prettyprint source lang-json"><code>{
-    &quot;rules&quot;: {
-        &quot;crc/generate-crc&quot;: 2
-    }
-}</code></pre><h2>4. Usage</h2><p>For local installations, run:</p>
-<pre class="prettyprint source lang-bash"><code>$ ./node_modules/.bin/eslint \
-  -f './lib/formatters/crc/index.js' tests/fixtures/crc/class-declaration/*.js \
-  -o reports/crc-model-report.md</code></pre><p>If you installed <code>eslint-plugin-crc</code> globally, run:</p>
-<pre class="prettyprint source lang-bash"><code>$ eslint \
-  -f './lib/formatters/crc/index.js' tests/fixtures/crc/class-declaration/*.js \
-  -o reports/crc-model-report.md</code></pre><h2>5. Anatomy of a CRC model</h2><p>CRC Models use a simple and scannable template that consist of three simple sections for:</p>
-<ol>
-<li><strong>Name</strong>: what the class (or object) is called in source code.</li>
-<li><strong>Responsibilities</strong>: the work that the class/object is supposed to perform, and the data it's supposed to maintain.</li>
-<li><strong>Collaborators</strong>: other objects this class directly invokes in order to do its work.</li>
-</ol>
-<table width="100%">
-  <thead>
-    <tr valign="top" align="left">
-      <th colspan="2"><code>Class/Object name</code></th>
-    </tr>
-    <tr valign="top" align="left">
-      <th>Responsibilities</th>
-      <th>Collaborators</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr valign="top" align="left">
-      <td width="50%">
-      <p>The <code>class/object</code>'s activities and purpose:
-        <ol>
-          <li>What the class/object does.
-          <li>The information it maintains.
-        </ol></p>
-      </td>
-      <td width="50%">
-      <p>Objects that this <code>class</code> depends on to:
-        <ol>
-          <li>Assist <code>Class name</code> with its work.
-          <li>Provide info/data that <code>Class name</code> needs.
-        </ol></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 <blockquote>
 <p><img src="docs/img/icons8/icon-info-30.png" alt="Use of terms"> Despite the implementation of the <code>class</code>, <code>constructor</code>, <code>static</code>, <code>extends</code>, and <code>super</code> keywords in ES2015, JavaScript <em>still</em> achieves encapsulation, inheritance, and polymorphism with <code>prototype</code> chains. Nevertheless, I use the word <code>class</code> to refer to JavaScript objects with <code>prototype</code>-based inheritance.</p>
 </blockquote>
-<h2>6. Benefits</h2><h3>6.1. Simplicity</h3><p>CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.</p>
+<h2>2. Refactoring with CRC models</h2><p>As software programs grow over time, engineers detect whiffs of potentially deeper problems wafting from source code. Like an odor you can't quite find the right words for, software also starts giving off <a href="https://en.wikipedia.org/wiki/Code_smell">code smells</a>. <em>Code smells signify software that's sweating under the strain of complexity or an imbalanced design.</em></p>
+<p>Software can become brittle and inextensible unless we sniff out the structural problems that create code smells. CRC Models can help us clean and deodorize malodorous software with <a href="https://refactoring.com/"><em>refactorings</em></a>.</p>
 <blockquote>
-<p><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"> A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[2]</a></sup></p>
+<dl><strong>:book: <dfn>Refactoring</dfn> defined</strong>
+
+<dt>noun</dt>
+<dd>a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior</dd>
+
+<dt>verb</dt>
+<dd>to restructure software by applying a series of refactorings without changing its observable behavior <sup><a href="#ref-refactoring-definition">[1]</a></sup></dd>
+</dl>
+
 </blockquote>
-<p>CRC models are simple to read, write, and update. CRC models focus on the <strong>purpose</strong> of classes instead of their <strong>mechanics</strong>. Because of their simplicity, CRC models are useful for determining why software might be difficult to extend or change.</p>
-<h3>6.2. Behavior-driven development</h3><p>Behavior-driven development (BDD) seeks to incorporate <strong><em>design</em></strong> as a routine exercise during product delivery. BDD prescribes iterative activities intended to redefine and contextualize design, testing, and programming as unified activities that share common specifications expressing a product's behavior instead of its technical implementation. BDD extends TDD's focus on refactoring to how classes behave with each other. The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior instead of technical assertions.</p>
-<h2>7. Contributing</h2><blockquote>
-<p><a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a> We welcome contributors and pull requests.</p>
+<h2>3. Installation</h2><p>You'll first need to install <a href="http://eslint.org">ESLint</a>:</p>
+<pre class="prettyprint source lang-bash"><code>$ npm i eslint --save-dev</code></pre><p>Next, install <code>eslint-plugin-crc</code>.</p>
+<blockquote>
+<p>:octocat: <code>eslint-plugin-crc</code> isn't available via <code>npm</code> yet, so you'll have to clone this repository, for now.</p>
 </blockquote>
-<p>Check out the guidelines for</p>
+<pre class="prettyprint source lang-bash"><code># Clone this repository
+$ git clone https://github.com/gregswindle/eslint-plugin-crc.git
+# Change into the eslint-plugin-crc directory
+$ cd eslint-plugin-crc
+# Symlink the eslint-plugin-crc package directory
+# so you can run eslint-plugin-crc globally
+$ npm link</code></pre><h2>4. Usage</h2><h3>4.1. Generate CRC Model reports</h3><p>For local (<code>devDependency</code>) installations, run:</p>
+<pre class="prettyprint source lang-bash"><code>$ ./node_modules/.bin/eslint \
+  -f './lib/formatters/crc' tests/fixtures/crc/class-declaration/*.js \
+  -o reports/crc-model-report.md</code></pre><p>If you installed <code>eslint-plugin-crc</code> globally, you can run the <code>cli</code> client:</p>
+<pre class="prettyprint source lang-bash"><code>$ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js
+# => ✅  Generated a CRC Model report to /Users/you/repo/reports/crc-model-report.md</code></pre><h3>4.2. Reporting options</h3><p>You can provide a custom report destination, too:</p>
+<pre class="prettyprint source lang-bash"><code>$ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js \
+  --output=&quot;./tests/reports/refactoring.md&quot;
+# => ✅  Generated a CRC Model report to ./tests/reports/refactoring.md</code></pre><p>Use the <code>--help</code> flag to view all options:</p>
+<pre class="prettyprint source lang-bash"><code>$ eslint-plugin-crc --help
+
+  Generate CRC (Class-Responsibility-Collaboration) Model
+  reports to analyze and refactor JavaScript codebases.
+
+  Usage
+    $ eslint-plugin-crc input [options] [info]
+
+  Input
+    The path (or glob) of the JavaScript resources you want
+    analyzed. [Default: '.']
+
+  Options
+    --output, -o  The &quot;CRC Models report&quot; destination directory.
+                  [Default: './reports']
+
+  Info
+    --help        Show this dialog.
+    --version     Display the installed semantic version.
+
+  Examples
+    $ eslint-plugin-crc
+    ✅  Generated a CRC Model report to
+     /Users/you/work/repo/reports/crc-model-report.md.
+
+    $ eslint-plugin-crc 'lib/**/*.js' -o='./tests/analysis'
+    ✅  Generated a CRC Model report to
+     /Users/you/work/repo/tests/analysis/crc-model-report.md.
+
+    $ eslint-plugin-crc -o='😱'
+    ❌  There was a problem generating your CRC Model report.
+        Error: ENOENT: no such file or directory, open '😱'</code></pre><h2>5. Benefits</h2><h3>5.1. Readability</h3><p>CRC Models are small and easy to read. Since CRC Models focus on responsibilities and collaboration, collaborators don't need much (if any) training. All stakeholders can participate.</p>
+<h3>5.2. Simplicity</h3><p>CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.</p>
+<p>CRC models are simple to read, write, and update. CRC models focus on the <strong>purpose</strong> of classes instead of their <strong>mechanics</strong>. Because of their simplicity, CRC models are useful for</p>
 <ul>
-<li><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md">Contributing to <code>eslint-plugin-crc</code></a> and our</li>
-<li><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CODE_OF_CONDUCT.md">Contributor Covenant Code of Conduct</a>.</li>
+<li>Designing new features</li>
+<li>Improving the design of existing software</li>
+<li>Understanding existing codebases</li>
 </ul>
-<p>Contributions are stories with a beginning, a middle, and an end, all told through issues, comments, commit logs, and pull requests.</p>
+<h3>5.3. Design thinking</h3><p><a href="https://www.interaction-design.org/literature/article/5-stages-in-the-design-thinking-process">Design thinking</a>'s non-linear, iterative process model deliberately introduces exercises and methods that encourage team members to embrace:</p>
 <ul>
-<li><a href="https://github.com/gregswindle/eslint-plugin-crc/issues">Peruse open issues</a> or</li>
-<li><a href="https://github.com/gregswindle/eslint-plugin-crc/pulls">Open a new pull request (PR)</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Divergent_thinking">Divergent thinking</a>, which ideates many possible solutions, as well as</li>
+<li><a href="https://en.wikipedia.org/wiki/Convergent_thinking">Convergent thinking</a>, which hones in on a user-centered solution based on test results from rapid prototypes.</li>
 </ul>
-<h2>8. Version</h2><p><code>eslint-plugin-crc</code>'s latest version is <!-- semver --> <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md"><code>v0.2.0</code></a> <!-- semverend --> . Please read the <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md">CHANGELOG</a> for details.</p>
-<h2>9. License</h2><p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE">MIT</a> © <a href="https://github.com/gregswindle">Greg Swindle</a></p>
+<p><img src="docs/img/design-thinking-process.png" alt="Design thinking's non-linear process model."></p>
+<p>With their focus on software's purpose, behavior, and interactions, CRC Models encourage divergent thinking without ignoring the convergent thinking required to improve software design. CRC Models portray software programs in a technology-agnostic way, which opens opportunities for creative, solution-based methodologies like design thinking.</p>
+<h3>5.4. Behavior-driven development</h3><p>Behavior-driven development (BDD) seeks to incorporate <strong><em>design</em></strong> as a routine exercise during product delivery. <strong>BDD is a process model</strong> that incorporates solution-based testing, programming, and design into an iterative routine. BDD begins with tests-as-specifications (specs) first, followed by source code development, which then leads to discrete design improvements with refactorings.</p>
+<p><img src="docs/img/bdd-process.png" alt="BDD incorporates testing, programming, and design improvement into a repeatable process model."></p>
+<p>The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior <em>as well as</em> of mechanics.</p>
+<h2>6. Contributing</h2><p><a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a> We welcome contributors and pull requests.</p>
+<hr>
+<p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md">:four_leaf_clover: Read <strong>Contributing to <code>eslint-plugin-crc</code></strong> to get started :four_leaf_clover:</a>.</p>
+<p><a href="http://makeapullrequest.com">Free and independent training</a> is available, too.</p>
+<hr>
+<p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md">Contributing</a> in the form of GitHub pull requests are welcome. Before embarking on a significant change, please adhere to the following guidelines:</p>
+<ol>
+<li>Read the <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CODE_OF_CONDUCT.md">Code of Conduct</a>.</li>
+<li>Create an issue to propose changes:<ul>
+<li><a href="https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=fix%28affected-scope%29%3A+50-character-defect-summary&amp;labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&amp;body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A">Report a defect</a> (aka &quot;bug&quot;)</li>
+<li><a href="https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=feat%28affected-scope%29%3A+50-character-change-proposal-summary&amp;labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&amp;body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A">Propose a new feature</a></li>
+</ul>
+</li>
+<li>Follow <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md">Contributing to <code>eslint-plugin-crc's</code></a> guidelines if you're willing and able to program (or want to learn how).</li>
+</ol>
+<h2>7. Version</h2><p><code>eslint-plugin-crc</code>'s latest version is <!-- semver --> <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md"><code>v0.2.0</code></a> <!-- semverend --> . Please read the <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md">CHANGELOG</a> for details.</p>
+<h2>8. License</h2><p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE">MIT</a> © <a href="https://github.com/gregswindle">Greg Swindle</a></p>
 <p><a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large"><img src="https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large" alt="FOSSA Status"></a></p>
-<h2>10. References</h2><p><a name="ref-refactoring-definition"></a>
+<h2>9. References</h2><p><a name="ref-refactoring-definition"></a>
 <strong>[1]</strong> M. Fowler, &quot;Refactoring&quot;, Refactoring.com, 2017. [Online]. Available: https://refactoring.com/. [Accessed: 22- Nov- 2017]</p>
 <p><a name="ref-crc-definition"></a>
 <strong>[2]</strong> S. Ambler, &quot;Class Responsibility Collaborator (CRC) Models: An Agile Introduction&quot;, Agilemodeling.com, 2017. [Online]. Available: http://agilemodeling.com/artifacts/crcModel.htm. [Accessed: 22- Nov- 2017]</p>
 <hr>
-<p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a> <a href="http://clayallsopp.github.io/readme-score?url=https://github.com/gregswindle/eslint-plugin-crc"><img src="http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/gregswindle/eslint-plugin-crc" alt="Readme Score"></a> <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg?style=flat-square" alt="Greenkeeper"></a></p></article>
+<p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
+<a href="http://clayallsopp.github.io/readme-score?url=https://github.com/gregswindle/eslint-plugin-crc"><img src="http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/gregswindle/eslint-plugin-crc/blob/master/readme.md" alt="Readme Score"></a>
+<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg?style=flat-square" alt="Greenkeeper"></a></p></article>
     </section>
 
 
@@ -374,7 +426,7 @@ module.exports = Square</code>
 <header>
     
         <h2>
-        crc/ast-config.js
+        lib/crc/ast-config.js
         </h2>
         
     
@@ -470,7 +522,7 @@ module.exports = Square</code>
 <header>
     
         <h2>
-        crc/crc-class.js
+        lib/crc/crc-class.js
         </h2>
         
     
@@ -571,7 +623,7 @@ module.exports = Square</code>
 <header>
     
         <h2>
-        index.js
+        lib/index.js
         </h2>
         
     
@@ -670,7 +722,7 @@ Class-Responsibility-Collaboration models.</p></div>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Dec 09 2017 16:39:25 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Jan 14 2018 01:37:09 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

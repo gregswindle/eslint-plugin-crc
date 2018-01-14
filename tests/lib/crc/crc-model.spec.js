@@ -70,4 +70,14 @@ describe("crc-model", () => {
     })
   });
 
+  describe("when parsing ESLint result objects", () => {
+    it("reads source code from result.filePath");
+    it("creates a crc.Context object");
+
+    describe("when parsing the Context object", () => {
+      it("splits the context.code.text into source code blocks by ASTNode");
+
+    })
+  });
+
 });

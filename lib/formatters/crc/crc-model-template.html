@@ -9,9 +9,7 @@
             <tt>extends
             <%= _.get(crcModel, 'class.superClass.name') || '<a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn">Object</a>' %></tt>
        </h3>
-       <blockquote>
-         <%- crcModel.class.description %>
-       </blockquote>
+       <blockquote><%- crcModel.class.description %></blockquote>
        </th>
     </tr>
     <tr valign="top" align="left">
@@ -25,15 +23,6 @@
         <details>
           <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
             <dl>
-            <dt><strong>Example</dt>
-            <dd><blockquote>
-
-```js
-
-```
-
-</blockquote>
-</dd>
             <dt><strong>Source code</strong></dt>
             <dd><blockquote>
 
@@ -50,6 +39,12 @@
               <li>TODO: reference two.</li>
               <li>TODO: reference one.</li>
            </ol></blockquote></dd>
+           <dt><strong>Path</strong></dt>
+           <dd>
+            <blockquote>
+              <%- crcModel.class.meta.filePath %>
+            </blockquote>
+           </dd>
             </dl>
         </details>
       </td>
@@ -73,6 +68,3 @@
 </table>
 
 <!--/crc-model-template:html,markdown -->
-
-
-[classes-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes

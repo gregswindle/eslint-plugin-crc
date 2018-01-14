@@ -1,16 +1,16 @@
 ---
 parserOptions:
-  ecmaVersion:                                    6
-  sourceType:                                     module
+  attachComment:                                  true
+  comment:                                        true
   ecmaFeatures:
     experimentalObjectRestSpread:                 true
-    jsx:                                          true
     globalReturn:                                 true
     impliedStrict:                                true
-  range:                                          false
+    jsx:                                          true
+  ecmaVersion:                                    2017
   loc:                                            true
-  comment:                                        true
-  attachComment:                                  false
+  range:                                          true
+  sourceType:                                     module
   tokens:                                         true
 env:
   es6:                                            true
@@ -27,14 +27,10 @@ plugins:
 # - # scanjs-rules
 - security
 - standard
+- xo
 - xss
 extends:
-- plugin:eslint-plugin-no-unsanitized/DOM
-- plugin:import/errors
-- plugin:import/warnings
-- plugin:node/recommended
-- plugin:security/recommended
-- eslint:recommended
+- eslint:all
 globals:
   document:                                       false
   navigator:                                      false
@@ -104,6 +100,20 @@ rules:
   - error
   - before:                                       true
     after:                                        true
+  lines-around-comment:
+    - error
+    - afterBlockComment:                          true
+      afterLineComment:                           true
+      allowArrayEnd:                              true
+      allowArrayStart:                            true
+      allowBlockEnd:                              true
+      allowBlockStart:                            true
+      allowClassEnd:                              true
+      allowClassStart:                            true
+      allowObjectEnd:                             true
+      allowObjectStart:                           true
+      beforeBlockComment:                         true
+      beforeLineComment:                          true
   max-len:
     - warn
     - code:                                       180
@@ -123,7 +133,7 @@ rules:
   - error
   - checkLoops:                                   false
   no-console:
-    - off
+  - off
   no-control-regex:                               error
   no-debugger:                                    error
   no-delete-var:                                  error
@@ -205,6 +215,7 @@ rules:
   no-sequences:                                   error
   no-shadow-restricted-names:                     error
   no-sparse-arrays:                               error
+  no-sync:                                        off
   no-tabs:                                        error
   no-template-curly-in-string:                    error
   no-this-before-super:                           error
@@ -362,9 +373,11 @@ rules:
       - glob-promise
       - escomplex
   node/no-unsupported-features:
-  - warn
-  - version:                                      4
-    ignores:                                      []
+  - error
+  - version:                                      7
+    ignores:
+    - defaultParameters
+    - destructuring
   node/process-exit-as-throw:                     error
   node/shebang:                                   error
   promise/param-names:                            error
@@ -471,12 +484,22 @@ rules:
   security/detect-disable-mustache-escape:        error
   security/detect-eval-with-expression:           error
   security/detect-no-csrf-before-method-override: error
-  security/detect-non-literal-fs-filename:        error
+  security/detect-non-literal-fs-filename:        warn
   security/detect-non-literal-regexp:             error
   security/detect-non-literal-require:            error
   security/detect-object-injection:               error
   security/detect-possible-timing-attacks:        error
   security/detect-pseudoRandomBytes:              error
   security/detect-unsafe-regex:                   error
+  xo/catch-error-name:
+  - error
+  - name:                                         err
+  xo/explicit-length-check:                       error
+  xo/filename-case:
+  - error
+  - case:                                         kebabCase
+  xo/no-abusive-eslint-disable:                   error
+  xo/no-process-exit:                             error
+  xo/throw-new-error:                             error
   xss/no-location-href-assign:                    off
   xss/no-mixed-html:                              off

@@ -1,12 +1,13 @@
 {
   "name": "eslint-plugin-crc",
-  "description": "Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaboration models.",
+  "description": "Generate CRC (Class-Responsibility-Collaboration) Model reports to analyze and refactor JavaScript codebases.",
   "version": "0.2.0",
   "author": {
     "name": "Greg Swindle",
     "email": "greg@swindle.net",
     "url": "https://github.com/gregswindle"
   },
+  "bin": "lib/cli.js",
   "bugs": {
     "url": "https://github.com/gregswindle/eslint-plugin-crc/issues"
   },
@@ -30,11 +31,13 @@
   "contributors": [],
   "dependencies": {
     "bunyan": "1.8.12",
-    "doctrine": "2.0.2",
-    "eslint": "4.13.0",
+    "doctrine": "2.1.0",
+    "escomplex": "2.0.0-alpha",
+    "eslint": "4.15.0",
     "espree": "3.5.2",
     "esquery": "1.0.0",
     "lodash": "4.17.4",
+    "meow": "4.0.0",
     "pluralize": "7.0.0",
     "requireindex": "1.1.0"
   },
@@ -45,7 +48,7 @@
     "docdash": "0.4.0",
     "eslint-config-xo-space": "0.17.0",
     "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-jsdoc": "3.2.0",
+    "eslint-plugin-jsdoc": "3.3.1",
     "eslint-plugin-no-unsafe-innerhtml": "1.0.16",
     "eslint-plugin-no-unsanitized": "2.0.2",
     "eslint-plugin-node": "5.2.1",
@@ -55,20 +58,21 @@
     "eslint-plugin-standard": "3.0.1",
     "eslint-plugin-xss": "0.1.9",
     "jsdoc": "3.5.5",
-    "markdown-magic": "0.1.19",
+    "lec": "^1.0.1",
+    "markdown-magic": "0.1.20",
     "markdown-magic-dependency-table": "1.3.2",
     "markdown-magic-package-scripts": "1.2.1",
-    "mocha": "4.0.1",
-    "nodemon": "1.12.5",
+    "mocha": "4.1.0",
+    "nodemon": "1.14.11",
     "nsp": "3.1.0",
-    "nyc": "11.3.0",
+    "nyc": "11.4.1",
     "properties-parser": "0.3.1",
-    "semantic-release": "8.2.0",
-    "snyk": "1.54.1",
-    "standard-version": "4.2.0"
+    "semantic-release": "12.2.2",
+    "snyk": "1.68.0",
+    "standard-version": "4.3.0"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=4.0.0"
   },
   "homepage": "https://github.com/gregswindle/eslint-plugin-crc/",
   "keywords": [
@@ -108,21 +112,18 @@
   "scripts": {
     "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s",
     "coverage": "./node_modules/.bin/nyc report",
-    "coverage:all": "npm run coverage:codacy && npm run coverage:codecov && npm run coverage:coveralls",
-    "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
-    "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
-    "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "docs": "npm run docs2html && npm run docs2md && npm run docs:markdown",
-    "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
+    "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -P package.json",
     "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files './lib/**/*.js' './lib/**/**/*.js' './lib/formatters/**/*.js' './lib/formatters/crc/*.js' > ../eslint-plugin-crc.wiki/API.md && markdown-toc -i ../eslint-plugin-crc.wiki/API.md",
     "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./markdown.config.js",
     "docs:script": "node ./markdown.config.js",
     "lint": "./node_modules/.bin/eslint . --fix",
-    "posttest": "./node_modules/.bin/nsp check --output summary",
+    "posttest": "npm run security",
     "postversion": "npm run changelog && node ./.ci/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
+    "prepublish": "lec lib/cli.js -c LF && npm run security",
     "pretest": "npm run lint",
-    "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
-    "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
+    "preversion": "npm test && npm run security",
+    "push": "git push origin master && git status",
     "release": "standard-version",
     "security": "./node_modules/.bin/nsp check --output summary",
     "security:patch": "snyk wizard",
@@ -131,8 +132,8 @@
     "snyk-test": "snyk test",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
     "test": "nyc mocha 'tests/**/*.spec.js'",
-    "version": null,
-    "watch:test": "nodemon -w ./tests -w ./lib -e js,json -x npm test"
+    "test:watch": "nodemon -w ./tests -w ./lib -e js,json -x npm test",
+    "version": null
   },
   "snyk": true
 }

@@ -27,7 +27,7 @@ plugins:
 # - # scanjs-rules
 - security
 - standard
-- xo
+- unicorn
 - xss
 extends:
 - eslint:all
@@ -491,15 +491,27 @@ rules:
   security/detect-possible-timing-attacks:        error
   security/detect-pseudoRandomBytes:              error
   security/detect-unsafe-regex:                   error
-  xo/catch-error-name:
+  # eslint-plugin-unicorn rules
+  # @see https://github.com/sindresorhus/eslint-plugin-unicorn
+  unicorn/catch-error-name:
   - error
   - name:                                         err
-  xo/explicit-length-check:                       error
-  xo/filename-case:
+  unicorn/custom-error-definition:                error
+  unicorn/escape-case:                            error
+  unicorn/explicit-length-check:                  error
+  unicorn/filename-case:
   - error
   - case:                                         kebabCase
-  xo/no-abusive-eslint-disable:                   error
-  xo/no-process-exit:                             error
-  xo/throw-new-error:                             error
-  xss/no-location-href-assign:                    off
-  xss/no-mixed-html:                              off
+  unicorn/import-index:                           error
+  unicorn/new-for-builtins:                       error
+  unicorn/no-abusive-eslint-disable:              error
+  unicorn/no-array-instanceof:                    error
+  unicorn/no-fn-reference-in-iterator:            error
+  unicorn/no-hex-escape:                          error
+  unicorn/no-new-buffer:                          error
+  unicorn/no-process-exit:                        error
+  unicorn/number-literal-case:                    error
+  unicorn/prefer-starts-ends-with:                error
+  unicorn/prefer-type-error:                      error
+  unicorn/regex-shorthand:                        error
+  unicorn/throw-new-error:                        error

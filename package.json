@@ -38,14 +38,15 @@
     "esquery": "1.0.0",
     "lodash": "4.17.4",
     "meow": "4.0.0",
-    "pluralize": "7.0.0",
     "requireindex": "1.1.0"
   },
   "devDependencies": {
     "babel-register": "6.26.0",
+    "bithound": "1.7.0",
     "chai": "4.1.2",
     "coveralls": "3.0.0",
     "docdash": "0.4.0",
+    "eslint-config-scanjs": "1.0.0-beta4",
     "eslint-config-xo-space": "0.17.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsdoc": "3.3.1",
@@ -74,7 +75,7 @@
     "standard-version": "4.3.0"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=7.0.0"
   },
   "homepage": "https://github.com/gregswindle/eslint-plugin-crc/",
   "keywords": [

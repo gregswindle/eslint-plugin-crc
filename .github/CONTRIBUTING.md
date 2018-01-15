@@ -890,12 +890,13 @@
  | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production | 
  | [lodash@4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | MIT | production | 
  | [meow@4.0.0](https://github.com/sindresorhus/meow#readme) | CLI app helper | 4.0.0 | MIT | production | 
- | [pluralize@7.0.0](https://github.com/blakeembrey/pluralize#readme) | Pluralize and singularize any word | 7.0.0 | MIT | production | 
  | [requireindex@1.1.0](https://github.com/stephenhandley/requireindex#readme) | Write minimal node index.js files that require and export siblings by file basename | 1.1.0 | MIT | production | 
  | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev | 
+ | [bithound@1.7.0](https://github.com/bithound/cli.bithound.io) | Commands for interacting with bitHound: https://bithound.io | 1.7.0 | MIT | dev | 
  | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev | 
  | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev | 
  | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev | 
+ | [eslint-config-scanjs@1.0.0-beta4](https://github.com/mozfreddyb/eslint-config-scanjs#readme) | umbrella config to get scanjs-like functionality from eslint | 1.0.0-beta4 | MPL-2.0 | dev | 
  | [eslint-config-xo-space@0.17.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.17.0 | MIT | dev | 
  | [eslint-plugin-import@2.8.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.8.0 | MIT | dev | 
  | [eslint-plugin-jsdoc@3.3.1](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.3.1 | BSD-3-Clause | dev | 
@@ -906,6 +907,7 @@
  | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | MPL-2.0 | dev | 
  | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | Apache-2.0 | dev | 
  | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | MIT | dev | 
+ | [eslint-plugin-unicorn@3.0.1](https://github.com/sindresorhus/eslint-plugin-unicorn#readme) | Various awesome ESLint rules | 3.0.1 | MIT | dev | 
  | [eslint-plugin-xss@0.1.9](https://github.com/Rantanen/eslint-plugin-xss#readme) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.9 | ISC | dev | 
  | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev | 
  | [lec@^1.0.1](https://github.com/iShafayet/lec) | Command Line Wrapper for Line Ending Corrector (An utility that makes sure your files have consistent line endings) | 1.0.1 | MIT | dev | 
@@ -918,6 +920,7 @@
  | [nyc@11.4.1](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.4.1 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
  | [semantic-release@12.2.2](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 12.2.2 | MIT | dev | 
+ | [simple-mock@0.8.0](https://github.com/jupiter/simple-mock) | Super simple stubs and spies with 1-step sandbox restore | 0.8.0 | MIT | dev | 
  | [snyk@1.68.0](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.68.0 | Apache-2.0 | dev | 
  | [standard-version@4.3.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.3.0 | ISC | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->

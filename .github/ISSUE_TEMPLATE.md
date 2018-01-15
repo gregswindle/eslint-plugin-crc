@@ -2,20 +2,23 @@
 
 <!--- If you're suggesting a change/improvement, uncomment this block -->
 ## User story
+
 As an API producer and consumer,
 I must/need/want/should {do something}
-In order to {achieve business value}.
+In order to {add value}.
 
 <!--- Write each criterion in the present tense. Criteria should express the
       plugin's state once the ESLint: Rule's or ESLint: Processor's requirements
       have been met and all tests pass with full coverage. -->
 ## Acceptance criteria
+
 - [ ] 1. {criterion-one}
 - [ ] 2. {criterion-two}
 - [ ] 3. {criterion-three}
 - [ ] 4. {criterion-four}
 
 #### :zap: Rule developers _must_ use the `eslint:rule` subgenerator!
+
 > When you create a new rule, be sure to use the `eslint:rule` subgenerator, since it will
 > 1. Create a stubbed rule,
 > 2. The rule's stubbed BDD specs,

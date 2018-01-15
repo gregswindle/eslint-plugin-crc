@@ -1,5 +1,5 @@
 // eslint-disable-next-line node/no-unsupported-features
-const { version } = require("../../package");
+const {version} = require("../../package");
 const path = require("path");
 // eslint-disable-next-line node/no-unpublished-require
 const prop = require("properties-parser");

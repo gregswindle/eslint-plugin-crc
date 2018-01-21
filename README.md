@@ -40,13 +40,18 @@
 
 ## 1. Background
 
-As software grows over time, subtle structural problems accumulate, which creates complexity. Consequently, it becomes riskier and harder to add features and fix defects.
+As software programs get bigger, subtle structural problems accumulate, resulting in [_complexity_][complexity-dfn-url]. As complexity grows over time, it becomes riskier and harder to add features and fix defects.
 
-Tools like CRC Models can help document, analyze, [refactor][refactoring-url], and manage software complexity and design. CRC Models portray source code as tables with three simple sections:
+Tools like CRC Models can help document, analyze, [**refactor**][refactoring-url], and manage software complexity and design. CRC Models portray source code as tables with three simple sections:
 
-1. **Name**: what the class (or object) is called in source code.
-2. **Responsibilities**: the work that the object is supposed to perform, and the data it's supposed to maintain.
-3. **Collaborators**: other objects this class directly invokes in order to do its work.
+<dl>
+  <dt>1. Name</dt>
+  <dd>What the prototypal object is called in source code.</dd>
+  <dt>2. Responsibilities</dt>
+  <dd>The work that the object is expected to perform, and the data it's supposed to maintain.</dd>
+  <dt>3. Collaborators</dt>
+  <dd>Other objects this class directly invokes in order to do its work.</dd>
+</dl>
 
 ### 1.1. Anatomy of a CRC model
 
@@ -55,7 +60,7 @@ Tools like CRC Models can help document, analyze, [refactor][refactoring-url], a
 <table width="100%">
   <thead>
     <tr valign="top" align="left">
-      <th colspan="2"><h3><code>class</code> ClassName <code>extends Object</code></h3>
+      <th colspan="2"><h3><samp>kind <code>Prototypable</code> [<em>extends <code>Object</code></em>]<samp></h3>
       <blockquote>Description of the prototyped object.</blockquote>
       </th>
     </tr>
@@ -67,17 +72,17 @@ Tools like CRC Models can help document, analyze, [refactor][refactoring-url], a
   <tbody>
     <tr valign="top" align="left">
       <td width="50%">
-      <p><code>ClassName</code>'s activities and purpose:
+      <p><code>Prototypable</code>'s activities and purpose:
         <ol>
-          <li>What <code>ClassName</code> does.
+          <li>What <code>Prototypable</code> does.
           <li>The information it maintains.
         </ol></p>
       </td>
       <td width="50%">
-      <p>Objects that <code>ClassName</code> depends on to:
+      <p>Objects that <code>Prototypable</code> depends on to:
         <ol>
-          <li>Assist <code>ClassName</code> with its work.
-          <li>Provide info/data that <code>ClassName</code> needs.
+          <li>Assist <code>Prototypable</code> with its work.
+          <li>Provide info/data that <code>Prototypable</code> needs.
         </ol></p>
       </td>
     </tr>
@@ -95,10 +100,10 @@ Tools like CRC Models can help document, analyze, [refactor][refactoring-url], a
     <tr valign="top" align="left">
       <th colspan="2">
         <h3>
-          <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
-            Polygon
-            <tt>extends
-            <a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn">Object</a></tt>
+          <samp><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a>
+            <code>Polygon</code>
+            extends
+            <a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn"><code>Object</code></a></samp>
        </h3>
        <blockquote></blockquote>
        </th>
@@ -112,7 +117,7 @@ Tools like CRC Models can help document, analyze, [refactor][refactoring-url], a
     <tr valign="top" align="left" width="100%">
       <td bgcolor="#fcfcfc" colspan="2">
         <details>
-          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
+          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"><code>Polygon</code> details...</summary>
             <dl>
             <dt><strong>Source code</strong></dt>
             <dd><blockquote>
@@ -151,9 +156,9 @@ module.exports = Polygon
   <tbody>
     <tr valign="top" align="left">
     <td width="50%">
-      <ol><li>Provide <tt>height</tt>, the measurement of a shape from base to top.</li>
-      <li>Provide <tt>name</tt>, what the geometric shape is called.</li>
-      <li>Provide <tt>width</tt>, the length of a shape from side to side.
+      <ol><li>Provide <code>height</code>, the measurement of a shape from base to top.</li>
+      <li>Provide <code>name</code>, what the geometric shape is called.</li>
+      <li>Provide <code>width</code>, the length of a shape from side to side.
       </ol>
     </td>
     <td width="50%">
@@ -170,11 +175,11 @@ module.exports = Polygon
   <thead>
     <tr valign="top" align="left">
       <th colspan="2">
-        <h3>
-          <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
-            Square
-            <tt>extends
-            <a href="#crc-model-polygon">Polygon</a></tt>
+        <h3><samp>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a>
+            <code>Square</code>
+            extends
+            <a href="#crc-model-polygon"><code>Polygon</code></a></samp>
        </h3>
        <blockquote>A plane figure with four equal straight sides and four right angles.</blockquote>
        </th>
@@ -188,7 +193,7 @@ module.exports = Polygon
     <tr valign="top" align="left" width="100%">
       <td bgcolor="#fcfcfc" colspan="2">
         <details>
-          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
+          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"><code>Square</code> details...</summary>
             <dl>
             <dt><strong>Source code</strong></dt>
             <dd><blockquote>
@@ -264,10 +269,10 @@ square.area
   <tbody>
     <tr valign="top" align="left">
     <td width="50%">
-      <ol><li>Provide <tt>area</tt>, the extent of a two-dimensional figure or shape, or planar lamina, in the plane.</li></ol>
+      <ol><li>Provide <code>area</code>, the extent of a two-dimensional figure or shape, or planar lamina, in the plane.</li></ol>
     </td>
     <td width="50%">
-      <ol><li><tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" title="View definition on MDN.">Math</a></tt> [226 32:48]</ol>
+      <ol><li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" title="View definition on MDN.">Math</a></code> [226 32:48]</ol>
     </td>
     </tr>
   </tbody>
@@ -292,8 +297,10 @@ Next, install `eslint-plugin-crc`.
 ```bash
 # Clone this repository
 $ git clone https://github.com/gregswindle/eslint-plugin-crc.git
+
 # Change into the eslint-plugin-crc directory
 $ cd eslint-plugin-crc
+
 # Symlink the eslint-plugin-crc package directory
 # so you can run eslint-plugin-crc globally
 $ npm link
@@ -485,26 +492,27 @@ View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/gregswindle/eslint-plugin-crc/blob/master/readme.md)](http://clayallsopp.github.io/readme-score?url=https://github.com/gregswindle/eslint-plugin-crc)
 [![Greenkeeper][greenkeeper-img]][greenkeeper-url]
 
-[btn-defect-img]: docs/img/icon-button-report-a-defect.png
-[btn-feature-img]: docs/img/icon-button-propose-a-new-feature.png
 [api-docs-url]: https://github.com/gregswindle/eslint-plugin-crc/docs/API.md
 [apigee-edge-js-url]: http://docs.apigee.com/api-services/reference/javascript-object-model
 [appveyor-image]: https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&logo=appveyor
 [appveyor-url]: https://ci.appveyor.com/project/gregswindle/eslint-plugin-crc
 [author-url]: https://github.com/gregswindle
 [bdd-process-image]: docs/img/bdd-process.png
+[btn-defect-img]: docs/img/icon-button-report-a-defect.png
+[btn-feature-img]: docs/img/icon-button-propose-a-new-feature.png
 [changelog-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md
+[classes-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 [codacy-coverage-image]: https://api.codacy.com/project/badge/Coverage/fa4ade3f68a04b9cad26165a59ceb88e
 [codacy-coverage-url]: https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Coverage
 [codacy-image]: https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square
 [codacy-url]: https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade
 [code-of-conduct-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CODE_OF_CONDUCT.md
 [code-smell-url]: https://en.wikipedia.org/wiki/Code_smell
+[complexity-dfn-url]: https://en.wikipedia.org/wiki/Programming_complexity
 [complexity-report-url]: https://github.com/escomplex/complexity-report
 [contributing-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md
 [coveralls-image]: https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master
-[classes-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 [daviddm-dev-image]: https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg?style=flat-square
 [daviddm-dev-url]: https://david-dm.org/gregswindle/eslint-plugin-crc?type=dev
 [daviddm-image]: https://david-dm.org/gregswindle/eslint-plugin-crc.svg?theme=shields.io&style=flat-square
@@ -516,11 +524,11 @@ View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 [fossa-url]: https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield
 [greenkeeper-img]: https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg?style=flat-square
 [greenkeeper-url]: https://greenkeeper.io/
-[issues-url]: https://github.com/gregswindle/eslint-plugin-crc/issues
-[issues-new-defect-url]: https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=fix%28affected-scope%29%3A+50-character-defect-summary&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
-[issues-new-feature-url]: https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=feat%28affected-scope%29%3A+50-character-change-proposal-summary&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
 [icon-info-image]: docs/img/icons8/icon-info-30.png
 [icon-quote-left-image]: docs/img/icons8/icon-quote-left-25.png
+[issues-new-defect-url]: https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=fix%28affected-scope%29%3A+50-character-defect-summary&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
+[issues-new-feature-url]: https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=feat%28affected-scope%29%3A+50-character-change-proposal-summary&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
+[issues-url]: https://github.com/gregswindle/eslint-plugin-crc/issues
 [jsdoc2md-url]: https://github.com/jsdoc2md/jsdoc-to-markdown
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE

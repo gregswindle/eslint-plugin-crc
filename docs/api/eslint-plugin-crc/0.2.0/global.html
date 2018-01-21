@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>CrcClass - Documentation</title>
+    <title>Global - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">CrcClass</h1>
+    <h1 class="page-title">Global</h1>
     
 
     
@@ -40,10 +40,8 @@
 <header>
     
         <h2>
-        CrcClass
-        </h2>
         
-            <div class="class-description"><p>Represents <code>class</code> &quot;summary&quot; <code>Object</code> used for reporting.</p></div>
+        </h2>
         
     
 </header>
@@ -53,13 +51,67 @@
     
         
 
-    
-    <h2>Constructor</h2>
-    
-
-    <h4 class="name" id="CrcClass"><span class="type-signature"></span>new CrcClass<span class="signature">(params<span class="signature-attributes">opt</span>, ])</span><span class="type-signature"></span></h4>
+<dl class="details">
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="astConfig"><span class="type-signature">(constant) </span>astConfig<span class="type-signature"> :object</span></h4>
+
 
 
 
@@ -69,7 +121,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_crc-class.js.html">crc/crc-class.js</a>, <a href="crc_crc-class.js.html#line59">line 59</a>
+        <a href="crc_ast-config.js.html">crc/ast-config.js</a>, <a href="crc_ast-config.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -132,13 +184,13 @@
 
         <tr>
             
-                <td class="name"><code>description</code></td>
+                <td class="name"><code>attachComment</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
             
@@ -148,20 +200,21 @@
 
             
 
-            <td class="description last"><p>The purpose or intent of the <code>class</code>.</p></td>
+            <td class="description last"><p>Attach comments to the closest relevant
+ node as leadingComments and trailingComments.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>name</code></td>
+                <td class="name"><code>comment</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
             
@@ -171,200 +224,15 @@
 
             
 
-            <td class="description last"><p>The name of the <code>class</code>.</p></td>
+            <td class="description last"><p>Create a top-level comments array containing
+ all comments.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>code</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">SourceCode</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The ESLint
-<a href="http://bit.ly/2kfR79f"><code>SourceCode</code></a> object.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>superClass</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="CrcClass.html">CrcClass</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The <code>prototype</code> of the object being
-modeled. Defaults to <code>null</code>.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>A parameter object that sets all of
-the CrcClass's properties.</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>code</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">SourceCode</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>The ESLint
-<a href="http://bit.ly/2kfR79f"><code>SourceCode</code></a> object.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>]</code></td>
+                <td class="name"><code>ecmaFeatures</code></td>
             
 
             <td class="type">
@@ -377,120 +245,260 @@ the CrcClass's properties.</p>
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
-        </tr>
+            <td class="description last">
+                <h6>Properties</h6>
 
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
             
-                <td class="name"><code>params.name</code></td>
+                <td class="name"><code>experimentalObjectRestSpread</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"><p>The source code identifier of the class or
-object to be modeled.</p></td>
+            <td class="description last"><p>Allow
+ experimental object rest/spread.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>params.description</code></td>
+                <td class="name"><code>globalReturn</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"><p>A summary of the
-object's purpose.</p></td>
+            <td class="description last"><p>Enable return in global
+ scope.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>params.superClass</code></td>
+                <td class="name"><code>impliedStrict</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="CrcClass.html">CrcClass</a></span>
+<span class="param-type">boolean</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
 
-                
+            
 
+            <td class="description last"><p>Enable implied strict mode
+ (if ecmaVersion &gt;= 5).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>jsx</code></td>
+            
+
+            <td class="type">
+            
                 
-                </td>
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
             
 
             
 
-            <td class="description last"><p>The <code>prototype</code> of the object being
-modeled. Defaults to <code>null</code>.</p></td>
+            <td class="description last"><p>Enable JSX parsing.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ecmaVersion</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Specify the version of ECMAScript syntax
+ you want to use. Valid versions are:</p>
+<ul>
+<li>3</li>
+<li>5 (default)</li>
+<li>6 (2015)</li>
+<li>7 (2016)</li>
+<li>8 (2017)</li>
+<li>9</li>
+</ul>
+<p>You can also set to 2015 (same as 6), 2016 (same as 7), or 2017
+(same as 8) to use the year-based naming.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>loc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Attach line/column location information to each
+ node.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>range</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Attach range information to each node.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sourceType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">enum</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Specify which type of script you're parsing
+ (script or module, default is script).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tokens</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Create a top-level tokens array containing
+ all tokens. <code>tokens</code> must be set to <code>true</code> in order for CRC models to
+ maintain a list of &quot;references&quot;, i.e., where they themselves are referenced.</p></td>
         </tr>
 
     
@@ -502,29 +510,28 @@ modeled. Defaults to <code>null</code>.</p></td>
 
 
 
+<div class="description">
+    <p><code>eslint-plugin-crc</code>'s default Espree AST parsing options.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
 
 
 
 
 
 
-
-
-
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
+        
     
 
     
@@ -535,7 +542,7 @@ modeled. Defaults to <code>null</code>.</p></td>
 
     
 
-    <h4 class="name" id=".factory"><span class="type-signature">(static) </span>factory<span class="signature">(context)</span><span class="type-signature"> &rarr; {<a href="CrcClass.html">CrcClass</a>}</span></h4>
+    <h4 class="name" id="module:eslint-plugin-crc/formatters/crc"><span class="type-signature"></span>module:eslint-plugin-crc/formatters/crc<span class="signature">(results)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
 
@@ -547,7 +554,7 @@ modeled. Defaults to <code>null</code>.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_crc-class.js.html">crc/crc-class.js</a>, <a href="crc_crc-class.js.html#line103">line 103</a>
+        <a href="formatters_crc_index.js.html">formatters/crc/index.js</a>, <a href="formatters_crc_index.js.html#line62">line 62</a>
     </li></ul></dd>
     
 
@@ -587,7 +594,7 @@ modeled. Defaults to <code>null</code>.</p></td>
 
 
 <div class="description">
-    <p>Create a <code>CrcClass</code> from ESTree <code>Nodes</code> and ESLint Rule <code>Contexts</code>.</p>
+    <p>Create a markdown-based report of CrcModels.</p>
 </div>
 
 
@@ -600,7 +607,12 @@ modeled. Defaults to <code>null</code>.</p></td>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>const crcClass = CrcClass.factory(context);</code></pre>
+    <pre class="prettyprint"><code># Run from a Terminal or CLI:
+eslint \
+  --format 'eslint-plugin-crc/formatters/crc' \
+  --output 'reports/crc-model-report.md' \
+  lib/ \
+  --fix</code></pre>
 
 
 
@@ -630,13 +642,13 @@ modeled. Defaults to <code>null</code>.</p></td>
 
         <tr>
             
-                <td class="name"><code>context</code></td>
+                <td class="name"><code>results</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="CrcContext.html">CrcContext</a></span>
+<span class="param-type">array.&lt;Result></span>
 
 
             
@@ -646,8 +658,7 @@ modeled. Defaults to <code>null</code>.</p></td>
 
             
 
-            <td class="description last"><p>A summary object with information to derive
-a CrcModel.</p></td>
+            <td class="description last"><p>A list of ESLint rule parser results.</p></td>
         </tr>
 
     
@@ -671,7 +682,7 @@ a CrcModel.</p></td>
 
         
 <div class="param-desc">
-    <p>A <code>NullObject</code> for CrcClass.</p>
+    <p>CrcModels rendered as markdown.</p>
 </div>
 
 
@@ -682,7 +693,7 @@ a CrcModel.</p></td>
     </dt>
     <dd>
         
-<span class="param-type"><a href="CrcClass.html">CrcClass</a></span>
+<span class="param-type">string</span>
 
 
     </dd>

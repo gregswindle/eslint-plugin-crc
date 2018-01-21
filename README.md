@@ -1,6 +1,6 @@
 # `eslint-plugin-crc`
 
-> Analyze, model, and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaborator models.
+> Document, analyze, and refactor JavaScript codebases with auto-generated CRC (Class-Responsibility-Collaborator) Models.
 
 [![License][license-image]][license-url]
 [![FOSSA Status][fossa-image]][fossa-url]
@@ -17,33 +17,40 @@
 ## Table of contents
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
-- [1. Overview: anatomy of a CRC model](#1-overview-anatomy-of-a-crc-model)
-  * [1.1. Example: `class Polygon`](#11-example-class-polygon)
-  * [1.2. Example: `class Square`](#12-example-class-square)
-- [2. Refactoring with CRC models](#2-refactoring-with-crc-models)
-- [3. Installation](#3-installation)
-- [4. Usage](#4-usage)
-  * [4.1. Generate CRC Model reports](#41-generate-crc-model-reports)
-  * [4.2. Reporting options](#42-reporting-options)
-- [5. Benefits](#5-benefits)
-  * [5.1. Readability](#51-readability)
-  * [5.2. Simplicity](#52-simplicity)
-  * [5.3. Design thinking](#53-design-thinking)
-  * [5.4. Behavior-driven development](#54-behavior-driven-development)
-- [6. Contributing](#6-contributing)
-- [7. Version](#7-version)
-- [8. License](#8-license)
-- [9. References](#9-references)
+- [1. Background](#1-background)
+  * [1.1. Anatomy of a CRC model](#11-anatomy-of-a-crc-model)
+  * [1.2. Sample report](#12-sample-report)
+- [2. **Installation**](#2-installation)
+- [3. **Usage**](#3-usage)
+  * [3.1. Generate CRC Model reports](#31-generate-crc-model-reports)
+  * [3.2. Reporting options](#32-reporting-options)
+- [4. Benefits](#4-benefits)
+  * [4.1. Documentation](#41-documentation)
+  * [4.2. Simplicity](#42-simplicity)
+  * [4.3. Refactoring support](#43-refactoring-support)
+  * [4.4. Technical debt reduction](#44-technical-debt-reduction)
+  * [4.5. Design thinking](#45-design-thinking)
+  * [4.6. Behavior-driven development](#46-behavior-driven-development)
+- [5. **Contributing**](#5-contributing)
+- [6. Version](#6-version)
+- [7. License](#7-license)
+- [8. References](#8-references)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
-## 1. Overview: anatomy of a CRC model
+## 1. Background
 
-CRC Models are portraits of source code. CRC Models use a simple and scannable template that consist of three simple sections for:
+As software grows over time, subtle structural problems accumulate, which creates complexity. Consequently, it becomes riskier and harder to add features and fix defects.
+
+Tools like CRC Models can help document, analyze, [refactor][refactoring-url], and manage software complexity and design. CRC Models portray source code as tables with three simple sections:
 
 1. **Name**: what the class (or object) is called in source code.
 2. **Responsibilities**: the work that the object is supposed to perform, and the data it's supposed to maintain.
 3. **Collaborators**: other objects this class directly invokes in order to do its work.
+
+### 1.1. Anatomy of a CRC model
+
+> ![Citation][icon-quote-left-image] A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[1]</a></sup>
 
 <table width="100%">
   <thead>
@@ -77,13 +84,12 @@ CRC Models are portraits of source code. CRC Models use a simple and scannable t
   </tbody>
 </table>
 
-> ![Citation][icon-quote-left-image] A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[2]</a></sup>
-
-### 1.1. Example: `class Polygon`
+### 1.2. Sample report
 
 > Object count: 2. Generated on 2018-01-13T12:44:42.724Z.
 
  <!-- crc-model-template:html,markdown -->
+<a name="crc-model-polygon"></a>
 <table width="100%">
   <thead>
     <tr valign="top" align="left">
@@ -120,18 +126,16 @@ class Polygon {
   }
 }
 
-module.exports = Polygon;
-
+module.exports = Polygon
 ```
 
 </blockquote></dd>
             <dt><strong>References</strong></dt>
             <dd>
-              <blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
+              <blockquote><strong>Polygon is referenced <em>2</em> times in <em>2</em> files.</strong><br><br>
             <ol>
-              <li>TODO: reference one.</li>
-              <li>TODO: reference two.</li>
-              <li>TODO: reference one.</li>
+              <li>calculator.js</li>
+              <li>dimensions.js</li>
            </ol></blockquote></dd>
            <dt><strong>Path</strong></dt>
            <dd>
@@ -147,7 +151,10 @@ module.exports = Polygon;
   <tbody>
     <tr valign="top" align="left">
     <td width="50%">
-      <ol> Undetermined. </ol>
+      <ol><li>Provide <tt>height</tt>, the measurement of a shape from base to top.</li>
+      <li>Provide <tt>name</tt>, what the geometric shape is called.</li>
+      <li>Provide <tt>width</tt>, the length of a shape from side to side.
+      </ol>
     </td>
     <td width="50%">
       <ol> None found. </ol>
@@ -158,8 +165,6 @@ module.exports = Polygon;
 
 <!--/crc-model-template:html,markdown -->
 
-### 1.2. Example: `class Square`
-
 <!-- crc-model-template:html,markdown -->
 <table width="100%">
   <thead>
@@ -169,7 +174,7 @@ module.exports = Polygon;
           <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
             Square
             <tt>extends
-            Polygon</tt>
+            <a href="#crc-model-polygon">Polygon</a></tt>
        </h3>
        <blockquote>A plane figure with four equal straight sides and four right angles.</blockquote>
        </th>
@@ -199,6 +204,10 @@ const Polygon = require("./polygon");
  * or shape, or planar lamina, in the plane.
  * @property {string=Square} name - The geometric `object`'s name.
  * @extends Polygon
+ * @example
+ * const square = new Square(2)
+ * square.area
+ * // => 4
  */
 class Square extends Polygon {
   /**
@@ -221,18 +230,25 @@ class Square extends Polygon {
   }
 }
 
-module.exports = Square;
+module.exports = Square
+```
 
+</blockquote></dd>
+            <dt><strong>Example</strong></dt>
+            <dd><blockquote>
+
+```js
+const square = new Square(2)
+square.area
+// => 4
 ```
 
 </blockquote></dd>
             <dt><strong>References</strong></dt>
             <dd>
-              <blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
+              <blockquote><strong>Square is referenced <em>1</em> time in <em>1</em> file.</strong><br><br>
             <ol>
-              <li>TODO: reference one.</li>
-              <li>TODO: reference two.</li>
-              <li>TODO: reference one.</li>
+              <li>foobar.js</li>
            </ol></blockquote></dd>
            <dt><strong>Path</strong></dt>
            <dd>
@@ -248,10 +264,10 @@ module.exports = Square;
   <tbody>
     <tr valign="top" align="left">
     <td width="50%">
-      <ol> Undetermined. </ol>
+      <ol><li>Provide <tt>area</tt>, the extent of a two-dimensional figure or shape, or planar lamina, in the plane.</li></ol>
     </td>
     <td width="50%">
-      <ol> None found. </ol>
+      <ol><li><tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" title="View definition on MDN.">Math</a></tt> [226 32:48]</ol>
     </td>
     </tr>
   </tbody>
@@ -261,22 +277,7 @@ module.exports = Square;
 
 > ![Use of terms][icon-info-image] Despite the implementation of the `class`, `constructor`, `static`, `extends`, and `super` keywords in ES2015, JavaScript _still_ achieves encapsulation, inheritance, and polymorphism with `prototype` chains. Nevertheless, I use the word `class` to refer to JavaScript objects with `prototype`-based inheritance.
 
-## 2. Refactoring with CRC models
-
-As software programs grow over time, engineers detect whiffs of potentially deeper problems wafting from source code. Like an odor you can't quite find the right words for, software also starts giving off [code smells][code-smell-url]. *Code smells signify software that's sweating under the strain of complexity or an imbalanced design.*
-
-Software can become brittle and inextensible unless we sniff out the structural problems that create code smells. CRC Models can help us clean and deodorize malodorous software with [_refactorings_][refactoring-url].
-
-> <dl><strong>:book: <dfn>Refactoring</dfn> defined</strong>
->
-> <dt>noun</dt>
-> <dd>a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior</dd>
->
-> <dt>verb</dt>
-> <dd>to restructure software by applying a series of refactorings without changing its observable behavior <sup><a href="#ref-refactoring-definition">[1]</a></sup></dd>
-> </dl>
-
-## 3. Installation
+## 2. **Installation**
 
 You'll first need to install [ESLint](http://eslint.org):
 
@@ -298,9 +299,9 @@ $ cd eslint-plugin-crc
 $ npm link
 ```
 
-## 4. Usage
+## 3. **Usage**
 
-### 4.1. Generate CRC Model reports
+### 3.1. Generate CRC Model reports
 
 For local (`devDependency`) installations, run:
 
@@ -317,7 +318,7 @@ $ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js
 # => ✅  Generated a CRC Model report to /Users/you/repo/reports/crc-model-report.md
 ```
 
-### 4.2. Reporting options
+### 3.2. Reporting options
 
 You can provide a custom report destination, too:
 
@@ -365,78 +366,118 @@ $ eslint-plugin-crc --help
 
 ```
 
-## 5. Benefits
+## 4. Benefits
 
-### 5.1. Readability
+### 4.1. Documentation
 
-CRC Models are small and easy to read. Since CRC Models focus on responsibilities and collaboration, collaborators don't need much (if any) training. All stakeholders can participate.
+CRC Models are small and easy to read. CRC Models portray software programs in a technology-agnostic way by focusing on accurate _names_, _responsibilities_, and _collaboration_ instead of technical mechanics.
 
-### 5.2. Simplicity
+### 4.2. Simplicity
 
-CRC Models express how classes (i.e., prototyped JavaScript objects) behave and interact in order to fulfill their specified responsibilities.
+CRC Models express how software programs behave and interact in order to fulfill defined responsibilities.
 
-CRC models are simple to read, write, and update. CRC models focus on the **purpose** of classes instead of their **mechanics**. Because of their simplicity, CRC models are useful for
+CRC models focus on the **purpose** of classes instead of their **mechanics**. Because of their simplicity, CRC models are useful for
 
  * Designing new features
  * Improving the design of existing software
  * Understanding existing codebases
 
-### 5.3. Design thinking
+Consequently, analysts don't need much (if any) training. All stakeholders can participate.
 
-[Design thinking](https://www.interaction-design.org/literature/article/5-stages-in-the-design-thinking-process)'s non-linear, iterative process model deliberately introduces exercises and methods that encourage team members to embrace:
+### 4.3. Refactoring support
+
+As software programs grow over time, engineers detect whiffs of potentially deeper problems wafting from source code. Like an odor you can't quite find the right words for, software also starts giving off [code smells][code-smell-url]. _Code smells signify software that is sweating under the strain of complexity or an imbalanced design._
+
+Software can become brittle and inextensible unless we sniff out the structural problems that create code smells. CRC Models can help us clean and deodorize malodorous software with [_refactorings_][refactoring-url].
+
+> <dl><strong>Refactoring defined</strong>
+> <dt>:book: noun</dt>
+> <dd>a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior</dd>
+>
+> <dt>:book: verb</dt>
+> <dd>to restructure software by applying a series of refactorings without changing its observable behavior <sup><a href="#ref-refactoring-definition">[2]</a></sup></dd>
+> </dl>
+
+### 4.4. Technical debt reduction
+
+Code smells often indicate technical debt.
+
+> :book: <dfn><strong>Technical debt</strong></dfn> (also known as _design debt_ or _code debt_) is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy solution now instead of using a better approach that would take longer. <sup><a href="#ref-technical-debt">[3]</a></sup>
+
+As technical debt increases, new features take longer to ship, and defects become harder to fix. CRC Models can help address the causes of technical debt, including:  
+
+ * Deficient documentation
+ * Delayed refactoring
+ * Faulty understanding
+ * Inadequate collaboration
+ * Insufficient definitions
+ * Tightly-coupled components
+
+### 4.5. Design thinking
+
+[Design thinking](https://www.interaction-design.org/literature/article/5-stages-in-the-design-thinking-process)'s non-linear, iterative process model deliberately introduces exercises and methods in order to encourage:
 
  * [Divergent thinking](https://en.wikipedia.org/wiki/Divergent_thinking), which ideates many possible solutions, as well as
  * [Convergent thinking](https://en.wikipedia.org/wiki/Convergent_thinking), which hones in on a user-centered solution based on test results from rapid prototypes.
 
 ![Design thinking's non-linear process model.][design-thinking-process-model-img]
 
-With their focus on software's purpose, behavior, and interactions, CRC Models encourage divergent thinking without ignoring the convergent thinking required to improve software design. CRC Models portray software programs in a technology-agnostic way, which opens opportunities for creative, solution-based methodologies like design thinking.
+**CRC Models focus on software's _purpose_, _behavior_, and _interactions_.** This focus encourages divergent thinking to _redefine_ and _ideate_ software before jumping to convergent thinking--_prototyping_ and _testing_--required to improve software design. CRC Models therefore compliment creative, solution-based methodologies like design thinking.
 
-### 5.4. Behavior-driven development
+### 4.6. Behavior-driven development
 
-Behavior-driven development (BDD) seeks to incorporate **_design_** as a routine exercise during product delivery. **BDD is a process model** that incorporates solution-based testing, programming, and design into an iterative routine. BDD begins with tests-as-specifications (specs) first, followed by source code development, which then leads to discrete design improvements with refactorings.
+Behavior-driven development (BDD) incorporates **_design_** as a routine exercise during product delivery. **BDD is a process model** that incorporates solution-based testing, programming, and design into an iterative routine. BDD begins with tests-as-specifications (specs) first, followed by source code development, which then leads to discrete design improvements with refactorings.
 
 ![BDD incorporates testing, programming, and design improvement into a repeatable process model.][bdd-process-image]
 
 The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior _as well as_ of mechanics.
 
-## 6. Contributing
+## 5. **Contributing**
 
-[![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributors and pull requests.
-
----
-
-[:four_leaf_clover: Read **Contributing to `eslint-plugin-crc`** to get started :four_leaf_clover:][contributing-url].
-
-[Free and independent training][makeapullrequest-url] is available, too.
+[![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributions with GitHub **issues** and **pull requests**.
 
 ---
 
-[Contributing][contributing-url] in the form of GitHub pull requests are welcome. Before embarking on a significant change, please adhere to the following guidelines:
+[:beginner: Read **Contributing to `eslint-plugin-crc`** to get started :beginner:][contributing-url].
 
- 1. Read the [Code of Conduct][code-of-conduct-url].
- 1. Create an issue to propose changes:
-    * [Report a defect][issues-new-defect-url] (aka "bug")
-    * [Propose a new feature][issues-new-feature-url]
- 1. Follow [Contributing to `eslint-plugin-crc's`][contributing-url] guidelines if you're willing and able to program (or want to learn how).
+[:mortar_board: Free and independent training][makeapullrequest-url] is available, too.
 
-## 7. Version
+---
+
+[**Contributing**][contributing-url] with GitHub issues and pull requests is welcome. Before embarking on a significant change, please:
+
+ 1. Read the [Code of Conduct][code-of-conduct-url];
+ 1. Create an issue to   
+
+    [![Propose a new feature][btn-feature-img]][issues-new-feature-url] or
+
+    [![Report a defect][btn-defect-img]][issues-new-defect-url]
+
+ 1. Follow [**Contributing to `eslint-plugin-crc's`**][contributing-url] guidelines (if you're willing and able to program or want to learn how).
+
+## 6. Version
 
 `eslint-plugin-crc`'s latest version is <!-- semver --> [`v0.2.0`][changelog-url] <!-- semverend --> . Please read the [CHANGELOG][changelog-url] for details.
 
-## 8. License
+## 7. License
 
 [MIT][license-url] © [Greg Swindle][author-url]
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large)
 
-## 9. References
+View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 
-<a name="ref-refactoring-definition"></a>
-**[1]** M. Fowler, "Refactoring", Refactoring.com, 2017. [Online]. Available: https://refactoring.com/. [Accessed: 22- Nov- 2017]
+## 8. References
 
 <a name="ref-crc-definition"></a>
-**[2]** S. Ambler, "Class Responsibility Collaborator (CRC) Models: An Agile Introduction", Agilemodeling.com, 2017. [Online]. Available: http://agilemodeling.com/artifacts/crcModel.htm. [Accessed: 22- Nov- 2017]
+**[1]** S. Ambler, "Class Responsibility Collaborator (CRC) Models: An Agile Introduction", Agilemodeling.com, 2017. [Online]. Available: http://agilemodeling.com/artifacts/crcModel.htm. [Accessed: 22- Nov- 2017]
+
+<a name="ref-refactoring-definition"></a>
+**[2]** M. Fowler, "Refactoring", Refactoring.com, 2017. [Online]. Available: https://refactoring.com/. [Accessed: 22- Nov- 2017]
+
+<a name="ref-refactoring-definition"></a>
+**[3]** "Technical debt", En.wikipedia.org, 2018. [Online].
+   Available: https://en.wikipedia.org/wiki/Technical_debt. [Accessed: 21- Jan- 2018]
 
 ---
 
@@ -444,6 +485,8 @@ The very structure of Class-Responsibility-Collaboration models, with their emph
 [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/gregswindle/eslint-plugin-crc/blob/master/readme.md)](http://clayallsopp.github.io/readme-score?url=https://github.com/gregswindle/eslint-plugin-crc)
 [![Greenkeeper][greenkeeper-img]][greenkeeper-url]
 
+[btn-defect-img]: docs/img/icon-button-report-a-defect.png
+[btn-feature-img]: docs/img/icon-button-propose-a-new-feature.png
 [api-docs-url]: https://github.com/gregswindle/eslint-plugin-crc/docs/API.md
 [apigee-edge-js-url]: http://docs.apigee.com/api-services/reference/javascript-object-model
 [appveyor-image]: https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&logo=appveyor
@@ -491,7 +534,7 @@ The very structure of Class-Responsibility-Collaboration models, with their emph
 [pr-url]: https://github.com/gregswindle/eslint-plugin-crc/pulls
 [readme-score-img]: http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/gregswindle/eslint-plugin-crc
 [readme-score-url]: http://clayallsopp.github.io/readme-score?url=https://github.com/gregswindle/eslint-plugin-crc
-[refactoring-url]: https://refactoring.com/
+[refactoring-url]: https://github.com/gregswindle/eslint-plugin-crc/wiki/Refactorings-by-category
 [scoreme-url]: http://clayallsopp.github.io/readme-score/?url=https://github.com/gregswindle/eslint-plugin-crc/blob/master/README.md
 [sonar-cognitive-img]: http://sonarcloud.io/api/badges/measure?key=gregswindle-eslint-plugin-crc&metric=cognitive_complexity
 [sonar-cognitive-url]: https://sonarcloud.io/component_measures/metric/cognitive_complexity/list?id=gregswindle-eslint-plugin-crc

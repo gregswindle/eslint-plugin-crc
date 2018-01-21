@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>formatters/crc/index.js - Documentation</title>
+    <title>crc/descriptors/variable-declaration.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">formatters/crc/index.js</h1>
+    <h1 class="page-title">crc/descriptors/variable-declaration.js</h1>
     
 
     
@@ -37,79 +37,50 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Markdown reporter
- * @module eslint-plugin-crc/formatters/crc
- * @author Greg Swindle
- */
+            <pre class="prettyprint source linenums"><code>const CrcClass = require("../crc-class");
+const esquery = require("esquery");
+const {first, get} = require("lodash");
 
-const CrcReporter = require("../../crc/crc-reporter");
-const fs = require("fs");
-const path = require("path");
-// eslint-disable-next-line node/no-unsupported-features
-const {template} = require("lodash");
+class VariableDeclaration extends CrcClass {
+  /**
+   * @static selector - Identify prototypal inheritance by an `Object.create`
+   * `AssignmentExpression`.
+   *
+   * @returns {string} An ESQuery selector.
+   */
 
-/*
- * --------------------------------------------------------------------------
- * Helpers
- * --------------------------------------------------------------------------
- */
+  static get descriptor () {
+    return "VariableDeclaration";
+  }
 
-/**
- * Provides a compiled lodash template.
- *
- * **Security:** `security/detect-non-literal-fs-filename` has been disabled
- * for this private function, since the `markdown` formatter does not accept
- * user-provided values for lodash report templates.
- *
- * @example
- * const crcPageTemplate = getTempate("crc-page-template.html");
- * @param {string} templateName - The lodash template file name.
- * @returns {string} The compiled lodash template.
- * @private
- */
+  /**
+   * Create a `CrcClass` from ESTree `Nodes` and ESLint Rule `Contexts`.
+   *
+   * @static
+   * @override
+   * @param {Context} context  - An ESLint
+   * {@link https://goo.Gl/tuUSG5 Context} object with relevant information.
+   * @example
+   * const crcClass = VariableDeclaration.factory(context);
+   * @returns {CrcClass} A NullObject for CrcClass.
+   */
 
-// eslint-disable-next-line security/detect-non-literal-fs-filename
-const getTempate = (templateName) => template(fs.readFileSync(path.join(
-  __dirname,
-  templateName
-), "utf-8"));
-const crcPageTemplate = getTempate("crc-page-template.html");
-const crcModelTemplate = getTempate("crc-model-template.html");
+  static factory (context) {
+    const node = first(esquery.match(
+      context.code.ast,
+      esquery.parse(VariableDeclaration.descriptor)
+    ));
 
-/*
- * --------------------------------------------------------------------------
- * Public Interface
- * --------------------------------------------------------------------------
- */
+    const superClass = null;
 
-/**
- * Create a markdown-based report of CrcModels.
- *
- * @function
- * @param {array.&lt;Result>} results - A list of ESLint rule parser results.
- * @example
- * # Run from a Terminal or CLI:
- * eslint \
- *   --format 'eslint-plugin-crc/formatters/crc' \
- *   --output 'reports/crc-model-report.md' \
- *   lib/ \
- *   --fix
- * @returns {string} CrcModels rendered as markdown.
- */
+    return Object.assign(super.factory(context), {
+      "name": get(node, "name"),
+      superClass
+    });
+  }
+}
 
-module.exports = function format (results) {
-  const crcReporter = new CrcReporter();
-  const crcModels = crcReporter.report(results);
-
-  const report = crcPageTemplate({
-    "date": new Date(),
-    "results": crcModels.map((crcModel) => crcModelTemplate({crcModel})),
-    "summary": `Object count: ${crcModels.length}`
-  });
-
-  return report;
-};
+module.exports = VariableDeclaration;
 </code></pre>
         </article>
     </section>

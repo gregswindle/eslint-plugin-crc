@@ -66,9 +66,9 @@
 - [6. **Logging**](#6-logging)
 - [7. **Dependencies**](#7-dependencies)
 - [8. **APIs**](#8-apis)
-  * [8.1 **API design**](#81-api-design)
-  * [8.2 **API security**](#82-api-security)
-  * [8.3 **API documentation**](#83-api-documentation)
+  * [8.1. API design](#81-api-design)
+  * [8.2. API security](#82-api-security)
+  * [8.3. API documentation](#83-api-documentation)
 - [9. **Licensing**](#9-licensing)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
@@ -730,7 +730,7 @@
   _Tip:_
   > **:bulb: Test continuously during development.**
   >
-  > Run `npm run watch:test` to execute all specs every time you save a file.
+  > Run `npm run test:watch` to execute all specs every time you save a file.
 
 * ### 4.2. Reach 100% code coverage.
 
@@ -871,6 +871,8 @@
 
 ## 6. **Logging**
 
+`eslint-plugin-crc` uses [bunyan](https://github.com/trentm/node-bunyan#readme).
+
 ## 7. **Dependencies**
 
 ![Package tech stack][tech-stack-image]
@@ -885,7 +887,8 @@
  | [bunyan@1.8.12](https://github.com/trentm/node-bunyan#readme) | a JSON logging library for node.js services | 1.8.12 | MIT | production | 
  | [doctrine@2.1.0](https://github.com/eslint/doctrine) | JSDoc parser | 2.1.0 | Apache-2.0 | production | 
  | [escomplex@2.0.0-alpha](https://github.com/jared-stilwell/escomplex) | Software complexity analysis of JavaScript-family abstract syntax trees. | 2.0.0-alpha | MIT | production | 
- | [eslint@4.15.0](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.15.0 | MIT | production | 
+ | [eslint@4.16.0](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.16.0 | MIT | production | 
+ | [eslint-scope@3.7.1](http://github.com/eslint/eslint-scope) | ECMAScript scope analyzer for ESLint | 3.7.1 | BSD-2-Clause | production | 
  | [espree@3.5.2](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.2 | BSD-2-Clause | production | 
  | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production | 
  | [lodash@4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | MIT | production | 
@@ -914,14 +917,14 @@
  | [markdown-magic@0.1.20](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.20 | MIT | dev | 
  | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev | 
  | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev | 
- | [mocha@4.1.0](https://mochajs.org) | simple, flexible, fun test framework | 4.1.0 | MIT | dev | 
+ | [mocha@5.0.0](https://mochajs.org) | simple, flexible, fun test framework | 5.0.0 | MIT | dev | 
  | [nodemon@1.14.11](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.14.11 | MIT | dev | 
  | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
  | [nyc@11.4.1](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.4.1 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
  | [semantic-release@12.2.2](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 12.2.2 | MIT | dev | 
  | [simple-mock@0.8.0](https://github.com/jupiter/simple-mock) | Super simple stubs and spies with 1-step sandbox restore | 0.8.0 | MIT | dev | 
- | [snyk@1.68.0](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.68.0 | Apache-2.0 | dev | 
+ | [snyk@1.69.1](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.69.1 | Apache-2.0 | dev | 
  | [standard-version@4.3.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.3.0 | ISC | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->
@@ -930,7 +933,7 @@
 
 ![APIs][icon-rest-api-image]
 
-* ### 8.1 **API design**
+* ### 8.1. API design
 
   _Why:_
   > ⌦ Because we try to enforce development of sanely constructed RESTful interfaces, which team members and clients can consume simply and consistently.
@@ -1114,7 +1117,7 @@
       ```
   * Pagination, filtering, and sorting don’t need to be supported from start for all resources. Document those resources that offer filtering and sorting.
 
-* ### 8.2 **API security**
+* ### 8.2. API security
 
   These are some basic security best practices:
 
@@ -1150,9 +1153,8 @@
       _Why:_
       > ⌦ For instance, accepting the `application/x-www-form-urlencoded` mime type allows the attacker to create a form and trigger a simple POST request. The server should never assume the Content-Type. A lack of Content-Type header or an unexpected Content-Type header should result in the server rejecting the content with a `4XX` response.
 
-* ### 8.3 **API documentation**
+* ### 8.3. API documentation
 
-  * Fill the `API Reference` section in [README.md template](./README.sample.md) for API.
   * Describe API authentication methods with a code sample.
   * Explaining The URL Structure (path only, no root URL) including The request type (Method).
 

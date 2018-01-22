@@ -1,9 +1,11 @@
-# CRC Model results
+# CRC Model Report
 
-> <%= reportSummary %>. Generated on <%= date.toISOString() %>.
+> <%= summary %>. _Generated on <%= date.toISOString() %>_.
 
- <%= results %>
+## Table of contents
 
----
+<%= toc.join("") %>
 
-[classes-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+## CRC Models
+
+<%= results.join("") %>

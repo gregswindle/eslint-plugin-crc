@@ -4,12 +4,13 @@
     <tr valign="top" align="left">
       <th colspan="2">
         <h3>
-          <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
-            <%- _.get(crcModel, 'class.name') %>
-            <tt>extends
-            <%= _.get(crcModel, 'class.superClass.name') || '<a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn">Object</a>' %></tt>
+          <samp><%= _.get(crcModel, 'class.meta.kind') %>
+            <code><%- _.get(crcModel, 'class.name') %></code>
+            <!-- extends
+            <code><%= _.get(crcModel, 'class.superClass.name') || '<a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn">Object</a>' %></code> -->
+          </samp>
        </h3>
-       <blockquote><%- crcModel.class.description %></blockquote>
+       <blockquote><%- _.get(crcModel, 'class.meta.description') %></blockquote>
        </th>
     </tr>
     <tr valign="top" align="left">
@@ -27,7 +28,7 @@
             <dd><blockquote>
 
 ```js
-<%= crcModel.class.code.text %>
+<%= _.get(crcModel, 'class.code.text') %>
 ```
 
 </blockquote></dd>
@@ -42,7 +43,7 @@
            <dt><strong>Path</strong></dt>
            <dd>
             <blockquote>
-              <%- crcModel.class.meta.filePath %>
+              <%- _.get(crcModel, 'class.meta.filePath') %>
             </blockquote>
            </dd>
             </dl>

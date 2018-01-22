@@ -36,7 +36,8 @@
     "xss"
   ],
   "extends": [
-    "eslint:all"
+    "eslint:all",
+    "eslint-config-crockford"
   ],
   "globals": {
     "document": false,
@@ -45,6 +46,7 @@
   },
   "rules": {
     "accessor-pairs": "error",
+    "allowAllPropertiesOnSameLine": false,
     "arrow-parens": "warn",
     "arrow-spacing": [
       "error",
@@ -190,9 +192,7 @@
         "checkLoops": false
       }
     ],
-    "no-console": [
-      false
-    ],
+    "no-console": "warn",
     "no-control-regex": "error",
     "no-debugger": "error",
     "no-delete-var": "error",
@@ -344,6 +344,15 @@
     "no-useless-return": "error",
     "no-whitespace-before-property": "error",
     "no-with": "error",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": {
+          "multiline": true
+        }
+      }
+    ],
     "object-property-newline": [
       "error",
       {

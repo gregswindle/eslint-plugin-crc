@@ -37,6 +37,7 @@
     "eslint-scope": "3.7.1",
     "espree": "3.5.2",
     "esquery": "1.0.0",
+    "estraverse": "4.2.0",
     "lodash": "4.17.4",
     "meow": "4.0.0",
     "requireindex": "1.1.0"
@@ -47,6 +48,7 @@
     "chai": "4.1.2",
     "coveralls": "3.0.0",
     "docdash": "0.4.0",
+    "eslint-config-crockford": "2.0.0",
     "eslint-config-scanjs": "1.0.0-beta4",
     "eslint-config-xo-space": "0.17.0",
     "eslint-plugin-import": "2.8.0",
@@ -70,7 +72,7 @@
     "nsp": "3.1.0",
     "nyc": "11.4.1",
     "properties-parser": "0.3.1",
-    "semantic-release": "12.2.2",
+    "semantic-release": "12.2.4",
     "simple-mock": "0.8.0",
     "snyk": "1.69.1",
     "standard-version": "4.3.0"

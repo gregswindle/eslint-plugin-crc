@@ -30,7 +30,7 @@ describe("crc-class", () => {
     });
 
     specify("description", () => {
-      expect(crcClass.description).to.equal("A polygon with equilateral sides.");
+      expect(crcClass.meta.description).to.equal("A polygon with equilateral sides.");
     });
 
     specify("associated ESLint SourceCode", () => {
@@ -40,7 +40,7 @@ describe("crc-class", () => {
     specify("NullObject", () => {
       crcClass = new CrcClass();
       expect(crcClass.code).to.be.null;
-      expect(crcClass.description).to.be.null;
+      expect(crcClass.meta.description).to.be.null;
       expect(crcClass.name).to.be.null;
       expect(crcClass.superClass).to.be.null;
     });
@@ -61,7 +61,7 @@ describe("crc-class", () => {
 
       expect(crcClass.name).to.be.null;
       expect(crcClass.superClass).to.be.null;
-      expect(crcClass.description).to.be.null;
+      expect(crcClass.meta.description).to.be.null;
       expect(crcClass.code).to.be.ok;
     });
 
@@ -70,7 +70,7 @@ describe("crc-class", () => {
 
       expect(crcClass.name).to.be.null;
       expect(crcClass.superClass).to.be.null;
-      expect(crcClass.description).to.be.null;
+      expect(crcClass.meta.description).to.be.null;
       expect(crcClass.code).to.be.null;
     });
   });

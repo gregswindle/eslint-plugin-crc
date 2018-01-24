@@ -4,7 +4,11 @@
 
 ## Table of contents
 
-<%= toc.join("") %>
+<!-- toc -->
+
+<%- toc %>
+
+<!-- tocend -->
 
 ## CRC Models
 

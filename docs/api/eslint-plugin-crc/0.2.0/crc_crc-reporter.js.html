@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.create">create</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcContextCodebase.html">CrcContextCodebase</a><ul class='methods'><li data-type='method'><a href="CrcContextCodebase.html#.parse">parse</a></li><li data-type='method'><a href="CrcContextCodebase.html#load">load</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="global.html#CrcResponsibility">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="global.html#CrcResponsibility#.create">create</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li><li data-type='method'><a href="NodeManager.html#.parse">parse</a></li></ul></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc.html">eslint-plugin-crc</a></li><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li><li><a href="module-lib_crc_index.html">lib/crc/index</a><ul class='members'><li data-type='member'><a href="module-lib_crc_index.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-lib_crc_index.html#.CrcModel">CrcModel</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li></ul>
 </nav>
 
 <div id="main">
@@ -37,35 +37,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const CrcModel = require("./crc-model");
-const CrcContext = require("./crc-context");
-const {astNodeFactoryMap} = require("./descriptors");
-const {isEqual, uniqBy} = require("lodash");
-
-const getContext = (result, descriptors) => {
-  const contexts = [];
-  descriptors.forEach((descriptorFactory) => {
-    const context = CrcContext.create(
-      result,
-      descriptorFactory
-    );
-
-    contexts.push(context);
-  });
-  return uniqBy(contexts, isEqual);
-};
-
-const getAllContexts = (results, descriptors) => {
-  let contexts = [];
-  results.forEach((result) => {
-    const ctxt = getContext(result, descriptors);
-
-    // Console.log(ctxt);
-
-    contexts = contexts.concat(ctxt);
-  });
-  return contexts;
-};
+            <pre class="prettyprint source linenums"><code>const CrcClass = require("./crc-class");
+const CrcContextCodebase = require("./crc-context-codebase");
+const CrcModel = require("./crc-model");
 
 /**
  * Generates an array of `CrcClasses`.
@@ -74,8 +48,6 @@ const getAllContexts = (results, descriptors) => {
 class CrcReporter {
   constructor () {
     this.crcModels = [];
-    this.descriptors = astNodeFactoryMap;
-    this.map = new Map();
   }
 
   /**
@@ -83,26 +55,25 @@ class CrcReporter {
    *
    * @param {array.&lt;Result>} results - A list of result objects.
    *
-   * @returns {array.&lt;CrcClass>} A list of CrcClasses.
+   * @returns {array.&lt;CrcModel>} A list of CrcModels.
    */
 
   report (results) {
+    const codebase = new CrcContextCodebase(results);
+
     const crcClasses = [];
-    getAllContexts(results, this.descriptors).forEach((context) => {
-      // Console.log(context.descriptor);
-
-      const descriptor = this.descriptors.get(context.descriptor);
-
-      const crcClass = descriptor.factory(context);
-
+    codebase.contexts.forEach((context) => {
+      const crcClass = CrcClass.factory(context);
       crcClasses.push(crcClass);
     });
 
-    return crcClasses.map((crcClass) => new CrcModel({
+    this.crcModels = crcClasses.map((crcClass) => new CrcModel({
       "class": crcClass,
       "collaborators": [],
       "responsibilities": []
     }));
+
+    return this.crcModels;
   }
 }
 
@@ -119,7 +90,7 @@ module.exports = CrcReporter;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 20 2018 22:56:26 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Jan 24 2018 02:50:11 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -31,14 +31,17 @@
   "contributors": [],
   "dependencies": {
     "bunyan": "1.8.12",
+    "chalk": "2.3.0",
     "doctrine": "2.1.0",
     "escomplex": "2.0.0-alpha",
     "eslint": "4.16.0",
-    "eslint-scope": "3.7.1",
     "espree": "3.5.2",
     "esquery": "1.0.0",
     "estraverse": "4.2.0",
+    "fs-extra": "5.0.0",
+    "github-markdown": "3.2.0",
     "lodash": "4.17.4",
+    "markdown-toc": "1.2.0",
     "meow": "4.0.0",
     "requireindex": "1.1.0"
   },
@@ -47,6 +50,7 @@
     "bithound": "1.7.0",
     "chai": "4.1.2",
     "coveralls": "3.0.0",
+    "debug": "3.1.0",
     "docdash": "0.4.0",
     "eslint-config-crockford": "2.0.0",
     "eslint-config-scanjs": "1.0.0-beta4",
@@ -78,7 +82,7 @@
     "standard-version": "4.3.0"
   },
   "engines": {
-    "node": ">=7.0.0"
+    "node": ">=7.6.0"
   },
   "homepage": "https://github.com/gregswindle/eslint-plugin-crc/",
   "keywords": [
@@ -118,14 +122,14 @@
   "scripts": {
     "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s",
     "coverage": "./node_modules/.bin/nyc report",
-    "docs": "npm run docs2html && npm run docs2md && npm run docs:markdown",
-    "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -P package.json",
+    "docs": "npm run docs2html && npm run docs:markdown",
+    "docs2html": "jsdoc -c config/jsdoc.conf.json -P package.json",
     "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files './lib/**/*.js' './lib/**/**/*.js' './lib/formatters/**/*.js' './lib/formatters/crc/*.js' > ../eslint-plugin-crc.wiki/API.md && markdown-toc -i ../eslint-plugin-crc.wiki/API.md",
-    "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./markdown.config.js",
+    "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./config/markdown.config.js",
     "docs:script": "node ./markdown.config.js",
     "lint": "./node_modules/.bin/eslint . --fix",
     "postversion": "npm run changelog && node ./.ci/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
-    "prepublish": "lec lib/cli.js -c LF && npm run security",
+    "prepublishOnly": "lec lib/cli.js -c LF && npm run security",
     "pretest": "npm run security && npm run lint",
     "preversion": "npm test && npm run security",
     "push": "git push origin master && git status",

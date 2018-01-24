@@ -485,7 +485,7 @@
 }, {
   "text": "const",
   "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const",
-  "title": "The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request."
+  "title": "This declaration creates a constant whose scope can be either global or local to the block in which it is declared. Global constants do not become properties of the window object, unlike var variables. An initializer for a constant is required; that is, you must specify its value in the same statement in which it's declared (which makes sense, given that it can't be changed later)."
 }, {
   "text": "continue",
   "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue",

@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.create">create</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcContextCodebase.html">CrcContextCodebase</a><ul class='methods'><li data-type='method'><a href="CrcContextCodebase.html#.parse">parse</a></li><li data-type='method'><a href="CrcContextCodebase.html#load">load</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="global.html#CrcResponsibility">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="global.html#CrcResponsibility#.create">create</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li><li data-type='method'><a href="NodeManager.html#.parse">parse</a></li></ul></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc.html">eslint-plugin-crc</a></li><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li><li><a href="module-lib_crc_index.html">lib/crc/index</a><ul class='members'><li data-type='member'><a href="module-lib_crc_index.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-lib_crc_index.html#.CrcModel">CrcModel</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li></ul>
 </nav>
 
 <div id="main">
@@ -64,7 +64,7 @@
 <ul>
 <li><a href="#1-background">1. Background</a><ul>
 <li><a href="#11-anatomy-of-a-crc-model">1.1. Anatomy of a CRC model</a></li>
-<li><a href="#12-example">1.2. Example</a></li>
+<li><a href="#12-sample-report">1.2. Sample report</a></li>
 </ul>
 </li>
 <li><a href="#2-installation">2. <strong>Installation</strong></a></li>
@@ -89,20 +89,24 @@
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 </li>
 </ul>
-<h2>1. Background</h2><p>As software grows over time, subtle structural problems accumulate, which creates complexity. Adding features to (and fixing defects in) complex software takes longer and becomes riskier as a result. Tools like CRC Models can help document, analyze, <a href="https://github.com/gregswindle/eslint-plugin-crc/wiki/Refactorings-by-category">refactor</a>, and manage software complexity and design.</p>
-<p>CRC Models portray source code as tables with three simple sections:</p>
-<ol>
-<li><strong>Name</strong>: what the class (or object) is called in source code.</li>
-<li><strong>Responsibilities</strong>: the work that the object is supposed to perform, and the data it's supposed to maintain.</li>
-<li><strong>Collaborators</strong>: other objects this class directly invokes in order to do its work.</li>
-</ol>
+<h2>1. Background</h2><p>As software programs get bigger, subtle structural problems accumulate, resulting in <a href="https://en.wikipedia.org/wiki/Programming_complexity"><em>complexity</em></a>. As complexity grows over time, it becomes riskier and harder to add features and fix defects.</p>
+<p>Tools like CRC Models can help document, analyze, <a href="https://github.com/gregswindle/eslint-plugin-crc/wiki/Refactorings-by-category"><strong>refactor</strong></a>, and manage software complexity and design. CRC Models portray source code as tables with three simple sections:</p>
+<dl>
+  <dt>1. Name</dt>
+  <dd>What the prototypal object is called in source code.</dd>
+  <dt>2. Responsibilities</dt>
+  <dd>The work that the object is expected to perform, and the data it's supposed to maintain.</dd>
+  <dt>3. Collaborators</dt>
+  <dd>Other objects this class directly invokes in order to do its work.</dd>
+</dl>
+
 <h3>1.1. Anatomy of a CRC model</h3><blockquote>
 <p><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"> A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[1]</a></sup></p>
 </blockquote>
 <table width="100%">
   <thead>
     <tr valign="top" align="left">
-      <th colspan="2"><h3><code>class</code> ClassName <code>extends Object</code></h3>
+      <th colspan="2"><h3><samp>kind <code>Prototypable</code> [<em>extends <code>Object</code></em>]<samp></h3>
       <blockquote>Description of the prototyped object.</blockquote>
       </th>
     </tr>
@@ -114,17 +118,17 @@
   <tbody>
     <tr valign="top" align="left">
       <td width="50%">
-      <p><code>ClassName</code>'s activities and purpose:
+      <p><code>Prototypable</code>'s activities and purpose:
         <ol>
-          <li>What <code>ClassName</code> does.
+          <li>What <code>Prototypable</code> does.
           <li>The information it maintains.
         </ol></p>
       </td>
       <td width="50%">
-      <p>Objects that <code>ClassName</code> depends on to:
+      <p>Objects that <code>Prototypable</code> depends on to:
         <ol>
-          <li>Assist <code>ClassName</code> with its work.
-          <li>Provide info/data that <code>ClassName</code> needs.
+          <li>Assist <code>Prototypable</code> with its work.
+          <li>Provide info/data that <code>Prototypable</code> needs.
         </ol></p>
       </td>
     </tr>
@@ -141,10 +145,10 @@
     <tr valign="top" align="left">
       <th colspan="2">
         <h3>
-          <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
-            Polygon
-            <tt>extends
-            <a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn">Object</a></tt>
+          <samp><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a>
+            <code>Polygon</code>
+            extends
+            <a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn"><code>Object</code></a></samp>
        </h3>
        <blockquote></blockquote>
        </th>
@@ -158,7 +162,7 @@
     <tr valign="top" align="left" width="100%">
       <td bgcolor="#fcfcfc" colspan="2">
         <details>
-          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
+          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"><code>Polygon</code> details...</summary>
             <dl>
             <dt><strong>Source code</strong></dt>
             <dd><blockquote>
@@ -196,9 +200,9 @@ module.exports = Polygon</code>
   <tbody>
     <tr valign="top" align="left">
     <td width="50%">
-      <ol><li>Provide <tt>height</tt>, the measurement of a shape from base to top.</li>
-      <li>Provide <tt>name</tt>, what the geometric shape is called.</li>
-      <li>Provide <tt>width</tt>, the length of a shape from side to side.
+      <ol><li>Provide <code>height</code>, the measurement of a shape from base to top.</li>
+      <li>Provide <code>name</code>, what the geometric shape is called.</li>
+      <li>Provide <code>width</code>, the length of a shape from side to side.
       </ol>
     </td>
     <td width="50%">
@@ -214,11 +218,11 @@ module.exports = Polygon</code>
   <thead>
     <tr valign="top" align="left">
       <th colspan="2">
-        <h3>
-          <tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a></tt>
-            Square
-            <tt>extends
-            <a href="#crc-model-polygon">Polygon</a></tt>
+        <h3><samp>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a>
+            <code>Square</code>
+            extends
+            <a href="#crc-model-polygon"><code>Polygon</code></a></samp>
        </h3>
        <blockquote>A plane figure with four equal straight sides and four right angles.</blockquote>
        </th>
@@ -232,7 +236,7 @@ module.exports = Polygon</code>
     <tr valign="top" align="left" width="100%">
       <td bgcolor="#fcfcfc" colspan="2">
         <details>
-          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"> Details...</summary>
+          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"><code>Square</code> details...</summary>
             <dl>
             <dt><strong>Source code</strong></dt>
             <dd><blockquote>
@@ -306,10 +310,10 @@ square.area
   <tbody>
     <tr valign="top" align="left">
     <td width="50%">
-      <ol><li>Provide <tt>area</tt>, the extent of a two-dimensional figure or shape, or planar lamina, in the plane.</li></ol>
+      <ol><li>Provide <code>area</code>, the extent of a two-dimensional figure or shape, or planar lamina, in the plane.</li></ol>
     </td>
     <td width="50%">
-      <ol><li><tt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" title="View definition on MDN.">Math</a></tt> [226 32:48]</ol>
+      <ol><li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" title="View definition on MDN.">Math</a></code> [226 32:48]</ol>
     </td>
     </tr>
   </tbody>
@@ -326,8 +330,10 @@ square.area
 </blockquote>
 <pre class="prettyprint source lang-bash"><code># Clone this repository
 $ git clone https://github.com/gregswindle/eslint-plugin-crc.git
+
 # Change into the eslint-plugin-crc directory
 $ cd eslint-plugin-crc
+
 # Symlink the eslint-plugin-crc package directory
 # so you can run eslint-plugin-crc globally
 $ npm link</code></pre><h2>3. <strong>Usage</strong></h2><h3>3.1. Generate CRC Model reports</h3><p>For local (<code>devDependency</code>) installations, run:</p>
@@ -451,215 +457,12 @@ $ npm link</code></pre><h2>3. <strong>Usage</strong></h2><h3>3.1. Generate CRC M
 
 
 
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        lib/crc/crc-class.js
-        </h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_crc-class.js.html">crc/crc-class.js</a>, <a href="crc_crc-class.js.html#line1">line 1</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Greg Swindle (https://github.com/gregswindle)</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-        
-            <div class="description"><p>Create a <code>class</code> summary object for CrcModels.</p></div>
-        
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        lib/index.js
-        </h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line1">line 1</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li><a href="mailto:greg@swindle.net">Greg Swindle</a></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-        
-            <div class="description"><p>Analyze and refactor JavaScript codebases with auto-generated
-Class-Responsibility-Collaboration models.</p></div>
-        
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 20 2018 22:56:26 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Jan 24 2018 02:50:11 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -383,7 +383,7 @@ rules:
     - escomplex
   node/no-unsupported-features:
   - error
-  - version: 7
+  - version: 8
     ignores:
     - defaultParameters
     - destructuring

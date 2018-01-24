@@ -1,4 +1,4 @@
-const crc = require("../../lib");
+const crc = require("/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib");
 const { expect } = require("chai");
 
 describe("eslint-plugin-crc", () => {

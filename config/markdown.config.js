@@ -13,8 +13,8 @@ const config = {
   }
 };
 
-let markdownPath = path.join(__dirname, "*.md");
+let markdownPath = path.join(__dirname, "../*.md");
 markdownMagic(markdownPath, config);
 
-markdownPath = path.join(__dirname, ".github/CONTRIBUTING.md");
+markdownPath = path.join(__dirname, "../.github/CONTRIBUTING.md");
 markdownMagic(markdownPath, config);

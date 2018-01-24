@@ -68,3 +68,5 @@ reports
 /.scannerwork
 
 .DS_Store
+
+.zappr.yaml

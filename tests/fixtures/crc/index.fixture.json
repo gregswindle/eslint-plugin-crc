@@ -1,0 +1,64 @@
+{
+  "crc": {
+    "ast-config.js": {
+      "attachComment": true,
+      "comment": true,
+      "ecmaFeatures": {},
+      "ecmaVersion": 6,
+      "loc": true,
+      "range": true,
+      "sourceType": "module",
+      "tokens": true
+    },
+    "crc-class.js": null,
+    "crc-context-codebase.js": null,
+    "crc-context.js": null,
+    "crc-meta.js": null,
+    "crc-model.js": null,
+    "crc-reporter.js": null,
+    "crc-responsibility.js": null,
+    "node-manager.js": null,
+    "null-crc-class.js": null,
+    "null-crc-meta.js": null,
+    "null-source-code.js": null,
+    "prototypable.js": {
+      "constructorSuper": {},
+      "isConstructorFunction": null,
+      "isPossibleConstructor": null,
+      "isReachable": null
+    },
+    "source-code-factory.js": null
+  },
+  "formatters": {
+    "es-version-img-map.js": {
+      "EsImgMap": null,
+      "esImgMap": {}
+    },
+    "mdn-reference.js": null,
+    "template-factory.js": {
+      "anchor": {},
+      "getTemplate": null,
+      "model": null,
+      "options": {},
+      "page": {},
+      "toc": {}
+    },
+    "toc-factory.js": null
+  },
+  "logger": {
+    "domain": null,
+    "_events": {},
+    "_eventsCount": 0,
+    "_maxListeners": null,
+    "_level": 30,
+    "streams": [],
+    "serializers": null,
+    "src": false,
+    "fields": {
+      "name": "eslint-plugin-crc",
+      "hostname": "crc.local.com",
+      "pid": 12222
+    },
+    "haveNonRawStreams": false
+  }
+}

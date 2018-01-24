@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.create">create</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li></ul></li><li><a href="module-eslint-plugin-crc_crc-CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_crc-CrcContext.html#.parse">parse</a></li></ul></li><li><a href="module-eslint-plugin-crc_crc-CrcContextCodebase.html">CrcContextCodebase</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_crc-CrcContextCodebase.html#.parse">parse</a></li><li data-type='method'><a href="module-eslint-plugin-crc_crc-CrcContextCodebase.html#load">load</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc_ecma-script-img-map-EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_formatters_crc_ecma-script-img-map-EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="module-eslint-plugin-crc_formatters_crc_ecma-script-img-map-EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="module-eslint-plugin-crc_formatters_crc_ecma-script-img-map-EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li><li data-type='method'><a href="NodeManager.html#.parse">parse</a></li></ul></li><li><a href="NullCrcClass.html">NullCrcClass</a></li><li><a href="NullCrcMeta.html">NullCrcMeta</a></li><li><a href="NullSourceCode.html">NullSourceCode</a></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc.html">eslint-plugin-crc</a></li><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a></li><li><a href="module-eslint-plugin-crc_crc_descriptors.html">eslint-plugin-crc/crc/descriptors</a></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li><li><a href="module-eslint-plugin-crc_formatters_crc_ecma-script-img-map.html">eslint-plugin-crc/formatters/crc/ecma-script-img-map</a></li><li><a href="module-lib_crc_index.html">lib/crc/index</a></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a></li></ul>
 </nav>
 
 <div id="main">
@@ -38,15 +38,19 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Markdown reporter
+ * Format ESTree ASTNodes as CRC Models.
+ *
  * @module eslint-plugin-crc/formatters/crc
- * @author Greg Swindle
+ * @see module:eslint-plugin-crc/crc
  */
 
 const CrcReporter = require("../../crc/crc-reporter");
-const fs = require("fs");
+const MdnReference = require("./mdn-reference");
+const tocFactory = require("./toc-factory");
+const fs = require("fs-extra");
+const markdownToc = require("markdown-toc");
 const path = require("path");
-// eslint-disable-next-line node/no-unsupported-features
+const {esImgMap} = require("./ecma-script-img-map");
 const {template} = require("lodash");
 
 /*
@@ -54,6 +58,29 @@ const {template} = require("lodash");
  * Helpers
  * --------------------------------------------------------------------------
  */
+
+const createTableOfContents = (crcModels, toc) => {
+  const tableOfContents = crcModels.map((crcModel) => crcTocTemplate({
+    crcModel,
+    toc
+  })).join("");
+  return markdownToc(tableOfContents).content;
+};
+
+const decorateBuiltInsWithLinks = (crcModels) => {
+  const mdn = new MdnReference();
+  crcModels.forEach((model, index, models) => {
+    const link = mdn.link(model.class.meta.kind);
+    models[index].class.meta.kind = link;
+  });
+};
+
+const importOpts = {
+  "imports": {
+    esImgMap,
+    "toc": tocFactory
+  }
+};
 
 /**
  * Provides a compiled lodash template.
@@ -63,19 +90,33 @@ const {template} = require("lodash");
  * user-provided values for lodash report templates.
  *
  * @example
- * const crcPageTemplate = getTempate("crc-page-template.html");
+ * const crcPageTemplate =
+ *  getTempate("crc-page-template.html", {
+ *    imports: {
+ *      esImgMap
+ *    }
+ * });
+ *
  * @param {string} templateName - The lodash template file name.
  * @returns {string} The compiled lodash template.
  * @private
  */
 
-// eslint-disable-next-line security/detect-non-literal-fs-filename
-const getTempate = (templateName) => template(fs.readFileSync(path.join(
-  __dirname,
-  templateName
-), "utf-8"));
-const crcPageTemplate = getTempate("crc-page-template.html");
-const crcModelTemplate = getTempate("crc-model-template.html");
+const getTempate = (templateName, options = {
+}) => template(
+  fs.readFileSync(
+    path.join(__dirname, templateName),
+    "utf-8"
+  ),
+  options
+);
+
+const crcModelTemplate =
+  getTempate(".templates/en/crc-model-template.html", importOpts);
+const crcPageTemplate =
+  getTempate(".templates/en/crc-page-template.md");
+const crcTocTemplate =
+  getTempate(".templates/en/crc-toc-template.md");
 
 /*
  * --------------------------------------------------------------------------
@@ -87,7 +128,7 @@ const crcModelTemplate = getTempate("crc-model-template.html");
  * Create a markdown-based report of CrcModels.
  *
  * @function
- * @param {array.&lt;Result>} results - A list of ESLint rule parser results.
+ * @param {array&lt;Result>} results - A list of ESLint rule parser results.
  * @example
  * # Run from a Terminal or CLI:
  * eslint \
@@ -95,17 +136,31 @@ const crcModelTemplate = getTempate("crc-model-template.html");
  *   --output 'reports/crc-model-report.md' \
  *   lib/ \
  *   --fix
- * @returns {string} CrcModels rendered as markdown.
+ * @returns {string} CrcModels rendered as GitHub-flavored markdown with HTML
+ *  tables.
  */
 
 module.exports = function format (results) {
   const crcReporter = new CrcReporter();
   const crcModels = crcReporter.report(results);
 
+  // Const codebase = crcReporter.codebase;
+
+  const toc = createTableOfContents(crcModels, tocFactory);
+
+  // Console.log(codebase);
+
+  decorateBuiltInsWithLinks(crcModels);
+  const models = crcModels.map((crcModel) => crcModelTemplate({
+    crcModel,
+    tocFactory
+  })).join("");
+
   const report = crcPageTemplate({
     "date": new Date(),
-    "results": crcModels.map((crcModel) => crcModelTemplate({crcModel})),
-    "summary": `Object count: ${crcModels.length}`
+    "results": models,
+    "summary": `Object count: ${crcModels.length}`,
+    toc
   });
 
   return report;
@@ -122,7 +177,7 @@ module.exports = function format (results) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 20 2018 22:56:26 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Jan 28 2018 14:28:01 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

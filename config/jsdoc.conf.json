@@ -1,0 +1,41 @@
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc"]
+  },
+  "source": {
+    "include": [
+      ".github/CONTRIBUTING.md",
+      "CHANGELOG.md",
+      "LICENSE",
+      "NOTICE.md",
+      "README.md",
+      "lib",
+      "package.json"
+    ],
+    "exclude": ["tests"],
+    "excludePattern": "tests(^|\\/|\\\\)_"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true
+    }
+  },
+  "opts": {
+    "destination": "./docs/api/",
+    "encoding": "utf8",
+    "private": false,
+    "recurse": true,
+    "template": "./node_modules/docdash",
+    "package": "./package.json"
+  },
+  "docdash": {
+    "static": true,
+    "sort": true
+  }
+}

@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.create">create</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcContextCodebase.html">CrcContextCodebase</a><ul class='methods'><li data-type='method'><a href="CrcContextCodebase.html#.parse">parse</a></li><li data-type='method'><a href="CrcContextCodebase.html#load">load</a></li></ul></li><li><a href="CrcMeta.html">CrcMeta</a></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li><li><a href="EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li><li data-type='method'><a href="NodeManager.html#.parse">parse</a></li></ul></li><li><a href="NullCrcClass.html">NullCrcClass</a></li><li><a href="NullCrcMeta.html">NullCrcMeta</a></li><li><a href="NullSourceCode.html">NullSourceCode</a></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc.html">eslint-plugin-crc</a></li><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a></li><li><a href="module-eslint-plugin-crc_crc_descriptors.html">eslint-plugin-crc/crc/descriptors</a></li><li><a href="module-eslint-plugin-crc_formatters_md.html">eslint-plugin-crc/formatters/md</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_formatters_md.html#~format">format</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li><li><a href="global.html#esImgMap">esImgMap</a></li></ul>
 </nav>
 
 <div id="main">
@@ -37,12 +37,14 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const astConfig = require("./ast-config");
-const eslintScope = require("eslint-scope");
-const espree = require("espree");
-const fs = require("fs");
-const path = require("path");
-const {SourceCode} = require("eslint");
+            <pre class="prettyprint source linenums"><code>const NodeManager = require("./node-manager");
+const SourceCodeFactory = require("./source-code-factory");
+
+const defaultConstructorParams = {
+  "code": SourceCodeFactory.create(),
+  "filePath": null,
+  "nodes": new Map()
+};
 
 /**
  * Provides contextual information about source code.
@@ -50,12 +52,10 @@ const {SourceCode} = require("eslint");
  */
 
 class CrcContext {
-  constructor (code, filePath, descriptor) {
-    this.code = code;
-    this.filePath = filePath;
-    this.descriptor = descriptor;
-    this.scopeManager = eslintScope.analyze(code.ast);
-    this.variables = this.scopeManager.globalScope.variables;
+  constructor (params = defaultConstructorParams) {
+    this.code = params.code;
+    this.filePath = NodeManager.getNamespace(params.filePath);
+    this.nodes = params.nodes;
   }
 
   /**
@@ -63,23 +63,25 @@ class CrcContext {
    *
    * @static
    * @param {Result} result - An ESLint Rule Result.
-   * @param {Object} descriptorFactory - An object that identifies ASTNodes
    * with ESQuery selectors.
    * @example
-   * const context = CrcContext.create(result, descriptorFactory);
+   * const context = CrcContext.parse(result);
    * @returns {CrcContext} A CrcContext object.
    */
 
-  static create (result, descriptorFactory) {
-    // eslint-disable-next-line security/detect-non-literal-fs-filename
-    const src = fs.readFileSync(path.resolve(result.filePath)).toString();
-    const ast = espree.parse(src, astConfig);
-
-    return new CrcContext(
-      new SourceCode(src, ast),
-      result.filePath,
-      descriptorFactory.descriptor
+  static parse (result) {
+    const code = SourceCodeFactory.parse(result);
+    const {filePath} = result;
+    const nodes = NodeManager.getAllNodes(
+      NodeManager.getNamespace(filePath),
+      code
     );
+
+    return new CrcContext({
+      code,
+      filePath,
+      nodes
+    });
   }
 }
 
@@ -96,7 +98,7 @@ module.exports = CrcContext;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 20 2018 22:56:26 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Jan 28 2018 18:55:41 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

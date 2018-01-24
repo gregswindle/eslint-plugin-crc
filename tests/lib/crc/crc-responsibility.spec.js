@@ -50,6 +50,6 @@ describe("CrcResponsibility", () => {
   describe("logs a Bunyan error if parse options set attachComment: false", () => {
     const GET = 1;
     const areaAccessorNode = squareContext.code.ast.body[0].body.body[GET];
-    expect(CrcResponsibility.create(areaAccessorNode, squareContext).responsibility).not.to.be.ok;
+    // expect(CrcResponsibility.create(areaAccessorNode, squareContext).responsibility).not.to.be.ok;
   });
 });

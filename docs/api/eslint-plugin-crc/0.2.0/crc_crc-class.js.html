@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.create">create</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcContextCodebase.html">CrcContextCodebase</a><ul class='methods'><li data-type='method'><a href="CrcContextCodebase.html#.parse">parse</a></li><li data-type='method'><a href="CrcContextCodebase.html#load">load</a></li></ul></li><li><a href="CrcMeta.html">CrcMeta</a></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li><li><a href="EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li><li data-type='method'><a href="NodeManager.html#.parse">parse</a></li></ul></li><li><a href="NullCrcClass.html">NullCrcClass</a></li><li><a href="NullCrcMeta.html">NullCrcMeta</a></li><li><a href="NullSourceCode.html">NullSourceCode</a></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc.html">eslint-plugin-crc</a></li><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a></li><li><a href="module-eslint-plugin-crc_crc_descriptors.html">eslint-plugin-crc/crc/descriptors</a></li><li><a href="module-eslint-plugin-crc_formatters_md.html">eslint-plugin-crc/formatters/md</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_formatters_md.html#~format">format</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li><li><a href="global.html#esImgMap">esImgMap</a></li></ul>
 </nav>
 
 <div id="main">
@@ -37,98 +37,67 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Create a `class` summary object for CrcModels.
- * @author Greg Swindle (https://github.com/gregswindle)
- */
+            <pre class="prettyprint source linenums"><code>const NullCrcClass = require("./null-crc-class");
 
-const doctrine = require("doctrine");
-const {first, get, isEmpty, defaults} = require("lodash");
+// Const prototypableFinder = require("./prototypable");
+
+const {
+  chain,
+  find,
+  first,
+  get
+} = require("lodash");
+
+// eslint-disable-next-line max-len
+const findNode = (name, astNodes) => astNodes.filter((node) => find(node.declarations, {
+  "id": {
+    name
+  }
+}));
 
 /**
- * Default NullObject constructor parameters.
+ * Create CrcClass.prototype.constructor parameters.
  *
  * @ignore
  * @private
+ * @param {CrcContext} context - A CrcContext object.
+ *
+ * @returns {object} Constructor parameters for a new CrcContext.
  */
 
-const defaultConstructorParams = {
-  "code": null,
-  "meta": {"description": null},
-  "name": null,
-  "superClass": null
-};
+const crcClassParamsFactory = {
+  "create" (context) {
+    return crcClassParamsFactory.fromCrcContext(context);
+  },
 
-/**
- * Assigns a value to CrcClass#description, if one exists in JSDoc comments.
- *
- * @param {CrcClass} crcClass - The object/class we want to describe.
- *
- * @returns {void} Void.
- *
- * @example
- * setDescription(crcClass);
- * @ignore
- * @private
- */
+  "fromCrcContext" (context) {
+    const code = get(context, "code");
+    const nodes = get(context, "nodes");
+    const firstNode = nodes.values().next().value;
+    const name = get(firstNode, "name");
+    const srcNode = findNode(name, code.ast.body);
 
-const setDescription = (crcClass) => {
-  const comments = get(crcClass, "code.ast.comments");
-  if (!isEmpty(comments)) {
-    const ast = doctrine.parse(first(comments).value, {
-      "recoverable": true,
-      "sloppy": true,
-      "unwrap": true
-    });
-    crcClass.meta.description = ast.description.replace(/\s+/g, " ");
+    return {
+      code,
+      "meta": {
+        context,
+        "filePath": get(context, "filePath"),
+        "kind": get(first(srcNode), "kind") || "class",
+        "references": getReferences(name, code)
+      },
+      name
+    };
   }
 };
 
-/**
- * Represents `class` "summary" `Object` used for reporting.
- *
- * @property {string} description - The purpose or intent of the `class`.
- * @property {string} name - The name of the `class`.
- * @property {SourceCode} code - The ESLint
- * {@link http://bit.ly/2kfR79f `SourceCode`} object.
- * @property {CrcClass} superClass - The `prototype` of the object being
- * modeled. Defaults to `null`.
- */
+const getReferences = (name, sourceCode) => {
+  const tokens = get(sourceCode, "ast.tokens");
+  return chain(tokens).filter((token) => name === token.value)
+    .sortBy(["start"])
+    .value();
+};
 
-class CrcClass {
-  /**
-   * @classdesc Create a `class` representation for use in a CrcClass
-   * (Class-Responsibility-Collaboration model).
-   * @class
-   * @public
-   * @param {Object} [params] - A parameter object that sets all of
-   * the CrcClass's properties.
-   * @param {SourceCode} [params.code] - The ESLint
-   * {@link http://bit.ly/2kfR79f `SourceCode`} object.
-   * @param {object} []
-   * @param {string} [params.name] - The source code identifier of the class or
-   * object to be modeled.
-   * @param {string} [params.description] - A summary of the
-   * object's purpose.
-   * @param {CrcClass} [params.superClass] - The `prototype` of the object being
-   * modeled. Defaults to `null`.
-   * @example
-   * const crcClass = new CrcClass({
-   *   code: sourceCode,
-   *   description: "Disambiguates the letter \"B\" when stating english letters.",
-   *   name: "Bravo",
-   *   superClass: Alpha
-   * });
-   */
-  // eslint-disable-next-line node/no-unsupported-features
-  constructor (params = defaultConstructorParams) {
-    this.code = params.code;
-    this.meta = params.meta;
-    this.name = params.name;
-    this.superClass = params.superClass;
-    setDescription(this);
-  }
-
+class CrcClass extends NullCrcClass {
   /**
    * Create a `CrcClass` from ESTree `Nodes` and ESLint Rule `Contexts`.
    *
@@ -136,15 +105,11 @@ class CrcClass {
    * a CrcModel.
    * @example
    * const crcClass = CrcClass.factory(context);
-   * @returns {CrcClass} A `NullObject` for CrcClass.
+   * @returns {CrcClass} A summary representation of a prototypable object.
    */
-  // eslint-disable-next-line node/no-unsupported-features
+
   static factory (context) {
-    const ctxt = context || {"code": null};
-    const params = defaults({
-      "code": ctxt.code,
-      "meta": {"filePath": ctxt.filePath}
-    }, defaultConstructorParams);
+    const params = crcClassParamsFactory.create(context);
 
     return new CrcClass(params);
   }
@@ -163,7 +128,7 @@ module.exports = CrcClass;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 20 2018 22:56:26 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Jan 28 2018 18:55:41 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.create">create</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a><ul class='members'><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcClass">CrcClass</a></li><li data-type='member'><a href="module-eslint-plugin-crc_crc.html#.CrcModel">CrcModel</a></li></ul></li><li><a href="module-eslint-plugin-crc_formatters_crc.html">eslint-plugin-crc/formatters/crc</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ClassMatcherCrcClass.html">ClassMatcherCrcClass</a><ul class='members'><li data-type='member'><a href="ClassMatcherCrcClass.html#.descriptor">descriptor</a></li></ul><ul class='methods'><li data-type='method'><a href="ClassMatcherCrcClass.html#.factory">factory</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcContextCodebase.html">CrcContextCodebase</a><ul class='methods'><li data-type='method'><a href="CrcContextCodebase.html#.parse">parse</a></li><li data-type='method'><a href="CrcContextCodebase.html#load">load</a></li></ul></li><li><a href="CrcMeta.html">CrcMeta</a></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li><li><a href="EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li><li data-type='method'><a href="NodeManager.html#.parse">parse</a></li></ul></li><li><a href="NullCrcClass.html">NullCrcClass</a></li><li><a href="NullCrcMeta.html">NullCrcMeta</a></li><li><a href="NullSourceCode.html">NullSourceCode</a></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc.html">eslint-plugin-crc</a></li><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a></li><li><a href="module-eslint-plugin-crc_crc_descriptors.html">eslint-plugin-crc/crc/descriptors</a></li><li><a href="module-eslint-plugin-crc_formatters_md.html">eslint-plugin-crc/formatters/md</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_formatters_md.html#~format">format</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li><li><a href="global.html#esImgMap">esImgMap</a></li></ul>
 </nav>
 
 <div id="main">
@@ -43,9 +43,11 @@
         CrcModel
         </h2>
         
-            <div class="class-description"><p>Represents a <strong>Class-Responsibility-Collaboration model</strong>, which expresses
-the scope of an object's behaviors (<strong><em>responsibilities</em></strong>) and the objects
-it depends on to fulfill its responsibilities (<strong><em>collaborators</em></strong>).</p></div>
+            <div class="class-description"><p>Represents a <strong>Class-Responsibility-Collaboration model</strong>,
+which expresses the scope of an object's behaviors
+(<strong><em>responsibilities</em></strong>) and the objects
+it depends on to fulfill its responsibilities
+(<strong><em>collaborators</em></strong>).</p></div>
         
     
 </header>
@@ -59,7 +61,7 @@ it depends on to fulfill its responsibilities (<strong><em>collaborators</em></s
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="CrcModel"><span class="type-signature"></span>new CrcModel<span class="signature">(params)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="CrcModel"><span class="type-signature"></span>new CrcModel<span class="signature">(params<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -71,7 +73,7 @@ it depends on to fulfill its responsibilities (<strong><em>collaborators</em></s
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_crc-model.js.html">crc/crc-model.js</a>, <a href="crc_crc-model.js.html#line21">line 21</a>
+        <a href="crc_crc-model.js.html">crc/crc-model.js</a>, <a href="crc_crc-model.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -150,7 +152,79 @@ it depends on to fulfill its responsibilities (<strong><em>collaborators</em></s
 
             
 
-            <td class="description last"><p>A summary representation of <code>class</code>.</p></td>
+            <td class="description last"><p>A summary representation of prototypable
+ objects.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>collaborators</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="CrcClass.html">CrcClass</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of zero or more objects
+ required to fulfill the CrcModel#class's responsibilities.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>meta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="CrcMeta.html">CrcMeta</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Additional information.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>responsibilities</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="CrcResponsibility.html">CrcResponsibility</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A list of
+data this object must maintain and/or operations it must perform.</p></td>
         </tr>
 
     
@@ -174,6 +248,18 @@ it depends on to fulfill its responsibilities (<strong><em>collaborators</em></s
 
 
 
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Pass without parameters to create a NullCrcModel object
+const crcModel = new CrcModel();
+
+// Provide a CrcClass instance to reveal its responsibilities and
+// collaborators.
+const crcModel = new CrcModel({
+  class
+});</code></pre>
+
+
 
 
     <h5>Parameters:</h5>
@@ -188,6 +274,8 @@ it depends on to fulfill its responsibilities (<strong><em>collaborators</em></s
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -213,6 +301,16 @@ it depends on to fulfill its responsibilities (<strong><em>collaborators</em></s
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -313,6 +411,40 @@ more CrcClasses that this object depends on.</p></td>
 
         <tr>
             
+                <td class="name"><code>meta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>An object with meta data necessary for
+ visually rendering the CrcModel.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>responsibilities</code></td>
             
 
@@ -401,7 +533,7 @@ data this object must maintain and/or operations it must perform.</p></td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 20 2018 22:56:26 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Jan 28 2018 18:55:41 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

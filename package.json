@@ -34,7 +34,7 @@
     "eslint": "4.13.0",
     "espree": "3.5.2",
     "esquery": "1.0.0",
-    "lodash": "4.17.4",
+    "lodash": "4.17.5",
     "pluralize": "7.0.0",
     "requireindex": "1.1.0"
   },

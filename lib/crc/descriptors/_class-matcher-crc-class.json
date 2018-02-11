@@ -28,7 +28,7 @@ class ClassMatcherCrcClass extends CrcClass {
    * @param {Context} context  - An ESLint
    * {@link https://goo.Gl/tuUSG5 Context} object with relevant information.
    * @example
-   * const crcClass = ClassMatcherCrcClass.factory(result, params);
+   * const crcClass = ClassMatcherCrcClass.create(result, params);
    * @returns {CrcClass} A `CrcClass` `NullObject`.
    */
 

@@ -13,7 +13,7 @@ class PrototypeConstructorCrcClass extends CrcClass {
    * @param {Context} context  - An ESLint
    * {@link https://goo.gl/tuUSG5 Context} object with relevant information.
    * @example
-   * const crcClass = PrototypeConstructorCrcClass.factory(node, context);
+   * const crcClass = PrototypeConstructorCrcClass.create(node, context);
    * @returns {CrcClass} A NullObject for CrcClass.
    */
 

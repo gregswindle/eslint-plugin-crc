@@ -6,7 +6,7 @@
 
 - [const-astConfig](#const-astconfig)
 - [class-CrcClass](#class-crcclass)
-- [class-CrcContextCodebase](#class-crccontextcodebase)
+- [class-CrcCodebase](#class-CrcCodebase)
 - [class-CrcContext](#class-crccontext)
 - [class-CrcMeta](#class-crcmeta)
 - [class-CrcModel](#class-crcmodel)
@@ -177,7 +177,7 @@ class CrcClass extends NullCrcClass {
    * @param {CrcContext} context - A summary object with information to derive
    * a CrcModel.
    * @example
-   * const crcClass = CrcClass.factory(context);
+   * const crcClass = CrcClass.create(context);
    * @returns {CrcClass} A summary representation of a prototypable object.
    */
 
@@ -195,10 +195,10 @@ module.exports = CrcClass;
 ```
 
 </blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-class.js</blockquote></dd></dl></details></td></tr></tfoot></table>
-<a name="class-crccontextcodebase"></a>
+<a name="class-CrcCodebase"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
-            title="The class declaration creates a new class with a given name using prototype-based inheritance.">class</a><code>CrcContextCodebase</code></samp></h3><blockquote>Tracks contextual data for a collection of source code files.</blockquote></th></tr><tr valign="top" align="left"><th>Responsibilities</th><th>Collaborators</th></tr></thead><tbody><tr valign="top" align="left"><td width="50%">None found. </td><td width="50%"> None found. </td></tr></tbody><tfoot valign="top" align="left"><tr valign="top" align="left" width="100%"><td bgcolor="#fcfcfc" colspan="2"><details><summary><img src="" alt="Select to toggle details" align="top" title="Select to toggle details"><code>CrcContextCodebase</code> details...</summary><dl><dt><p><strong>Source code</strong></dt><dd><blockquote>
+            title="The class declaration creates a new class with a given name using prototype-based inheritance.">class</a><code>CrcCodebase</code></samp></h3><blockquote>Tracks contextual data for a collection of source code files.</blockquote></th></tr><tr valign="top" align="left"><th>Responsibilities</th><th>Collaborators</th></tr></thead><tbody><tr valign="top" align="left"><td width="50%">None found. </td><td width="50%"> None found. </td></tr></tbody><tfoot valign="top" align="left"><tr valign="top" align="left" width="100%"><td bgcolor="#fcfcfc" colspan="2"><details><summary><img src="" alt="Select to toggle details" align="top" title="Select to toggle details"><code>CrcCodebase</code> details...</summary><dl><dt><p><strong>Source code</strong></dt><dd><blockquote>
 
 ```js
 const CrcContext = require("./crc-context");
@@ -216,7 +216,7 @@ const defaultConstructorParams = {
  *
  */
 
-class CrcContextCodebase {
+class CrcCodebase {
   constructor (results) {
     Object.assign(this, defaultConstructorParams);
     this.load(results);
@@ -245,25 +245,25 @@ class CrcContextCodebase {
   }
 
   /**
-   * Factory method for generating a CrcContextCodebase object.
+   * Factory method for generating a CrcCodebase object.
    *
    * @static
    * @param {array.<Result>} results - An ESLint Rule Result array.
    * @example
-   * const codeBaseContext = CrcContextCodebase.create(results);
-   * @returns {CrcContextCodebase} A CrcContextCodebase object.
+   * const codeBaseContext = CrcCodebase.create(results);
+   * @returns {CrcCodebase} A CrcCodebase object.
    */
 
   static parse (results) {
-    return new CrcContextCodebase(results);
+    return new CrcCodebase(results);
   }
 }
 
-module.exports = CrcContextCodebase;
+module.exports = CrcCodebase;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-context-codebase.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-codebase.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-crccontext"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -434,7 +434,7 @@ module.exports = CrcModel;
 
 ```js
 const CrcClass = require("./crc-class");
-const CrcContextCodebase = require("./crc-context-codebase");
+const CrcCodebase = require("./crc-codebase");
 const CrcModel = require("./crc-model");
 
 /**
@@ -456,11 +456,11 @@ class CrcReporter {
    */
 
   report (results) {
-    this.codebase = new CrcContextCodebase(results);
+    this.codebase = new CrcCodebase(results);
 
     const crcClasses = [];
     this.codebase.contexts.forEach((context) => {
-      const crcClass = CrcClass.factory(context);
+      const crcClass = CrcClass.create(context);
       crcClasses.push(crcClass);
     });
 

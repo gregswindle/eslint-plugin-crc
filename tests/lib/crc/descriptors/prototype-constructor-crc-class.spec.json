@@ -6,9 +6,9 @@ const context = require("../../../fixtures/crc/function-declarations/assignment-
 
 
 describe("PrototypeConstructorCrcClass", () => {
-  describe("overrides the static CrcClass.factory function and", () => {
+  describe("overrides the static CrcClass.create function and", () => {
     it("creates a CrcClass from context", () => {
-      const crcClass = PrototypeConstructorCrcClass.factory(context);
+      const crcClass = PrototypeConstructorCrcClass.create(context);
 
       expect(crcClass.name).to.equal("Square");
       expect(crcClass.superClass.name).to.equal("Polygon");

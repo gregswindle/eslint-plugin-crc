@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>crc/crc-codebase.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CrcClass.html">CrcClass</a><ul class='methods'><li data-type='method'><a href="CrcClass.html#.create">create</a></li></ul></li><li><a href="CrcCodebase.html">CrcCodebase</a><ul class='methods'><li data-type='method'><a href="CrcCodebase.html#.parse">parse</a></li><li data-type='method'><a href="CrcCodebase.html#load">load</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcMeta.html">CrcMeta</a></li><li><a href="CrcModel.html">CrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li></ul></li><li><a href="EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li><li data-type='method'><a href="NodeManager.html#.parse">parse</a></li></ul></li><li><a href="NullCrcClass.html">NullCrcClass</a></li><li><a href="NullCrcMeta.html">NullCrcMeta</a></li><li><a href="NullSourceCode.html">NullSourceCode</a></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc.html">eslint-plugin-crc</a></li><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a></li><li><a href="module-eslint-plugin-crc_formatters_md.html">eslint-plugin-crc/formatters/md</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_formatters_md.html#~format">format</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li><li><a href="global.html#esImgMap">esImgMap</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">crc/crc-codebase.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const CrcContext = require("./crc-context");
+const {sortedUniq} = require("lodash");
+
+const defaultConstructorParams = {
+  "code": new Map(),
+  "contexts": [],
+  "filePaths": [],
+  "nodes": new Map()
+};
+
+/**
+ * Tracks contextual data for a collection of source code files.
+ *
+ */
+
+class CrcCodebase {
+  constructor (results) {
+    Object.assign(this, defaultConstructorParams);
+    this.load(results);
+  }
+
+  /**
+   * Adds.
+   *
+   * @param {array.&lt;Result>} results - All
+   *
+   * @returns {type} Description.
+   */
+
+  load (results) {
+    results.forEach((result) => {
+      const context = CrcContext.parse(result);
+      this.contexts.push(context);
+      this.filePaths.push(result.filePath);
+      context.nodes.forEach((node, namespace) => {
+        if (!this.nodes.has(namespace)) {
+          this.nodes.set(namespace, node);
+        }
+      });
+    });
+    this.filePaths = sortedUniq(this.filePaths);
+  }
+
+  /**
+   * Factory method for generating a CrcCodebase object.
+   *
+   * @static
+   * @param {array.&lt;Result>} results - An ESLint Rule Result array.
+   * @example
+   * const codeBaseContext = CrcCodebase.create(results);
+   * @returns {CrcCodebase} A CrcCodebase object.
+   */
+
+  static parse (results) {
+    return new CrcCodebase(results);
+  }
+}
+
+module.exports = CrcCodebase;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 10 2018 22:34:15 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

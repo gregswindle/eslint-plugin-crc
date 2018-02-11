@@ -1,6 +1,6 @@
 {
   "crc": {
-    "ast-config.js": {
+    "ast-config": {
       "attachComment": true,
       "comment": true,
       "ecmaFeatures": {},
@@ -10,32 +10,31 @@
       "sourceType": "module",
       "tokens": true
     },
-    "crc-class.js": null,
-    "crc-context-codebase.js": null,
-    "crc-context.js": null,
-    "crc-meta.js": null,
-    "crc-model.js": null,
-    "crc-reporter.js": null,
-    "crc-responsibility.js": null,
-    "node-manager.js": null,
-    "null-crc-class.js": null,
-    "null-crc-meta.js": null,
-    "null-source-code.js": null,
-    "prototypable.js": {
+    "crc-class": null,
+    "crc-codebase": null,
+    "crc-context": null,
+    "crc-meta": null,
+    "crc-model": null,
+    "crc-reporter": null,
+    "crc-responsibility": null,
+    "node-manager": null,
+    "null-crc-class": null,
+    "null-source-code": null,
+    "prototypable": {
       "constructorSuper": {},
       "isConstructorFunction": null,
       "isPossibleConstructor": null,
       "isReachable": null
     },
-    "source-code-factory.js": null
+    "source-code-factory": null
   },
   "formatters": {
-    "es-version-img-map.js": {
+    "es-version-img-map": {
       "EsImgMap": null,
       "esImgMap": {}
     },
-    "mdn-reference.js": null,
-    "template-factory.js": {
+    "mdn-reference": null,
+    "template-factory": {
       "anchor": {},
       "getTemplate": null,
       "model": null,
@@ -43,7 +42,7 @@
       "page": {},
       "toc": {}
     },
-    "toc-factory.js": null
+    "toc-factory": null
   },
   "logger": {
     "domain": null,

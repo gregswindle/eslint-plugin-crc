@@ -28,6 +28,16 @@ class Square extends Polygon {
   set area(value) {
     this.height = this.width = Math.sqrt(value)
   }
+
+
+  /**
+   * Render a square visually.
+   *
+   * @returns {void}
+   */
+  draw () {
+
+  }
 }
 
 module.exports = Square;

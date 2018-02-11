@@ -32,6 +32,7 @@
   "dependencies": {
     "bunyan": "1.8.12",
     "chalk": "2.3.0",
+    "compromise": "11.3.0",
     "debug": "3.1.0",
     "doctrine": "2.1.0",
     "escomplex": "2.0.0-alpha",
@@ -49,6 +50,7 @@
     "babel-register": "6.26.0",
     "bithound": "1.7.0",
     "chai": "4.1.2",
+    "common-vocabulary": "1.0.1",
     "coveralls": "3.0.0",
     "debug": "3.1.0",
     "docdash": "0.4.0",
@@ -116,7 +118,6 @@
     "include": [
       "lib/**/*.js"
     ],
-    "lines": 100,
     "reporter": [
       "lcov",
       "text"
@@ -133,6 +134,7 @@
     "docs": "npm run docs2html && npm run docs:markdown",
     "docs2html": "jsdoc -c config/jsdoc.conf.json -P package.json",
     "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files './lib/**/*.js' './lib/**/**/*.js' './lib/formatters/**/*.js' './lib/formatters/crc/*.js' > ../eslint-plugin-crc.wiki/API.md && markdown-toc -i ../eslint-plugin-crc.wiki/API.md",
+    "docs:glossary": "common-vocabulary",
     "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./config/markdown.config.js",
     "docs:script": "node ./markdown.config.js",
     "lint": "./node_modules/.bin/eslint . --fix",

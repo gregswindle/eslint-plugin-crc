@@ -6,9 +6,9 @@ const context = require("../../../fixtures/crc/function-declarations/new-express
 
 describe("NewExpressionCrcClass", () => {
 
-  describe("overrides the static CrcClass.factory function and", () => {
+  describe("overrides the static CrcClass.create function and", () => {
     it("creates a CrcClass from a NewExpression ASTNode type", () => {
-      const crcClass = NewExpressionCrcClass.factory(context);
+      const crcClass = NewExpressionCrcClass.create(context);
 
       expect(crcClass.name).to.equal("Square");
       expect(crcClass.superClass.name).to.equal("Polygon");

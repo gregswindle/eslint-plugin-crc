@@ -12,7 +12,7 @@ class NewExpressionCrcClass extends CrcClass {
    * @param {Context} context  - An ESLint
    * {@link https://goo.Gl/tuUSG5 Context} object with relevant information.
    * @example
-   * const crcClass = NewExpressionCrcClass.factory(node, context);
+   * const crcClass = NewExpressionCrcClass.create(node, context);
    * @returns {CrcClass} A NullObject for CrcClass.
    */
 

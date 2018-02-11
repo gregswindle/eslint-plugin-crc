@@ -1,83 +1,82 @@
-const { expect } = require("chai");
+const {expect} = require("chai");
 const CrcClass = require("../../../lib/crc/crc-class");
-const NullCrcClass = require("../../../lib/crc/null-crc-class");
 
-const specifyNullCrcClass = (crcClass, context) => {
+const specifyNullCrcClass = (crcClass, nullCrcClass) => {
   expect(crcClass.code).to.equal(nullCrcClass.code);
   expect(crcClass.meta.description).to.be.empty;
   expect(crcClass.name).to.be.null;
   expect(crcClass.superClass).to.be.null;
 };
 
-describe("crc-class", () => {
+describe("eslint-plugin-crc/crc/crc-class,", () => {
 
   let crcClass = null;
+  let nullCrcClass = null;
+
+  before(() => {
+    nullCrcClass = new CrcClass();
+  });
 
   afterEach(() => {
     crcClass = null;
   });
 
-  describe("constructor:can create a CrcClass", () => {
+  after(() => {
+    nullCrcClass = null;
+  });
 
-    beforeEach(() => {
-      crcClass = new CrcClass({
-        code: {},
-        meta: {
-          description: "A polygon with equilateral sides."
-        },
-        name: "Square",
-        superClass: {
-          name: "Polygon"
-        }
+  describe("when given SourceCode, meta, name, and superClass objects,", () => {
+
+    describe("constructs a CrcClass, a summarized a prototypal object with a", () => {
+
+      beforeEach(() => {
+        crcClass = new CrcClass({
+          code: {},
+          meta: {
+            description: "A polygon with equilateral sides.",
+            kind: "class"
+          },
+          name: "Square",
+          superClass: {
+            name: "Polygon"
+          }
+        });
+      });
+
+      specify("name", () => {
+        expect(crcClass.name).to.equal("Square");
+      });
+
+      specify("superClass", () => {
+        expect(crcClass.superClass.name).to.equal("Polygon");
+      });
+
+      specify("description", () => {
+        expect(crcClass.meta.description).to.equal("A polygon with equilateral sides.");
+      });
+
+      specify("meta information", () => {
+        expect(crcClass.meta.kind).to.equal("class");
+      });
+
+      specify("code (i.e., the associated ESLint SourceCode)", () => {
+        expect(crcClass.code).to.be.ok;
       });
     });
 
+  });
 
-
-    specify("name", () => {
-      expect(crcClass.name).to.equal("Square");
-    });
-
-    specify("superClass's name", () => {
-      expect(crcClass.superClass.name)
-        .to.equal("Polygon");
-    });
-
-    specify("description", () => {
-      expect(crcClass.meta.description).to.equal("A polygon with equilateral sides.");
-    });
-
-    specify("associated ESLint SourceCode", () => {
-      expect(crcClass.code).to.be.ok;
-    });
-
-    specify("NullObject", () => {
-      const nullCrcClass = new NullCrcClass();
+  describe("when given no parameters,", () => {
+    it("constructs a NullCrcClass when no parameters are passed", () => {
       crcClass = new CrcClass();
-      expect(crcClass.code).to.equal(nullCrcClass.code);
-      expect(crcClass.meta.description).to.be.empty;
-      expect(crcClass.name).to.be.null;
-      expect(crcClass.superClass).to.be.null;
+      expect(crcClass).to.deep.equal(nullCrcClass);
     });
   });
 
-  describe("factory: can create a Null CrcClass", () => {
-
-    const contextMock = {
-      code: {}
-    };
-
-    afterEach(() => {
-      crcClass = null;
-    });
-
-    specify("from an ESLint Context object", () => {
-      specifyNullCrcClass(crcClass, contextMock);
-    });
-
-    specify("NullObject", () => {
-      crcClass = CrcClass.factory();
-      specifyNullCrcClass(crcClass);
+  describe("creates a CrcClass with a static factory method", () => {
+    it("constructs a NullCrcClass when no parameters are passed", () => {
+      crcClass = CrcClass.create();
+      expect(crcClass).to.deep.equal(nullCrcClass);
     });
   });
 });

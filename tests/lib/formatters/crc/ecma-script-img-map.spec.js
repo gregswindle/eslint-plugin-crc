@@ -9,7 +9,7 @@
 
 const { expect } = require("chai");
 const {esImgMap, EsImgMap} = require("../../../../lib/formatters/md/es-version-img-map");
-const ecmaScriptDescriptorMap = require("../../../../lib/formatters/md/data/ecma-script-descriptor-map");
+const esDescriptorVersionMap = require("../../../../lib/formatters/md/data/es-descriptor-version-map");
 
 // ----------------------------------------------------------------------------
 // Helpers
@@ -20,7 +20,7 @@ const ecmaScriptDescriptorMap = require("../../../../lib/formatters/md/data/ecma
 // Tests
 // ----------------------------------------------------------------------------
 
-describe("ecmaScriptImgMap evaluates ASTNode types by ECMAScript version with", () => {
+describe("eslint-plugin-crc/formatters/md/es-version-img-map evaluates ASTNode types by ECMAScript version with", () => {
 
   describe("esImgMap, an instance of EcmaScriptImgMap, which,", () => {
 

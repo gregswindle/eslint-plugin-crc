@@ -8,9 +8,9 @@
 //
 // // tests/fixtures/crc/class-expression/polygon.js
 // describe("ClassExpressionCrcClass", () => {
-//   describe("overrides the static CrcClass.factory function and", () => {
+//   describe("overrides the static CrcClass.create function and", () => {
 //     it("creates a CrcClass from a ClassExpression ASTNode type", () => {
-//       const polygon = ClassExpressionCrcClass.factory()
+//       const polygon = ClassExpressionCrcClass.create()
 //     });
 //   });
 // });

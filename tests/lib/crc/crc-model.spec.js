@@ -6,7 +6,7 @@ const CrcModel = require("../../../lib/crc/crc-model");
 // Tests
 // ------------------------------------------------------------------------------
 
-describe("crc-model", () => {
+describe("eslint-plugin-crc/crc/crc-model", () => {
 
   let crcClass = null;
   let crcMath = null;
@@ -21,17 +21,21 @@ describe("crc-model", () => {
 
     beforeEach(() => {
       crcClass = new CrcClass({
-        node: {},
+        code: {},
+        meta: {
+          description: "A polygon with equilateral sides.",
+          kind: "class"
+        },
         name: "Square",
-        description: "A polygon with equilateral sides.",
         superClass: {
           name: "Polygon"
         }
       });
 
       crcMath = new CrcClass({
-        node: {},
-        name: "Math"
+        code: {},
+        name: "Math",
+        superClass: null
       });
 
       crcModel = new CrcModel({

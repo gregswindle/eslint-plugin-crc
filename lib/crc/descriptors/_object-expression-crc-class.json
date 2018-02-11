@@ -19,7 +19,7 @@ class ObjectExpressionCrcClass extends CrcClass {
    * @param {Context} context  - An ESLint
    * {@link https://goo.Gl/tuUSG5 Context} object with relevant information.
    * @example
-   * const crcClass = ObjectExpressionCrcClass.factory(context);
+   * const crcClass = ObjectExpressionCrcClass.create(context);
    * @returns {CrcClass} A NullObject for CrcClass.
    */
 

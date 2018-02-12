@@ -29,6 +29,7 @@
   },
   "contributors": [],
   "dependencies": {
+    "airbrake-js": "1.0.5",
     "bunyan": "1.8.12",
     "doctrine": "2.0.2",
     "eslint": "4.13.0",
@@ -68,7 +69,7 @@
     "standard-version": "4.2.0"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "homepage": "https://github.com/gregswindle/eslint-plugin-crc/",
   "keywords": [

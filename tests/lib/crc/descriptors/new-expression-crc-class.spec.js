@@ -5,7 +5,6 @@ const Square = require("../../../fixtures/crc/function-declarations/new-expressi
 const context = require("../../../fixtures/crc/function-declarations/new-expression/context.json");
 
 describe("NewExpressionCrcClass", () => {
-
   describe("overrides the static CrcClass.factory function and", () => {
     it("creates a CrcClass from a NewExpression ASTNode type", () => {
       const crcClass = NewExpressionCrcClass.factory(context);

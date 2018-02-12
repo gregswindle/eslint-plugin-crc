@@ -7,7 +7,6 @@ const CrcModel = require("../../../lib/crc/crc-model");
 // ------------------------------------------------------------------------------
 
 describe("crc-model", () => {
-
   let crcClass = null;
   let crcMath = null;
   let crcModel = null;
@@ -18,7 +17,6 @@ describe("crc-model", () => {
   ];
 
   describe("represents a Represents a Class-Responsibility-Collaboration model, which expresses a class's", () => {
-
     beforeEach(() => {
       crcClass = new CrcClass({
         node: {},
@@ -38,7 +36,7 @@ describe("crc-model", () => {
         class: crcClass,
         responsibilities,
         collaborators: [ crcMath ]
-      })
+      });
     });
 
     afterEach(() => {
@@ -67,7 +65,6 @@ describe("crc-model", () => {
       expect(crcModel.class).to.be.null;
       expect(crcModel.collaborators).to.be.empty;
       expect(crcModel.responsibilities).to.be.empty;
-    })
+    });
   });
-
 });

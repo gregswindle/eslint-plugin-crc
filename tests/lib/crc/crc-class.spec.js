@@ -2,13 +2,11 @@ const { expect } = require("chai");
 const CrcClass = require("../../../lib/crc/crc-class");
 
 describe("crc-class", () => {
-
   let crcClass = null;
 
-  afterEach(() => { crcClass = null; })
+  afterEach(() => { crcClass = null; });
 
   describe("constructor:can create a CrcClass", () => {
-
     beforeEach(() => {
       crcClass = new CrcClass({
         name: "Square",
@@ -47,7 +45,6 @@ describe("crc-class", () => {
   });
 
   describe("factory: can create a Null CrcClass", () => {
-
     const contextMock = {
       code: {}
     };

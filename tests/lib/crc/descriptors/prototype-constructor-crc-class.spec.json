@@ -4,7 +4,6 @@ const Polygon = require("../../../fixtures/crc/function-declarations/polygon.js"
 const Square = require("../../../fixtures/crc/function-declarations/assignment-expression-constructor/square.js");
 const context = require("../../../fixtures/crc/function-declarations/assignment-expression-constructor/context.json");
 
-
 describe("PrototypeConstructorCrcClass", () => {
   describe("overrides the static CrcClass.create function and", () => {
     it("creates a CrcClass from context", () => {

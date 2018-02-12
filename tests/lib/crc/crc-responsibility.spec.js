@@ -3,10 +3,8 @@ const context = require("../../fixtures/crc/crc-responsibilities/geometry-contex
 const squareContext = require("../../fixtures/crc/crc-responsibilities/square-context");
 const { expect } = require("chai");
 
-
 describe("CrcResponsibility", () => {
   describe("tries to extract a \"responsibility\" from these JSDoc comments", () => {
-
     const POINT = 0;
     const POLYGON = 1;
     const SQUARE = 2;
@@ -25,7 +23,6 @@ describe("CrcResponsibility", () => {
         CrcResponsibility.create(nodes[RECTANGLE], context);
 
       expect(responsibility).to.contain("A plane figure with four straight sides and four right angles");
-
     });
 
     specify("* @description", () => {

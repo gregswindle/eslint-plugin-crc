@@ -27,5 +27,4 @@ describe("eslint-plugin-crc/crc/crc-reporter", () => {
 
     specify("saving the markdown to a file");
   });
-
 });

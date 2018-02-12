@@ -5,8 +5,12 @@ const Square = require("../../../fixtures/crc/function-declarations/new-expressi
 const context = require("../../../fixtures/crc/function-declarations/new-expression/context.json");
 
 describe("NewExpressionCrcClass", () => {
+<<<<<<< HEAD:tests/lib/crc/descriptors/new-expression-crc-class.spec.json
 
   describe("overrides the static CrcClass.create function and", () => {
+=======
+  describe("overrides the static CrcClass.factory function and", () => {
+>>>>>>> master:tests/lib/crc/descriptors/new-expression-crc-class.spec.js
     it("creates a CrcClass from a NewExpression ASTNode type", () => {
       const crcClass = NewExpressionCrcClass.create(context);
 

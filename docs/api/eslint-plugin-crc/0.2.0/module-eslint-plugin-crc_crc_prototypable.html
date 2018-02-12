@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>crc/crc-model.js - Documentation</title>
+    <title>eslint-plugin-crc/crc/prototypable - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,100 +27,196 @@
 
 <div id="main">
     
-    <h1 class="page-title">crc/crc-model.js</h1>
+    <h1 class="page-title">eslint-plugin-crc/crc/prototypable</h1>
     
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const CrcClass = require("./crc-class");
-const CrcResponsibility = require("./crc-responsibility");
+        
+            
+        
+    
+</header>
 
-/**
- * Default parameters for a CrcModel NullObject.
- *
- * @private
- */
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Detect the prototype of an ASTNode.</p></div>
+        
 
-const defaultConstructorParams = {
-  "class": new CrcClass(),
-  "collaborators": [],
-  "meta": {
-    "description": null,
-    "toc": {
-      "anchor": null,
-      "link": null
-    }
-  },
-  "responsibilities": []
-};
+        
+            
 
-/**
- * Represents a &lt;strong>Class-Responsibility-Collaboration model&lt;/strong>,
- * which expresses the scope of an object's behaviors
- * (&lt;strong>&lt;em>responsibilities&lt;/em>&lt;/strong>) and the objects
- * it depends on to fulfill its responsibilities
- * (&lt;strong>&lt;em>collaborators&lt;/em>&lt;/strong>).
- *
- * @property {CrcClass} class - A summary representation of prototypable
- *  objects.
- * @property {array.&lt;CrcClass>} collaborators - An array of zero or more objects
- *  required to fulfill the CrcModel#class's responsibilities.
- * @property {CrcMeta} meta - Additional information.
- * @property {array.&lt;CrcResponsibility>} responsibilities - A list of
- * data this object must maintain and/or operations it must perform.
- * @example
- * // Pass without parameters to create a NullCrcModel object
- * const crcModel = new CrcModel();
- *
- * // Provide a CrcClass instance to reveal its responsibilities and
- * // collaborators.
- * const crcModel = new CrcModel({
- *   class
- * });
- */
 
-class CrcModel {
-  /**
-   * Create a shadow Class-Responsibility-Collaboration model.
-   *
-   * @class
-   * @param {Object} [params] - A parameter object that optionally sets all of
-   * the CrcModel's properties.
-   * @param {CrcClass} [params.class] - A &lt;code>class&lt;/code> representation.
-   * @param {array.&lt;CrcClass>} [params.collaborators] - A collection of zero or
-   * more CrcClasses that this object depends on.
-   * @param {object} [params.meta] - An object with meta data necessary for
-   *  visually rendering the CrcModel.
-   * @param {array.&lt;CrcResponsibility>} [params.responsibilities] - A list of
-   * data this object must maintain and/or operations it must perform.
-   */
 
-  constructor (params = defaultConstructorParams) {
-    this.class = params.class;
-    this.collaborators = params.collaborators;
-    this.meta = params.meta;
-    this.responsibilities =
-      CrcResponsibility.create(params.class).all;
-    CrcResponsibility.assign(this.class);
 
-    // Console.log(this.responsibilities);
-  }
+<dl class="details">
 
-  static get nullObject () {
-    class NullCrcModel extends CrcModel {}
-    return new NullCrcModel(defaultConstructorParams);
-  }
-}
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="crc_prototypable.js.html">crc/prototypable.js</a>, <a href="crc_prototypable.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
 
-module.exports = CrcModel;
-</code></pre>
-        </article>
-    </section>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".getPrototypeOf"><span class="type-signature">(static) </span>getPrototypeOf<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="crc_prototypable.js.html">crc/prototypable.js</a>, <a href="crc_prototypable.js.html#line109">line 109</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Returns a prototype ASTNode.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 

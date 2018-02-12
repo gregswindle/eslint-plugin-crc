@@ -18,7 +18,6 @@ describe("eslint-plugin-crc/crc/crc-model", () => {
   ];
 
   describe("represents a Represents a Class-Responsibility-Collaboration model, which expresses a class's", () => {
-
     beforeEach(() => {
       crcClass = new CrcClass({
         code: {},
@@ -42,7 +41,7 @@ describe("eslint-plugin-crc/crc/crc-model", () => {
         class: crcClass,
         responsibilities,
         collaborators: [ crcMath ]
-      })
+      });
     });
 
     afterEach(() => {
@@ -71,7 +70,7 @@ describe("eslint-plugin-crc/crc/crc-model", () => {
       expect(crcModel.class).to.be.null;
       expect(crcModel.collaborators).to.be.empty;
       expect(crcModel.responsibilities).to.be.empty;
-    })
+    });
   });
 
   describe("when parsing ESLint result objects", () => {

@@ -31,7 +31,7 @@ script:
   - npm test
 after_script:
   - cat coverage/lcov.info | node_modules/.bin/coveralls
-  - sonar-scanner -Dproject.settings=./sonar-project.properties -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -X
+  - sonar-scanner -Dproject.settings=./sonar-project.properties -Dsonar.branch.name=$TRAVIS_PULL_REQUEST_BRANCH -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -X
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/

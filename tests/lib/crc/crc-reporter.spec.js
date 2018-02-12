@@ -7,7 +7,6 @@ const eslintResults = require("../../fixtures/formatters/eslint-results");
 // -----------------------------------------------------------------------------
 
 describe("crc-reporter", () => {
-
   let crcReporter = null;
   let report = null;
 
@@ -23,14 +22,13 @@ describe("crc-reporter", () => {
   describe("iterates through ESLint results in order to", () => {
     it("fetch the source code from each result's filePath", () => {
       expect(eslintResults).to.be.ok;
-
     });
 
     it("create an AST for each file");
 
-    it("create an ESLint SourceCode object for each file")
+    it("create an ESLint SourceCode object for each file");
 
-    it("create an array of ASTNodes for each file")
+    it("create an array of ASTNodes for each file");
 
     it("associate SourceCode text with each ASTNode");
 
@@ -43,7 +41,6 @@ describe("crc-reporter", () => {
 
       it("adds the CrcModel to an array of crcModels");
     });
-
   });
 
   describe("generate CRC Model reports by", () => {
@@ -53,5 +50,4 @@ describe("crc-reporter", () => {
 
     specify("saving the markdown to a file");
   });
-
 });

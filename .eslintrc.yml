@@ -13,10 +13,11 @@ parserOptions:
   attachComment:                                  false
   tokens:                                         true
 env:
-  es6:                                            true
-  node:                                           true
-  jest:                                           true
   browser:                                        true
+  es6:                                            true
+  jest:                                           true
+  mocha:                                          true
+  node:                                           true
 plugins:
 - import
 - jsdoc
@@ -36,6 +37,7 @@ extends:
 - plugin:security/recommended
 - eslint:recommended
 globals:
+  chai:                                           true
   document:                                       false
   navigator:                                      false
   window:                                         false

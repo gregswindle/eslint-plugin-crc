@@ -18,5 +18,5 @@
     "lcov",
     "text"
   ],
-  "report-dir": "./reports/coverage"
+  "report-dir": "./docs/reports/coverage"
 }

@@ -34,7 +34,6 @@
     "bunyan": "1.8.12",
     "chalk": "2.3.1",
     "compromise": "11.3.0",
-    "debug": "3.1.0",
     "doctrine": "2.1.0",
     "escomplex": "2.0.0-alpha",
     "eslint": "4.17.0",
@@ -53,7 +52,6 @@
     "chai": "4.1.2",
     "common-vocabulary": "1.0.1",
     "coveralls": "3.0.0",
-    "debug": "3.1.0",
     "docdash": "0.4.0",
     "eslint-config-crockford": "2.0.0",
     "eslint-config-scanjs": "1.0.0-beta4",
@@ -79,9 +77,9 @@
     "nsp": "3.1.0",
     "nyc": "11.4.1",
     "properties-parser": "0.3.1",
-    "proxyquire": "1.8.0",
     "semantic-release": "12.4.1",
-    "simple-mock": "0.8.0",
+    "sinon": "4.3.0",
+    "sinon-chai": "2.14.0",
     "snyk": "1.69.7",
     "standard-version": "4.3.0"
   },
@@ -123,7 +121,7 @@
       "lcov",
       "text"
     ],
-    "report-dir": "./reports/coverage"
+    "report-dir": "./docs/reports/coverage"
   },
   "repository": {
     "type": "git",

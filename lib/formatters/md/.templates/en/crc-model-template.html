@@ -6,7 +6,7 @@
 <h3><samp><%=_.get(crcModel, 'class.meta.kind') %><code><%- _.get(crcModel, 'class.name') %></code></samp>
 <% const proto = _.get(crcModel, 'class.superClass');
 if (!_.isEmpty(proto)) { %>
-<sub>extends <code><%= _.get(proto, 'name') %></code></sub>
+<samp>extends</samp> <code><%= _.get(proto, 'name') %></code>
 <% } %>
 </h3>
 <blockquote>
@@ -68,12 +68,14 @@ if (!_.isEmpty(proto)) { %>
 </blockquote>
 </dd><dt><p><strong>References</strong></dt>
 <dd>
-<blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
+<blockquote><strong><code><%= _.get(crcModel, 'class.name') %></code> is referenced <em><%= _.get(crcModel, 'class.meta.references.length') %></em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
+<% if (_.gt(_.get(crcModel, 'class.meta.references.length'), 0)) { %>
 <ol>
-<li>TODO: reference one.</li>
-<li>TODO: reference two.</li>
-<li>TODO: reference one.</li>
+<% _.forEach(_.get(crcModel, 'class.meta.references'), (ref) => { %>
+  <li>File name: <samp>[<%= ref.start %> : <%= ref.end %>]</samp></li>
+<% }) %>
 </ol>
+<% } %>
 </blockquote>
 </dd><dt><p><strong>Path</strong></dt>
 <dd>

@@ -292,7 +292,7 @@ $ npm i eslint --save-dev
 
 Next, install `eslint-plugin-crc`.
 
-> :octocat: `eslint-plugin-crc` isn't available via `npm` yet, so you'll have to clone this repository, for now.
+> ![GitHub's octocat mascot][emoji-octocat-img] `eslint-plugin-crc` isn't available via `npm` yet, so you'll have to clone this repository, for now.
 
 ```bash
 # Clone this repository
@@ -398,10 +398,10 @@ As software programs grow over time, engineers detect whiffs of potentially deep
 Software can become brittle and inextensible unless we sniff out the structural problems that create code smells. CRC Models can help us clean and deodorize malodorous software with [_refactorings_][refactoring-url].
 
 > <dl><strong>Refactoring defined</strong>
-> <dt>:book: noun</dt>
+> <dt>📖  noun</dt>
 > <dd>a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior</dd>
 >
-> <dt>:book: verb</dt>
+> <dt>📖  verb</dt>
 > <dd>to restructure software by applying a series of refactorings without changing its observable behavior <sup><a href="#ref-refactoring-definition">[2]</a></sup></dd>
 > </dl>
 
@@ -409,7 +409,7 @@ Software can become brittle and inextensible unless we sniff out the structural 
 
 Code smells often indicate technical debt.
 
-> :book: <dfn><strong>Technical debt</strong></dfn> (also known as _design debt_ or _code debt_) is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy solution now instead of using a better approach that would take longer. <sup><a href="#ref-technical-debt">[3]</a></sup>
+> 📖  <dfn><strong>Technical debt</strong></dfn> (also known as _design debt_ or _code debt_) is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy solution now instead of using a better approach that would take longer. <sup><a href="#ref-technical-debt">[3]</a></sup>
 
 As technical debt increases, new features take longer to ship, and defects become harder to fix. CRC Models can help address the causes of technical debt, including:  
 
@@ -445,22 +445,38 @@ The very structure of Class-Responsibility-Collaboration models, with their emph
 
 ---
 
-[:beginner: Read **Contributing to `eslint-plugin-crc`** to get started :beginner:][contributing-url].
+[![Request a feature][issues-new-feat-image]][issues-new-feat-url]
+[![Report a defect][issues-new-defect-image]][issues-new-defect-url]
 
-[:mortar_board: Free and independent training][makeapullrequest-url] is available, too.
+[![Read the CONTRIBUTING guidelines][contributing-image]][contributing-url]
 
 ---
 
-[**Contributing**][contributing-url] with GitHub issues and pull requests is welcome. Before embarking on a significant change, please:
+Contributions in the form of GitHub pull requests are welcome. Before embarking on a significant change, please adhere to the following guidelines:
 
- 1. Read the [Code of Conduct][code-of-conduct-url];
- 1. Create an issue to   
+  1. **[Create an issue][issues-url]**&mdash;e.g., a [defect ("bug") report][issues-new-defect-url] or a [feature request][issues-new-feat-url]&mdash;to propose changes.
 
-    [![Propose a new feature][btn-feature-img]][issues-new-feature-url] or
+     _Exceptions:_
 
-    [![Report a defect][btn-defect-img]][issues-new-defect-url]
+     > If you're working on documentation and fixing something simple like a typo or an easy bug, go ahead and make a pull request.
 
- 1. Follow [**Contributing to `eslint-plugin-crc's`**][contributing-url] guidelines (if you're willing and able to program or want to learn how).
+  1. **[Follow the CONTRIBUTING guidelines][contributing-url].**
+
+     _Why:_
+
+     > Standards and guidelines make communication easier. If you're willing and able to program&mdash;or want to learn how&mdash; following the guidelines will increase the likelihood of adding your changes to the software product.
+
+  1. **[Read the Code of Conduct][code-of-conduct-url].**
+
+     _Why:_
+
+     > It's more fun when everybody's friendly and respectful.
+
+  1. **[Make a pull request][pr-url]** when you're ready for other to review your changes (or you get stuck somewhere).
+
+     _PR novices:_
+
+     > **🙋  Never created a pull request?** No problem. [🆓  Take this free online training][makeapullrequest-url]. (It even covers most of the conventions in the [CONTRIBUTING guidelines][contributing-url]!)
 
 ## 6. Version
 
@@ -510,6 +526,7 @@ View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 [code-smell-url]: https://en.wikipedia.org/wiki/Code_smell
 [complexity-dfn-url]: https://en.wikipedia.org/wiki/Programming_complexity
 [complexity-report-url]: https://github.com/escomplex/complexity-report
+[contributing-image]: https://img.shields.io/badge/read---CONTRIBUTING%20Guidelines---yellow.svg?style=for-the-badge&label=read+the
 [contributing-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md
 [coveralls-image]: https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master
@@ -519,6 +536,7 @@ View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 [daviddm-url]: https://david-dm.org/gregswindle/eslint-plugin-crc
 [design-thinking-process-model-img]: docs/img/design-thinking-process.png
 [editorconfig-url]: http://editorconfig.org/
+[emoji-octocat-img]: https://assets-cdn.github.com/images/icons/emoji/octocat.png
 [eslint-github-url]: https://github.com/eslint/eslint
 [fossa-image]: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield&style=flat-square
 [fossa-url]: https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield
@@ -526,8 +544,10 @@ View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 [greenkeeper-url]: https://greenkeeper.io/
 [icon-info-image]: docs/img/icons8/icon-info-30.png
 [icon-quote-left-image]: docs/img/icons8/icon-quote-left-25.png
+[issues-new-defect-image]: https://img.shields.io/badge/report---defect---lightgrey.svg?style=for-the-badge&label=report+a
 [issues-new-defect-url]: https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=fix%28affected-scope%29%3A+50-character-defect-summary&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
-[issues-new-feature-url]: https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=feat%28affected-scope%29%3A+50-character-change-proposal-summary&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
+[issues-new-feat-image]: https://img.shields.io/badge/request---feature---blue.svg?style=for-the-badge&label=request+a
+[issues-new-feat-url]: https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=feat%28affected-scope%29%3A+50-character-change-proposal-summary&labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A
 [issues-url]: https://github.com/gregswindle/eslint-plugin-crc/issues
 [jsdoc2md-url]: https://github.com/jsdoc2md/jsdoc-to-markdown
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square

@@ -1,13 +1,22 @@
-const { expect } = require("chai");
 const CrcClass = require("../../../lib/crc/crc-class");
+const CrcMeta = require("../../../lib/crc/crc-meta");
 const CrcModel = require("../../../lib/crc/crc-model");
+const CrcResponsibility = require("../../../lib/crc/crc-responsibility");
+const chai = require("chai");
+const expect = chai.expect;
+const sinon = require("sinon");
+const sinonChai = require("sinon-chai");
+const {isEqual, noop} = require("lodash");
 
-// ------------------------------------------------------------------------------
-// Tests
-// ------------------------------------------------------------------------------
+chai.use(sinonChai);
+
+/*
+ * ------------------------------------------------------------------------------
+ * Tests
+ * ------------------------------------------------------------------------------
+ */
 
 describe("eslint-plugin-crc/crc/crc-model", () => {
-
   let crcClass = null;
   let crcMath = null;
   let crcModel = null;
@@ -17,34 +26,48 @@ describe("eslint-plugin-crc/crc/crc-model", () => {
     "C"
   ];
 
+  const nullCrcModelObject = {
+    "class": new CrcClass(),
+    "collaborators": [],
+    "meta": CrcMeta.nullObject,
+    "responsibilities": []
+  };
+
   describe("represents a Represents a Class-Responsibility-Collaboration model, which expresses a class's", () => {
     beforeEach(() => {
+      sinon.stub(CrcResponsibility, "create").returns({
+        "all": responsibilities
+      });
+
       crcClass = new CrcClass({
-        code: {},
-        meta: {
-          description: "A polygon with equilateral sides.",
-          kind: "class"
+        "code": {
         },
-        name: "Square",
-        superClass: {
-          name: "Polygon"
+        "meta": {
+          "description": "A polygon with equilateral sides.",
+          "kind": "class"
+        },
+        "name": "Square",
+        "superClass": {
+          "name": "Polygon"
         }
       });
 
       crcMath = new CrcClass({
-        code: {},
-        name: "Math",
-        superClass: null
+        "code": {
+        },
+        "name": "Math",
+        "superClass": null
       });
 
       crcModel = new CrcModel({
-        class: crcClass,
+        "class": crcClass,
         responsibilities,
-        collaborators: [ crcMath ]
+        "collaborators": [crcMath]
       });
     });
 
     afterEach(() => {
+      CrcResponsibility.create.restore();
       crcClass = null;
       crcMath = null;
       crcModel = null;
@@ -62,25 +85,15 @@ describe("eslint-plugin-crc/crc/crc-model", () => {
       expect(crcModel.collaborators.length).to.equal(1);
       expect(crcModel.collaborators[0].name).to.equal("Math");
     });
-  });
 
-  describe("when given no information", () => {
-    it("creates a CrcModel NullObject", () => {
-      crcModel = new CrcModel();
-      expect(crcModel.class).to.be.null;
-      expect(crcModel.collaborators).to.be.empty;
-      expect(crcModel.responsibilities).to.be.empty;
+    it("creates a NullObject", () => {
+      CrcResponsibility.create.reset();
+
+      const nullObjectProperties = Object.keys(nullCrcModelObject);
+      const nullCrcModel = CrcModel.nullObject;
+      const nullCrcModelProps = Object.keys(nullCrcModel);
+
+      expect(isEqual(nullCrcModelProps, nullObjectProperties)).to.equal(true);
     });
   });
-
-  describe("when parsing ESLint result objects", () => {
-    it("reads source code from result.filePath");
-    it("creates a crc.Context object");
-
-    describe("when parsing the Context object", () => {
-      it("splits the context.code.text into source code blocks by ASTNode");
-
-    })
-  });
-
 });

@@ -3,32 +3,36 @@
  * @author Greg Swindle
  */
 
-// ----------------------------------------------------------------------------
-// Requirements
-// ----------------------------------------------------------------------------
+/*
+ * ----------------------------------------------------------------------------
+ * Requirements
+ * ----------------------------------------------------------------------------
+ */
 
-const { expect } = require("chai");
+const {expect} = require("chai");
 const TocFactory = require("../../../../lib/formatters/md/toc-factory");
 
-// ----------------------------------------------------------------------------
-// Helpers
-// ----------------------------------------------------------------------------
+/*
+ * ----------------------------------------------------------------------------
+ * Helpers
+ * ----------------------------------------------------------------------------
+ */
 
-
-// ----------------------------------------------------------------------------
-// Tests
-// ----------------------------------------------------------------------------
+/*
+ * ----------------------------------------------------------------------------
+ * Tests
+ * ----------------------------------------------------------------------------
+ */
 
 describe("eslint-plugin-crc/formatters/md", () => {
-
   const crcModelMock = {
-    class: {
-      meta: {
-        kind: "class"
+    "class": {
+      "meta": {
+        "kind": "class"
       },
-      name: "CrcMock"
+      "name": "CrcMock"
     }
-  }
+  };
 
   const link = `<a rel="noopener"\n            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"\n            title="The class declaration creates a new class with a given name using prototype-based inheritance.">class</a>`;
 
@@ -44,7 +48,5 @@ describe("eslint-plugin-crc/formatters/md", () => {
     it("links Table Of Content links to anchored CrcModels", () => {
       expect(TocFactory.link(crcModelMock)).to.equal("class CrcMock");
     });
-
   });
-
 });

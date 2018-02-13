@@ -1,8 +1,7 @@
 const crc = require("../../lib");
-const { expect } = require("chai");
+const {expect} = require("chai");
 
 describe("module:eslint-plugin-crc analyzes prototype-based JavaScript with", () => {
-
   it("logger, a buyan logger", () => {
     expect(crc.logger).to.be.ok;
   });

@@ -1,6 +1,6 @@
-function Polygon(height, width) {
-  this.height = height
-  this.width = width
+function Polygon (height, width) {
+  this.height = height;
+  this.width = width;
 }
 
-module.exports = Polygon
+module.exports = Polygon;

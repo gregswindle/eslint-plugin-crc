@@ -9,7 +9,6 @@ const specifyNullCrcClass = (crcClass, nullCrcClass) => {
 };
 
 describe("eslint-plugin-crc/crc/crc-class,", () => {
-
   let crcClass = null;
   let nullCrcClass = null;
 
@@ -26,19 +25,18 @@ describe("eslint-plugin-crc/crc/crc-class,", () => {
   });
 
   describe("when given SourceCode, meta, name, and superClass objects,", () => {
-
     describe("constructs a CrcClass, a summarized a prototypal object with a", () => {
-
       beforeEach(() => {
         crcClass = new CrcClass({
-          code: {},
-          meta: {
-            description: "A polygon with equilateral sides.",
-            kind: "class"
+          "code": {
           },
-          name: "Square",
-          superClass: {
-            name: "Polygon"
+          "meta": {
+            "description": "A polygon with equilateral sides.",
+            "kind": "class"
+          },
+          "name": "Square",
+          "superClass": {
+            "name": "Polygon"
           }
         });
       });
@@ -63,7 +61,6 @@ describe("eslint-plugin-crc/crc/crc-class,", () => {
         expect(crcClass.code).to.be.ok;
       });
     });
-
   });
 
   describe("when given no parameters,", () => {

@@ -888,10 +888,10 @@
  | [bunyan@1.8.12](https://github.com/trentm/node-bunyan#readme) | a JSON logging library for node.js services | 1.8.12 | MIT | production | 
  | [chalk@2.3.1](https://github.com/chalk/chalk#readme) | Terminal string styling done right | 2.3.1 | MIT | production | 
  | [compromise@11.3.0](https://github.com/nlp-compromise/compromise#readme) | natural language processing in the browser | 11.3.0 | MIT | production | 
- | [debug@3.1.0](https://github.com/visionmedia/debug#readme) | small debugging utility | 3.1.0 | MIT | production | 
  | [doctrine@2.1.0](https://github.com/eslint/doctrine) | JSDoc parser | 2.1.0 | Apache-2.0 | production | 
  | [escomplex@2.0.0-alpha](https://github.com/jared-stilwell/escomplex) | Software complexity analysis of JavaScript-family abstract syntax trees. | 2.0.0-alpha | MIT | production | 
  | [eslint@4.17.0](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.17.0 | MIT | production | 
+ | [eslint-scope@3.7.1](http://github.com/eslint/eslint-scope) | ECMAScript scope analyzer for ESLint | 3.7.1 | BSD-2-Clause | production | 
  | [espree@3.5.3](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.3 | BSD-2-Clause | production | 
  | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production | 
  | [estraverse@4.2.0](https://github.com/estools/estraverse) | ECMAScript JS AST traversal functions | 4.2.0 | BSD-2-Clause | production | 
@@ -905,7 +905,6 @@
  | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev | 
  | [common-vocabulary@1.0.1](https://github.com/commonality/common-vocabulary) | Facilitate communication and avoid confusion with canonical terms: share a common vocabulary. | 1.0.1 | MIT | dev | 
  | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev | 
- | [debug@3.1.0](https://github.com/visionmedia/debug#readme) | small debugging utility | 3.1.0 | MIT | dev | 
  | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev | 
  | [eslint-config-crockford@2.0.0](https://github.com/ssoloff/eslint-config-crockford) | ESLint shareable config for Crockford style | 2.0.0 | MIT | dev | 
  | [eslint-config-scanjs@1.0.0-beta4](https://github.com/mozfreddyb/eslint-config-scanjs#readme) | umbrella config to get scanjs-like functionality from eslint | 1.0.0-beta4 | MPL-2.0 | dev | 
@@ -931,9 +930,9 @@
  | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
  | [nyc@11.4.1](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.4.1 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
- | [proxyquire@1.8.0](https://github.com/thlorenz/proxyquire#readme) | Proxies nodejs require in order to allow overriding dependencies during testing. | 1.8.0 | MIT | dev | 
  | [semantic-release@12.4.1](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 12.4.1 | MIT | dev | 
- | [simple-mock@0.8.0](https://github.com/jupiter/simple-mock) | Super simple stubs and spies with 1-step sandbox restore | 0.8.0 | MIT | dev | 
+ | [sinon@4.3.0](http://sinonjs.org/) | JavaScript test spies, stubs and mocks. | 4.3.0 | BSD-3-Clause | dev | 
+ | [sinon-chai@2.14.0](https://github.com/domenic/sinon-chai#readme) | Extends Chai with assertions for the Sinon.JS mocking framework. | 2.14.0 | (BSD-2-Clause OR WTFPL) | dev | 
  | [snyk@1.69.7](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.69.7 | Apache-2.0 | dev | 
  | [standard-version@4.3.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.3.0 | ISC | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->

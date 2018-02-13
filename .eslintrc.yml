@@ -316,6 +316,7 @@ rules:
       markers:
       - "*package"
       - "!"
+      - "#!"
       - "/"
       - ","
     block:
@@ -388,7 +389,7 @@ rules:
     - defaultParameters
     - destructuring
   node/process-exit-as-throw:                         error
-  node/shebang:                                       error
+  node/shebang:                                       warn
   promise/param-names:                                error
   standard/array-bracket-even-spacing:
   - error

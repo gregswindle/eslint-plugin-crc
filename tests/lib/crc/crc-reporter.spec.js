@@ -1,13 +1,14 @@
-const { expect } = require("chai");
+const {expect} = require("chai");
 const CrcReporter = require("../../../lib/crc/crc-reporter");
 const eslintResults = require("../../fixtures/formatters/eslint-results");
 
-// -----------------------------------------------------------------------------
-// Tests
-// -----------------------------------------------------------------------------
+/*
+ * -----------------------------------------------------------------------------
+ * Tests
+ * -----------------------------------------------------------------------------
+ */
 
 describe("eslint-plugin-crc/crc/crc-reporter", () => {
-
   let crcReporter = null;
   let report = null;
 

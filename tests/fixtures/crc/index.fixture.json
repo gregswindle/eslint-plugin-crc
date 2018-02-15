@@ -34,14 +34,6 @@
       "esImgMap": {}
     },
     "mdn-reference": null,
-    "template-factory": {
-      "anchor": {},
-      "getTemplate": null,
-      "model": null,
-      "options": {},
-      "page": {},
-      "toc": {}
-    },
     "toc-factory": null
   },
   "logger": {

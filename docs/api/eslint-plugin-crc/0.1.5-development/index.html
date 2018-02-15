@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CrcClass.html">CrcClass</a><ul class='members'><li data-type='member'><a href="CrcClass.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="CrcClass.html#.create">create</a></li></ul></li><li><a href="CrcCodebase.html">CrcCodebase</a><ul class='methods'><li data-type='method'><a href="CrcCodebase.html#load">load</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='members'><li data-type='member'><a href="CrcContext.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcMeta.html">CrcMeta</a><ul class='members'><li data-type='member'><a href="CrcMeta.html#.nullObject">nullObject</a></li></ul></li><li><a href="CrcModel.html">CrcModel</a><ul class='members'><li data-type='member'><a href="CrcModel.html#.nullObject">nullObject</a></li></ul></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.assign">assign</a></li><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li><li data-type='method'><a href="CrcResponsibility.html#.descriptionFromContext">descriptionFromContext</a></li></ul></li><li><a href="EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li><li data-type='method'><a href="MdnReference.html#link">link</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li></ul></li><li><a href="NullCrcClass.html">NullCrcClass</a></li><li><a href="NullCrcContext.html">NullCrcContext</a></li><li><a href="NullCrcMeta.html">NullCrcMeta</a></li><li><a href="NullCrcModel.html">NullCrcModel</a></li><li><a href="NullSourceCode.html">NullSourceCode</a></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a><ul class='members'><li data-type='member'><a href="SourceCodeFactory.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="SourceCodeFactory.html#.create">create</a></li><li data-type='method'><a href="SourceCodeFactory.html#.parse">parse</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-eslint-plugin-crc.html">eslint-plugin-crc</a></li><li><a href="module-eslint-plugin-crc_crc.html">eslint-plugin-crc/crc</a></li><li><a href="module-eslint-plugin-crc_formatters_md.html">eslint-plugin-crc/formatters/md</a><ul class='methods'><li data-type='method'><a href="module-eslint-plugin-crc_formatters_md.html#~format">format</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#astConfig">astConfig</a></li><li><a href="global.html#copyAssets">copyAssets</a></li><li><a href="global.html#esImgMap">esImgMap</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#prototypable">prototypable</a></li><li><a href="global.html#writeReportFile">writeReportFile</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1><code>eslint-plugin-crc</code></h1><blockquote>
+<p>Document, analyze, and refactor JavaScript codebases with auto-generated CRC (Class-Responsibility-Collaborator) Models.</p>
+</blockquote>
+<p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=shield&amp;style=flat-square" alt="FOSSA Status"></a>
+<a href="https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a"><img src="https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square" alt="NSP Status"></a>
+<a href="https://david-dm.org/gregswindle/eslint-plugin-crc"><img src="https://david-dm.org/gregswindle/eslint-plugin-crc.svg?theme=shields.io&amp;style=flat-square" alt="Dependencies"></a>
+<a href="https://david-dm.org/gregswindle/eslint-plugin-crc?type=dev"><img src="https://david-dm.org/gregswindle/eslint-plugin-crc/dev-status.svg?style=flat-square" alt="Dependencies"></a><br>
+<a href="https://travis-ci.org/gregswindle/eslint-plugin-crc"><img src="https://img.shields.io/travis/gregswindle/eslint-plugin-crc/master.svg?style=flat-square" alt="Travis branch"></a>
+<a href="https://ci.appveyor.com/project/gregswindle/eslint-plugin-crc"><img src="https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&amp;logo=appveyor" alt="AppVeyor Windows build status"></a>
+<a href="https://coveralls.io/github/gregswindle/eslint-plugin-crc?branch=master"><img src="https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square" alt="Coveralls coverage"></a>
+<a href="https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square" alt="Codacy Badge"></a>
+<a href="https://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc"><img src="https://sonarcloud.io/api/badges/gate?key=gregswindle-eslint-plugin-crc" alt="Quality Gate"></a>
+<a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a></p>
+<h2>Table of contents</h2><!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+<ul>
+<li><a href="#1-background">1. Background</a><ul>
+<li><a href="#11-anatomy-of-a-crc-model">1.1. Anatomy of a CRC model</a></li>
+<li><a href="#12-sample-report">1.2. Sample report</a></li>
+</ul>
+</li>
+<li><a href="#2-installation">2. <strong>Installation</strong></a></li>
+<li><a href="#3-usage">3. <strong>Usage</strong></a><ul>
+<li><a href="#31-generate-crc-model-reports">3.1. Generate CRC Model reports</a></li>
+<li><a href="#32-reporting-options">3.2. Reporting options</a></li>
+</ul>
+</li>
+<li><a href="#4-benefits">4. Benefits</a><ul>
+<li><a href="#41-documentation">4.1. Documentation</a></li>
+<li><a href="#42-simplicity">4.2. Simplicity</a></li>
+<li><a href="#43-refactoring-support">4.3. Refactoring support</a></li>
+<li><a href="#44-technical-debt-reduction">4.4. Technical debt reduction</a></li>
+<li><a href="#45-design-thinking">4.5. Design thinking</a></li>
+<li><a href="#46-behavior-driven-development">4.6. Behavior-driven development</a></li>
+</ul>
+</li>
+<li><a href="#5-contributing">5. <strong>Contributing</strong></a></li>
+<li><a href="#6-version">6. Version</a></li>
+<li><a href="#7-license">7. License</a></li>
+<li><a href="#8-references">8. References</a><!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+</li>
+</ul>
+<h2>1. Background</h2><p>As software programs get bigger, subtle structural problems accumulate, resulting in <a href="https://en.wikipedia.org/wiki/Programming_complexity"><em>complexity</em></a>. As complexity grows over time, it becomes riskier and harder to add features and fix defects.</p>
+<p>Tools like CRC Models can help document, analyze, <a href="https://github.com/gregswindle/eslint-plugin-crc/wiki/Refactorings-by-category"><strong>refactor</strong></a>, and manage software complexity and design. CRC Models portray source code as tables with three simple sections:</p>
+<dl>
+  <dt>1. Name</dt>
+  <dd>What the prototypal object is called in source code.</dd>
+  <dt>2. Responsibilities</dt>
+  <dd>The work that the object is expected to perform, and the data it's supposed to maintain.</dd>
+  <dt>3. Collaborators</dt>
+  <dd>Other objects this class directly invokes in order to do its work.</dd>
+</dl>
+
+<h3>1.1. Anatomy of a CRC model</h3><blockquote>
+<p><img src="docs/img/icons8/icon-quote-left-25.png" alt="Citation"> A Class Responsibility Collaborator (CRC) model...is...divided into three sections.... A class represents a collection of similar objects, a responsibility is something that a class knows or does, and a collaborator is another class that a class interacts with to fulfill its responsibilities.<sup><a href="#ref-crc-definition">[1]</a></sup></p>
+</blockquote>
+<table width="100%">
+  <thead>
+    <tr valign="top" align="left">
+      <th colspan="2"><h3><samp>kind <code>Prototypable</code> [<em>extends <code>Object</code></em>]<samp></h3>
+      <blockquote>Description of the prototyped object.</blockquote>
+      </th>
+    </tr>
+    <tr valign="top" align="left">
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top" align="left">
+      <td width="50%">
+      <p><code>Prototypable</code>'s activities and purpose:
+        <ol>
+          <li>What <code>Prototypable</code> does.
+          <li>The information it maintains.
+        </ol></p>
+      </td>
+      <td width="50%">
+      <p>Objects that <code>Prototypable</code> depends on to:
+        <ol>
+          <li>Assist <code>Prototypable</code> with its work.
+          <li>Provide info/data that <code>Prototypable</code> needs.
+        </ol></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>1.2. Sample report</h3><blockquote>
+<p>Object count: 2. Generated on 2018-01-13T12:44:42.724Z.</p>
+</blockquote>
+ <!-- crc-model-template:html,markdown -->
+<p><a name="crc-model-polygon"></a></p>
+<table width="100%">
+  <thead>
+    <tr valign="top" align="left">
+      <th colspan="2">
+        <h3>
+          <samp><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a>
+            <code>Polygon</code>
+            extends
+            <a rel="noopener" href="https://is.gd/ZZBLcn" target="mdn"><code>Object</code></a></samp>
+       </h3>
+       <blockquote></blockquote>
+       </th>
+    </tr>
+    <tr valign="top" align="left">
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tfoot valign="top" align="left">
+    <tr valign="top" align="left" width="100%">
+      <td bgcolor="#fcfcfc" colspan="2">
+        <details>
+          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"><code>Polygon</code> details...</summary>
+            <dl>
+            <dt><strong>Source code</strong></dt>
+            <dd><blockquote>
+
+<code>js
+class Polygon {
+  constructor(height, width) {
+    this.height = height
+    this.width = width
+    this.name = 'Polygon'
+  }
+}
+
+module.exports = Polygon</code>
+
+</blockquote></dd>
+            <dt><strong>References</strong></dt>
+            <dd>
+              <blockquote><strong>Polygon is referenced <em>2</em> times in <em>2</em> files.</strong><br><br>
+            <ol>
+              <li>calculator.js</li>
+              <li>dimensions.js</li>
+           </ol></blockquote></dd>
+           <dt><strong>Path</strong></dt>
+           <dd>
+            <blockquote>
+              /path/to/eslint-plugin-crc/tests/fixtures/crc/class-declaration/polygon.js
+            </blockquote>
+           </dd>
+            </dl>
+        </details>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr valign="top" align="left">
+    <td width="50%">
+      <ol><li>Provide <code>height</code>, the measurement of a shape from base to top.</li>
+      <li>Provide <code>name</code>, what the geometric shape is called.</li>
+      <li>Provide <code>width</code>, the length of a shape from side to side.
+      </ol>
+    </td>
+    <td width="50%">
+      <ol> None found. </ol>
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--/crc-model-template:html,markdown -->
+<!-- crc-model-template:html,markdown -->
+<table width="100%">
+  <thead>
+    <tr valign="top" align="left">
+      <th colspan="2">
+        <h3><samp>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a>
+            <code>Square</code>
+            extends
+            <a href="#crc-model-polygon"><code>Polygon</code></a></samp>
+       </h3>
+       <blockquote>A plane figure with four equal straight sides and four right angles.</blockquote>
+       </th>
+    </tr>
+    <tr valign="top" align="left">
+      <th>Responsibilities</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tfoot valign="top" align="left">
+    <tr valign="top" align="left" width="100%">
+      <td bgcolor="#fcfcfc" colspan="2">
+        <details>
+          <summary><img src="docs/img/icons8/icon-javascript-filled-25.png" alt="Select to toggle" align="top"><code>Square</code> details...</summary>
+            <dl>
+            <dt><strong>Source code</strong></dt>
+            <dd><blockquote>
+
+<code>js
+const Polygon = require(&quot;./polygon&quot;);
+
+/**
+ * A plane figure with four equal straight sides and four right
+ * angles.
+ *
+ * @property {number} area - The extent of a two-dimensional figure
+ * or shape, or planar lamina, in the plane.
+ * @property {string=Square} name - The geometric `object`'s name.
+ * @extends Polygon
+ * @example
+ * const square = new Square(2)
+ * square.area
+ * // =&gt; 4
+ */
+class Square extends Polygon {
+  /**
+    * Call the parent class's constructor with lengths
+    * provided for the Polygon's width and height.
+    * @param {!number=0} length - The length of all sides.
+    * @constructor
+    */
+  constructor(length = 0) {
+    super(length, length)
+    this.name = 'Square'
+  }
+
+  get area() {
+    return this.height * this.width
+  }
+
+  set area(value) {
+    this.height = this.width = Math.sqrt(value)
+  }
+}
+
+module.exports = Square</code>
+
+</blockquote></dd>
+            <dt><strong>Example</strong></dt>
+            <dd><blockquote>
+
+<code>js
+const square = new Square(2)
+square.area
+// =&gt; 4</code>
+
+</blockquote></dd>
+            <dt><strong>References</strong></dt>
+            <dd>
+              <blockquote><strong>Square is referenced <em>1</em> time in <em>1</em> file.</strong><br><br>
+            <ol>
+              <li>foobar.js</li>
+           </ol></blockquote></dd>
+           <dt><strong>Path</strong></dt>
+           <dd>
+            <blockquote>
+              /path/to/eslint-plugin-crc/tests/fixtures/crc/class-declaration/square.js
+            </blockquote>
+           </dd>
+            </dl>
+        </details>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr valign="top" align="left">
+    <td width="50%">
+      <ol><li>Provide <code>area</code>, the extent of a two-dimensional figure or shape, or planar lamina, in the plane.</li></ol>
+    </td>
+    <td width="50%">
+      <ol><li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" title="View definition on MDN.">Math</a></code> [226 32:48]</ol>
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--/crc-model-template:html,markdown -->
+<blockquote>
+<p><img src="docs/img/icons8/icon-info-30.png" alt="Use of terms"> Despite the implementation of the <code>class</code>, <code>constructor</code>, <code>static</code>, <code>extends</code>, and <code>super</code> keywords in ES2015, JavaScript <em>still</em> achieves encapsulation, inheritance, and polymorphism with <code>prototype</code> chains. Nevertheless, I use the word <code>class</code> to refer to JavaScript objects with <code>prototype</code>-based inheritance.</p>
+</blockquote>
+<h2>2. <strong>Installation</strong></h2><p>You'll first need to install <a href="http://eslint.org">ESLint</a>:</p>
+<pre class="prettyprint source lang-bash"><code>$ npm i eslint --save-dev</code></pre><p>Next, install <code>eslint-plugin-crc</code>.</p>
+<blockquote>
+<p><img src="https://assets-cdn.github.com/images/icons/emoji/octocat.png" alt="GitHub's octocat mascot"> <code>eslint-plugin-crc</code> isn't available via <code>npm</code> yet, so you'll have to clone this repository, for now.</p>
+</blockquote>
+<pre class="prettyprint source lang-bash"><code># Clone this repository
+$ git clone https://github.com/gregswindle/eslint-plugin-crc.git
+
+# Change into the eslint-plugin-crc directory
+$ cd eslint-plugin-crc
+
+# Symlink the eslint-plugin-crc package directory
+# so you can run eslint-plugin-crc globally
+$ npm link</code></pre><h2>3. <strong>Usage</strong></h2><h3>3.1. Generate CRC Model reports</h3><p>For local (<code>devDependency</code>) installations, run:</p>
+<pre class="prettyprint source lang-bash"><code>$ ./node_modules/.bin/eslint \
+  -f './lib/formatters/crc' tests/fixtures/crc/class-declaration/*.js \
+  -o reports/crc-model-report.md</code></pre><p>If you installed <code>eslint-plugin-crc</code> globally, you can run the <code>cli</code> client:</p>
+<pre class="prettyprint source lang-bash"><code>$ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js
+# => ✅  Generated a CRC Model report to /Users/you/repo/reports/crc-model-report.md</code></pre><h3>3.2. Reporting options</h3><p>You can provide a custom report destination, too:</p>
+<pre class="prettyprint source lang-bash"><code>$ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js \
+  --output=&quot;./tests/reports/refactoring.md&quot;
+# => ✅  Generated a CRC Model report to ./tests/reports/refactoring.md</code></pre><p>Use the <code>--help</code> flag to view all options:</p>
+<pre class="prettyprint source lang-bash"><code>$ eslint-plugin-crc --help
+
+  Generate CRC (Class-Responsibility-Collaboration) Model
+  reports to analyze and refactor JavaScript codebases.
+
+  Usage
+    $ eslint-plugin-crc input [options] [info]
+
+  Input
+    The path (or glob) of the JavaScript resources you want
+    analyzed. [Default: '.']
+
+  Options
+    --output, -o  The &quot;CRC Models report&quot; destination directory.
+                  [Default: './reports']
+
+  Info
+    --help        Show this dialog.
+    --version     Display the installed semantic version.
+
+  Examples
+    $ eslint-plugin-crc
+    ✅  Generated a CRC Model report to
+     /Users/you/work/repo/reports/crc-model-report.md.
+
+    $ eslint-plugin-crc 'lib/**/*.js' -o='./tests/analysis'
+    ✅  Generated a CRC Model report to
+     /Users/you/work/repo/tests/analysis/crc-model-report.md.
+
+    $ eslint-plugin-crc -o='😱'
+    ❌  There was a problem generating your CRC Model report.
+        Error: ENOENT: no such file or directory, open '😱'</code></pre><h2>4. Benefits</h2><h3>4.1. Documentation</h3><p>CRC Models are small and easy to read. CRC Models portray software programs in a technology-agnostic way by focusing on accurate <em>names</em>, <em>responsibilities</em>, and <em>collaboration</em> instead of technical mechanics.</p>
+<h3>4.2. Simplicity</h3><p>CRC Models express how software programs behave and interact in order to fulfill defined responsibilities.</p>
+<p>CRC models focus on the <strong>purpose</strong> of classes instead of their <strong>mechanics</strong>. Because of their simplicity, CRC models are useful for</p>
+<ul>
+<li>Designing new features</li>
+<li>Improving the design of existing software</li>
+<li>Understanding existing codebases</li>
+</ul>
+<p>Consequently, analysts don't need much (if any) training. All stakeholders can participate.</p>
+<h3>4.3. Refactoring support</h3><p>As software programs grow over time, engineers detect whiffs of potentially deeper problems wafting from source code. Like an odor you can't quite find the right words for, software also starts giving off <a href="https://en.wikipedia.org/wiki/Code_smell">code smells</a>. <em>Code smells signify software that is sweating under the strain of complexity or an imbalanced design.</em></p>
+<p>Software can become brittle and inextensible unless we sniff out the structural problems that create code smells. CRC Models can help us clean and deodorize malodorous software with <a href="https://github.com/gregswindle/eslint-plugin-crc/wiki/Refactorings-by-category"><em>refactorings</em></a>.</p>
+<blockquote>
+<dl><strong>Refactoring defined</strong>
+<dt>📖  noun</dt>
+<dd>a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior</dd>
+
+<dt>📖  verb</dt>
+<dd>to restructure software by applying a series of refactorings without changing its observable behavior <sup><a href="#ref-refactoring-definition">[2]</a></sup></dd>
+</dl>
+
+</blockquote>
+<h3>4.4. Technical debt reduction</h3><p>Code smells often indicate technical debt.</p>
+<blockquote>
+<p>📖  <dfn><strong>Technical debt</strong></dfn> (also known as <em>design debt</em> or <em>code debt</em>) is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy solution now instead of using a better approach that would take longer. <sup><a href="#ref-technical-debt">[3]</a></sup></p>
+</blockquote>
+<p>As technical debt increases, new features take longer to ship, and defects become harder to fix. CRC Models can help address the causes of technical debt, including:  </p>
+<ul>
+<li>Deficient documentation</li>
+<li>Delayed refactoring</li>
+<li>Faulty understanding</li>
+<li>Inadequate collaboration</li>
+<li>Insufficient definitions</li>
+<li>Tightly-coupled components</li>
+</ul>
+<h3>4.5. Design thinking</h3><p><a href="https://www.interaction-design.org/literature/article/5-stages-in-the-design-thinking-process">Design thinking</a>'s non-linear, iterative process model deliberately introduces exercises and methods in order to encourage:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Divergent_thinking">Divergent thinking</a>, which ideates many possible solutions, as well as</li>
+<li><a href="https://en.wikipedia.org/wiki/Convergent_thinking">Convergent thinking</a>, which hones in on a user-centered solution based on test results from rapid prototypes.</li>
+</ul>
+<p><img src="docs/img/design-thinking-process.png" alt="Design thinking's non-linear process model."></p>
+<p><strong>CRC Models focus on software's <em>purpose</em>, <em>behavior</em>, and <em>interactions</em>.</strong> This focus encourages divergent thinking to <em>redefine</em> and <em>ideate</em> software before jumping to convergent thinking--<em>prototyping</em> and <em>testing</em>--required to improve software design. CRC Models therefore compliment creative, solution-based methodologies like design thinking.</p>
+<h3>4.6. Behavior-driven development</h3><p>Behavior-driven development (BDD) incorporates <strong><em>design</em></strong> as a routine exercise during product delivery. <strong>BDD is a process model</strong> that incorporates solution-based testing, programming, and design into an iterative routine. BDD begins with tests-as-specifications (specs) first, followed by source code development, which then leads to discrete design improvements with refactorings.</p>
+<p><img src="docs/img/bdd-process.png" alt="BDD incorporates testing, programming, and design improvement into a repeatable process model."></p>
+<p>The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior <em>as well as</em> of mechanics.</p>
+<h2>5. <strong>Contributing</strong></h2><p><a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a> We welcome contributions with GitHub <strong>issues</strong> and <strong>pull requests</strong>.</p>
+<hr>
+<p><a href="https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=feat%28affected-scope%29%3A+50-character-change-proposal-summary&amp;labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&amp;body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A"><img src="https://img.shields.io/badge/request---feature---blue.svg?style=for-the-badge&amp;label=request+a" alt="Request a feature"></a>
+<a href="https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=fix%28affected-scope%29%3A+50-character-defect-summary&amp;labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&amp;body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A"><img src="https://img.shields.io/badge/report---defect---lightgrey.svg?style=for-the-badge&amp;label=report+a" alt="Report a defect"></a></p>
+<p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/read---CONTRIBUTING%20Guidelines---yellow.svg?style=for-the-badge&amp;label=read+the" alt="Read the CONTRIBUTING guidelines"></a></p>
+<hr>
+<p>Contributions in the form of GitHub pull requests are welcome. Before embarking on a significant change, please adhere to the following guidelines:</p>
+<ol>
+<li><p><strong><a href="https://github.com/gregswindle/eslint-plugin-crc/issues">Create an issue</a></strong>&mdash;e.g., a <a href="https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=fix%28affected-scope%29%3A+50-character-defect-summary&amp;labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Defect&amp;body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A">defect (&quot;bug&quot;) report</a> or a <a href="https://github.com/gregswindle/eslint-plugin-crc/issues/new?title=feat%28affected-scope%29%3A+50-character-change-proposal-summary&amp;labels=Priority%3A+Medium%2CStatus%3A+Review+Needed%2CType%3A+Feature&amp;body=%2A%2A%F0%9F%92%A1+TIP%3A%2A%2A+Select+the+%E2%86%96%EF%B8%8E%E2%8E%BE+Preview+%E2%8F%8B+Tab+above+help+read+these+instructions.%0D%0A%0D%0A%23%23+1.+Issue+type%0D%0A%3E%E2%8C%A6+Type+the+letter+%22x%22+in+the+%22checkbox%22+the+best+describe+this+issue.%0D%0A%0D%0A-+%5Bx%5D+__Feature%3A__+I%27m+requesting+a+product+enhancement.%0D%0A%0D%0A%23%23+2.+User+story+summary%0D%0A%3E%E2%8C%A6+Describe+what+you+want+to+accomplish%2C+in+what+role%2Fcapacity%2C+and+why+it%27s+important+to+you.%0D%0A%0D%0A%3E+__EXAMPLE%3A__%0D%0A%3E+As+a+Applicant%2C%0D%0A%3E+I+want+to+submit+my+resume%0D%0A%3E+In+order+to+be+considered+for+a+job+opening.%0D%0A%0D%0AAs+a+%7Brole%7D%2C%0D%0AI+must%2Fneed%2Fwant%2Fshould+%7Bdo+something%7D%0D%0AIn+order+to+%7Bachieve+value%7D.%0D%0A%0D%0A%23%23+3.+Acceptance+criteria%0D%0A%3E%E2%8C%A6+Replace+the+examples+below+with+your+own+imperative%2C+%22true%2Ffalse%22+statements+for+the+__behavior+you+expect__+to+see%2C+or+the+behavior+that+__would__+be+true+if+there+were+no+errors+%28for+defects%29.%0D%0A%0D%0A-+%5B+%5D+1.+Job+Applicants+receive+a+confirmation+email+after+they+submit+their+resumes.%0D%0A-+%5B+%5D+2.+An+Applicant%27s+resume+information+isn%27t+lost+when+errors+occur.%0D%0A-+%5B+%5D+3.+%7Bcriterion-three%7D%0D%0A-+%5B+%5D+4.+%7Bcriterion-four%7D%0D%0A%0D%0A%3C%21--+%E2%9B%94%EF%B8%8F++Do+not+remove+anything+below+this+comment.+%E2%9B%94%EF%B8%8F++--%3E%0D%0A%5Bicon-info-image%5D%3A+..%2Fdocs%2Fimg%2Ficons8%2Ficon-info-50.png%0D%0A">feature request</a>&mdash;to propose changes.</p>
+<p><em>Exceptions:</em></p>
+<blockquote>
+<p>If you're working on documentation and fixing something simple like a typo or an easy bug, go ahead and make a pull request.</p>
+</blockquote>
+</li>
+<li><p><strong><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md">Follow the CONTRIBUTING guidelines</a>.</strong></p>
+<p><em>Why:</em></p>
+<blockquote>
+<p>Standards and guidelines make communication easier. If you're willing and able to program&mdash;or want to learn how&mdash; following the guidelines will increase the likelihood of adding your changes to the software product.</p>
+</blockquote>
+</li>
+<li><p><strong><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CODE_OF_CONDUCT.md">Read the Code of Conduct</a>.</strong></p>
+<p><em>Why:</em></p>
+<blockquote>
+<p>It's more fun when everybody's friendly and respectful.</p>
+</blockquote>
+</li>
+<li><p><strong><a href="https://github.com/gregswindle/eslint-plugin-crc/pulls">Make a pull request</a></strong> when you're ready for other to review your changes (or you get stuck somewhere).</p>
+<p><em>PR novices:</em></p>
+<blockquote>
+<p><strong>🙋  Never created a pull request?</strong> No problem. <a href="http://makeapullrequest.com">🆓  Take this free online training</a>. (It even covers most of the conventions in the <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md">CONTRIBUTING guidelines</a>!)</p>
+</blockquote>
+</li>
+</ol>
+<h2>6. Version</h2><p><code>eslint-plugin-crc</code>'s latest version is <!-- semver --> <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md"><code>v0.2.0</code></a> <!-- semverend --> . Please read the <a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/CHANGELOG.md">CHANGELOG</a> for details.</p>
+<h2>7. License</h2><p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE">MIT</a> © <a href="https://github.com/gregswindle">Greg Swindle</a></p>
+<p><a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc?ref=badge_large"><img src="https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-crc.svg?type=large" alt="FOSSA Status"></a></p>
+<p>View <a href="NOTICE.md"><code>eslint-plugin-crc</code>'s third party software dependencies</a>.</p>
+<h2>8. References</h2><p><a name="ref-crc-definition"></a>
+<strong>[1]</strong> S. Ambler, &quot;Class Responsibility Collaborator (CRC) Models: An Agile Introduction&quot;, Agilemodeling.com, 2017. [Online]. Available: http://agilemodeling.com/artifacts/crcModel.htm. [Accessed: 22- Nov- 2017]</p>
+<p><a name="ref-refactoring-definition"></a>
+<strong>[2]</strong> M. Fowler, &quot;Refactoring&quot;, Refactoring.com, 2017. [Online]. Available: https://refactoring.com/. [Accessed: 22- Nov- 2017]</p>
+<p><a name="ref-refactoring-definition"></a>
+<strong>[3]</strong> &quot;Technical debt&quot;, En.wikipedia.org, 2018. [Online].
+   Available: https://en.wikipedia.org/wiki/Technical_debt. [Accessed: 21- Jan- 2018]</p>
+<hr>
+<p><a href="https://github.com/gregswindle/eslint-plugin-crc/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
+<a href="http://clayallsopp.github.io/readme-score?url=https://github.com/gregswindle/eslint-plugin-crc"><img src="http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/gregswindle/eslint-plugin-crc/blob/master/readme.md" alt="Readme Score"></a>
+<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/gregswindle/eslint-plugin-crc.svg?style=flat-square" alt="Greenkeeper"></a></p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Feb 15 2018 01:20:35 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

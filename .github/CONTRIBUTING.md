@@ -3,7 +3,7 @@
 [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributors, issues, and pull requests.
 
 <blockquote>
-<dfn>**Contributions** start with **community conversations** that lead to **positive change.**</dfn> `eslint-plugin-crc's` open source collaboration model has five steps:
+<dfn><strong>Contributions</strong> start with <strong>community conversations</strong> that lead to <strong>positive change.</strong></dfn> <code>eslint-plugin-crc's</code> open source collaboration model has five steps:
 
 <dl>
   <dt>1. <dfn>Issues</dfn></dt>
@@ -900,41 +900,39 @@
  | [markdown-toc@1.2.0](https://github.com/jonschlinkert/markdown-toc) | Generate a markdown TOC (table of contents) with Remarkable. | 1.2.0 | MIT | production | 
  | [meow@4.0.0](https://github.com/sindresorhus/meow#readme) | CLI app helper | 4.0.0 | MIT | production | 
  | [requireindex@1.2.0](https://github.com/stephenhandley/requireindex) | Write minimal node index.js files that require and export siblings by file basename | 1.2.0 | MIT | production | 
- | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev | 
- | [bithound@1.7.0](https://github.com/bithound/cli.bithound.io) | Commands for interacting with bitHound: https://bithound.io | 1.7.0 | MIT | dev | 
+ | [@semantic-release/changelog@1.0.1](https://github.com/semantic-release/changelog#readme) | Set of semantic-release plugins for creating or updating a changelog file | 1.0.1 | MIT | dev | 
+ | [@semantic-release/git@3.0.1](https://github.com/semantic-release/git#readme) | Set of semantic-release plugins to publish to a git repository | 3.0.1 | MIT | dev | 
+ | [@semantic-release/npm@3.0.2](https://github.com/semantic-release/npm#readme) | Set of semantic-release plugins to publish to a npm registry | 3.0.2 | MIT | dev | 
  | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev | 
  | [common-vocabulary@1.0.1](https://github.com/commonality/common-vocabulary) | Facilitate communication and avoid confusion with canonical terms: share a common vocabulary. | 1.0.1 | MIT | dev | 
- | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev | 
  | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev | 
  | [eslint-config-crockford@2.0.0](https://github.com/ssoloff/eslint-config-crockford) | ESLint shareable config for Crockford style | 2.0.0 | MIT | dev | 
  | [eslint-config-scanjs@1.0.0-beta4](https://github.com/mozfreddyb/eslint-config-scanjs#readme) | umbrella config to get scanjs-like functionality from eslint | 1.0.0-beta4 | MPL-2.0 | dev | 
  | [eslint-config-xo-space@0.17.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.17.0 | MIT | dev | 
  | [eslint-plugin-import@2.8.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.8.0 | MIT | dev | 
- | [eslint-plugin-jsdoc@3.3.1](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.3.1 | BSD-3-Clause | dev | 
- | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | MPL-2.0 | dev | 
- | [eslint-plugin-no-unsanitized@3.0.0](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 3.0.0 | MPL-2.0 | dev | 
+ | [eslint-plugin-jsdoc@3.4.1](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.4.1 | BSD-3-Clause | dev | 
  | [eslint-plugin-node@6.0.0](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 6.0.0 | MIT | dev | 
  | [eslint-plugin-promise@3.6.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.6.0 | ISC | dev | 
  | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | MPL-2.0 | dev | 
  | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | Apache-2.0 | dev | 
  | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | MIT | dev | 
- | [eslint-plugin-unicorn@3.0.1](https://github.com/sindresorhus/eslint-plugin-unicorn#readme) | Various awesome ESLint rules | 3.0.1 | MIT | dev | 
+ | [eslint-plugin-unicorn@4.0.2](https://github.com/sindresorhus/eslint-plugin-unicorn#readme) | Various awesome ESLint rules | 4.0.2 | MIT | dev | 
  | [eslint-plugin-xss@0.1.9](https://github.com/Rantanen/eslint-plugin-xss#readme) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.9 | ISC | dev | 
  | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev | 
  | [lec@^1.0.1](https://github.com/iShafayet/lec) | Command Line Wrapper for Line Ending Corrector (An utility that makes sure your files have consistent line endings) | 1.0.1 | MIT | dev | 
  | [markdown-magic@0.1.20](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.20 | MIT | dev | 
  | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev | 
  | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev | 
- | [mocha@5.0.0](https://mochajs.org) | simple, flexible, fun test framework | 5.0.0 | MIT | dev | 
+ | [mocha@5.0.1](https://mochajs.org) | simple, flexible, fun test framework | 5.0.1 | MIT | dev | 
  | [nodemon@1.14.12](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.14.12 | MIT | dev | 
  | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
  | [nyc@11.4.1](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.4.1 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
- | [semantic-release@12.4.1](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 12.4.1 | MIT | dev | 
+ | [semantic-release@^12.4.1](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 12.4.1 | MIT | dev | 
  | [sinon@4.3.0](http://sinonjs.org/) | JavaScript test spies, stubs and mocks. | 4.3.0 | BSD-3-Clause | dev | 
  | [sinon-chai@2.14.0](https://github.com/domenic/sinon-chai#readme) | Extends Chai with assertions for the Sinon.JS mocking framework. | 2.14.0 | (BSD-2-Clause OR WTFPL) | dev | 
  | [snyk@1.69.7](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.69.7 | Apache-2.0 | dev | 
- | [standard-version@4.3.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.3.0 | ISC | dev | 
+ | [travis-deploy-once@^4.3.4](https://github.com/semantic-release/travis-deploy-once#readme) | Run a deployment script only once in the Travis test matrix | 4.3.4 | MIT | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->
 

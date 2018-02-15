@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-crc",
   "description": "Document, analyze, and refactor JavaScript codebases with auto-generated CRC (Class-Responsibility-Collaborator) Models.",
-  "version": "0.2.0",
+  "version": "0.1.5-development",
   "author": {
     "name": "Greg Swindle",
     "email": "greg@swindle.net",
@@ -51,25 +51,20 @@
     "@semantic-release/changelog": "1.0.1",
     "@semantic-release/git": "3.0.1",
     "@semantic-release/npm": "3.0.2",
-    "babel-register": "6.26.0",
-    "bithound": "1.7.0",
     "chai": "4.1.2",
     "common-vocabulary": "1.0.1",
-    "coveralls": "3.0.0",
     "docdash": "0.4.0",
     "eslint-config-crockford": "2.0.0",
     "eslint-config-scanjs": "1.0.0-beta4",
     "eslint-config-xo-space": "0.17.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsdoc": "3.4.1",
-    "eslint-plugin-no-unsafe-innerhtml": "1.0.16",
-    "eslint-plugin-no-unsanitized": "3.0.0",
     "eslint-plugin-node": "6.0.0",
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-scanjs-rules": "0.2.1",
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-standard": "3.0.1",
-    "eslint-plugin-unicorn": "4.0.1",
+    "eslint-plugin-unicorn": "4.0.2",
     "eslint-plugin-xss": "0.1.9",
     "jsdoc": "3.5.5",
     "lec": "^1.0.1",
@@ -81,12 +76,11 @@
     "nsp": "3.1.0",
     "nyc": "11.4.1",
     "properties-parser": "0.3.1",
-    "semantic-release": "12.4.1",
+    "semantic-release": "^12.4.1",
     "sinon": "4.3.0",
     "sinon-chai": "2.14.0",
     "snyk": "1.69.7",
-    "standard-version": "4.3.0",
-    "travis-deploy-once": "4.3.4"
+    "travis-deploy-once": "^4.3.4"
   },
   "engines": {
     "node": ">=7.6.0"
@@ -128,33 +122,44 @@
     ],
     "report-dir": "./docs/reports/coverage"
   },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "publish": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gregswindle/eslint-plugin-crc.git"
   },
   "scripts": {
-    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s",
-    "coverage": "./node_modules/.bin/nyc report",
     "docs": "npm run docs2html && npm run docs:markdown",
     "docs2html": "jsdoc -c config/jsdoc.conf.json -P package.json",
-    "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files './lib/**/*.js' './lib/**/**/*.js' './lib/formatters/**/*.js' './lib/formatters/crc/*.js' > ../eslint-plugin-crc.wiki/API.md && markdown-toc -i ../eslint-plugin-crc.wiki/API.md",
     "docs:glossary": "common-vocabulary",
     "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./config/markdown.config.js",
     "docs:script": "node ./markdown.config.js",
     "lint": "./node_modules/.bin/eslint . --fix",
-    "postversion": "npm run changelog && node ./.ci/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
+    "postversion": "node ./.ci/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
     "prepublishOnly": "lec lib/cli.js -c LF && npm run security",
     "pretest": "npm run security && npm run lint",
     "preversion": "npm test && npm run security",
     "push": "git push origin master && git status",
-    "release": "standard-version",
     "security": "./node_modules/.bin/nsp check --output summary",
     "security:patch": "snyk wizard",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
     "snyk-protect": "snyk protect",
     "snyk-test": "snyk test",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
     "test": "nyc mocha 'tests/**/*.spec.js'",
+    "travis-deploy-once": "travis-deploy-once",
     "version": null
   },
   "snyk": true

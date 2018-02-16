@@ -8,7 +8,7 @@ addons:
       secure:       "$GH_TOKEN"
     branches:
       - master
-      - /[build|chore|ci|docs|feat|fix|perf|refactor|revert|spike|style|test].*/
+      - /[build|chore|ci|docs|feat|fix|perf|refactor|revert|spike|style|test]\/.*/
 jdk:
   - oraclejdk8
 
@@ -37,7 +37,6 @@ branches:
 
 before_script:
   - npm prune
-  - npm dedupe
 
 script:
   - echo "$TRAVIS_PULL_REQUEST_BRANCH"
@@ -47,7 +46,7 @@ after_script:
   - cat docs/reports/coverage/lcov.info | npx coveralls
   # Send stats to SonarCloud for pull requests
   - test $TRAVIS_PULL_REQUEST != false
-    && sonar-scanner -Dproject.settings=./sonar-project.properties -Dsonar.branch.name="$TRAVIS_PULL_REQUEST_BRANCH" -Dsonar.branch.target=master -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -X
+    && sonar-scanner -Dproject.settings=./sonar-project.properties -Dsonar.branch=$TRAVIS_PULL_REQUEST_BRANCH -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -X
 
 jobs:
   include:

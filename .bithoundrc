@@ -4,6 +4,12 @@
       "engine":"eslint"
     }
   },
+  "dependencies": {
+    "unused-ignores": [
+      "compromise",
+      "escomplex"
+    ]
+  },
   "ignore":[
     "**/node_modules/**",
     "docs/**",

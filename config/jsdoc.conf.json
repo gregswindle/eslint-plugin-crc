@@ -1,8 +1,19 @@
 {
-  "tags": {
-    "allowUnknownTags": true,
-    "dictionaries": ["jsdoc"]
+  "docdash": {
+    "static": true,
+    "sort": true
   },
+  "opts": {
+    "destination": "docs/api/",
+    "encoding": "utf8",
+    "private": false,
+    "recurse": true,
+    "template": "node_modules/docdash",
+    "package": "package.json"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
   "source": {
     "include": [
       ".github/CONTRIBUTING.md",
@@ -16,26 +27,17 @@
     "exclude": ["tests"],
     "excludePattern": "tests(^|\\/|\\\\)_"
   },
-  "plugins": [
-    "plugins/markdown"
-  ],
+  "sourceType": "module",
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc"]
+  },
   "templates": {
     "cleverLinks": false,
     "monospaceLinks": false,
     "default": {
-      "outputSourceFiles": true
+      "outputSourceFiles": true,
+      "useLongnameInNav": true
     }
-  },
-  "opts": {
-    "destination": "./docs/api/",
-    "encoding": "utf8",
-    "private": false,
-    "recurse": true,
-    "template": "./node_modules/docdash",
-    "package": "./package.json"
-  },
-  "docdash": {
-    "static": true,
-    "sort": true
   }
 }

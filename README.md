@@ -4,6 +4,8 @@
 
 [![License][license-image]][license-url]
 [![FOSSA Status][fossa-image]][fossa-url]
+[![NPM version][npm-image]][npm-url]
+[![NPMS score][npms-image]][npms-url]<br>
 [![NSP Status][nsp-image]][nsp-url]
 [![Dependencies][daviddm-image]][daviddm-url]
 [![Dependencies][daviddm-dev-image]][daviddm-dev-url]<br>
@@ -11,7 +13,6 @@
 [![AppVeyor Windows build status][appveyor-image]][appveyor-url]
 [![Coveralls coverage][coveralls-image]][coveralls-url]
 [![Codacy Badge][codacy-image]][codacy-url]
-[![Quality Gate][sonar-quality-gate-image]][sonar-quality-gate-url]
 [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url]
 
 ## Table of contents
@@ -321,7 +322,7 @@ $ ./node_modules/.bin/eslint \
 If you installed `eslint-plugin-crc` globally, you can run the `cli` client:
 
 ```bash
-$ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js
+$ crc test/fixtures/crc/class-declaration/*.js
 # => ✅  Generated a CRC Model report to /Users/you/repo/reports/crc-model-report.md
 ```
 
@@ -330,7 +331,7 @@ $ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js
 You can provide a custom report destination, too:
 
 ```bash
-$ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js \
+$ crc test/fixtures/crc/class-declaration/*.js \
   --output="./tests/reports/refactoring.md"
 # => ✅  Generated a CRC Model report to ./tests/reports/refactoring.md
 ```
@@ -338,13 +339,13 @@ $ eslint-plugin-crc test/fixtures/crc/class-declaration/*.js \
 Use the `--help` flag to view all options:
 
 ```bash
-$ eslint-plugin-crc --help
+$ crc --help
 
   Generate CRC (Class-Responsibility-Collaboration) Model
   reports to analyze and refactor JavaScript codebases.
 
   Usage
-    $ eslint-plugin-crc input [options] [info]
+    $ crc input [options] [info]
 
   Input
     The path (or glob) of the JavaScript resources you want
@@ -359,15 +360,15 @@ $ eslint-plugin-crc --help
     --version     Display the installed semantic version.
 
   Examples
-    $ eslint-plugin-crc
+    $ crc
     ✅  Generated a CRC Model report to
      /Users/you/work/repo/reports/crc-model-report.md.
 
-    $ eslint-plugin-crc 'lib/**/*.js' -o='./tests/analysis'
+    $ crc 'lib/**/*.js' -o='./tests/analysis'
     ✅  Generated a CRC Model report to
      /Users/you/work/repo/tests/analysis/crc-model-report.md.
 
-    $ eslint-plugin-crc -o='😱'
+    $ crc -o='😱'
     ❌  There was a problem generating your CRC Model report.
         Error: ENOENT: no such file or directory, open '😱'
 
@@ -510,7 +511,7 @@ View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 
 [api-docs-url]: https://github.com/gregswindle/eslint-plugin-crc/docs/API.md
 [apigee-edge-js-url]: http://docs.apigee.com/api-services/reference/javascript-object-model
-[appveyor-image]: https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&logo=appveyor
+[appveyor-image]: https://img.shields.io/appveyor/ci/gregswindle/eslint-plugin-crc.svg?style=flat-square&logo=appveyor&label=windows%20build
 [appveyor-url]: https://ci.appveyor.com/project/gregswindle/eslint-plugin-crc
 [author-url]: https://github.com/gregswindle
 [bdd-process-image]: docs/img/bdd-process.png
@@ -556,7 +557,10 @@ View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 [makeapullrequest-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [makeapullrequest-url]: http://makeapullrequest.com
 [npm-image]: https://badge.fury.io/js/eslint-plugin-crc.svg
+[npm-image]: https://img.shields.io/npm/v/eslint-plugin-crc.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/eslint-plugin-crc
+[npms-image]: https://badges.npms.io/eslint-plugin-crc.svg?style=flat-square
+[npms-url]: https://npms.io/search?q=eslint-plugin-crc
 [nsp-image]: https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a/badge?style=flat-square
 [nsp-url]: https://nodesecurity.io/orgs/gregswindle/projects/da7e6d96-620d-4acb-8559-85c06c66921a
 [pr-url]: https://github.com/gregswindle/eslint-plugin-crc/pulls
@@ -574,5 +578,5 @@ View [`eslint-plugin-crc`'s third party software dependencies](NOTICE.md).
 [sonar-quality-gate-url]: https://sonarcloud.io/dashboard/index/gregswindle-eslint-plugin-crc
 [sonar-tech-debt-img]: https://sonarcloud.io/api/badges/measure?key=gregswindle-eslint-plugin-crc&metric=sqale_debt_ratio
 [sonar-tech-debt-url]: https://sonarcloud.io/component_measures/metric/sqale_index/list?id=gregswindle-eslint-plugin-crc
-[travis-image]: https://img.shields.io/travis/gregswindle/eslint-plugin-crc/master.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/gregswindle/eslint-plugin-crc/master.svg?style=flat-square&label=macOS%20%7C%20ubuntu%20builds
 [travis-url]: https://travis-ci.org/gregswindle/eslint-plugin-crc

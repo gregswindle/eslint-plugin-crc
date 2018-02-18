@@ -20,11 +20,11 @@ describe("eslint-plugin-crc/crc/crc-model", () => {
   let crcClass = null;
   let crcMath = null;
   let crcModel = null;
-  const responsibilities = [
-    "A",
-    "B",
-    "C"
-  ];
+  const responsibilities = {
+    "comments": [],
+    "descriptions": ["A", "B", "C"],
+    "primary": "A"
+  };
 
   const nullCrcModelObject = {
     "class": new CrcClass(),
@@ -33,11 +33,9 @@ describe("eslint-plugin-crc/crc/crc-model", () => {
     "responsibilities": []
   };
 
-  describe("represents a Represents a Class-Responsibility-Collaboration model, which expresses a class's", () => {
+  describe("represents a Class-Responsibility-Collaboration model, which expresses a class's", () => {
     beforeEach(() => {
-      sinon.stub(CrcResponsibility, "create").returns({
-        "all": responsibilities
-      });
+      sinon.stub(CrcResponsibility, "create").returns(responsibilities);
 
       crcClass = new CrcClass({
         "code": {
@@ -78,7 +76,7 @@ describe("eslint-plugin-crc/crc/crc-model", () => {
     });
 
     specify("responsibilities", () => {
-      expect(crcModel.responsibilities.length).to.equal(3);
+      expect(crcModel.responsibilities.descriptions.length).to.equal(3);
     });
 
     specify("collaborators", () => {

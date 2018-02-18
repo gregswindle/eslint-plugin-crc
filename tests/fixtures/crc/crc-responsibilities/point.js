@@ -1,6 +1,5 @@
 /**
- * @class Point
- * @description Represents a point.
+ * @class Point - Represents a point.
  */
 
 class Point {
@@ -18,9 +17,10 @@ class Point {
   }
 
   /**
-   * @method - Get the x value.
+   * @method getX - Get the x value.
    *
    * @return {number} The x value.
+   * @memberOf Point.prototype
    */
 
   getX () {
@@ -29,9 +29,11 @@ class Point {
   }
 
   /**
-   * @function - Get the y value.
+   * @description Get the y value.
    *
+   * @function getY
    * @return {number} The y value.
+   * @memberOf Point.prototype
    */
 
   getY () {
@@ -40,16 +42,16 @@ class Point {
   }
 
   /**
+   * @description Convert a string containing two comma-separated numbers into a point.
+   *
    * @static
-   *
-   * @description Convert a string containing two comma-separated numbers into a point.
-   * @description Convert a string containing two comma-separated numbers into a point.
-   *
+   * @method fromString
    * @param {string} str - The string containing two comma-separated numbers.
-   * @return {Point} A Point object.
+   * @returns {Point} A Point object.
+   * @memberof Point
    */
 
-  static fromString (str) {
+static fromString (str) {
     const [
       x,
       y

@@ -75,4 +75,15 @@ describe("CrcResponsibility", () => {
       expect(crcClass.meta.description).to.equal(expectedDesc);
     });
   });
+
+  describe("returns all non-empty descriptions as responsbilities", () => {
+    specify("all responsibilities", () => {
+      const context = CrcContext.parse({
+        "filePath": "tests/fixtures/crc/crc-responsibilities/point.js"
+      });
+      const crcClass = CrcClass.create(context);
+      const r = new CrcResponsibility(crcClass);
+      console.log(r.valueOf());
+    });
+  });
 });

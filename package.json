@@ -7,7 +7,9 @@
     "email": "greg@swindle.net",
     "url": "https://github.com/gregswindle"
   },
-  "bin": "lib/cli.js",
+  "bin": {
+    "crc": "lib/cli.js"
+  },
   "bugs": {
     "url": "https://github.com/gregswindle/eslint-plugin-crc/issues"
   },
@@ -158,6 +160,7 @@
     "snyk-test": "snyk test",
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
     "test": "nyc mocha 'tests/**/*.spec.js'",
+    "test:watch": "nodemon --exec npm run test",
     "travis-deploy-once": "travis-deploy-once",
     "version": null
   },

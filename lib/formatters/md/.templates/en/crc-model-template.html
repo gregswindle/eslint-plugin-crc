@@ -25,8 +25,8 @@ if (!_.isEmpty(proto)) { %>
 <% if (_.isEmpty(crcModel.responsibilities)){%>None found.
 <%}else{%>
 <ol>
-<% _.forEach(crcModel.responsibilities, responsibility => {%>
-<li><strong><%= responsibility.name %></strong>: Provide "<%= responsibility.description %>"</li>
+<% _.forEach(crcModel.responsibilities.descriptions, description => {%>
+<li><%= description %></li>
 <%}); %>
 </ol>
 <%}%>
@@ -72,7 +72,7 @@ if (!_.isEmpty(proto)) { %>
 <% if (_.gt(_.get(crcModel, 'class.meta.references.length'), 0)) { %>
 <ol>
 <% _.forEach(_.get(crcModel, 'class.meta.references'), (ref) => { %>
-  <li>File name: <samp>[<%= ref.start %> : <%= ref.end %>]</samp></li>
+  <li>File name: <samp><%= ref.identifier.name %> [<%= ref.identifier.start %> : <%= ref.identifier.end %>]</samp></li>
 <% }) %>
 </ol>
 <% } %>

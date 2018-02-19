@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>crc-logger.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CommentsStrategy.html">CommentsStrategy</a><ul class='methods'><li data-type='method'><a href="CommentsStrategy.html#parse">parse</a></li><li data-type='method'><a href="CommentsStrategy.html#toString">toString</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='members'><li data-type='member'><a href="CrcClass.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="CrcClass.html#.create">create</a></li></ul></li><li><a href="CrcClass-NullCrcClass.html">NullCrcClass</a></li><li><a href="CrcCodebase.html">CrcCodebase</a><ul class='methods'><li data-type='method'><a href="CrcCodebase.html#load">load</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='members'><li data-type='member'><a href="CrcContext.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcContext-NullCrcContext.html">NullCrcContext</a></li><li><a href="CrcMeta.html">CrcMeta</a><ul class='members'><li data-type='member'><a href="CrcMeta.html#.nullObject">nullObject</a></li></ul></li><li><a href="CrcMeta-NullCrcMeta.html">NullCrcMeta</a></li><li><a href="CrcModel.html">CrcModel</a><ul class='members'><li data-type='member'><a href="CrcModel.html#.nullObject">nullObject</a></li></ul></li><li><a href="CrcModel-NullCrcModel.html">NullCrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li><li data-type='method'><a href="CrcResponsibility.html#valueOf">valueOf</a></li></ul></li><li><a href="eslint-plugin-crc_formatters_md.EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="MdnReference.html#get">get</a></li><li data-type='method'><a href="MdnReference.html#link">link</a></li></ul></li><li><a href="module-crc_typedef.CatharsisCommentsStrategy.html">CatharsisCommentsStrategy</a><ul class='methods'><li data-type='method'><a href="module-crc_typedef.CatharsisCommentsStrategy.html#parse">parse</a></li><li data-type='method'><a href="module-crc_typedef.CatharsisCommentsStrategy.html#toString">toString</a></li></ul></li><li><a href="module-crc_typedef.DocumentationCommentsStrategy.html">DocumentationCommentsStrategy</a><ul class='methods'><li data-type='method'><a href="module-crc_typedef.DocumentationCommentsStrategy.html#parse">parse</a></li><li data-type='method'><a href="module-crc_typedef.DocumentationCommentsStrategy.html#toString">toString</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li></ul></li><li><a href="PrototypeInspector.html">PrototypeInspector</a><ul class='methods'><li data-type='method'><a href="PrototypeInspector.html#.getPrototypeOf">getPrototypeOf</a></li><li data-type='method'><a href="PrototypeInspector.html#.getScopeOf">getScopeOf</a></li></ul></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a><ul class='members'><li data-type='member'><a href="SourceCodeFactory.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="SourceCodeFactory.html#.create">create</a></li><li data-type='method'><a href="SourceCodeFactory.html#.getAst">getAst</a></li><li data-type='method'><a href="SourceCodeFactory.html#.parse">parse</a></li></ul></li><li><a href="SourceCodeFactory-NullSourceCode.html">NullSourceCode</a></li></ul><h3>Modules</h3><ul><li><a href="module-crc.html">crc</a><ul class='members'><li data-type='member'><a href="module-crc.html#.crcLogger">crcLogger</a></li></ul></li><li><a href="module-crc_formatters.module_crc_formatters_md.html">crc/formatters/md</a><ul class='methods'><li data-type='method'><a href="module-crc_formatters.module_crc_formatters_md.html#~format">format</a></li></ul></li><li><a href="module-crc_typedef.html">crc/typedef</a></li></ul><h3>Interfaces</h3><ul><li><a href="LinkElement.html">LinkElement</a><ul class='methods'><li data-type='method'><a href="LinkElement.html#link">link</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html">astConfig</a></li><li><a href="global.html#crcLogger">crcLogger</a></li><li><a href="global.html">descriptionFromContext</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">crc-logger.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const bunyan = require("bunyan");
+const chalk = require("chalk");
+const {get} = require("lodash");
+
+const writeErr = (rec, level, color) => {
+  // eslint-disable-next-line no-console
+  console.error(
+    "[%s] %s %s %s",
+    chalk.hex("#eaeaea")(rec.name),
+    chalk.gray(rec.time.toISOString()),
+    color(level.toUpperCase()),
+    `${rec.err.name}: ${rec.err.message}. ${rec.msg}`
+  );
+};
+
+const writeInfo = (rec, level, color) => {
+  // eslint-disable-next-line no-console
+  console.log(
+    "[%s] %s %s %s",
+    chalk.hex("#eaeaea")(rec.name),
+    chalk.gray(rec.time.toISOString()),
+    color(level.toUpperCase()),
+    rec.msg
+  );
+};
+
+const crcLoggerStream = {
+
+  "debug": chalk.blue,
+
+  "error": chalk.redBright,
+
+  "fatal": chalk.bold.red,
+
+  "info": chalk.green,
+
+  "trace": chalk.whiteBright,
+
+  "warn": chalk.yellowBright,
+
+  write (rec) {
+    const level = get(bunyan.nameFromLevel, rec.level);
+    const color = get(crcLoggerStream, level);
+    if (rec.level >= bunyan.ERROR) {
+      writeErr(rec, level, color);
+    } else {
+      writeInfo(rec, level, color);
+    }
+  }
+};
+
+/**
+ * @const
+ * @name crcLogger
+ *
+ * @description
+ * Provides a bunyan logger.
+ *
+ * @memberOf module:crc
+ */
+
+const crcLogger = bunyan.createLogger({
+  "level": bunyan.INFO,
+  "name": "eslint-plugin-crc",
+  "streams": [
+    {
+      "level": bunyan.INFO,
+      "stream": crcLoggerStream,
+      "type": "raw"
+    }
+  ]
+});
+
+/**
+ * @alias crcLogger
+ */
+
+module.exports = crcLogger;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Feb 19 2018 10:18:34 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

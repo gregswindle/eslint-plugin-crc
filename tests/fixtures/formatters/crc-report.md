@@ -100,7 +100,7 @@ module.exports = Object.freeze(astConfig);
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/ast-config.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/ast-config.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-crcclass"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -111,7 +111,7 @@ const NullCrcClass = require("./null-crc-class");
 
 // Const crcLogger = require("../crc-logger");
 
-// Const prototypableFinder = require("./prototypable");
+// Const prototypableFinder = require("./prototype-inspector");
 
 const {
   chain,
@@ -178,7 +178,7 @@ class CrcClass extends NullCrcClass {
    * a CrcModel.
    * @example
    * const crcClass = CrcClass.create(context);
-   * @returns {CrcClass} A summary representation of a prototypable object.
+   * @returns {CrcClass} A summary representation of a PrototypeInspector object.
    */
 
   static factory (context) {
@@ -194,7 +194,7 @@ module.exports = CrcClass;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-class.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/crc-class.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-CrcCodebase"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -263,7 +263,7 @@ module.exports = CrcCodebase;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-codebase.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/crc-codebase.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-crccontext"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -322,7 +322,7 @@ module.exports = CrcContext;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-context.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/crc-context.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-crcmeta"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -345,7 +345,7 @@ module.exports = CrcMeta;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-meta.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/crc-meta.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-crcmodel"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -380,7 +380,7 @@ const defaultConstructorParams = {
  * it depends on to fulfill its responsibilities
  * (<strong><em>collaborators</em></strong>).
  *
- * @property {CrcClass} class - A summary representation of prototypable
+ * @property {CrcClass} class - A summary representation of PrototypeInspector
  *  objects.
  * @property {array.<CrcClass>} collaborators - An array of zero or more objects
  *  required to fulfill the CrcModel#class's responsibilities.
@@ -426,7 +426,7 @@ module.exports = CrcModel;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-model.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/crc-model.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-crcreporter"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -478,7 +478,7 @@ module.exports = CrcReporter;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-reporter.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/crc-reporter.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-crcresponsibility"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -563,7 +563,7 @@ module.exports = CrcResponsibility;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/crc-responsibility.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/crc-responsibility.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-__dirname"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -574,7 +574,7 @@ module.exports = CrcResponsibility;
  * Create class-responsibilities-collaborators
  * reporting model objects.
  *
- * @module eslint-plugin-crc/crc
+ * @module crc
  */
 
 /*
@@ -595,7 +595,7 @@ module.exports = requireIndex(__dirname);
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/index.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/index.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-nodemanager"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -686,7 +686,7 @@ module.exports = NodeManager;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/node-manager.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/node-manager.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-nullcrcclass"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -746,7 +746,7 @@ module.exports = NullCrcClass;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/null-crc-class.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/null-crc-class.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-nullcrcmeta"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -792,7 +792,7 @@ module.exports = NullCrcMeta;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/null-crc-meta.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/null-crc-meta.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-nullsourcecode"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -832,7 +832,7 @@ module.exports = NullSourceCode;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/null-source-code.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/null-source-code.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="const-isreachable"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"
@@ -936,7 +936,7 @@ module.exports = {
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/prototypable.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/PrototypeInspector.js</blockquote></dd></dl></details></td></tr></tfoot></table>
 <a name="class-sourcecodefactory"></a>
 <table width="100%"><thead><tr valign="top" align="left"><th colspan="2"><h3><samp><a rel="noopener"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class"
@@ -985,4 +985,4 @@ module.exports = SourceCodeFactory;
 
 ```
 
-</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/eslint-plugin-crc/lib/crc/source-code-factory.js</blockquote></dd></dl></details></td></tr></tfoot></table>
+</blockquote></dd><dt><p><strong>References</strong></dt><dd><blockquote><strong>Square is referenced <em>n</em> times in <em>n<sub>1</sub></em> files.</strong><br><br><ol><li>TODO: reference one.</li><li>TODO: reference two.</li><li>TODO: reference one.</li></ol></blockquote></dd><dt><p><strong>Path</strong></dt><dd><blockquote>/Users/swindle/Projects/github/gregswindle/crc/source-code-factory.js</blockquote></dd></dl></details></td></tr></tfoot></table>

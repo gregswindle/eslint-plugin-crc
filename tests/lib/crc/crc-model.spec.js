@@ -16,7 +16,7 @@ chai.use(sinonChai);
  * ------------------------------------------------------------------------------
  */
 
-describe("eslint-plugin-crc/crc/crc-model", () => {
+describe("crc/crc-model", () => {
   let crcClass = null;
   let crcMath = null;
   let crcModel = null;

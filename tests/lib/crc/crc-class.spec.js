@@ -8,7 +8,7 @@ const specifyNullCrcClass = (crcClass, nullCrcClass) => {
   expect(crcClass.superClass).to.be.null;
 };
 
-describe("eslint-plugin-crc/crc/crc-class,", () => {
+describe("crc/crc-class,", () => {
   let crcClass = null;
   let nullCrcClass = null;
 

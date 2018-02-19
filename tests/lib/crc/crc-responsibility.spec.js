@@ -83,7 +83,7 @@ describe("CrcResponsibility", () => {
       });
       const crcClass = CrcClass.create(context);
       const r = new CrcResponsibility(crcClass);
-      console.log(r.valueOf());
+      expect(r.valueOf()).to.equal(r.descriptions);
     });
   });
 });

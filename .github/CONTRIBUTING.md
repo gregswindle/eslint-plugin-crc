@@ -884,10 +884,15 @@
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE) -->
 | **Dependency** | **Description** | **Version** | **License** | **Type** |
 | -------------- | --------------- | ----------- | ----------- | -------- |
+ | [boom@3.1.3](https://github.com/hapijs/boom#readme) | HTTP-friendly error objects | 3.1.3 | BSD-3-Clause | production | 
  | [bunyan@1.8.12](https://github.com/trentm/node-bunyan#readme) | a JSON logging library for node.js services | 1.8.12 | MIT | production | 
+ | [catharsis@0.8.9](https://github.com/hegemonic/catharsis#readme) | A JavaScript parser for Google Closure Compiler and JSDoc type expressions. | 0.8.9 | MIT | production | 
  | [chalk@2.3.1](https://github.com/chalk/chalk#readme) | Terminal string styling done right | 2.3.1 | MIT | production | 
  | [compromise@11.4.0](https://github.com/nlp-compromise/compromise#readme) | natural language processing in the browser | 11.4.0 | MIT | production | 
+ | [cryptiles@3.0.0](https://github.com/hapijs/cryptiles#readme) | General purpose crypto utilities | 3.0.0 | BSD-3-Clause | production | 
+ | [debug@2.6.9](https://github.com/visionmedia/debug#readme) | small debugging utility | 2.6.9 | MIT | production | 
  | [doctrine@2.1.0](https://github.com/eslint/doctrine) | JSDoc parser | 2.1.0 | Apache-2.0 | production | 
+ | [documentation@5.4.0](https://github.com/documentationjs/documentation#readme) | a documentation generator | 5.4.0 | ISC | production | 
  | [escomplex@2.0.0-alpha](https://github.com/jared-stilwell/escomplex) | Software complexity analysis of JavaScript-family abstract syntax trees. | 2.0.0-alpha | MIT | production | 
  | [eslint@4.18.0](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.18.0 | MIT | production | 
  | [eslint-scope@3.7.1](http://github.com/eslint/eslint-scope) | ECMAScript scope analyzer for ESLint | 3.7.1 | BSD-2-Clause | production | 
@@ -895,9 +900,11 @@
  | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production | 
  | [estraverse@4.2.0](https://github.com/estools/estraverse) | ECMAScript JS AST traversal functions | 4.2.0 | BSD-2-Clause | production | 
  | [fs-extra@5.0.0](https://github.com/jprichardson/node-fs-extra) | fs-extra contains methods that aren't included in the vanilla Node.js fs package. Such as mkdir -p, cp -r, and rm -rf. | 5.0.0 | MIT | production | 
+ | [hawk@5.0.0](https://github.com/hueniverse/hawk#readme) | HTTP Hawk Authentication Scheme | 5.0.0 | BSD-3-Clause | production | 
  | [lodash@4.17.5](https://lodash.com/) | Lodash modular utilities. | 4.17.5 | MIT | production | 
  | [markdown-toc@1.2.0](https://github.com/jonschlinkert/markdown-toc) | Generate a markdown TOC (table of contents) with Remarkable. | 1.2.0 | MIT | production | 
  | [meow@4.0.0](https://github.com/sindresorhus/meow#readme) | CLI app helper | 4.0.0 | MIT | production | 
+ | [request@2.82.0](https://github.com/request/request#readme) | Simplified HTTP request client. | 2.82.0 | Apache-2.0 | production | 
  | [requireindex@1.2.0](https://github.com/stephenhandley/requireindex) | Write minimal node index.js files that require and export siblings by file basename | 1.2.0 | MIT | production | 
  | [@semantic-release/changelog@1.0.1](https://github.com/semantic-release/changelog#readme) | Set of semantic-release plugins for creating or updating a changelog file | 1.0.1 | MIT | dev | 
  | [@semantic-release/git@3.0.1](https://github.com/semantic-release/git#readme) | Set of semantic-release plugins to publish to a git repository | 3.0.1 | MIT | dev | 
@@ -917,6 +924,7 @@
  | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | MIT | dev | 
  | [eslint-plugin-unicorn@4.0.2](https://github.com/sindresorhus/eslint-plugin-unicorn#readme) | Various awesome ESLint rules | 4.0.2 | MIT | dev | 
  | [eslint-plugin-xss@0.1.9](https://github.com/Rantanen/eslint-plugin-xss#readme) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.9 | ISC | dev | 
+ | [hoek@4.2.1](https://github.com/hapijs/hoek#readme) | General purpose node utilities | 4.2.1 | BSD-3-Clause | dev | 
  | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev | 
  | [lec@^1.0.1](https://github.com/iShafayet/lec) | Command Line Wrapper for Line Ending Corrector (An utility that makes sure your files have consistent line endings) | 1.0.1 | MIT | dev | 
  | [markdown-magic@0.1.20](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.20 | MIT | dev | 

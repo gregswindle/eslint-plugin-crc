@@ -6,7 +6,7 @@ const {noop} = require("lodash");
 
 chai.use(sinonChai);
 
-describe("eslint-plugin-crc/crc-logger", () => {
+describe("crc-logger", () => {
   describe("logs FATAL and ERROR events", () => {
     beforeEach(() => {
       sinon.stub(console, "error").callsFake(noop);

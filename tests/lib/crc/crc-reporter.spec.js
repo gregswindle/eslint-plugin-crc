@@ -8,7 +8,7 @@ const eslintResults = require("../../fixtures/formatters/eslint-results");
  * -----------------------------------------------------------------------------
  */
 
-describe("eslint-plugin-crc/crc/crc-reporter", () => {
+describe("crc/crc-reporter", () => {
   let crcReporter = null;
   let report = null;
 

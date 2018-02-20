@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>crc/formatters/md - Documentation</title>
+    <title>MdnReference - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">crc/formatters/md</h1>
+    <h1 class="page-title">MdnReference</h1>
     
 
     
@@ -39,8 +39,15 @@
 
 <header>
     
+        <h2>
+            <span class="ancestors"><a href="module-crc_formatters.module_crc_formatters_md.html">.crc/formatters/md</a>~</span>
         
-            
+        MdnReference
+        </h2>
+        
+            <div class="class-description"><p>Provides hyperlinks to Mozilla Developer Network (MDN) reference materials
+for JavaScript's standard, built-in objects, including their methods and
+properties.</p></div>
         
     
 </header>
@@ -49,12 +56,14 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>A lightweight interface used for decorating strings with
-a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
-        
 
-        
-            
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="MdnReference"><span class="type-signature"></span>new MdnReference<span class="signature">(references<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
 
 
 
@@ -64,7 +73,7 @@ a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="formatters_md_mdn-reference.js.html">formatters/md/mdn-reference.js</a>, <a href="formatters_md_mdn-reference.js.html#line3">line 3</a>
+        <a href="formatters_md_mdn-reference.js.html">formatters/md/mdn-reference.js</a>, <a href="formatters_md_mdn-reference.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -78,6 +87,13 @@ a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
 
     
 
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="LinkElement.html">LinkElement</a></li>
+        
+    </ul></dd>
     
 
     
@@ -98,7 +114,7 @@ a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="module-crc.html">module:crc</a></li>
+            <li>/lib/formatters/md/data/mdn-references.json</li>
         </ul>
     </dd>
     
@@ -134,13 +150,13 @@ a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
 
         <tr>
             
-                <td class="name"><code>href</code></td>
+                <td class="name"><code>references</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;<a href="LinkElement.html">LinkElement</a>></span>
 
 
             
@@ -150,54 +166,7 @@ a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
 
             
 
-            <td class="description last"><p>Represents the URI for the target resource.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>text</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A readable description of the target resource.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>title</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The text that appears in a popup box when a mouse
- hovers over the LinkElement's text.</p></td>
+            <td class="description last"><p>A list of MDN resources.</p></td>
         </tr>
 
     
@@ -219,21 +188,89 @@ a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
 
 
 
+    <h5>Parameters:</h5>
+    
 
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-
-
-
-
-
-
-
-
-
-
-
+        <th>Type</th>
 
         
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>references</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="LinkElement.html">LinkElement</a>></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>mdnReferences</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>A list of MDN resources.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     </div>
 
@@ -242,13 +279,6 @@ a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
     
 
     
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="module-crc_formatters.module_crc_formatters_md-MdnReference.html">MdnReference</a></dt>
-            <dd></dd>
-        </dl>
-    
 
      
 
@@ -256,6 +286,172 @@ a simplified <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a>.</p></div>
 
     
 
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="link"><span class="type-signature"></span>link<span class="signature">(topic)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="formatters_md_mdn-reference.js.html">formatters/md/mdn-reference.js</a>, <a href="formatters_md_mdn-reference.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="LinkElement.html#link">LinkElement#link</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Creates an <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a> string.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A valid topic key.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An an <a href="https://goo.gl/qUyKr2">HTMLLinkElement</a> string.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
     
 
     

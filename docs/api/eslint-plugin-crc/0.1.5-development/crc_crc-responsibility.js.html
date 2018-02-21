@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>crc/crc-responsibility.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CommentsStrategy.html">CommentsStrategy</a><ul class='methods'><li data-type='method'><a href="CommentsStrategy.html#parse">parse</a></li><li data-type='method'><a href="CommentsStrategy.html#toString">toString</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='members'><li data-type='member'><a href="CrcClass.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="CrcClass.html#.create">create</a></li></ul></li><li><a href="CrcClass-NullCrcClass.html">NullCrcClass</a></li><li><a href="CrcCodebase.html">CrcCodebase</a><ul class='methods'><li data-type='method'><a href="CrcCodebase.html#load">load</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='members'><li data-type='member'><a href="CrcContext.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcContext-NullCrcContext.html">NullCrcContext</a></li><li><a href="CrcMeta.html">CrcMeta</a><ul class='members'><li data-type='member'><a href="CrcMeta.html#.nullObject">nullObject</a></li></ul></li><li><a href="CrcMeta-NullCrcMeta.html">NullCrcMeta</a></li><li><a href="CrcModel.html">CrcModel</a><ul class='members'><li data-type='member'><a href="CrcModel.html#.nullObject">nullObject</a></li></ul></li><li><a href="CrcModel-NullCrcModel.html">NullCrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li><li data-type='method'><a href="CrcResponsibility.html#valueOf">valueOf</a></li></ul></li><li><a href="eslint-plugin-crc_formatters_md.EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="module-crc_formatters_md.module_crc_formatters_md_mdn-reference-MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="module-crc_formatters_md.module_crc_formatters_md_mdn-reference-MdnReference.html#link">link</a></li></ul></li><li><a href="module-crc_formatters_md_toc-factory-TocFactory.html">TocFactory</a></li><li><a href="module-crc_typedef.CatharsisCommentsStrategy.html">CatharsisCommentsStrategy</a><ul class='methods'><li data-type='method'><a href="module-crc_typedef.CatharsisCommentsStrategy.html#parse">parse</a></li><li data-type='method'><a href="module-crc_typedef.CatharsisCommentsStrategy.html#toString">toString</a></li></ul></li><li><a href="module-crc_typedef.DocumentationStrategy.html">DocumentationStrategy</a><ul class='methods'><li data-type='method'><a href="module-crc_typedef.DocumentationStrategy.html#parse">parse</a></li><li data-type='method'><a href="module-crc_typedef.DocumentationStrategy.html#toString">toString</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li></ul></li><li><a href="PrototypeInspector.html">PrototypeInspector</a><ul class='methods'><li data-type='method'><a href="PrototypeInspector.html#.getPrototypeOf">getPrototypeOf</a></li><li data-type='method'><a href="PrototypeInspector.html#.getScopeOf">getScopeOf</a></li></ul></li><li><a href="Responsibilities.html">Responsibilities</a></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a><ul class='members'><li data-type='member'><a href="SourceCodeFactory.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="SourceCodeFactory.html#.create">create</a></li><li data-type='method'><a href="SourceCodeFactory.html#.getAst">getAst</a></li><li data-type='method'><a href="SourceCodeFactory.html#.parse">parse</a></li></ul></li><li><a href="SourceCodeFactory-NullSourceCode.html">NullSourceCode</a></li></ul><h3>Modules</h3><ul><li><a href="module-crc.html">crc</a></li><li><a href="module-crc_crc-logger.html">crc/crc-logger</a></li><li><a href="module-crc_formatters_md.html">crc/formatters/md</a><ul class='methods'><li data-type='method'><a href="module-crc_formatters_md.html#~format">format</a></li></ul></li><li><a href="module-crc_formatters_md.module_crc_formatters_md_mdn-reference.html">crc/formatters/md/mdn-reference</a></li><li><a href="module-crc_formatters_md_toc-factory.html">crc/formatters/md/toc-factory</a></li><li><a href="module-crc_typedef.html">crc/typedef</a></li><li><a href="module-crc_typedef_json-string.html">crc/typedef/json-string</a></li><li><a href="module-crcLogger.html">crcLogger</a></li></ul><h3>Global</h3><ul><li><a href="global.html">astConfig</a></li><li><a href="global.html#crcLogger">crcLogger</a></li><li><a href="global.html">descriptionFromContext</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">crc/crc-responsibility.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const doctrine = require("doctrine");
+const doctrineOpts = require("./doctrine-opts");
+const {
+  first,
+  get,
+  isEmpty,
+  pull,
+  replace
+} = require("lodash");
+
+/**
+ * @private
+ * @ignore
+ */
+
+const cleanText = (text) => {
+  const SINGLE_SPACE = " ";
+
+  return replace(text, /\s+/gim, SINGLE_SPACE).trim();
+};
+
+/**
+ * @private
+ * @ignore
+ */
+
+const getComments = (crcClass) => get(crcClass, "code.ast.comments", [])
+  .map((comment) => doctrine.parse(get(comment, "value"), doctrineOpts.parse));
+
+/**
+ * @private
+ * @ignore
+ */
+
+const getPrimaryDescription =
+  (comments) => get(comments
+    .find((cmt) => !isEmpty(get(cmt, "description"))), "description", "");
+
+/**
+ * @private
+ * @ignore
+ */
+
+const pullAllTags = (comments) => {
+  const comment = comments.find((cmt) => {
+    const tags = get(cmt, "tags", []);
+    return tags.find((tag) => doctrineOpts.descriptions.includes(tag.title));
+  });
+  return get(comment, "tags", []);
+};
+
+/**
+ * @private
+ * @ignore
+ */
+
+const getDescriptionsFromTags = (comments) => {
+  const tags = pullAllTags(comments);
+  return pull(tags.map((tag) => get(tag, "description", null)), null);
+};
+
+/**
+ * @private
+ * @ignore
+ */
+
+const getDescriptionFromTags = (comments) => {
+  const tags = pullAllTags(comments);
+  return get(first(tags), "description");
+};
+
+/**
+ * @private
+ * @ignore
+ */
+
+const getDescriptionFromContext = (context) => {
+  const cxtComments = context.code.ast.comments;
+  const comments = cxtComments.map((comment) => doctrine.parse(comment.value, {
+    "recoverable": true,
+    "sloppy": true,
+    "unwrap": true
+  }));
+
+  const description =
+    getPrimaryDescription(comments) || getDescriptionFromTags(comments);
+
+  return cleanText(description);
+};
+
+/**
+ * @private
+ * @ignore
+ */
+
+const getDescription =
+  (crcClass) => cleanText(getDescriptionFromContext(crcClass.meta.context));
+
+/**
+ * @private
+ * @ignore
+ */
+
+const getAllDescriptions = (comments) => {
+  const descriptions =
+    comments
+      .filter((comment) => !isEmpty(get(comment, "description")))
+      .map((comment) => get(comment, "description"))
+      .filter((description) => !description.startsWith("eslint-disable"));
+  const tagDescriptions = getDescriptionsFromTags(comments);
+  return descriptions.concat(tagDescriptions);
+};
+
+/**
+ * @class CrcResponsibility
+ *
+ * @classdesc
+ * Creates an instance of CrcResponsibility, which evaluates objects
+ * for declarations of intent, i.e., responsibility.
+ *
+ * @property {array.&lt;Comment>} comments - A list of doctrine comments.
+ * @property {array.&lt;string>} descriptions - A list of descriptions.
+ * @property {string} primary - The description for a given CrcClass.
+ *
+ * @param {CrcClass} crcClass - The ECMAScript object under analysis.
+ *
+ * @this CrcResponsibility
+ */
+
+class CrcResponsibility {
+  constructor (crcClass) {
+    this.comments = getComments(crcClass);
+    this.descriptions = getAllDescriptions(this.comments);
+    this.primary = getDescription(crcClass);
+  }
+
+  /**
+   * Get all responsibilities.
+   *
+   * @memberof CrcResponsibility
+   * @instance
+   *
+   * @returns {array.&lt;string>} An arrary of resposibilities.
+   */
+
+  valueOf () {
+    return this.descriptions;
+  }
+
+  /**
+   * A factory method that generates a doctrine AST and
+   * responsibility string.
+   *
+   * @static
+   * @param {ASTNode} node - An ESLint representation of ECMAScript programming
+   * elements.
+   * @param {Context} context - A summary object with SourceCode and file info.
+   * @returns {CrcResponsibility} An object with a doctrine AST and the
+   * stated responsibility for the node.
+   */
+
+  static create (crcClass) {
+    return new CrcResponsibility(crcClass);
+  }
+
+  /**
+   * Retrieve the purpose of an object based on its JSDoc description tag's value.
+   *
+   * @static
+   * @method descriptionFromContext
+   * @param {CrcContext} context - The context of the object.
+   * @returns {string} A declaration of purpose.
+   */
+
+  static descriptionFromContext (context) {
+    return getDescriptionFromContext(context);
+  }
+}
+
+module.exports = CrcResponsibility;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Feb 21 2018 10:01:32 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

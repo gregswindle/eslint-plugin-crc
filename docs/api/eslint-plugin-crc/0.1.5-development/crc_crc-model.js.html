@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>crc/crc-model.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CommentsStrategy.html">CommentsStrategy</a><ul class='methods'><li data-type='method'><a href="CommentsStrategy.html#parse">parse</a></li><li data-type='method'><a href="CommentsStrategy.html#toString">toString</a></li></ul></li><li><a href="CrcClass.html">CrcClass</a><ul class='members'><li data-type='member'><a href="CrcClass.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="CrcClass.html#.create">create</a></li></ul></li><li><a href="CrcClass-NullCrcClass.html">NullCrcClass</a></li><li><a href="CrcCodebase.html">CrcCodebase</a><ul class='methods'><li data-type='method'><a href="CrcCodebase.html#load">load</a></li></ul></li><li><a href="CrcContext.html">CrcContext</a><ul class='members'><li data-type='member'><a href="CrcContext.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="CrcContext.html#.parse">parse</a></li></ul></li><li><a href="CrcContext-NullCrcContext.html">NullCrcContext</a></li><li><a href="CrcMeta.html">CrcMeta</a><ul class='members'><li data-type='member'><a href="CrcMeta.html#.nullObject">nullObject</a></li></ul></li><li><a href="CrcMeta-NullCrcMeta.html">NullCrcMeta</a></li><li><a href="CrcModel.html">CrcModel</a><ul class='members'><li data-type='member'><a href="CrcModel.html#.nullObject">nullObject</a></li></ul></li><li><a href="CrcModel-NullCrcModel.html">NullCrcModel</a></li><li><a href="CrcReporter.html">CrcReporter</a><ul class='methods'><li data-type='method'><a href="CrcReporter.html#report">report</a></li></ul></li><li><a href="CrcResponsibility.html">CrcResponsibility</a><ul class='methods'><li data-type='method'><a href="CrcResponsibility.html#.create">create</a></li><li data-type='method'><a href="CrcResponsibility.html#valueOf">valueOf</a></li></ul></li><li><a href="eslint-plugin-crc_formatters_md.EsImgMap.html">EsImgMap</a><ul class='methods'><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#findByDescriptor">findByDescriptor</a></li><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#findByEsVersion">findByEsVersion</a></li><li data-type='method'><a href="eslint-plugin-crc_formatters_md.EsImgMap.html#toHtmlLinkElemString">toHtmlLinkElemString</a></li></ul></li><li><a href="module-crc_formatters_md.module_crc_formatters_md_mdn-reference-MdnReference.html">MdnReference</a><ul class='methods'><li data-type='method'><a href="module-crc_formatters_md.module_crc_formatters_md_mdn-reference-MdnReference.html#link">link</a></li></ul></li><li><a href="module-crc_formatters_md_toc-factory-TocFactory.html">TocFactory</a></li><li><a href="module-crc_typedef.CatharsisCommentsStrategy.html">CatharsisCommentsStrategy</a><ul class='methods'><li data-type='method'><a href="module-crc_typedef.CatharsisCommentsStrategy.html#parse">parse</a></li><li data-type='method'><a href="module-crc_typedef.CatharsisCommentsStrategy.html#toString">toString</a></li></ul></li><li><a href="module-crc_typedef.DocumentationStrategy.html">DocumentationStrategy</a><ul class='methods'><li data-type='method'><a href="module-crc_typedef.DocumentationStrategy.html#parse">parse</a></li><li data-type='method'><a href="module-crc_typedef.DocumentationStrategy.html#toString">toString</a></li></ul></li><li><a href="NodeManager.html">NodeManager</a><ul class='methods'><li data-type='method'><a href="NodeManager.html#.getAllNodes">getAllNodes</a></li><li data-type='method'><a href="NodeManager.html#.getNamespace">getNamespace</a></li><li data-type='method'><a href="NodeManager.html#.getNodeName">getNodeName</a></li></ul></li><li><a href="PrototypeInspector.html">PrototypeInspector</a><ul class='methods'><li data-type='method'><a href="PrototypeInspector.html#.getPrototypeOf">getPrototypeOf</a></li><li data-type='method'><a href="PrototypeInspector.html#.getScopeOf">getScopeOf</a></li></ul></li><li><a href="Responsibilities.html">Responsibilities</a></li><li><a href="SourceCodeFactory.html">SourceCodeFactory</a><ul class='members'><li data-type='member'><a href="SourceCodeFactory.html#.nullObject">nullObject</a></li></ul><ul class='methods'><li data-type='method'><a href="SourceCodeFactory.html#.create">create</a></li><li data-type='method'><a href="SourceCodeFactory.html#.getAst">getAst</a></li><li data-type='method'><a href="SourceCodeFactory.html#.parse">parse</a></li></ul></li><li><a href="SourceCodeFactory-NullSourceCode.html">NullSourceCode</a></li></ul><h3>Modules</h3><ul><li><a href="module-crc.html">crc</a></li><li><a href="module-crc_crc-logger.html">crc/crc-logger</a></li><li><a href="module-crc_formatters_md.html">crc/formatters/md</a><ul class='methods'><li data-type='method'><a href="module-crc_formatters_md.html#~format">format</a></li></ul></li><li><a href="module-crc_formatters_md.module_crc_formatters_md_mdn-reference.html">crc/formatters/md/mdn-reference</a></li><li><a href="module-crc_formatters_md_toc-factory.html">crc/formatters/md/toc-factory</a></li><li><a href="module-crc_typedef.html">crc/typedef</a></li><li><a href="module-crc_typedef_json-string.html">crc/typedef/json-string</a></li><li><a href="module-crcLogger.html">crcLogger</a></li></ul><h3>Global</h3><ul><li><a href="global.html">astConfig</a></li><li><a href="global.html#crcLogger">crcLogger</a></li><li><a href="global.html">descriptionFromContext</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">crc/crc-model.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const CrcClass = require("./crc-class");
+const CrcMeta = require("./crc-meta");
+const CrcResponsibility = require("./crc-responsibility");
+
+/**
+ * @private
+ * @ignore
+ */
+
+const defaultConstructorParams = {
+  "class": new CrcClass(),
+  "collaborators": [],
+  "meta": CrcMeta.nullObject,
+  "responsibilities": []
+};
+
+/**
+ * Represents a &lt;strong>Class-Responsibility-Collaboration model&lt;/strong>,
+ * which expresses the scope of an object's behaviors
+ * (&lt;strong>&lt;em>responsibilities&lt;/em>&lt;/strong>) and the objects
+ * it depends on to fulfill its responsibilities
+ * (&lt;strong>&lt;em>collaborators&lt;/em>&lt;/strong>).
+ *
+ * @property {CrcClass} class - Provides a summary representation of PrototypeInspector
+ *  objects.
+ * @property {array.&lt;CrcClass>} collaborators - Provides an array of zero or more objects
+ *  required to fulfill the CrcModel#class's responsibilities.
+ * @property {CrcMeta} meta - Provides additional information about the object.
+ * @property {array.&lt;CrcResponsibility>} responsibilities - Provides a list of
+ * data this object must maintain and/or operations it must perform.
+ *
+ * @param {Object} [params] - A parameter object that optionally sets all of
+ * the CrcModel's properties.
+ * @param {CrcClass} [params.class] - A &lt;code>class&lt;/code> representation.
+ * @param {array.&lt;CrcClass>} [params.collaborators] - A collection of zero or
+ * more CrcClasses that this object depends on.
+ * @param {CrcMeta} [params.meta] - An object with meta data necessary for
+ *  visually rendering the CrcModel.
+ * @param {array.&lt;CrcResponsibility>} [params.responsibilities] - A list of
+ * data this object must maintain and/or operations it must perform.
+ *
+ * @example
+ * // Pass without parameters to create a NullCrcModel object
+ * const crcModel = new CrcModel();
+ *
+ * // Provide a CrcClass instance to reveal its responsibilities and
+ * // collaborators.
+ * const crcModel = new CrcModel({
+ *   class
+ * });
+ *
+ * @this CrcModel
+ */
+
+class CrcModel {
+  constructor (params = defaultConstructorParams) {
+    this.class = params.class;
+    this.collaborators = params.collaborators;
+    this.meta = params.meta;
+    this.responsibilities = CrcResponsibility.create(this.class);
+  }
+
+  /**
+   * @static
+   * @description A CrcModel NullObject.
+   *
+   * 🔒 **Note:** `NullCrcModel` instances can **only** be created
+   *  using the static getter `CrcModel.nullObject`.
+   * @type CrcModel~NullCrcModel
+   * @example
+   * const nullCrcModel = CrcModel.nullObject;
+   * @returns {CrcModel~NullCrcModel} A CrcModel NullObject.
+   */
+
+  static get nullObject () {
+    /**
+     * A CrcModel NullObject.
+     *
+     * 🔒 **Note:** `NullCrcModel` instances can **only** be created using the
+     *  static getter `CrcModel.nullObject`.
+     *
+     * @extends CrcModel
+     * @protected
+     * @inner
+     * @memberOf CrcModel
+     * @example
+     * const nullCrcModel = CrcModel.nullObject;
+     */
+
+    class NullCrcModel extends CrcModel {}
+    return new NullCrcModel();
+  }
+}
+
+module.exports = CrcModel;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Feb 21 2018 10:01:32 GMT-0600 (CST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

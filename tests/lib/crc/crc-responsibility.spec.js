@@ -1,52 +1,89 @@
+const CrcClass = require("../../../lib/crc/crc-class");
+const CrcContext = require("../../../lib/crc/crc-context");
 const CrcResponsibility = require("../../../lib/crc/crc-responsibility");
-const context = require("../../fixtures/crc/crc-responsibilities/geometry-context");
-const squareContext = require("../../fixtures/crc/crc-responsibilities/square-context");
-const { expect } = require("chai");
+const geometry = require("../../fixtures/crc/crc-responsibilities/geometry");
+const {expect} = require("chai");
+
+const SPACES = 1;
+const toJson = (object) => JSON.stringify(object, null, SPACES);
 
 describe("CrcResponsibility", () => {
   describe("tries to extract a \"responsibility\" from these JSDoc comments", () => {
-    const POINT = 0;
-    const POLYGON = 1;
-    const SQUARE = 2;
-    const RECTANGLE = 3;
-    const nodes = context.code.ast.body;
-
     specify("* @classdesc", () => {
-      const crc =
-        CrcResponsibility.create(nodes[POLYGON], context);
+      const expectedDesc = "A plane figure with at least three straight sides and angles, and typically five or more.";
 
-      expect(crc.responsibility).to.equal("A plane figure with at least three straight sides and angles, and typically five or more.");
+      const context = CrcContext.parse({
+        "filePath": "tests/fixtures/crc/crc-responsibilities/polygon.js"
+      });
+      const crcClass = CrcClass.create(context);
+      const description = CrcResponsibility.descriptionFromContext(context);
+
+      expect(description).to.equal(expectedDesc);
+      expect(crcClass.meta.description).to.equal(expectedDesc);
     });
 
     specify("* @desc", () => {
-      const { responsibility } =
-        CrcResponsibility.create(nodes[RECTANGLE], context);
+      const expectedDesc = "A plane figure with four straight sides and four right angles, especially one with unequal adjacent sides, in contrast to a square.";
 
-      expect(responsibility).to.contain("A plane figure with four straight sides and four right angles");
+      const context = CrcContext.parse({
+        "filePath": "tests/fixtures/crc/crc-responsibilities/rectangle.js"
+      });
+      const crcClass = CrcClass.create(context);
+      const description = CrcResponsibility.descriptionFromContext(context);
+
+      expect(description).to.equal(expectedDesc);
+      expect(crcClass.meta.description).to.equal(expectedDesc);
     });
 
     specify("* @description", () => {
-      const GET = 1;
-      const areaAccessorNode = context.code.ast.body[0].body.body[GET];
-      expect(CrcResponsibility.create(areaAccessorNode, squareContext).responsibility).to.be.ok;
+      const expectedDesc = "In modern mathematics, a point refers usually to an element of some set called a space.";
+
+      const context = CrcContext.parse({
+        "filePath": "tests/fixtures/crc/crc-responsibilities/punkt.js"
+      });
+      const crcClass = CrcClass.create(context);
+      const description = CrcResponsibility.descriptionFromContext(context);
+
+      expect(description).to.contain(expectedDesc);
+      expect(crcClass.meta.description).to.contain(expectedDesc);
     });
 
     specify("* @summary", () => {
-      const MODULE = 4;
-      const moduleNode = context.code.ast.body[MODULE];
-      expect(CrcResponsibility.create(moduleNode, context).responsibility).to.equal("The branch of mathematics concerned with shapes.");
+      const expectedDesc = "The branch of mathematics concerned with shapes.";
+
+      const context = CrcContext.parse({
+        "filePath": "tests/fixtures/crc/crc-responsibilities/geometry.js"
+      });
+
+      const crcClass = CrcClass.create(context);
+      const description = CrcResponsibility.descriptionFromContext(context);
+
+      expect(description).to.equal(expectedDesc);
+      expect(crcClass.meta.description).to.equal(expectedDesc);
     });
 
     specify("* no tag, but first comment entry", () => {
-      const { responsibility } =
-        CrcResponsibility.create(nodes[SQUARE], context);
-      expect(responsibility).to.equal("A plane figure with four equal straight sides and four right angles.");
+      const expectedDesc = "A plane figure with four equal straight sides and four right angles.";
+
+      const context = CrcContext.parse({
+        "filePath": "tests/fixtures/crc/crc-responsibilities/square.js"
+      });
+      const crcClass = CrcClass.create(context);
+      const description = CrcResponsibility.descriptionFromContext(context);
+
+      expect(description).to.equal(expectedDesc);
+      expect(crcClass.meta.description).to.equal(expectedDesc);
     });
   });
 
-  describe("logs a Bunyan error if parse options set attachComment: false", () => {
-    const GET = 1;
-    const areaAccessorNode = squareContext.code.ast.body[0].body.body[GET];
-    expect(CrcResponsibility.create(areaAccessorNode, squareContext).responsibility).not.to.be.ok;
+  describe("returns all non-empty descriptions as responsbilities", () => {
+    specify("all responsibilities", () => {
+      const context = CrcContext.parse({
+        "filePath": "tests/fixtures/crc/crc-responsibilities/point.js"
+      });
+      const crcClass = CrcClass.create(context);
+      const r = new CrcResponsibility(crcClass);
+      expect(r.valueOf()).to.equal(r.descriptions);
+    });
   });
 });

@@ -1,166 +1,175 @@
 ---
 parserOptions:
-  ecmaVersion:                                    2017
-  sourceType:                                     module
+  attachComment:                                      true
+  comment:                                            true
   ecmaFeatures:
-    experimentalObjectRestSpread:                 true
-    jsx:                                          true
-    globalReturn:                                 true
-    impliedStrict:                                true
-  range:                                          false
-  loc:                                            true
-  comment:                                        true
-  attachComment:                                  false
-  tokens:                                         true
+    experimentalObjectRestSpread:                     true
+    globalReturn:                                     true
+    impliedStrict:                                    true
+    jsx:                                              true
+  ecmaVersion:                                        2017
+  loc:                                                true
+  range:                                              true
+  sourceType:                                         module
+  tokens:                                             true
 env:
-  browser:                                        true
-  es6:                                            true
-  jest:                                           true
-  mocha:                                          true
-  node:                                           true
+  browser:                                            false
+  commonjs:                                           true
+  es6:                                                true
+  jest:                                               true
+  mocha:                                              true
+  node:                                               true
 plugins:
 - import
 - jsdoc
-- no-unsafe-innerhtml
-- no-unsanitized
 - node
 - promise
-# - # scanjs-rules
+- scanjs-rules
 - security
 - standard
+- unicorn
 - xss
 extends:
-- plugin:eslint-plugin-no-unsanitized/DOM
-- plugin:import/errors
-- plugin:import/warnings
-- plugin:node/recommended
-- plugin:security/recommended
-- eslint:recommended
+- eslint:all
+- eslint-config-crockford
 globals:
-  chai:                                           true
-  document:                                       false
-  navigator:                                      false
-  window:                                         false
+  document:                                           false
+  navigator:                                          false
+  window:                                             false
 rules:
-  accessor-pairs:                                 error
-  arrow-parens:                                   warn
+  accessor-pairs:                                     error
+  allowAllPropertiesOnSameLine:                       false
+  arrow-parens:                                       warn
   arrow-spacing:
   - error
-  - before:                                       true
-    after:                                        true
+  - before:                                           true
+    after:                                            true
   block-spacing:
   - error
   - always
   brace-style:
   - error
   - 1tbs
-  - allowSingleLine:                              true
+  - allowSingleLine:                                  true
   camelcase:
   - error
-  - properties:                                   never
+  - properties:                                       never
   comma-dangle:
   - error
-  - arrays:                                       never
-    objects:                                      never
-    imports:                                      never
-    exports:                                      never
-    functions:                                    never
+  - arrays:                                           never
+    objects:                                          never
+    imports:                                          never
+    exports:                                          never
+    functions:                                        never
   comma-spacing:
   - error
-  - before:                                       false
-    after:                                        true
+  - before:                                           false
+    after:                                            true
   comma-style:
   - error
   - last
-  constructor-super:                              error
+  constructor-super:                                  error
   curly:
   - error
   - multi-line
   dot-location:
   - error
   - property
-  eol-last:                                       error
+  eol-last:                                           error
   eqeqeq:
   - error
   - always
-  - 'null':                                       ignore
+  - 'null':                                           ignore
   func-call-spacing:
   - error
   - never
   generator-star-spacing:
   - error
-  - before:                                       true
-    after:                                        true
+  - before:                                           true
+    after:                                            true
   handle-callback-err:
   - error
   - "^(err|error)$"
   indent:
   - error
   - 2
-  - SwitchCase:                                   1
+  - SwitchCase:                                       4
   key-spacing:
   - error
-  - beforeColon:                                  false
-    afterColon:                                   true
+  - beforeColon:                                      false
+    afterColon:                                       true
   keyword-spacing:
   - error
-  - before:                                       true
-    after:                                        true
+  - before:                                           true
+    after:                                            true
+  lines-around-comment:
+  - error
+  - afterBlockComment:                                true
+    afterLineComment:                                 true
+    allowArrayEnd:                                    true
+    allowArrayStart:                                  true
+    allowBlockEnd:                                    true
+    allowBlockStart:                                  true
+    allowClassEnd:                                    true
+    allowClassStart:                                  true
+    allowObjectEnd:                                   true
+    allowObjectStart:                                 true
+    beforeBlockComment:                               true
+    beforeLineComment:                                true
   max-len:
-    - warn
-    - code:                                       180
-    - comments:                                   180
+  - warn
+  - code:                                             180
+  - comments:                                         180
   new-cap:
   - error
-  - newIsCap:                                     true
-    capIsNew:                                     false
-  new-parens:                                     error
-  no-array-constructor:                           error
-  no-caller:                                      error
-  no-class-assign:                                error
-  no-compare-neg-zero:                            error
-  no-cond-assign:                                 error
-  no-const-assign:                                error
+  - newIsCap:                                         true
+    capIsNew:                                         false
+  new-parens:                                         error
+  no-array-constructor:                               error
+  no-caller:                                          error
+  no-class-assign:                                    error
+  no-compare-neg-zero:                                error
+  no-cond-assign:                                     error
+  no-const-assign:                                    error
   no-constant-condition:
   - error
-  - checkLoops:                                   false
-  no-console:
-    - off
-  no-control-regex:                               error
-  no-debugger:                                    error
-  no-delete-var:                                  error
-  no-dupe-args:                                   error
-  no-dupe-class-members:                          error
-  no-dupe-keys:                                   error
-  no-duplicate-case:                              error
-  no-empty-character-class:                       error
-  no-empty-pattern:                               error
-  no-eval:                                        error
-  no-ex-assign:                                   error
-  no-extend-native:                               error
-  no-extra-bind:                                  error
-  no-extra-boolean-cast:                          error
+  - checkLoops:                                       false
+  no-console:                                         warn
+  no-control-regex:                                   error
+  no-debugger:                                        error
+  no-delete-var:                                      error
+  no-dupe-args:                                       error
+  no-dupe-class-members:                              error
+  no-dupe-keys:                                       error
+  no-duplicate-case:                                  error
+  no-empty-character-class:                           error
+  no-empty-pattern:                                   error
+  no-eval:                                            error
+  no-ex-assign:                                       error
+  no-extend-native:                                   error
+  no-extra-bind:                                      error
+  no-extra-boolean-cast:                              error
   no-extra-parens:
   - error
   - functions
-  no-fallthrough:                                 error
-  no-floating-decimal:                            error
-  no-func-assign:                                 error
-  no-global-assign:                               error
-  no-implied-eval:                                error
-  no-inline-comments:                             warn
+  no-fallthrough:                                     error
+  no-floating-decimal:                                error
+  no-func-assign:                                     error
+  no-global-assign:                                   error
+  no-implied-eval:                                    error
+  no-inline-comments:                                 warn
   no-inner-declarations:
   - error
   - functions
-  no-invalid-regexp:                              error
-  no-irregular-whitespace:                        error
-  no-iterator:                                    error
-  no-label-var:                                   error
+  no-invalid-regexp:                                  error
+  no-irregular-whitespace:                            error
+  no-iterator:                                        error
+  no-label-var:                                       error
   no-labels:
   - error
-  - allowLoop:                                    false
-    allowSwitch:                                  false
-  no-lone-blocks:                                 error
+  - allowLoop:                                        false
+    allowSwitch:                                      false
+  no-lone-blocks:                                     error
   no-mixed-operators:
   - error
   - groups:
@@ -176,98 +185,104 @@ rules:
       - "||"
     - - in
       - instanceof
-    allowSamePrecedence:                          true
-  no-mixed-spaces-and-tabs:                       error
-  no-multi-spaces:                                error
-  no-multi-str:                                   error
+    allowSamePrecedence:                              true
+  no-mixed-spaces-and-tabs:                           error
+  no-multi-spaces:                                    error
+  no-multi-str:                                       error
   no-multiple-empty-lines:
   - error
-  - max:                                          1
-    maxEOF:                                       0
-  no-negated-in-lhs:                              error
-  no-new:                                         error
-  no-new-func:                                    error
-  no-new-object:                                  error
-  no-new-require:                                 error
-  no-new-symbol:                                  error
-  no-new-wrappers:                                error
-  no-obj-calls:                                   error
-  no-octal:                                       error
-  no-octal-escape:                                error
-  no-path-concat:                                 error
-  no-proto:                                       error
-  no-redeclare:                                   error
-  no-regex-spaces:                                error
+  - max:                                              1
+    maxEOF:                                           0
+  no-negated-in-lhs:                                  error
+  no-new:                                             error
+  no-new-func:                                        error
+  no-new-object:                                      error
+  no-new-require:                                     error
+  no-new-symbol:                                      error
+  no-new-wrappers:                                    error
+  no-obj-calls:                                       error
+  no-octal:                                           error
+  no-octal-escape:                                    error
+  no-path-concat:                                     error
+  no-proto:                                           error
+  no-redeclare:                                       error
+  no-regex-spaces:                                    error
   no-return-assign:
   - error
   - except-parens
-  no-return-await:                                error
-  no-self-assign:                                 error
-  no-self-compare:                                error
-  no-sequences:                                   error
-  no-shadow-restricted-names:                     error
-  no-sparse-arrays:                               error
-  no-tabs:                                        error
-  no-template-curly-in-string:                    error
-  no-this-before-super:                           error
-  no-throw-literal:                               error
-  no-trailing-spaces:                             error
-  no-undef:                                       error
-  no-undef-init:                                  error
-  no-unexpected-multiline:                        error
-  no-unmodified-loop-condition:                   error
+  no-return-await:                                    error
+  no-self-assign:                                     error
+  no-self-compare:                                    error
+  no-sequences:                                       error
+  no-shadow-restricted-names:                         error
+  no-sparse-arrays:                                   error
+  no-sync:                                            off
+  no-tabs:                                            error
+  no-template-curly-in-string:                        error
+  no-this-before-super:                               error
+  no-throw-literal:                                   error
+  no-trailing-spaces:                                 error
+  no-undef:                                           error
+  no-undef-init:                                      error
+  no-unexpected-multiline:                            error
+  no-unmodified-loop-condition:                       error
   no-unneeded-ternary:
   - error
-  - defaultAssignment:                            false
-  no-unreachable:                                 error
-  no-unsafe-finally:                              error
-  no-unsafe-negation:                             error
+  - defaultAssignment:                                false
+  no-unreachable:                                     error
+  no-unsafe-finally:                                  error
+  no-unsafe-negation:                                 error
   no-unused-expressions:
   - error
-  - allowShortCircuit:                            true
-    allowTernary:                                 true
-    allowTaggedTemplates:                         true
+  - allowShortCircuit:                                true
+    allowTernary:                                     true
+    allowTaggedTemplates:                             true
   no-unused-vars:
   - error
-  - vars:                                         all
-    args:                                         none
-    ignoreRestSiblings:                           true
+  - vars:                                             all
+    args:                                             none
+    ignoreRestSiblings:                               true
   no-use-before-define:
   - error
-  - functions:                                    false
-    classes:                                      false
-    variables:                                    false
-  no-useless-call:                                error
-  no-useless-computed-key:                        error
-  no-useless-constructor:                         error
-  no-useless-escape:                              error
-  no-useless-rename:                              error
-  no-useless-return:                              error
-  no-whitespace-before-property:                  error
-  no-with:                                        error
+  - functions:                                        false
+    classes:                                          false
+    variables:                                        false
+  no-useless-call:                                    error
+  no-useless-computed-key:                            error
+  no-useless-constructor:                             error
+  no-useless-escape:                                  error
+  no-useless-rename:                                  error
+  no-useless-return:                                  error
+  no-whitespace-before-property:                      error
+  no-with:                                            error
+  object-curly-newline:
+  - error
+  - ObjectExpression:                                 always
+    ObjectPattern:
+      multiline:                                      true
   object-property-newline:
   - error
-  - allowMultiplePropertiesPerLine:               true
+  - allowMultiplePropertiesPerLine:                   true
   one-var:
   - error
-  - initialized:                                  never
+  - initialized:                                      never
   operator-linebreak:
   - error
   - after
   - overrides:
-      "?":                                        before
-      ":":                                        before
+      "?":                                            before
+      ":":                                            before
   padded-blocks:
   - error
-  - blocks:                                       never
-    switches:                                     never
-    classes:                                      never
-  prefer-promise-reject-errors:                   error
+  - blocks:                                           never
+    switches:                                         never
+    classes:                                          never
+  prefer-promise-reject-errors:                       error
   quotes:
   - error
   - double
-  - avoidEscape:                                  true
-    allowTemplateLiterals:                        true
+  - avoidEscape:                                      true
+    allowTemplateLiterals:                            true
   rest-spread-spacing:
   - error
   - never
@@ -276,8 +291,8 @@ rules:
   - always
   semi-spacing:
   - error
-  - before:                                       false
-    after:                                        true
+  - before:                                           false
+    after:                                            true
   space-before-blocks:
   - error
   - always
@@ -287,11 +302,11 @@ rules:
   space-in-parens:
   - error
   - never
-  space-infix-ops:                                error
+  space-infix-ops:                                    error
   space-unary-ops:
   - error
-  - words:                                        true
-    nonwords:                                     false
+  - words:                                            true
+    nonwords:                                         false
   spaced-comment:
   - error
   - always
@@ -299,10 +314,11 @@ rules:
       markers:
       - "*package"
       - "!"
+      - "#!"
       - "/"
       - ","
     block:
-      balanced:                                   true
+      balanced:                                       true
       markers:
       - "*package"
       - "!"
@@ -312,7 +328,7 @@ rules:
       - flow-include
       exceptions:
       - "*"
-  symbol-description:                             error
+  symbol-description:                                 error
   template-curly-spacing:
   - error
   - never
@@ -322,163 +338,118 @@ rules:
   unicode-bom:
   - error
   - never
-  use-isnan:                                      error
+  use-isnan:                                          error
   valid-typeof:
   - error
-  - requireStringLiterals:                        true
+  - requireStringLiterals:                            true
   wrap-iife:
   - error
   - any
-  - functionPrototypeMethods:                     true
+  - functionPrototypeMethods:                         true
   yield-star-spacing:
   - error
   - both
   yoda:
   - error
   - never
-  jsdoc/check-param-names:                        warn
-  jsdoc/check-tag-names:                          warn
-  jsdoc/check-types:                              warn
-  jsdoc/newline-after-description:                warn
-  jsdoc/require-description-complete-sentence:    warn
-  jsdoc/require-example:                          warn
-  jsdoc/require-hyphen-before-param-description:  warn
-  jsdoc/require-param:                            warn
-  jsdoc/require-param-description:                warn
-  jsdoc/require-param-type:                       warn
-  jsdoc/require-returns-description:              warn
-  jsdoc/require-returns-type:                     warn
-  no-unsanitized/method:                          error
-  no-unsanitized/property:                        error
-  node/exports-style:                             error
-  node/no-deprecated-api:                         error
-  node/no-extraneous-import:                      error
-  node/no-extraneous-require:                     error
-  node/no-missing-import:                         error
-  node/no-missing-require:                        error
-  node/no-unpublished-bin:                        error
-  node/no-unpublished-import:                     error
+  jsdoc/check-param-names:                            warn
+  jsdoc/check-tag-names:                              warn
+  jsdoc/check-types:                                  warn
+  jsdoc/newline-after-description:                    warn
+  jsdoc/require-description-complete-sentence:        warn
+  jsdoc/require-example:                              warn
+  jsdoc/require-hyphen-before-param-description:      warn
+  jsdoc/require-param:                                warn
+  jsdoc/require-param-description:                    warn
+  jsdoc/require-param-type:                           warn
+  jsdoc/require-returns-description:                  warn
+  jsdoc/require-returns-type:                         warn
+  node/exports-style:                                 error
+  node/no-deprecated-api:                             error
+  node/no-extraneous-import:                          error
+  node/no-extraneous-require:                         error
+  node/no-missing-import:                             error
+  node/no-missing-require:                            error
+  node/no-unpublished-bin:                            error
+  node/no-unpublished-import:                         error
   node/no-unpublished-require:
-    - error
-    - allowModules:
-      - glob-promise
-      - escomplex
+  - error
+  - allowModules:
+    - glob-promise
+    - escomplex
   node/no-unsupported-features:
-  - warn
-  - version:                                      4
-    ignores:                                      []
-  node/process-exit-as-throw:                     error
-  node/shebang:                                   error
-  promise/param-names:                            error
+  - error
+  - version:                                          7
+    ignores:
+    - defaultParameters
+    - destructuring
+  node/process-exit-as-throw:                         error
+  node/shebang:                                       warn
+  promise/param-names:                                error
   standard/array-bracket-even-spacing:
   - error
   - either
   standard/computed-property-even-spacing:
   - error
   - even
-  standard/no-callback-literal:                   error
+  standard/no-callback-literal:                       error
   standard/object-curly-even-spacing:
   - error
   - either
-  # scanjs-rules/accidental_assignment:           1
-  # scanjs-rules/assign_to_hostname:              1
-  # scanjs-rules/assign_to_href:                  1
-  # scanjs-rules/assign_to_location:              1
-  # scanjs-rules/assign_to_mozAudioChannel:       warn
-  # scanjs-rules/assign_to_mozAudioChannelType:   warn
-  # scanjs-rules/assign_to_onmessage:             1
-  # scanjs-rules/assign_to_pathname:              1
-  # scanjs-rules/assign_to_protocol:              1
-  # scanjs-rules/assign_to_search:                1
-  # scanjs-rules/assign_to_src:                   1
-  # scanjs-rules/call_Function:                   1
-  # scanjs-rules/call_addEventListener:           1
-  # scanjs-rules/call_addEventListener_cellbroadcastmsgchanged: warn
-  # scanjs-rules/call_addEventListener_deviceproximity: 1
-  # scanjs-rules/call_addEventListener_message:   1
-  # scanjs-rules/call_addEventListener_moznetworkdownload: warn
-  # scanjs-rules/call_addEventListener_moznetworkupload: warn
-  # scanjs-rules/call_connect:                    1
-  # scanjs-rules/call_eval:                       1
-  # scanjs-rules/call_execScript:                 1
-  # scanjs-rules/call_generateCRMFRequest:        warn
-  # scanjs-rules/call_getDeviceStorage_apps:      1
-  # scanjs-rules/call_getDeviceStorage_crashes:   1
-  # scanjs-rules/call_getDeviceStorage_music:     1
-  # scanjs-rules/call_getDeviceStorage_pictures:  1
-  # scanjs-rules/call_getDeviceStorage_sdcard:    1
-  # scanjs-rules/call_getDeviceStorage_videos:    1
-  # scanjs-rules/call_hide:                       1
-  # scanjs-rules/call_mozSetMessageHandler:       warn
-  # scanjs-rules/call_mozSetMessageHandler_activity: warn
-  # scanjs-rules/call_mozSetMessageHandler_wappush_received: warn
-  # scanjs-rules/call_open_attention:             1
-  # scanjs-rules/call_open_remote=true:           1
-  # scanjs-rules/call_parseFromString:            1
-  # scanjs-rules/call_setAttribute_mozapp:        warn
-  # scanjs-rules/call_setAttribute_mozbrowser:    warn
-  # scanjs-rules/call_setImmediate:               1
-  # scanjs-rules/call_setInterval:                1
-  # scanjs-rules/call_setMessageHandler_connect:  warn
-  # scanjs-rules/call_setTimeout:                 1
-  # scanjs-rules/call_write:                      1
-  # scanjs-rules/call_writeln:                    1
-  # scanjs-rules/identifier_indexedDB:            1
-  # scanjs-rules/identifier_localStorage:         1
-  # scanjs-rules/identifier_sessionStorage:       1
-  # scanjs-rules/new_Function:                    1
-  # scanjs-rules/new_MozActivity:                 warn
-  # scanjs-rules/new_MozSpeakerManager:           warn
-  # scanjs-rules/new_Notification:                1
-  # scanjs-rules/object_mozSystem:                warn
-  # scanjs-rules/property_addIdleObserver:        1
-  # scanjs-rules/property_createContextualFragment: 1
-  # scanjs-rules/property_crypto:                 1
-  # scanjs-rules/property_geolocation:            1
-  # scanjs-rules/property_getDataStores:          1
-  # scanjs-rules/property_getDeviceStorage:       1
-  # scanjs-rules/property_getUserMedia:           1
-  # scanjs-rules/property_indexedDB:              1
-  # scanjs-rules/property_lastKnownHomeNetwork:   1
-  # scanjs-rules/property_lastKnownNetwork:       1
-  # scanjs-rules/property_localStorage:           1
-  # scanjs-rules/property_mgmt:                   1
-  # scanjs-rules/property_mozAlarms:              warn
-  # scanjs-rules/property_mozBluetooth:           warn
-  # scanjs-rules/property_mozCameras:             warn
-  # scanjs-rules/property_mozCellBroadcast:       warn
-  # scanjs-rules/property_mozContacts:            warn
-  # scanjs-rules/property_mozDownloadManager:     warn
-  # scanjs-rules/property_mozFMRadio:             warn
-  # scanjs-rules/property_mozInputMethod:         warn
-  # scanjs-rules/property_mozKeyboard:            warn
-  # scanjs-rules/property_mozMobileConnection:    warn
-  # scanjs-rules/property_mozMobileConnections:   warn
-  # scanjs-rules/property_mozMobileMessage:       warn
-  # scanjs-rules/property_mozNetworkStats:        warn
-  # scanjs-rules/property_mozNfc:                 warn
-  # scanjs-rules/property_mozNotification:        warn
-  # scanjs-rules/property_mozPermissionSettings:  warn
-  # scanjs-rules/property_mozPhoneNumberService:  warn
-  # scanjs-rules/property_mozPower:               warn
-  # scanjs-rules/property_mozSettings:            warn
-  # scanjs-rules/property_mozTCPSocket:           warn
-  # scanjs-rules/property_mozTelephony:           warn
-  # scanjs-rules/property_mozTime:                warn
-  # scanjs-rules/property_mozVoicemail:           warn
-  # scanjs-rules/property_mozWifiManager:         warn
-  # scanjs-rules/property_sessionStorage:         1
-  security/detect-buffer-noassert:                error
-  security/detect-child-process:                  error
-  security/detect-disable-mustache-escape:        error
-  security/detect-eval-with-expression:           error
-  security/detect-no-csrf-before-method-override: error
-  security/detect-non-literal-fs-filename:        error
-  security/detect-non-literal-regexp:             error
-  security/detect-non-literal-require:            error
-  security/detect-object-injection:               error
-  security/detect-possible-timing-attacks:        error
-  security/detect-pseudoRandomBytes:              error
-  security/detect-unsafe-regex:                   error
-  xss/no-location-href-assign:                    off
-  xss/no-mixed-html:                              off
+  scanjs-rules/accidental_assignment:                 error
+  scanjs-rules/assign_to_hostname:                    error
+  scanjs-rules/assign_to_href:                        error
+  scanjs-rules/assign_to_location:                    error
+  scanjs-rules/assign_to_onmessage:                   error
+  scanjs-rules/assign_to_pathname:                    error
+  scanjs-rules/assign_to_protocol:                    error
+  scanjs-rules/assign_to_search:                      error
+  scanjs-rules/assign_to_src:                         error
+  scanjs-rules/call_Function:                         error
+  scanjs-rules/call_addEventListener:                 error
+  scanjs-rules/call_addEventListener_deviceproximity: error
+  scanjs-rules/call_addEventListener_message:         error
+  scanjs-rules/call_connect:                          error
+  scanjs-rules/call_eval:                             error
+  scanjs-rules/call_execScript:                       error
+  scanjs-rules/call_hide:                             error
+  scanjs-rules/call_open_remote=true:                 error
+  scanjs-rules/call_parseFromString:                  error
+  scanjs-rules/call_setImmediate:                     error
+  scanjs-rules/call_setInterval:                      error
+  scanjs-rules/call_setTimeout:                       error
+  scanjs-rules/identifier_indexedDB:                  error
+  scanjs-rules/identifier_localStorage:               error
+  scanjs-rules/identifier_sessionStorage:             error
+  scanjs-rules/new_Function:                          error
+  scanjs-rules/property_addIdleObserver:              error
+  scanjs-rules/property_createContextualFragment:     error
+  scanjs-rules/property_crypto:                       error
+  scanjs-rules/property_geolocation:                  error
+  scanjs-rules/property_getUserMedia:                 error
+  scanjs-rules/property_indexedDB:                    error
+  scanjs-rules/property_localStorage:                 error
+  scanjs-rules/property_mgmt:                         error
+  scanjs-rules/property_sessionStorage:               error
+  unicorn/catch-error-name:
+  - error
+  - name:                                             err
+  unicorn/custom-error-definition:                    error
+  unicorn/escape-case:                                error
+  unicorn/explicit-length-check:                      error
+  unicorn/filename-case:
+  - error
+  - case:                                             kebabCase
+  unicorn/import-index:                               error
+  unicorn/new-for-builtins:                           error
+  unicorn/no-abusive-eslint-disable:                  error
+  unicorn/no-array-instanceof:                        error
+  unicorn/no-fn-reference-in-iterator:                error
+  unicorn/no-hex-escape:                              error
+  unicorn/no-new-buffer:                              error
+  unicorn/no-process-exit:                            error
+  unicorn/number-literal-case:                        error
+  unicorn/prefer-starts-ends-with:                    error
+  unicorn/prefer-type-error:                          error
+  unicorn/regex-shorthand:                            error
+  unicorn/throw-new-error:                            error

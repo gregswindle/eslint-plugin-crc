@@ -1,11 +1,14 @@
 {
   "name": "eslint-plugin-crc",
-  "description": "Analyze and refactor JavaScript codebases with auto-generated Class-Responsibility-Collaboration models.",
-  "version": "0.2.0",
+  "description": "Document, analyze, and refactor JavaScript codebases with auto-generated CRC (Class-Responsibility-Collaborator) Models.",
+  "version": "0.1.5-development",
   "author": {
     "name": "Greg Swindle",
     "email": "greg@swindle.net",
     "url": "https://github.com/gregswindle"
+  },
+  "bin": {
+    "crc": "lib/cli.js"
   },
   "bugs": {
     "url": "https://github.com/gregswindle/eslint-plugin-crc/issues"
@@ -29,46 +32,73 @@
   },
   "contributors": [],
   "dependencies": {
-    "airbrake-js": "1.0.5",
+    "boom": "7.1.1",
     "bunyan": "1.8.12",
+    "catharsis": "0.8.9",
+    "chalk": "2.3.1",
+    "compromise": "11.4.0",
+    "cryptiles": "4.1.1",
+    "debug": "3.1.0",
     "doctrine": "2.1.0",
-    "eslint": "4.17.0",
+    "documentation": "5.4.0",
+    "escomplex": "2.0.0-alpha",
+    "eslint": "4.18.1",
+    "eslint-scope": "3.7.1",
     "espree": "3.5.3",
     "esquery": "1.0.0",
+    "estraverse": "4.2.0",
+    "fs-extra": "5.0.0",
+    "hawk": "7.0.7",
     "lodash": "4.17.5",
+    "markdown-it": "8.4.1",
+    "markdown-toc": "1.2.0",
+    "meow": "4.0.0",
+    "request": "2.83.0",
     "requireindex": "1.2.0"
   },
   "devDependencies": {
-    "babel-register": "6.26.0",
+    "@semantic-release/changelog": "1.0.1",
+    "@semantic-release/git": "3.0.1",
+    "@semantic-release/npm": "3.0.2",
     "chai": "4.1.2",
-    "coveralls": "3.0.0",
+    "common-vocabulary": "1.0.1",
     "docdash": "0.4.0",
-    "eslint-config-xo-space": "0.17.0",
+    "eslint-config-crockford": "2.0.0",
+    "eslint-config-scanjs": "1.0.0-beta4",
+    "eslint-config-xo-space": "0.18.0",
     "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-jsdoc": "3.3.1",
-    "eslint-plugin-no-unsafe-innerhtml": "1.0.16",
-    "eslint-plugin-no-unsanitized": "3.0.0",
+    "eslint-plugin-jsdoc": "3.5.0",
     "eslint-plugin-node": "6.0.0",
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-scanjs-rules": "0.2.1",
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-standard": "3.0.1",
+    "eslint-plugin-unicorn": "4.0.2",
     "eslint-plugin-xss": "0.1.9",
+    "hoek": "5.0.3",
     "jsdoc": "3.5.5",
+    "lec": "^1.0.1",
     "markdown-magic": "0.1.20",
     "markdown-magic-dependency-table": "1.3.2",
     "markdown-magic-package-scripts": "1.2.1",
-    "mocha": "5.0.0",
-    "nodemon": "1.14.12",
-    "nsp": "3.1.0",
+    "mocha": "5.0.1",
+    "nodemon": "1.15.1",
+    "nsp": "3.2.1",
     "nyc": "11.4.1",
     "properties-parser": "0.3.1",
-    "semantic-release": "12.4.1",
+    "semantic-release": "^12.4.1",
+    "sinon": "4.3.0",
+    "sinon-chai": "2.14.0",
     "snyk": "1.69.7",
-    "standard-version": "4.3.0"
+    "travis-deploy-once": "^4.3.4"
+  },
+  "directories": {
+    "doc": "./docs",
+    "lib": "./lib",
+    "test": "./tests"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=7.6.0"
   },
   "homepage": "https://github.com/gregswindle/eslint-plugin-crc/",
   "keywords": [
@@ -86,53 +116,71 @@
   ],
   "license": "MIT",
   "main": "lib/index.js",
+  "maintainers": [
+    {
+      "email": "greg@swindle.net",
+      "name": "gregswindle"
+    }
+  ],
   "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "exclude": [
+      "**/descriptors/**",
+      "**/tests/**",
+      "reports/**"
+    ],
     "include": [
       "lib/**/*.js"
-    ],
-    "exclude": [
-      "tests/*.spec.js",
-      "tests/fixtures/**/*.js"
     ],
     "reporter": [
       "lcov",
       "text"
     ],
-    "check-coverage": true,
-    "lines": 100
+    "report-dir": "./docs/reports/coverage"
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "publish": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/gregswindle/eslint-plugin-crc.git"
   },
   "scripts": {
-    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s",
-    "coverage": "./node_modules/.bin/nyc report",
-    "coverage:all": "npm run coverage:codacy && npm run coverage:codecov && npm run coverage:coveralls",
-    "coverage:codacy": "./node_modules/.bin/nyc report && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
-    "coverage:codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov `-t $CODECOV_TOKEN`",
-    "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
-    "docs": "npm run docs2html && npm run docs2md && npm run docs:markdown",
-    "docs2html": "./node_modules/.bin/jsdoc -c jsdoc.conf.json",
-    "docs2md": "jsdoc2md  --template ../eslint-plugin-crc.wiki/README.hbs --files './lib/**/*.js' './lib/**/**/*.js' './lib/formatters/**/*.js' './lib/formatters/crc/*.js' > ../eslint-plugin-crc.wiki/API.md && markdown-toc -i ../eslint-plugin-crc.wiki/API.md",
-    "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./markdown.config.js",
-    "docs:script": "node ./markdown.config.js",
+    "docs": "npm run docs2html && npm run docs:markdown",
+    "docs2html": "jsdoc -c config/jsdoc.conf.json",
+    "docs:json": "jsdoc -c config/jsdoc.conf.json -X",
+    "docs:glossary": "common-vocabulary",
+    "docs:markdown": "md-magic --path '{.github/*.md,**/*.md}' '**/*.md' --ignore 'node_modules' --config ./config/markdown.config.js",
     "lint": "./node_modules/.bin/eslint . --fix",
-    "posttest": "./node_modules/.bin/nsp check --output summary",
-    "postversion": "npm run changelog && node ./.ci/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
-    "pretest": "npm run lint",
-    "preversion": "npm test && ./node_modules/.bin/nsp check --output summary",
-    "push": "git push origin develop && git checkout master && git merge develop && git push origin master && git checkout develop && git status",
-    "release": "standard-version",
+    "postversion": "node ./.ci/bump/ && git add sonar-project.properties && git commit --amend && git push && git push --tags",
+    "prepublishOnly": "lec lib/cli.js -c LF && npm run security",
+    "pretest": "npm run security && npm run lint",
+    "preversion": "npm test && npm run security",
+    "push": "git push origin master && git status",
     "security": "./node_modules/.bin/nsp check --output summary",
     "security:patch": "snyk wizard",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
     "snyk-protect": "snyk protect",
     "snyk-test": "snyk test",
-    "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
     "test": "nyc mocha 'tests/**/*.spec.js'",
-    "version": null,
-    "watch:test": "nodemon -w ./tests -w ./lib -e js,json -x npm test"
+    "test:watch": "nodemon --exec npm run test",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "snyk": true
 }

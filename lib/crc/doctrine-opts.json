@@ -1,0 +1,25 @@
+{
+  "descriptions": [
+    "classdesc",
+    "desc",
+    "description",
+    "summary"
+  ],
+  "modules": [
+    "desc",
+    "description",
+    "exports",
+    "module",
+    "summary"
+  ],
+  "parse": {
+    "recoverable": true,
+    "sloppy": true,
+    "unwrap": true
+  },
+  "tags": [
+    "description",
+    "name",
+    "title"
+  ]
+}

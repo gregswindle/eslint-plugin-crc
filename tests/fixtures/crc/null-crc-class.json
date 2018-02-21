@@ -1,0 +1,34 @@
+{
+  "code": {
+    "ast": {
+      "_commentCache": {},
+      "ast": null,
+      "hasBOM": false,
+      "lineStartIndices": [],
+      "lines": [],
+      "parserServices": {},
+      "scopeManager": null,
+      "text": null,
+      "tokensAndComments": [],
+      "visitorKeys": {},
+      "body": [],
+      "comments": [],
+      "end": 0,
+      "loc": [],
+      "range": [],
+      "sourceType": "module",
+      "start": 0,
+      "tokens": [],
+      "type": "Program"
+    }
+  },
+  "meta": {
+    "context": null,
+    "description": "",
+    "filePath": null,
+    "kind": "class",
+    "references": []
+  },
+  "name": null,
+  "superClass": null
+}

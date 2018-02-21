@@ -1,3 +1,5 @@
+*.bundle.js
+*.spec.js
 /.nyc_output/*
 /build/**
 /coverage/**
@@ -9,5 +11,4 @@
 /tests/fixtures/**
 /tests/performance/**
 /tmp/**
-*.test.js
-*.spec.js
+test.js

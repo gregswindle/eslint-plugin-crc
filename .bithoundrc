@@ -1,15 +1,22 @@
 {
-    "critics": {
-        "lint": {
-            "engine": "eslint"
-        }
-    },
-    "ignore": [
-        "**/node_modules/**",
-        "docs/**  "
-    ],
-    "test": [
-        "**/tests/**",
-        "**/*.spec.js"
+  "critics":{
+    "lint":{
+      "engine":"eslint"
+    }
+  },
+  "dependencies": {
+    "unused-ignores": [
+      "compromise",
+      "escomplex"
     ]
+  },
+  "ignore":[
+    "**/node_modules/**",
+    "docs/**",
+    "tests/**"
+  ],
+  "test":[
+    "**/tests/**",
+    "**/*.spec.js"
+  ]
 }

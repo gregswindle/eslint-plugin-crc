@@ -1,0 +1,91 @@
+<a name="<%= toc.toAnchor(crcModel) %>"></a>
+<table width="100%">
+<thead>
+<tr valign="top" align="left">
+<th colspan="2">
+<h3><samp><%=_.get(crcModel, 'class.meta.kind') %><code><%= _.get(crcModel, 'class.name') %></code></samp>
+<% const proto = _.get(crcModel, 'class.superClass');
+if (!_.isEmpty(proto)) { %>
+<samp>extends</samp> <code><%= _.get(proto, 'name') %></code>
+<% } %>
+</h3>
+<blockquote>
+<%= md.converter.render(_.get(crcModel, 'class.meta.description')) %>
+</blockquote>
+</th>
+</tr>
+<tr valign="top" align="left">
+<th>Responsibilities</th>
+<th>Collaborators</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top" align="left">
+<td width="50%">
+<% if (_.isEmpty(crcModel.responsibilities)){%>None found.
+<%}else{%>
+<ol>
+<% _.forEach(crcModel.responsibilities.descriptions, description => {%>
+<li><%= md.converter.render(description) %></li>
+<%}); %>
+</ol>
+<%}%>
+</td>
+<td width="50%">
+<% if (_.isEmpty(crcModel.collaborators)){%> None found.
+<%}else{%>
+<ol>
+<% _.forEach(crcModel.collaborators, collaborator=>{%>
+<%= collaborator %>
+<li><code><%= _.get(collaborator, 'class.name') %></code>
+<% const start=collaborator.class.loc.start %>
+  <a href="">
+    <%= start.line %>
+  </a>:
+  <a href="">
+    <%= start.column %>
+  </a>
+</li>
+<%}); %>
+</ol>
+<%}%>
+</td>
+</tr>
+</tbody>
+<tfoot valign="top" align="left">
+<tr valign="top" align="left" width="100%">
+<td bgcolor="#fcfcfc" colspan="2">
+<details>
+<summary><img src="<%= esImgMap.toHtmlLinkElemString(_.get(crcModel, 'class.meta.kind')) %>" alt="Select to toggle details" align="top" title="Select to toggle details"><code><%= _.get(crcModel, 'class.name') %></code> details...</summary>
+<dl><dt><p><strong>Source code</strong></dt>
+<dd>
+<blockquote>
+
+```js
+<%= _.get(crcModel, "class.code.text") %>
+```
+
+</blockquote>
+</dd><dt><p><strong>References</strong></dt>
+<dd>
+<blockquote><strong><code><%= _.get(crcModel, 'class.name') %></code> is referenced <em><%= _.get(crcModel, 'class.meta.references.length') %></em> times in <em>n<sub>1</sub></em> files.</strong><br><br>
+<% if (_.gt(_.get(crcModel, 'class.meta.references.length'), 0)) { %>
+<ol>
+<% _.forEach(_.get(crcModel, 'class.meta.references'), (ref) => { %>
+  <li>File name: <samp><%= ref.identifier.name %> [<%= ref.identifier.start %> : <%= ref.identifier.end %>]</samp></li>
+<% }) %>
+</ol>
+<% } %>
+</blockquote>
+</dd><dt><p><strong>Path</strong></dt>
+<dd>
+<blockquote>
+<%= _.get(crcModel, 'class.meta.filePath') %>
+</blockquote>
+</dd>
+</dl>
+</details>
+</td>
+</tr>
+</tfoot>
+</table>

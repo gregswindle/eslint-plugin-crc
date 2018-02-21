@@ -1,11 +1,23 @@
 # Contributing<br>to `eslint-plugin-crc`
-> [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url]
 
-<dfn>**Contributions** start with **community conversations** that lead to **positive change.**</dfn> Open source provides a flexible collaboration model that facilitates change, even among perfect strangers. Contributions therefore:
+[![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributors, issues, and pull requests.
 
-  1. Begin with **Issues**,
-  2. Occur in **Pull Requests**, and
-  3. End with **Merges**.
+<blockquote>
+<dfn><strong>Contributions</strong> start with <strong>community conversations</strong> that lead to <strong>positive change.</strong></dfn> <code>eslint-plugin-crc's</code> open source collaboration model has five steps:
+
+<dl>
+  <dt>1. <dfn>Issues</dfn></dt>
+  <dd>Start community conversations that determine whether proposed changes add value and should be made.</dd>
+  <dt>2. <dfn>Pull Requests (PRs)</dfn></dt>
+  <dd>Inform and manage community code reviews for approved changes in-progress.</dd>
+  <dt>3. <dfn>Merges</dfn></dt>
+  <dd>Incorporate approved PR changes into the product.</dd>
+  <dt>4. <dfn>Releases</dfn></dt>
+  <dd>Make changes available for community consumption.</dd>
+  <dt>5. <dfn>Support</dfn></dt>
+  <dd>Improves the product with refactorings and defect fixes.</dd>
+</dl>
+</blockquote>
 
 ## Table of contents
 
@@ -54,9 +66,9 @@
 - [6. **Logging**](#6-logging)
 - [7. **Dependencies**](#7-dependencies)
 - [8. **APIs**](#8-apis)
-  * [8.1 **API design**](#81-api-design)
-  * [8.2 **API security**](#82-api-security)
-  * [8.3 **API documentation**](#83-api-documentation)
+  * [8.1. API design](#81-api-design)
+  * [8.2. API security](#82-api-security)
+  * [8.3. API documentation](#83-api-documentation)
 - [9. **Licensing**](#9-licensing)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
@@ -718,7 +730,7 @@
   _Tip:_
   > **:bulb: Test continuously during development.**
   >
-  > Run `npm run watch:test` to execute all specs every time you save a file.
+  > Run `npm run test:watch` to execute all specs every time you save a file.
 
 * ### 4.2. Reach 100% code coverage.
 
@@ -859,6 +871,8 @@
 
 ## 6. **Logging**
 
+`eslint-plugin-crc` uses [bunyan](https://github.com/trentm/node-bunyan#readme).
+
 ## 7. **Dependencies**
 
 ![Package tech stack][tech-stack-image]
@@ -870,41 +884,63 @@
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE) -->
 | **Dependency** | **Description** | **Version** | **License** | **Type** |
 | -------------- | --------------- | ----------- | ----------- | -------- |
+ | [boom@7.1.1](https://github.com/hapijs/boom#readme) | HTTP-friendly error objects | 7.1.1 | BSD-3-Clause | production | 
  | [bunyan@1.8.12](https://github.com/trentm/node-bunyan#readme) | a JSON logging library for node.js services | 1.8.12 | MIT | production | 
- | [doctrine@2.0.2](https://github.com/eslint/doctrine) | JSDoc parser | 2.0.2 | Apache-2.0 | production | 
- | [eslint@4.13.0](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.13.0 | MIT | production | 
- | [espree@3.5.2](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.2 | BSD-2-Clause | production | 
+ | [catharsis@0.8.9](https://github.com/hegemonic/catharsis#readme) | A JavaScript parser for Google Closure Compiler and JSDoc type expressions. | 0.8.9 | MIT | production | 
+ | [chalk@2.3.1](https://github.com/chalk/chalk#readme) | Terminal string styling done right | 2.3.1 | MIT | production | 
+ | [compromise@11.4.0](https://github.com/nlp-compromise/compromise#readme) | natural language processing in the browser | 11.4.0 | MIT | production | 
+ | [cryptiles@4.1.1](https://github.com/hapijs/cryptiles#readme) | General purpose crypto utilities | 4.1.1 | BSD-3-Clause | production | 
+ | [debug@3.1.0](https://github.com/visionmedia/debug#readme) | small debugging utility | 3.1.0 | MIT | production | 
+ | [doctrine@2.1.0](https://github.com/eslint/doctrine) | JSDoc parser | 2.1.0 | Apache-2.0 | production | 
+ | [documentation@5.4.0](https://github.com/documentationjs/documentation#readme) | a documentation generator | 5.4.0 | ISC | production | 
+ | [escomplex@2.0.0-alpha](https://github.com/jared-stilwell/escomplex) | Software complexity analysis of JavaScript-family abstract syntax trees. | 2.0.0-alpha | MIT | production | 
+ | [eslint@4.18.1](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.18.1 | MIT | production | 
+ | [eslint-scope@3.7.1](http://github.com/eslint/eslint-scope) | ECMAScript scope analyzer for ESLint | 3.7.1 | BSD-2-Clause | production | 
+ | [espree@3.5.3](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.3 | BSD-2-Clause | production | 
  | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production | 
- | [lodash@4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | MIT | production | 
- | [pluralize@7.0.0](https://github.com/blakeembrey/pluralize#readme) | Pluralize and singularize any word | 7.0.0 | MIT | production | 
- | [requireindex@1.1.0](https://github.com/stephenhandley/requireindex#readme) | Write minimal node index.js files that require and export siblings by file basename | 1.1.0 | MIT | production | 
- | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev | 
+ | [estraverse@4.2.0](https://github.com/estools/estraverse) | ECMAScript JS AST traversal functions | 4.2.0 | BSD-2-Clause | production | 
+ | [fs-extra@5.0.0](https://github.com/jprichardson/node-fs-extra) | fs-extra contains methods that aren't included in the vanilla Node.js fs package. Such as mkdir -p, cp -r, and rm -rf. | 5.0.0 | MIT | production | 
+ | [hawk@7.0.7](https://github.com/hueniverse/hawk#readme) | HTTP Hawk Authentication Scheme | 7.0.7 | BSD-3-Clause | production | 
+ | [lodash@4.17.5](https://lodash.com/) | Lodash modular utilities. | 4.17.5 | MIT | production | 
+ | [markdown-it@8.4.1](https://github.com/markdown-it/markdown-it#readme) | Markdown-it - modern pluggable markdown parser. | 8.4.1 | MIT | production | 
+ | [markdown-toc@1.2.0](https://github.com/jonschlinkert/markdown-toc) | Generate a markdown TOC (table of contents) with Remarkable. | 1.2.0 | MIT | production | 
+ | [meow@4.0.0](https://github.com/sindresorhus/meow#readme) | CLI app helper | 4.0.0 | MIT | production | 
+ | [request@2.83.0](https://github.com/request/request#readme) | Simplified HTTP request client. | 2.83.0 | Apache-2.0 | production | 
+ | [requireindex@1.2.0](https://github.com/stephenhandley/requireindex) | Write minimal node index.js files that require and export siblings by file basename | 1.2.0 | MIT | production | 
+ | [@semantic-release/changelog@1.0.1](https://github.com/semantic-release/changelog#readme) | Set of semantic-release plugins for creating or updating a changelog file | 1.0.1 | MIT | dev | 
+ | [@semantic-release/git@3.0.1](https://github.com/semantic-release/git#readme) | Set of semantic-release plugins to publish to a git repository | 3.0.1 | MIT | dev | 
+ | [@semantic-release/npm@3.0.2](https://github.com/semantic-release/npm#readme) | Set of semantic-release plugins to publish to a npm registry | 3.0.2 | MIT | dev | 
  | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev | 
- | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev | 
+ | [common-vocabulary@1.0.1](https://github.com/commonality/common-vocabulary) | Facilitate communication and avoid confusion with canonical terms: share a common vocabulary. | 1.0.1 | MIT | dev | 
  | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev | 
- | [eslint-config-xo-space@0.17.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.17.0 | MIT | dev | 
+ | [eslint-config-crockford@2.0.0](https://github.com/ssoloff/eslint-config-crockford) | ESLint shareable config for Crockford style | 2.0.0 | MIT | dev | 
+ | [eslint-config-scanjs@1.0.0-beta4](https://github.com/mozfreddyb/eslint-config-scanjs#readme) | umbrella config to get scanjs-like functionality from eslint | 1.0.0-beta4 | MPL-2.0 | dev | 
+ | [eslint-config-xo-space@0.18.0](https://github.com/xojs/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.18.0 | MIT | dev | 
  | [eslint-plugin-import@2.8.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.8.0 | MIT | dev | 
- | [eslint-plugin-jsdoc@3.2.0](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.2.0 | BSD-3-Clause | dev | 
- | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | MPL-2.0 | dev | 
- | [eslint-plugin-no-unsanitized@2.0.2](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 2.0.2 | MPL-2.0 | dev | 
- | [eslint-plugin-node@5.2.1](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 5.2.1 | MIT | dev | 
+ | [eslint-plugin-jsdoc@3.5.0](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.5.0 | BSD-3-Clause | dev | 
+ | [eslint-plugin-node@6.0.0](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 6.0.0 | MIT | dev | 
  | [eslint-plugin-promise@3.6.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.6.0 | ISC | dev | 
  | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | MPL-2.0 | dev | 
  | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | Apache-2.0 | dev | 
  | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | MIT | dev | 
+ | [eslint-plugin-unicorn@4.0.2](https://github.com/sindresorhus/eslint-plugin-unicorn#readme) | Various awesome ESLint rules | 4.0.2 | MIT | dev | 
  | [eslint-plugin-xss@0.1.9](https://github.com/Rantanen/eslint-plugin-xss#readme) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.9 | ISC | dev | 
+ | [hoek@5.0.3](https://github.com/hapijs/hoek#readme) | General purpose node utilities | 5.0.3 | BSD-3-Clause | dev | 
  | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev | 
- | [markdown-magic@0.1.19](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.19 | MIT | dev | 
+ | [lec@^1.0.1](https://github.com/iShafayet/lec) | Command Line Wrapper for Line Ending Corrector (An utility that makes sure your files have consistent line endings) | 1.0.1 | MIT | dev | 
+ | [markdown-magic@0.1.20](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.20 | MIT | dev | 
  | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev | 
  | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev | 
- | [mocha@4.0.1](https://mochajs.org) | simple, flexible, fun test framework | 4.0.1 | MIT | dev | 
- | [nodemon@1.12.5](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.12.5 | MIT | dev | 
- | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
- | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev | 
+ | [mocha@5.0.1](https://mochajs.org) | simple, flexible, fun test framework | 5.0.1 | MIT | dev | 
+ | [nodemon@1.15.1](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.15.1 | MIT | dev | 
+ | [nsp@3.2.1](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.2.1 | Apache-2.0 | dev | 
+ | [nyc@11.4.1](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.4.1 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
- | [semantic-release@8.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 8.2.0 | MIT | dev | 
- | [snyk@1.54.1](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.54.1 | Apache-2.0 | dev | 
- | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | ISC | dev | 
+ | [semantic-release@^12.4.1](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 12.4.1 | MIT | dev | 
+ | [sinon@4.3.0](http://sinonjs.org/) | JavaScript test spies, stubs and mocks. | 4.3.0 | BSD-3-Clause | dev | 
+ | [sinon-chai@2.14.0](https://github.com/domenic/sinon-chai#readme) | Extends Chai with assertions for the Sinon.JS mocking framework. | 2.14.0 | (BSD-2-Clause OR WTFPL) | dev | 
+ | [snyk@1.69.7](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.69.7 | Apache-2.0 | dev | 
+ | [travis-deploy-once@^4.3.4](https://github.com/semantic-release/travis-deploy-once#readme) | Run a deployment script only once in the Travis test matrix | 4.3.4 | MIT | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->
 
@@ -912,7 +948,7 @@
 
 ![APIs][icon-rest-api-image]
 
-* ### 8.1 **API design**
+* ### 8.1. API design
 
   _Why:_
   > ⌦ Because we try to enforce development of sanely constructed RESTful interfaces, which team members and clients can consume simply and consistently.
@@ -1096,7 +1132,7 @@
       ```
   * Pagination, filtering, and sorting don’t need to be supported from start for all resources. Document those resources that offer filtering and sorting.
 
-* ### 8.2 **API security**
+* ### 8.2. API security
 
   These are some basic security best practices:
 
@@ -1132,9 +1168,8 @@
       _Why:_
       > ⌦ For instance, accepting the `application/x-www-form-urlencoded` mime type allows the attacker to create a form and trigger a simple POST request. The server should never assume the Content-Type. A lack of Content-Type header or an unexpected Content-Type header should result in the server rejecting the content with a `4XX` response.
 
-* ### 8.3 **API documentation**
+* ### 8.3. API documentation
 
-  * Fill the `API Reference` section in [README.md template](./README.sample.md) for API.
   * Describe API authentication methods with a code sample.
   * Explaining The URL Structure (path only, no root URL) including The request type (Method).
 

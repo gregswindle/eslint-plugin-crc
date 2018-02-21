@@ -1,0 +1,55 @@
+{
+  "crc": {
+    "ast-config": {
+      "attachComment": true,
+      "comment": true,
+      "ecmaFeatures": {},
+      "ecmaVersion": 6,
+      "loc": true,
+      "range": true,
+      "sourceType": "module",
+      "tokens": true
+    },
+    "crc-class": null,
+    "crc-codebase": null,
+    "crc-context": null,
+    "crc-meta": null,
+    "crc-model": null,
+    "crc-reporter": null,
+    "crc-responsibility": null,
+    "node-manager": null,
+    "null-crc-class": null,
+    "null-source-code": null,
+    "prototype-inspector": {
+      "constructorSuper": {},
+      "isConstructorFunction": null,
+      "isPossibleConstructor": null,
+      "isReachable": null
+    },
+    "source-code-factory": null
+  },
+  "formatters": {
+    "es-version-img-map": {
+      "EsImgMap": null,
+      "esImgMap": {}
+    },
+    "mdn-reference": null,
+    "toc-factory": null
+  },
+  "logger": {
+    "domain": null,
+    "_events": {},
+    "_eventsCount": 0,
+    "_maxListeners": null,
+    "_level": 30,
+    "streams": [],
+    "serializers": null,
+    "src": false,
+    "fields": {
+      "name": "eslint-plugin-crc",
+      "hostname": "crc.local.com",
+      "pid": 12222
+    },
+    "haveNonRawStreams": false
+  }
+}

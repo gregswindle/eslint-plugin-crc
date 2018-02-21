@@ -14,7 +14,7 @@
 
 Thanks for using [`eslint-plugin-crc`](https://github.com/gregswindle/eslint-plugin-crc#eslint-plugin-crc)!
 
-[![PRs Welcome][makeapullrequest-image]][makeapullrequest-url]
+[![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributions with GitHub **issues** and **pull requests**.
 
 [makeapullrequest-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [makeapullrequest-url]: http://makeapullrequest.com

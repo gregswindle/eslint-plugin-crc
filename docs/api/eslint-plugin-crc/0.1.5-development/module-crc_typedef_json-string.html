@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>CommentsStrategy - Documentation</title>
+    <title>crc/typedef/json-string - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">CommentsStrategy</h1>
+    <h1 class="page-title">crc/typedef/json-string</h1>
     
 
     
@@ -39,9 +39,8 @@
 
 <header>
     
-        <h2>
-        CommentsStrategy
-        </h2>
+        
+            
         
     
 </header>
@@ -50,12 +49,31 @@
     <div class="container-overview">
     
         
+            <div class="description"><blockquote>
+<p>JSON (JavaScript Object Notation) is a lightweight data-interchange format,
+based on a subset of the
+<a href="http://javascript.crockford.com/">JavaScript Programming Language</a>,
+<a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">Standard ECMA-262 3rd Edition - December 1999</a>.
+JSON is a text format that is completely language independent but uses
+conventions that are familiar to programmers of the C-family of languages,
+including C, C++, C#, Java, JavaScript, Perl, Python, and many others.
+These properties make JSON an ideal data-interchange language.</p>
+<p>JSON is built on two structures:</p>
+<ul>
+<li><p>A collection of name/value pairs. In various languages, this is realized
+as an object, record, struct, dictionary, hash table, keyed list, or
+associative array.</p>
+</li>
+<li><p>An ordered list of values. In most languages, this is realized as an
+array, vector, list, or sequence.</p>
+</li>
+</ul>
+<p>JSON. (2018). Json.org. Retrieved 19 February 2018, from https://www.json.org/</p>
+</blockquote></div>
+        
 
-    
-
-    <h4 class="name" id="CommentsStrategy"><span class="type-signature"></span>new CommentsStrategy<span class="signature">(files<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-
-    
+        
+            
 
 
 
@@ -65,7 +83,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_comments-strategy.js.html">crc/comments-strategy.js</a>, <a href="crc_comments-strategy.js.html#line6">line 6</a>
+        <a href="typedef_json-string.js.html">typedef/json-string.js</a>, <a href="typedef_json-string.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -96,88 +114,19 @@
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://www.json.org/">https://www.json.org/</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
 
 
 
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>files</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array.&lt;String></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>[]</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>An array of source code file paths.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<div class="description">
-    <p>Provides an interface for various ways of
-retrieving source code comments.</p>
-</div>
 
 
 
@@ -189,89 +138,22 @@ retrieving source code comments.</p>
 
 
 
-    <h5>Parameters:</h5>
-    
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
 
-        <th>Type</th>
+
+
+
+
+
+
+
+
+
+
+
+
 
         
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>files</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array.&lt;String></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>[]</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>An array of source code file paths.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     </div>
 
@@ -287,223 +169,6 @@ retrieving source code comments.</p>
 
     
 
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    <h4 class="name" id="parse"><span class="type-signature">(abstract) </span>parse<span class="signature">()</span><span class="type-signature"> &rarr; {array.&lt;ESLint.SourceCode#ast#tokensAndComments>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_comments-strategy.js.html">crc/comments-strategy.js</a>, <a href="crc_comments-strategy.js.html#line22">line 22</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Provides tokenized JSDoc.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>The
- ESLint.SourceCode#ast#tokensAndComments.</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">array.&lt;ESLint.SourceCode#ast#tokensAndComments></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="toString"><span class="type-signature">(abstract) </span>toString<span class="signature">()</span><span class="type-signature"> &rarr; {JsonString}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="crc_comments-strategy.js.html">crc/comments-strategy.js</a>, <a href="crc_comments-strategy.js.html#line40">line 40</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Serializes comments as JSON.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A JSON string representation of the comments.</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JsonString</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
     
 
     

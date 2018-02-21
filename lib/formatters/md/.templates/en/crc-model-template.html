@@ -1,16 +1,16 @@
-<a name="<%- toc.toAnchor(crcModel) %>"></a>
+<a name="<%= toc.toAnchor(crcModel) %>"></a>
 <table width="100%">
 <thead>
 <tr valign="top" align="left">
 <th colspan="2">
-<h3><samp><%=_.get(crcModel, 'class.meta.kind') %><code><%- _.get(crcModel, 'class.name') %></code></samp>
+<h3><samp><%=_.get(crcModel, 'class.meta.kind') %><code><%= _.get(crcModel, 'class.name') %></code></samp>
 <% const proto = _.get(crcModel, 'class.superClass');
 if (!_.isEmpty(proto)) { %>
 <samp>extends</samp> <code><%= _.get(proto, 'name') %></code>
 <% } %>
 </h3>
 <blockquote>
-<%- _.get(crcModel, 'class.meta.description') %>
+<%= md.converter.render(_.get(crcModel, 'class.meta.description')) %>
 </blockquote>
 </th>
 </tr>
@@ -26,7 +26,7 @@ if (!_.isEmpty(proto)) { %>
 <%}else{%>
 <ol>
 <% _.forEach(crcModel.responsibilities.descriptions, description => {%>
-<li><%= description %></li>
+<li><%= md.converter.render(description) %></li>
 <%}); %>
 </ol>
 <%}%>
@@ -36,14 +36,14 @@ if (!_.isEmpty(proto)) { %>
 <%}else{%>
 <ol>
 <% _.forEach(crcModel.collaborators, collaborator=>{%>
-<%- collaborator %>
-<li><code><%- _.get(collaborator, 'class.name') %></code>
+<%= collaborator %>
+<li><code><%= _.get(collaborator, 'class.name') %></code>
 <% const start=collaborator.class.loc.start %>
   <a href="">
-    <%- start.line %>
+    <%= start.line %>
   </a>:
   <a href="">
-    <%- start.column %>
+    <%= start.column %>
   </a>
 </li>
 <%}); %>
@@ -56,7 +56,7 @@ if (!_.isEmpty(proto)) { %>
 <tr valign="top" align="left" width="100%">
 <td bgcolor="#fcfcfc" colspan="2">
 <details>
-<summary><img src="<%= esImgMap.toHtmlLinkElemString(_.get(crcModel, 'class.meta.kind')) %>" alt="Select to toggle details" align="top" title="Select to toggle details"><code><%- _.get(crcModel, 'class.name') %></code> details...</summary>
+<summary><img src="<%= esImgMap.toHtmlLinkElemString(_.get(crcModel, 'class.meta.kind')) %>" alt="Select to toggle details" align="top" title="Select to toggle details"><code><%= _.get(crcModel, 'class.name') %></code> details...</summary>
 <dl><dt><p><strong>Source code</strong></dt>
 <dd>
 <blockquote>
@@ -80,7 +80,7 @@ if (!_.isEmpty(proto)) { %>
 </dd><dt><p><strong>Path</strong></dt>
 <dd>
 <blockquote>
-<%- _.get(crcModel, 'class.meta.filePath') %>
+<%= _.get(crcModel, 'class.meta.filePath') %>
 </blockquote>
 </dd>
 </dl>

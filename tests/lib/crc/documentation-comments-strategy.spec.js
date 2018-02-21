@@ -1,5 +1,5 @@
 const {expect} = require("chai");
-const DocumentationCommentsStrategy = require("../../../lib/crc/comment-strategies/documentation-comments-strategy");
+const DocumentationStrategy = require("../../../lib/crc/comment-strategies/documentation-strategy");
 
 describe("crc/documentation-comments-strategy,", () => {
   let comments = null;
@@ -10,7 +10,7 @@ describe("crc/documentation-comments-strategy,", () => {
 
   describe("uses a common interface for comment 'plugins', and", () => {
     beforeEach(() => {
-      comments = new DocumentationCommentsStrategy([
+      comments = new DocumentationStrategy([
         "tests/fixtures/crc/crc-responsibilities/rectangle.js"
       ]);
     });
@@ -23,14 +23,12 @@ describe("crc/documentation-comments-strategy,", () => {
 
     it("parses its files into a documentation AST", async () => {
       const ast = await comments.parse();
-
       expect(ast).to.be.ok;
       expect(ast).to.be.an("Array");
     });
 
     it("generates a JSON string of comments", async () => {
       const commentsJson = await comments.toString();
-
       expect(commentsJson).to.be.a("String");
     });
   });

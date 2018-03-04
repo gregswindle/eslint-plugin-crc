@@ -33,7 +33,7 @@
     "bunyan": "1.8.12",
     "doctrine": "2.1.0",
     "eslint": "4.17.0",
-    "espree": "3.5.3",
+    "espree": "3.5.4",
     "esquery": "1.0.0",
     "lodash": "4.17.5",
     "requireindex": "1.2.0"

@@ -64,7 +64,7 @@
     "nyc": "11.4.1",
     "properties-parser": "0.3.1",
     "semantic-release": "12.4.1",
-    "snyk": "1.69.7",
+    "snyk": "1.70.2",
     "standard-version": "4.3.0"
   },
   "engines": {

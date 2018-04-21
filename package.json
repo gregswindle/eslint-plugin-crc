@@ -34,7 +34,7 @@
     "doctrine": "2.1.0",
     "eslint": "4.17.0",
     "espree": "3.5.3",
-    "esquery": "1.0.0",
+    "esquery": "1.0.1",
     "lodash": "4.17.5",
     "requireindex": "1.2.0"
   },

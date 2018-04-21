@@ -29,7 +29,7 @@
   },
   "contributors": [],
   "dependencies": {
-    "airbrake-js": "1.0.5",
+    "airbrake-js": "1.1.0",
     "bunyan": "1.8.12",
     "doctrine": "2.1.0",
     "eslint": "4.17.0",

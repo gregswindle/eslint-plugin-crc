@@ -52,7 +52,7 @@
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-scanjs-rules": "0.2.1",
     "eslint-plugin-security": "1.4.0",
-    "eslint-plugin-standard": "3.0.1",
+    "eslint-plugin-standard": "3.1.0",
     "eslint-plugin-xss": "0.1.9",
     "jsdoc": "3.5.5",
     "markdown-magic": "0.1.20",

@@ -18,6 +18,7 @@
 ## Table of contents
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
+
 - [1. Background](#1-background)
   * [1.1. Anatomy of a CRC model](#11-anatomy-of-a-crc-model)
   * [1.2. Sample report](#12-sample-report)
@@ -36,6 +37,7 @@
 - [6. Version](#6-version)
 - [7. License](#7-license)
 - [8. References](#8-references)
+
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 

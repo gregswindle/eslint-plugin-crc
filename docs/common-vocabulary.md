@@ -4,17 +4,17 @@
 
 ## Index of terms
 
- 1. [**feat**](#feat) <sup>conventional-commit-type</sup>
- 1. [**fix**](#fix) <sup>conventional-commit-type</sup>
- 1. [**docs**](#docs) <sup>conventional-commit-type</sup>
- 1. [**style**](#style) <sup>conventional-commit-type</sup>
- 1. [**refactor**](#refactor) <sup>conventional-commit-type</sup>
- 1. [**perf**](#perf) <sup>conventional-commit-type</sup>
- 1. [**test**](#test) <sup>conventional-commit-type</sup>
- 1. [**build**](#build) <sup>conventional-commit-type</sup>
- 1. [**ci**](#ci) <sup>conventional-commit-type</sup>
- 1. [**chore**](#chore) <sup>conventional-commit-type</sup>
- 1. [**revert**](#revert) <sup>conventional-commit-type</sup>
+1.  [**feat**](#feat) <sup>conventional-commit-type</sup>
+1.  [**fix**](#fix) <sup>conventional-commit-type</sup>
+1.  [**docs**](#docs) <sup>conventional-commit-type</sup>
+1.  [**style**](#style) <sup>conventional-commit-type</sup>
+1.  [**refactor**](#refactor) <sup>conventional-commit-type</sup>
+1.  [**perf**](#perf) <sup>conventional-commit-type</sup>
+1.  [**test**](#test) <sup>conventional-commit-type</sup>
+1.  [**build**](#build) <sup>conventional-commit-type</sup>
+1.  [**ci**](#ci) <sup>conventional-commit-type</sup>
+1.  [**chore**](#chore) <sup>conventional-commit-type</sup>
+1.  [**revert**](#revert) <sup>conventional-commit-type</sup>
 
 ### Conventional Commit Specification Terms
 

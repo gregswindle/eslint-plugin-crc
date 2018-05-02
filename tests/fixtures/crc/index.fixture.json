@@ -34,7 +34,7 @@
       "esImgMap": {}
     },
     "mdn-reference": null,
-    "toc-factory": null
+    "markdownConverter": null
   },
   "logger": {
     "domain": null,

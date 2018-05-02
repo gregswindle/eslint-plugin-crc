@@ -11,9 +11,7 @@
     "template": "node_modules/docdash",
     "package": "package.json"
   },
-  "plugins": [
-    "plugins/markdown"
-  ],
+  "plugins": ["plugins/markdown"],
   "source": {
     "include": [
       ".github/CONTRIBUTING.md",

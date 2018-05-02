@@ -871,40 +871,39 @@
 | **Dependency** | **Description** | **Version** | **License** | **Type** |
 | -------------- | --------------- | ----------- | ----------- | -------- |
  | [bunyan@1.8.12](https://github.com/trentm/node-bunyan#readme) | a JSON logging library for node.js services | 1.8.12 | MIT | production | 
- | [doctrine@2.0.2](https://github.com/eslint/doctrine) | JSDoc parser | 2.0.2 | Apache-2.0 | production | 
- | [eslint@4.13.0](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.13.0 | MIT | production | 
- | [espree@3.5.2](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.2 | BSD-2-Clause | production | 
- | [esquery@1.0.0](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.0 | BSD | production | 
- | [lodash@4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | MIT | production | 
- | [pluralize@7.0.0](https://github.com/blakeembrey/pluralize#readme) | Pluralize and singularize any word | 7.0.0 | MIT | production | 
- | [requireindex@1.1.0](https://github.com/stephenhandley/requireindex#readme) | Write minimal node index.js files that require and export siblings by file basename | 1.1.0 | MIT | production | 
+ | [doctrine@2.1.0](https://github.com/eslint/doctrine) | JSDoc parser | 2.1.0 | Apache-2.0 | production | 
+ | [eslint@4.19.1](https://eslint.org) | An AST-based pattern checker for JavaScript. | 4.19.1 | MIT | production | 
+ | [espree@3.5.4](https://github.com/eslint/espree) | An Esprima-compatible JavaScript parser built on Acorn | 3.5.4 | BSD-2-Clause | production | 
+ | [esquery@1.0.1](https://github.com/jrfeenst/esquery#readme) | A query library for ECMAScript AST using a CSS selector like query language. | 1.0.1 | BSD-3-Clause | production | 
+ | [lodash@4.17.10](https://lodash.com/) | Lodash modular utilities. | 4.17.10 | MIT | production | 
+ | [requireindex@1.2.0](https://github.com/stephenhandley/requireindex) | Write minimal node index.js files that require and export siblings by file basename | 1.2.0 | MIT | production | 
  | [babel-register@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-register) | babel require hook | 6.26.0 | MIT | dev | 
  | [chai@4.1.2](http://chaijs.com) | BDD/TDD assertion library for node.js and the browser. Test framework agnostic. | 4.1.2 | MIT | dev | 
- | [coveralls@3.0.0](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.0 | BSD-2-Clause | dev | 
+ | [coveralls@3.0.1](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 3.0.1 | BSD-2-Clause | dev | 
  | [docdash@0.4.0](https://github.com/clenemt/docdash#readme) | A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami | 0.4.0 | Apache-2.0 | dev | 
- | [eslint-config-xo-space@0.17.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.17.0 | MIT | dev | 
- | [eslint-plugin-import@2.8.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.8.0 | MIT | dev | 
- | [eslint-plugin-jsdoc@3.2.0](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.2.0 | BSD-3-Clause | dev | 
+ | [eslint-config-xo-space@0.18.0](https://github.com/xojs/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.18.0 | MIT | dev | 
+ | [eslint-plugin-import@2.11.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.11.0 | MIT | dev | 
+ | [eslint-plugin-jsdoc@3.6.3](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.6.3 | BSD-3-Clause | dev | 
  | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | MPL-2.0 | dev | 
- | [eslint-plugin-no-unsanitized@2.0.2](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 2.0.2 | MPL-2.0 | dev | 
- | [eslint-plugin-node@5.2.1](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 5.2.1 | MIT | dev | 
- | [eslint-plugin-promise@3.6.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.6.0 | ISC | dev | 
+ | [eslint-plugin-no-unsanitized@3.0.0](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 3.0.0 | MPL-2.0 | dev | 
+ | [eslint-plugin-node@6.0.1](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 6.0.1 | MIT | dev | 
+ | [eslint-plugin-promise@3.7.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.7.0 | ISC | dev | 
  | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | MPL-2.0 | dev | 
  | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | Apache-2.0 | dev | 
- | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | MIT | dev | 
+ | [eslint-plugin-standard@3.1.0](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.1.0 | MIT | dev | 
  | [eslint-plugin-xss@0.1.9](https://github.com/Rantanen/eslint-plugin-xss#readme) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.9 | ISC | dev | 
  | [jsdoc@3.5.5](https://github.com/jsdoc3/jsdoc#readme) | An API documentation generator for JavaScript. | 3.5.5 | Apache-2.0 | dev | 
- | [markdown-magic@0.1.19](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.19 | MIT | dev | 
+ | [markdown-magic@0.1.21](https://github.com/DavidWells/markdown-magic#readme) | Automatically update markdown files with content from external sources | 0.1.21 | MIT | dev | 
  | [markdown-magic-dependency-table@1.3.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.3.2 | MIT | dev | 
  | [markdown-magic-package-scripts@1.2.1](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.1 | MIT | dev | 
- | [mocha@4.0.1](https://mochajs.org) | simple, flexible, fun test framework | 4.0.1 | MIT | dev | 
- | [nodemon@1.12.5](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.12.5 | MIT | dev | 
- | [nsp@3.1.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.1.0 | Apache-2.0 | dev | 
- | [nyc@11.3.0](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.3.0 | ISC | dev | 
+ | [mocha@5.1.1](https://mochajs.org) | simple, flexible, fun test framework | 5.1.1 | MIT | dev | 
+ | [nodemon@1.17.3](http://nodemon.io) | Simple monitor script for use during development of a node.js app. | 1.17.3 | MIT | dev | 
+ | [nsp@3.2.1](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 3.2.1 | Apache-2.0 | dev | 
+ | [nyc@11.7.1](https://github.com/istanbuljs/nyc#readme) | the Istanbul command line interface | 11.7.1 | ISC | dev | 
  | [properties-parser@0.3.1](https://github.com/xavi-/node-properties-parser#readme) | A parser for .properties files written in javascript | 0.3.1 | MIT | dev | 
- | [semantic-release@8.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 8.2.0 | MIT | dev | 
- | [snyk@1.54.1](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.54.1 | Apache-2.0 | dev | 
- | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | ISC | dev | 
+ | [semantic-release@15.2.0](https://github.com/semantic-release/semantic-release#readme) | Automated semver compliant package publishing | 15.2.0 | MIT | dev | 
+ | [snyk@1.78.0](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.78.0 | Apache-2.0 | dev | 
+ | [standard-version@4.3.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.3.0 | ISC | dev | 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
 <!-- AUTO-GENERATED-CONTENT:END -->
 

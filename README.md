@@ -29,15 +29,13 @@
 - [8. Version](#8-version)
 - [9. License](#9-license)
 - [10. References](#10-references)
-<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:excludeText=Table of contents) -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
-
 
 ## 1. Refactoring with CRC models
 
 > ![Citation][icon-quote-left-image] Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
 >
->  Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.<sup><a href="#ref-refactoring-definition">[1]</a></sup>
+> Its heart is a series of small behavior preserving transformations. Each transformation (called a “refactoring”) does little, but a sequence of transformations can produce a significant restructuring. Since each refactoring is small, it’s less likely to go wrong. The system is kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.<sup><a href="#ref-refactoring-definition">[1]</a></sup>
 
 CRC Models can help you pinpoint where problems might be, and reveal potential improvements to your design.
 
@@ -46,6 +44,7 @@ CRC Models can help you pinpoint where problems might be, and reveal potential i
 **Example:** two prototypes (classes) called Polygon and Square:
 
 <!-- crc-model-template:html,markdown -->
+
 <table width="100%">
  <thead>
    <tr valign="top" align="left">
@@ -60,6 +59,7 @@ CRC Models can help you pinpoint where problems might be, and reveal potential i
 
       </blockquote>
       </th>
+
    </tr>
    <tr valign="top" align="left">
      <th>Responsibilities</th>
@@ -77,15 +77,14 @@ CRC Models can help you pinpoint where problems might be, and reveal potential i
 
 ```js
 class Polygon {
- constructor(height, width) {
-   this.height = height
-   this.width = width
-   this.name = 'Polygon'
- }
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+    this.name = "Polygon";
+  }
 }
 
 module.exports = Polygon;
-
 ```
 
 </blockquote></dd>
@@ -117,6 +116,7 @@ module.exports = Polygon;
 <!--/crc-model-template:html,markdown -->
 
 <!-- crc-model-template:html,markdown -->
+
 <table width="100%">
   <thead>
     <tr valign="top" align="left">
@@ -147,11 +147,11 @@ module.exports = Polygon;
             <dd><blockquote>
 
 ```js
-let shape = new Square(5)
+let shape = new Square(5);
 console.log(`${shape.name} has
   a height ${shape.height} and
   a width of ${shape.width},
-  for an area of ${shape.area}.`)
+  for an area of ${shape.area}.`);
 // =>
 // Square has
 //  a height 5 and
@@ -182,26 +182,26 @@ console.log(`${shape.name} has
  */
 class Square extends Polygon {
   /**
-    * Call the parent class's constructor with lengths
-    * provided for the Polygon's width and height.
-    * @param {!number=0} length - The length of all sides.
-    * @constructor
-    */
+   * Call the parent class's constructor with lengths
+   * provided for the Polygon's width and height.
+   * @param {!number=0} length - The length of all sides.
+   * @constructor
+   */
   constructor(length = 0) {
-    super(length, length)
-    this.name = 'Square'
+    super(length, length);
+    this.name = "Square";
   }
 
   get area() {
-    return this.height * this.width
+    return this.height * this.width;
   }
 
   set area(value) {
-    this.height = this.width = Math.sqrt(value)
+    this.height = this.width = Math.sqrt(value);
   }
 }
 
-module.exports = Square
+module.exports = Square;
 ```
 
 </blockquote></dd>
@@ -238,7 +238,6 @@ module.exports = Square
 
 <!--/crc-model-template:html,markdown -->
 
-
 ## 2. Installation
 
 You'll first need to install [ESLint](http://eslint.org):
@@ -261,9 +260,7 @@ Add `crc` to the plugins section of your `.eslintrc` configuration file. You can
 
 ```json
 {
-    "plugins": [
-        "crc"
-    ]
+  "plugins": ["crc"]
 }
 ```
 
@@ -271,9 +268,9 @@ Then configure the rules you want to use under the rules section.
 
 ```json
 {
-    "rules": {
-        "crc/generate-crc": 2
-    }
+  "rules": {
+    "crc/generate-crc": 2
+  }
 }
 ```
 
@@ -299,9 +296,9 @@ $ eslint \
 
 CRC Models use a simple and scannable template that consist of three simple sections for:
 
-1. **Name**: what the class (or object) is called in source code.
-2. **Responsibilities**: the work that the class/object is supposed to perform, and the data it's supposed to maintain.
-3. **Collaborators**: other objects this class directly invokes in order to do its work.
+1.  **Name**: what the class (or object) is called in source code.
+2.  **Responsibilities**: the work that the class/object is supposed to perform, and the data it's supposed to maintain.
+3.  **Collaborators**: other objects this class directly invokes in order to do its work.
 
 <table width="100%">
   <thead>
@@ -335,7 +332,6 @@ CRC Models use a simple and scannable template that consist of three simple sect
 
 > ![Use of terms][icon-info-image] Despite the implementation of the `class`, `constructor`, `static`, `extends`, and `super` keywords in ES2015, JavaScript _still_ achieves encapsulation, inheritance, and polymorphism with `prototype` chains. Nevertheless, I use the word `class` to refer to JavaScript objects with `prototype`-based inheritance.
 
-
 ## 6. Benefits
 
 ### 6.1. Simplicity
@@ -351,17 +347,18 @@ CRC models are simple to read, write, and update. CRC models focus on the **purp
 Behavior-driven development (BDD) seeks to incorporate **_design_** as a routine exercise during product delivery. BDD prescribes iterative activities intended to redefine and contextualize design, testing, and programming as unified activities that share common specifications expressing a product's behavior instead of its technical implementation. BDD extends TDD's focus on refactoring to how classes behave with each other. The very structure of Class-Responsibility-Collaboration models, with their emphasis on the appropriate distribution of responsibilities among classes (and therefore how those classes collaborate) reflects BDD's emphasis on behavior instead of technical assertions.
 
 ## 7. Contributing
+
 > [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributors and pull requests.
 
 Check out the guidelines for
 
-- [Contributing to `eslint-plugin-crc`](https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md) and our
-- [Contributor Covenant Code of Conduct][code-of-conduct-url].
+* [Contributing to `eslint-plugin-crc`](https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CONTRIBUTING.md) and our
+* [Contributor Covenant Code of Conduct][code-of-conduct-url].
 
 Contributions are stories with a beginning, a middle, and an end, all told through issues, comments, commit logs, and pull requests.
 
-- [Peruse open issues][issues-url] or
-- [Open a new pull request (PR)][pr-url].
+* [Peruse open issues][issues-url] or
+* [Open a new pull request (PR)][pr-url].
 
 ## 8. Version
 
@@ -394,7 +391,7 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [codacy-coverage-image]: https://api.codacy.com/project/badge/Coverage/fa4ade3f68a04b9cad26165a59ceb88e
 [codacy-coverage-url]: https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Coverage
 [codacy-image]: https://img.shields.io/codacy/grade/685cb41fec6746038e6deaa1bfddb71a.svg?style=flat-square
-[codacy-url]: https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/eslint-plugin-crc&amp;utm_campaign=Badge_Grade
+[codacy-url]: https://www.codacy.com/app/greg_7/eslint-plugin-crc?utm_source=github.com&utm_medium=referral&utm_content=gregswindle/eslint-plugin-crc&utm_campaign=Badge_Grade
 [code-of-conduct-url]: https://github.com/gregswindle/eslint-plugin-crc/blob/master/.github/CODE_OF_CONDUCT.md
 [complexity-report-url]: https://github.com/escomplex/complexity-report
 [coveralls-image]: https://img.shields.io/coveralls/github/gregswindle/eslint-plugin-crc.svg?style=flat-square

@@ -11,3 +11,4 @@
 /tmp/**
 *.test.js
 *.spec.js
+markdown.config.js

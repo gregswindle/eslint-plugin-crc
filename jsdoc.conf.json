@@ -9,9 +9,7 @@
     "includePattern": "lib.+\\.js(doc|x)?$",
     "excludePattern": "tests(^|\\/|\\\\)_"
   },
-  "plugins": [
-        "plugins/markdown"
-    ],
+  "plugins": ["plugins/markdown"],
   "templates": {
     "cleverLinks": false,
     "monospaceLinks": false,
@@ -27,7 +25,7 @@
     "template": "./node_modules/docdash"
   },
   "docdash": {
-        "static": true,
-        "sort": true
-    }
+    "static": true,
+    "sort": true
+  }
 }

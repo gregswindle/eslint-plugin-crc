@@ -4,14 +4,12 @@
 
 [![License][license-image]][license-url]
 [![FOSSA Status][fossa-image]][fossa-url]
-[![NSP Status][nsp-image]][nsp-url]
 [![Dependencies][daviddm-image]][daviddm-url]
 [![Dependencies][daviddm-dev-image]][daviddm-dev-url]<br>
 [![Travis branch][travis-image]][travis-url]
 [![AppVeyor Windows build status][appveyor-image]][appveyor-url]
 [![Coveralls coverage][coveralls-image]][coveralls-url]
 [![Codacy Badge][codacy-image]][codacy-url]
-[![Quality Gate][sonar-quality-gate-image]][sonar-quality-gate-url]
 [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url]
 
 ## Table of contents

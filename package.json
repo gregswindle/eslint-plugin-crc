@@ -62,7 +62,7 @@
     "nsp": "3.2.1",
     "nyc": "11.7.1",
     "properties-parser": "0.3.1",
-    "semantic-release": "15.2.0",
+    "semantic-release": "15.13.30",
     "snyk": "1.78.0",
     "standard-version": "4.3.0"
   },

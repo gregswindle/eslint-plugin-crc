@@ -31,8 +31,8 @@
   "dependencies": {
     "bunyan": "1.8.12",
     "doctrine": "2.1.0",
-    "eslint": "4.19.1",
-    "espree": "3.5.4",
+    "eslint": "6.0.0",
+    "espree": "6.1.0",
     "esquery": "1.0.1",
     "lodash": "4.17.10",
     "requireindex": "1.2.0"

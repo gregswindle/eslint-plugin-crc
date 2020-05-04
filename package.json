@@ -35,7 +35,8 @@
     "espree": "3.5.4",
     "esquery": "1.0.1",
     "lodash": "4.17.10",
-    "requireindex": "1.2.0"
+    "requireindex": "1.2.0",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "babel-register": "6.26.0",
@@ -63,7 +64,6 @@
     "nyc": "11.7.1",
     "properties-parser": "0.3.1",
     "semantic-release": "15.2.0",
-    "snyk": "1.78.0",
     "standard-version": "4.3.0"
   },
   "engines": {
@@ -131,7 +131,8 @@
     "sonar": "sonar-scanner -Dproject.settings=./sonar-project.properties",
     "test": "nyc mocha 'tests/**/*.spec.js'",
     "version": null,
-    "watch:test": "nodemon -w ./tests -w ./lib -e js,json -x npm test"
+    "watch:test": "nodemon -w ./tests -w ./lib -e js,json -x npm test",
+    "prepare": "npm run snyk-protect"
   },
   "snyk": true
 }

@@ -34,7 +34,7 @@
     "eslint": "4.19.1",
     "espree": "3.5.4",
     "esquery": "1.0.1",
-    "lodash": "4.17.10",
+    "lodash": "4.17.19",
     "requireindex": "1.2.0"
   },
   "devDependencies": {

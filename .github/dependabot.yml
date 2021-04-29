@@ -1,0 +1,79 @@
+version: 2
+registries:
+  git-gitlab-com:
+    type: git
+    url: https://gitlab.com
+    username: gregswindle
+    password: "${{secrets.GIT_GITLAB_COM_PASSWORD}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "09:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: snyk
+    versions:
+    - 1.440.1
+    - 1.440.2
+    - 1.440.4
+    - 1.440.5
+    - 1.445.0
+    - 1.446.0
+    - 1.448.0
+    - 1.450.0
+    - 1.452.0
+    - 1.454.0
+    - 1.455.0
+    - 1.456.0
+    - 1.457.0
+    - 1.458.0
+    - 1.459.0
+    - 1.460.0
+    - 1.463.0
+    - 1.464.0
+    - 1.467.0
+    - 1.471.0
+    - 1.475.0
+    - 1.476.0
+    - 1.479.0
+    - 1.483.0
+    - 1.487.0
+    - 1.489.0
+    - 1.492.0
+    - 1.495.0
+    - 1.500.0
+    - 1.503.0
+    - 1.506.0
+    - 1.509.0
+    - 1.511.0
+    - 1.514.0
+    - 1.518.0
+    - 1.521.0
+    - 1.522.0
+    - 1.526.0
+    - 1.529.0
+    - 1.531.0
+    - 1.534.0
+    - 1.539.0
+    - 1.542.0
+    - 1.559.0
+    - 1.563.0
+    - 1.564.0
+    - 1.567.0
+    - 1.570.0
+  - dependency-name: mocha
+    versions:
+    - 8.2.1
+    - 8.3.0
+    - 8.3.1
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: eslint-plugin-promise
+    versions:
+    - 4.2.1
+  registries:
+  - git-gitlab-com
